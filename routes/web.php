@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContenidoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,26 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+});
+
+Route::controller(ContenidoController::class)->group(function(){
+
+    //Vista home de videos
+    Route::get('/dashboard','index')->name('dashboard.index');
+
+    Route::get('dashboard/create/contenido','create')->name('dashboard.create');
+
+    Route::post('dashboard/store/contenido', 'store')->name('contenido.store');
+
+    Route::get('/dashboard/{contenido}/edit','edit')->name('contenido.edit');
+
+    Route::put('/dashboard/{contenido}','update')->name('contenido.update');
+
+    Route::delete('edit/{contenido}','destroy')->name('contenido.destroy');
+
+    //Acceder a vista ajustes
+    Route::get('dashboard/ajustes/','ajustes')->name('dashboard.ajustes');
+    
+
+
 });
