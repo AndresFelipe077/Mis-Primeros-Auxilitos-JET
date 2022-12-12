@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap');
+
+:root{
+    --colorTextoPlaceholder:rgb(255, 123, 0);
+}
+
+/*Placeholder*/
+::placeholder{
+    color:var(--colorTextoPlaceholder);
+}
+
+/*Scroll-bar*/
+::-webkit-scrollbar{
+    width:1.5em;
+    background:grey;
+}
+
+::-webkit-scrollbar-track{
+    background: #334d50;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #cbcaa5, #334d50);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #cbcaa5, #334d50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    border-radius:3em;
+}
+::-webkit-scrollbar-thumb{
+    /*background-image:url(/Images/Facebook.svg);*/
+    background-size: contain; 
+    background-repeat:no-repeat;
+    background: #ffe259;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ffa751, #ffe259);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius:2em;
+}
+
+/*REGISTRO*/
+
+:root{
+    --colorTextos:rgb(0, 38, 255);
+}
+
+::before,
+::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.body-registro{
+
+    background-image: url("/img/login/background.png");
+    font-family: 'DynaPuff', cursive;
+    height: 1000px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    
+}
+
+#tituloAuxilitos{
+    font-size:2em;
+    text-align:center;
+    background:linear-gradient(to right, #ff1500, #25f71e);
+    border-radius:10px;
+    color: white;
+}
+
+#tituloRegistro{
+
+    font-size:2em;
+    text-align:center;
+    color:red;
+
+}
+
+.form{
+    
+    padding: 40px 0;
+    box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+    border-radius:10px;
+    width:100%;
+    margin:auto;
+    position:relative;
+    animation-name:mianimacion;
+    animation-duration:3s;
+    background-color: white;
+    
+    
+
+}
+
+@keyframes mianimacion {
+
+    0%{
+        top:0px;
+    }
+    
+    25%{ 
+        top:-50px;   
+    }
+    50%{
+        top:-50px;      
+    }
+    100%{ 
+        top:0px;   
+    }
+
+}
+
+/*Espaciado entre inputs y botones*/
+.form .grupo{
+    position:relative;
+    margin:25px;
+    /*background:black;*/
+}
+
+.input{
+
+    background:none;
+    color:var(--colorTextoPlaceholder);
+    font-size:18px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom: 1px solid var(--colorTextos);
+    font-family: 'DynaPuff', cursive;
+
+}
+
+.input:focus{
+    outline:none;
+    color:var(--colorTextoPlaceholder);
+}
+
+.label{ 
+    color:var(--colorTextos);
+    /*color:white;*/
+    font-size:16px;
+    position:absolute;
+    left:5px;
+    top: 10px;
+    transition:0.7s ease all;
+    pointer-events: none;
+    
+}
+
+.label-genero
+{
+    color:blue; 
+}
+
+.input:focus~label,
+.input:valid~label{
+    top: -14px;
+    font-size:12px;
+    color:rgb(177, 117, 6);
+}
+
+.barra{
+    position:relative;
+    display:block;
+    width:100%;
+}
+
+.barra::before{
+    content:"";
+    height:2px;
+    width: 0%;
+    bottom:0;
+    position:absolute;
+    background: linear-gradient(to right, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    transition:0.3s ease width;
+    left:0;
+}
+
+.input:focus~.barra::before{
+    width:100%;
+}
+
+#btn_Registrar{
+
+    font-family: 'DynaPuff', cursive;
+    background: #F7971E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFD200, #F7971E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius:10px;
+    display: block;
+    width: 80%;
+    margin:10px auto;
+    color:black;
+    height: 40px;
+    font-size: 16px;
+    cursor:pointer;
+
+}
+
+#btn_Regresar{
+
+    font-family: 'DynaPuff', cursive;
+    background: #F7971E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFD200, #F7971E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius:10px;
+    display: block;
+    width: 60%;
+    margin:10px auto;
+    color:black;
+    height: 40px;
+    font-size: 16px;
+    cursor:pointer;
+
+}
+
+.form div button:hover {
+
+    box-shadow: inset 0 0 20px rgba(49, 138, 172, 0.5), 0 0 20px rgba(49, 138, 172, 0.4);
+    outline-color: rgba(49, 138, 172, 0);
+    outline-offset: 100px;
+    text-shadow: 1px 1px 6px rgb(217, 255, 0); 
+
+}
+
+@media screen and (max-width:500px){
+    .form{
+        width: 80%;
+    }    
+}
+
+/*FIN REGISTRO*/

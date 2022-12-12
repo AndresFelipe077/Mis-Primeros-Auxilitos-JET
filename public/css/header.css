@@ -1,0 +1,11 @@
+.rounded-circle
+{
+    display: flex;
+    align-items: center;
+}
+
+#iconsvg
+{
+    top:10;
+    right:0;
+}

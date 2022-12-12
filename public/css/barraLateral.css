@@ -1,0 +1,40 @@
+#li {
+    --c: goldenrod;
+    color: var(--c);
+    font-size: 12px;
+    border: 0.3em solid var(--c);
+    border-radius: 0.5em;
+    width: 90%;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    /* overflow: hidden; */
+    transition: .7s;
+    margin: .5em;
+}
+
+#li:hover {
+    color: black;
+}
+
+#li:hover {
+    transform: translateY(0) scale(1.2);
+}
+
+#li:nth-child(1) {
+    --n: 1;
+}
+
+#li:nth-child(2) {
+    --n: 2;
+}
+
+#li:nth-child(3) {
+    --n: 3;
+}
+
+#li:nth-child(4) {
+    --n: 4;
+}

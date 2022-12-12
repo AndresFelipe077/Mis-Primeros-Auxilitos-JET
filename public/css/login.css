@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap');
+
+
+
+/* hola andres hayy */
+/*Scroll-bar*/
+::-webkit-scrollbar{
+    width:1.5em;
+    background:grey;
+}
+
+::-webkit-scrollbar-track{
+    background: #334d50;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #cbcaa5, #334d50);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #cbcaa5, #334d50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    border-radius:3em;
+}
+::-webkit-scrollbar-thumb{
+    /*background-image:url(/Images/Facebook.svg);*/
+    background-size: contain; 
+    background-repeat:no-repeat;
+    background: #ffe259;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ffa751, #ffe259);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius:2em;
+}
+
+
+
+.body_Login{
+
+    font-family:'DynaPuff', cursive;
+    height: 780px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image:url("/img/login/background.png");
+    
+}
+
+.content_login{
+
+    margin:0 auto;
+    animation-name: mianimacion;
+    animation-duration:2s;
+    position:relative;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none   
+    
+}
+#image-head{border-radius:"10px";}
+
+/*Animacion*/
+@keyframes mianimacion{
+
+    0%{
+        top:0px;
+    }
+    
+    25%{ 
+        top:-50px;   
+    }
+    50%{
+        top:-50px;      
+    }
+    100%{ 
+        top:0px;   
+    }
+    
+}
+
+
+#titulo-Auxilitos{
+    color:rgb(89, 255, 47);
+    font-size:3em;
+    text-align: center;
+    text-shadow: 3px 5px 5px black;
+    margin: 5px;
+}
+
+/*Imagen Botiquin*/
+#image_Title{
+
+    border-radius: 10px;
+
+}
+
+#titulo{
+
+    margin-top: 0.1em;
+    margin-bottom: 1em;
+    text-align: center;
+    font-size:3em;
+
+}
+
+
+form .grupo{
+    position: relative;
+    margin:30px;
+    display: block;
+    
+}
+
+form{
+
+    padding:40px 0;
+    box-shadow: 0 0 6px 0 #334d50;
+    margin-top: 2em;
+    border-radius:10px;
+    color: aliceblue;
+}
+
+.form{
+
+    width: 100%;
+    margin: auto;
+    
+
+}
+
+
+.grupo{
+    margin: auto;
+    text-align: center;
+}
+
+
+
+#correo{
+
+    font-family:'DynaPuff', cursive;
+    border-radius:10px;
+    font-size:20px;
+    background-color:rgb(0, 174, 255);
+    color: white;
+    margin: auto;
+    
+
+}
+
+:root{
+
+    --colorTextoPlaceholder:rgb(0, 0, 0);
+
+}
+
+::placeholder {
+    color:var(--colorTextoPlaceholder); 
+}
+
+#contrasena{
+
+    font-family:'DynaPuff', cursive;
+    border-radius:10px;
+    color: rgb(0, 0, 0);
+    background-color:rgb(255, 255, 0);
+    font-size:20px;
+    margin:auto;
+    
+
+}
+
+#btn_loguearse{
+
+    font-family:'DynaPuff', cursive;
+    border-radius:10px;
+    background-color: green;
+    color: aliceblue;
+    font-size:20px;
+    cursor: pointer;
+
+}
+
+#btn_registrarse{
+
+    font-family:'DynaPuff', cursive;
+    border-radius:10px;
+    background-color: green;
+    color: aliceblue;
+    font-size:20px;
+    cursor: pointer;
+
+}
+.form button:hover{
+    box-shadow: inset 0 0 20px rgba(49, 138, 172, 0.5), 0 0 20px rgba(49, 138, 172, 0.4);
+    outline-color: rgba(49, 138, 172, 0);
+    outline-offset: 80px;
+    text-shadow: 1px 1px 6px #fff;  
+}
+
+
+.img-btn-Facebook{
+    cursor: pointer;
+    
+    
+}
+.img-btn-Google{ 
+    cursor:pointer; 
+}
+
+
+.form img:hover{
+    box-shadow: inset 7px 7px 30px 7px rgba(184, 209, 219, 0.5), 0 0 20px rgba(162, 197, 211, 0.4);
+    border-radius:2em;
+}
+
+.content_password_Olvida{
+
+    top: 0;
+    text-align: center;   
+
+}
+
+#text_password{
+
+    /*text-decoration: none;*/
+    color:black;
+
+}
+
+.footer { 
+
+    position:relative bottom;
+    margin-top: 5%;
+    text-align: center;
+
+}
+
+@media screen and (max-width:500px) {
+    form {
+        width:100%;
+    }
+}

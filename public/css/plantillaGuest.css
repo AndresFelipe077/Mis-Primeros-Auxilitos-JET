@@ -1,0 +1,24 @@
+.py-5
+{
+    background-image:url('/img/imgs/a.jpg');
+    height:100vh;
+    background-size: cover;
+    background-position: center;
+    margin:0;
+    padding:0;
+}
+
+#h4-text
+{
+    font-family: 'DynaPuff', cursive; color:blue;
+}
+
+#href-iniciarSesion
+{
+    text-decoration: none; border-color: solid blue;
+}
+
+#text-IniciarSesion
+{
+    font-family: 'DynaPuff', cursive;
+}

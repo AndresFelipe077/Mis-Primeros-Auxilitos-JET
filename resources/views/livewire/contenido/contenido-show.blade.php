@@ -1,0 +1,63 @@
+<div>
+    <div class="gallery">
+        {{-- Cuando se borra algun contenido --}}
+        @if(session('eliminar') == 'ok')
+            <script>
+                Swal.fire(
+                    '¡Eliminado!',
+                    'El contenido se elimino exitosamente.',
+                    'success'
+                )
+            </script>
+        @endif
+        
+        @if(session('subir') == 'ok')
+            <script>
+                Swal.fire(
+                    '¡Contenido subido!',
+                    '¡El envio ha sido un exito!.',
+                    'success'
+                )
+            </script>
+        @endif
+        
+            {{-- @foreach($contenidos as $contenido) --}}
+                    <div class="col mb-4 animate__animated animate__wobble">
+    
+                        <div class="card shadow border-dark text-bg-info">
+                            <div class="card-header">
+                                 
+                            </div>
+                            <div class="card-body ">
+                                <div class="inner">
+                                <img class="card-img-top rounded-3" src="" alt="" width="200px" height="200px">
+                                </div>
+                                {{-- <p class="text-danger">{{auth()->user()->name}}</p> --}}
+                                <p><strong>Autor: </strong> </p>
+                                <p class="card-text">    
+                                    
+                                </p>
+                                <a href="" class="btn btn-primary">Editar</a>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+    
+            {{-- @endforeach --}}
+            
+            
+    </div>
+    
+    <div class="">
+        <ul class="pagination pagination-lg">
+            <li class="page-item active mb-5" aria-current="page">
+            <span class="page-link bg-light h4"></span>
+            </li>   
+        </ul>
+    </div>
+    
+    <!--estilos-->
+    <link rel="stylesheet" href="{{asset('css/index-home.css')}}">
+    
+</div>

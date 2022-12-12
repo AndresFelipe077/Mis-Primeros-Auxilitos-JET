@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap');
+
+/*Scroll-bar*/
+::-webkit-scrollbar{
+    width:1em;
+    background:grey;
+}
+
+::-webkit-scrollbar-track{
+    background: #334d50;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #cbcaa5, #334d50);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #cbcaa5, #334d50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    border-radius:3em;
+}
+::-webkit-scrollbar-thumb{
+    /*background-image:url(/Images/Facebook.svg);*/
+    background-size: contain; 
+    background-repeat:no-repeat;
+    background: #ffe259;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ffa751, #ffe259);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius:2em;
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+
+/*Splash Screen*/
+.intro{
+    position:fixed;
+    z-index:1;
+    left: 0;
+    top: 0;
+    width:100%;
+    height:100vh;
+    background-color: #161616;
+    transition:1s;
+}
+
+.logo-header{
+    position:absolute;
+    top: 40%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:#ffffff;
+}
+
+.logo{
+    position:relative;
+    display:inline-block;
+    bottom:-20px;
+    opacity: 0;
+}
+
+.logo.active {
+    bottom: 0;
+    opacity: 1;
+    transition:ease-in-out 0.5s;
+}
+
+.logo.fade{
+    bottom:150px;
+    opacity:0;
+    transition:ease-in-out 0.5s;
+}
+
+
+body{
+    
+    font-family: 'DynaPuff', cursive;
+    background-image:url("/img/imgs/a.jpg");
+    height:100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+      
+}
+
+.texto-login
+{
+    color:blue;
+}
+
+.form-control
+{
+    color:blue;
+    background-color:rgb(251, 250, 248);
+}
+
+.corousel-inner img{
+    width:100%;
+    height:100%;
+}

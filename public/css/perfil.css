@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap');
+
+/*Scroll-bar*/
+::-webkit-scrollbar{
+    width:1.5em;
+    background:grey;
+}
+
+::-webkit-scrollbar-track{
+    background: #334d50;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #cbcaa5, #334d50);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #cbcaa5, #334d50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    border-radius:3em;
+}
+::-webkit-scrollbar-thumb{
+    /*background-image:url(/Images/Facebook.svg);*/
+    background-size: contain; 
+    background-repeat:no-repeat;
+    background: #ffe259;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ffa751, #ffe259);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius:2em;
+}
+
+
+.body-perfil{
+   
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'DynaPuff', cursive;
+    background-image:url("/img/imgs/a.jpg");
+    height:100vh;
+    background-size: cover;
+    background-position: center;
+    margin-left: 3em;
+    margin-right: 3em;
+
+
+}
+
+
+.form1{
+
+    background:white;
+    padding: 40px 0;
+    box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+    border-radius:10px;
+    width:100%;
+    margin:auto;
+    position:relative;
+    animation-name:mianimacion;
+    animation-duration:3s;
+    
+
+}
+
+#img{
+    width: 200px;
+    height: 200px;
+}
+
+#juegos{
+    font-size: 1em;
+}
+
+#progreso-Padre
+{
+    height: 5px;
+}
+
+/* Este progressBar se ejecutara por medio de backend */
+#progressBar
+{
+    width: 80%
+}
+
+/* File */
+.form-control-file {
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    
+}
+  
+.form-control-file::before {
+    background-color: #5678EF;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    content: 'Seleccionar imagen'; /* testo por defecto */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+  
+.form-control-file input[type="file"] {
+    opacity: 0;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+.label{ 
+    color:var(--colorTextos);
+    /*color:white;*/
+    font-size:16px;
+    position:absolute;
+    left:5px;
+    top: 10px;
+    transition:0.7s ease all;
+    pointer-events: none;
+    
+}
+
+.input:focus~label,
+.input:valid~label{
+    top: -14px;
+    font-size:12px;
+    color:rgb(177, 117, 6);
+}
+
+
+#label-name
+{
+    font-size:1.5em;
+    margin-left:10px;
+}
+
+
+
+
+#btn-actualizar-image
+{
+    font-size:1.5em;
+    font-family:'DynaPuff', cursive;
+    border-radius:10px;
+    background-color: rgb(216, 203, 28);
+    color: aliceblue;
+    cursor: pointer;
+    color: #3a01f6;
+    background:linear-gradient(to right, #bdf71e, #26ff00, #bdf71e);
+   
+}
+
+
+#btn-actualizar-info-perfil
+{
+    font-size:1.5em;
+    font-family:'DynaPuff', cursive;
+    border-radius:10px;
+    background-color: rgb(216, 203, 28);
+    color: aliceblue;
+    cursor: pointer;
+    color: #3a01f6;
+    background:linear-gradient(to right, #bdf71e, #26ff00, #bdf71e);
+    
+}
+
+
+.btn-cambiar-contrasena-perfil
+{
+    background: #00ff55;
+    border-radius: 10px;
+    font-family:'DynaPuff', cursive;
+    background-color: rgb(216, 203, 28);
+    cursor: pointer;
+    color: #3a01f6;
+    background:linear-gradient(to right, #bdf71e, #26ff00, #bdf71e);
+    font-size: 1.1em;
+}
+
+
+/*FIN PERFIL*/

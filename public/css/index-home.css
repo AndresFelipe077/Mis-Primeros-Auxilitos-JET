@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap');
+
+body{
+    
+    font-family: 'DynaPuff', cursive;
+    background-image:url('/img/imgs/a.jpg');
+    height:100vh;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.gallery{
+    font-family: 'DynaPuff', cursive;
+}
+
+.col
+{
+    font-family:'DynaPuff', cursive;
+    display: flex;
+    justify-content: center !important;
+}
+
+.card
+{
+    width: 15rem;
+}
