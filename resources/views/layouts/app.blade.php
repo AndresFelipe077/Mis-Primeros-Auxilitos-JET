@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title') - {{ config('app.name') }}</title>
+    
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('build/assets/app.ede9da46.css') }}">
@@ -19,6 +18,9 @@
 
     {{-- Estilos de jquery --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    {{-- Script de notificacion --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!--estilos-->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -56,8 +58,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     
-    {{-- Script de notificacion --}}
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="font-sans antialiased bg-light">
@@ -65,7 +65,7 @@
     @auth
 
     <!-- Page Heading -->
-    <header class="d-flex py-3 bg-white shadow-sm border-bottom">
+    <header>
         <div class="container">
             {{ $header }}
         </div>
@@ -77,11 +77,11 @@
     </main>
 
     <!-- Page Heading -->
-    <header class="d-flex py-3 bg-white shadow-sm border-bottom">
+    <footer>
         <div class="container">
             {{ $footer }}
         </div>
-    </header>
+    </footer>
 
     @endauth
 

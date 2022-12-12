@@ -1,3 +1,4 @@
+@section('title','Crear Contenido')
 <div>
 
     <div class="gallery">

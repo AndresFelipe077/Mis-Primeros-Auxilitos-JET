@@ -1,4 +1,7 @@
 <x-app-layout>
+
+    @section('title','Mis Primeros Auxilitos')
+
     <x-slot name="header">
         <x-header />
     </x-slot>

@@ -1,4 +1,9 @@
-<div>
+<x-app-layout>
+
+    @section('title','Editar contenido')
+
+    <x-slot name="header">
+    </x-slot>
 
     <h1 id="title-h1" class="text-center">Vista crear videos</h1>
     <a href="{{ route('dashboard.index') }}"><img src="{{ asset('/img/icons/regresar.png') }}"id="a-regresar-perfil"></a>
@@ -25,9 +30,9 @@
                         @enderror
                     </div>
                 </div>
-                <div class="form-group m-1">
+                <div class="form-group m-1 text-center">
                     <label for="exampleFormControlFile1" id="src-file">Escoge una imagen</label><br>
-                    <img src="{{ asset($contenido->url) }}" width="100px" height="100px"><br>
+                    <img class="text-center" src="{{ asset($contenido->url) }}" width="100px" height="100px"><br>
                     <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1"
                         accept="image/*" value="{{ old('file', $contenido->url) }}">
                     @error('file')
@@ -74,4 +79,8 @@
     </div>
     <link rel="stylesheet" href="{{ asset('css/create-content.css') }}">
     <script src="{{ asset('js/toast-delete.js') }}"></script>
-</div>
+
+    <x-slot name="footer">
+    </x-slot>
+
+</x-app-layout>
