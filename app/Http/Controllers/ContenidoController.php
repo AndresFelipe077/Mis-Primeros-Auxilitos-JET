@@ -6,10 +6,17 @@ use Illuminate\Http\Request;
 use App\Models\Contenido;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
-use Nette\Utils\Image;
+use Livewire\WithFileUploads;
+use Intervention\Image\Facades\Image;
 
 class ContenidoController extends Controller
 {
+
+
+    use WithFileUploads;
+
+    public $url;
+
     //Vista home de videos
     public function index()
     {
@@ -46,35 +53,27 @@ class ContenidoController extends Controller
   
     }
 
-    public function store(Request $request)
-    {
+    // public function store(Request $request)
+    // {
 
-        $request->validate([
-            'title'        => 'required|max:50',
-            'file'         => 'required|image',
-            'autor'        => 'required|max:25',
-            'description'  => 'required'
-        ]);
+    //     $request->validate([
+    //         'title'        => 'required|max:50',
+    //         'file'         => 'required|image',
+    //         'autor'        => 'required|max:25',
+    //         'description'  => 'required'
+    //     ]);
 
-        // $nombre = Str::random(10) . $request->file('file')->getClientOriginalName();
+    //     $url = $this->url->store('contenidos');
 
-        // $ruta = storage_path() . '\app\public\images/' . $nombre;
+    //     Contenido::create([
+    //         'title'       => $request->title,
+    //         'url'         => $request->$url,
+    //         'autor'       => $request->autor,
+    //         'description' => $request->description,
+    //     ]);
 
-        // Image::make($request->file('file'))
-        //     ->resize(900, null, function($constraint){
-        //         $constraint->aspectRatio();
-        //     })
-        //     ->save($ruta);
-
-        Contenido::create([
-            'title'       => $request->title,
-            'url'         => '/storage/images/',
-            'autor'       => $request->autor,
-            'description' => $request->description,
-        ]);
-
-        return redirect()->route('dashboard.index')->with('subir','ok');
-    }
+    //     return redirect()->route('dashboard.index')->with('subir','ok');
+    // }
 
 
     public function edit(Contenido $contenido)

@@ -32,8 +32,14 @@
                     </div>
                     <div class="card-body ">
                         <div class="inner">
-                            <img class="card-img-top rounded-3" src="{{ asset($contenido->url) }}" alt=""
-                                width="200px" height="200px">
+
+                            @if(Storage::url($contenido->url))
+                            <img class="card-img-top rounded-3" src="{{ Storage::url($contenido->url) }}" alt=""
+                                width="300px" height="400px">
+                            @else
+                                <img class="card-img-top rounded-3" src="{{ asset($contenido->url) }}" alt=""
+                                width="300px" height="400px">
+                            @endif
                         </div>
                         {{-- <p class="text-danger">{{auth()->user()->name}}</p> --}}
                         <p><strong>Autor: </strong> {{ $contenido->autor }}</p>

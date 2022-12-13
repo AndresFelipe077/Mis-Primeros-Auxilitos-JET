@@ -1,7 +1,9 @@
 <x-app-layout>
+
+    @section('title', 'Perfil')
+
     <x-slot name="header">
         <h2 class="h4 font-weight-bold">
-            {{ __('Perfil') }}
         </h2>
     </x-slot>
 
@@ -9,7 +11,12 @@
         @if (Laravel\Fortify\Features::canUpdateProfileInformation())
             @livewire('profile.update-profile-information-form')
 
-            <x-jet-section-border />
+            {{-- @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
+                <x-jet-section-border />
+
+                @livewire('profile.delete-user-form')
+            @endif --}}
+
         @endif
 
         {{-- @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
@@ -25,17 +32,12 @@
         @endif
 
         @livewire('profile.logout-other-browser-sessions-form')
+--}}
 
-        @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
-            <x-jet-section-border />
 
-            @livewire('profile.delete-user-form')
-        @endif --}}
     </div>
 
     <x-slot name="footer">
-        <h2 class="h4 font-weight-bold">
-            {{ __('Pie de pagina') }}
-        </h2>
     </x-slot>
+    
 </x-app-layout>

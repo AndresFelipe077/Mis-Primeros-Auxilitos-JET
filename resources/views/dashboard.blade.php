@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    @section('title','Mis Primeros Auxilitos')
+    @section('title','Home')
 
     <x-slot name="header">
         <x-header />
