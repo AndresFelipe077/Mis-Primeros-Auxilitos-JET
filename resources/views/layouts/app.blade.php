@@ -9,7 +9,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500&display=swap" rel="stylesheet">
     
-
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('build/assets/app.ede9da46.css') }}">
 
@@ -41,11 +40,10 @@
     {{-- animations css --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-    @livewireStyles
-
     <!-- Scripts -->
     <script src="{{ asset('build/assets/app.76ec6e4f.js') }}" defer></script>
     <!-- Optional JavaScript; choose one of the two! -->
+    
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
         
@@ -72,6 +70,7 @@
             {{ $header }}
         </div>
     </header>
+
 
     <!-- Page Content -->
     <main class="container my-5">

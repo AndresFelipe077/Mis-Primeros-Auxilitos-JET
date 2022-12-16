@@ -9,10 +9,11 @@ use Illuminate\Support\Str;
 use Livewire\WithFileUploads;
 use Intervention\Image\Facades\Image;
 
+use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
+use Laravel\Jetstream\Http\Livewire\UpdateProfileInformationForm;
+
 class ContenidoController extends Controller
 {
-
-
     use WithFileUploads;
 
     public $url;
@@ -53,27 +54,35 @@ class ContenidoController extends Controller
   
     }
 
-    // public function store(Request $request)
-    // {
+    public function store(Request $request)
+    {
 
-    //     $request->validate([
-    //         'title'        => 'required|max:50',
-    //         'file'         => 'required|image',
-    //         'autor'        => 'required|max:25',
-    //         'description'  => 'required'
-    //     ]);
+        $request->validate([
+            'title'        => 'required|max:50',
+            'file'         => 'required|image',
+            'autor'        => 'required|max:25',
+            'description'  => 'required'
+        ]);
 
-    //     $url = $this->url->store('contenidos');
+        $nombre = Str::random(10) . $request->file('file')->getClientOriginalName();
 
-    //     Contenido::create([
-    //         'title'       => $request->title,
-    //         'url'         => $request->$url,
-    //         'autor'       => $request->autor,
-    //         'description' => $request->description,
-    //     ]);
+        $ruta = storage_path() . '\app\public\images/' . $nombre;
 
-    //     return redirect()->route('dashboard.index')->with('subir','ok');
-    // }
+        Image::make($request->file('file'))
+            ->resize(900, null, function($constraint){
+                $constraint->aspectRatio();
+            })
+            ->save($ruta);
+
+        Contenido::create([
+            'title'       => $request->title,
+            'url'         => '/storage/images/' . $nombre,
+            'autor'       => $request->autor,
+            'description' => $request->description,
+        ]);
+
+        return redirect()->route('dashboard.index')->with('subir','ok');
+    }
 
 
     public function edit(Contenido $contenido)
@@ -101,26 +110,26 @@ class ContenidoController extends Controller
             'description'  => 'required'
         ]);
         
-        // $nombre = Str::random(10) . $request->file('file')->getClientOriginalName();
+        $nombre = Str::random(10) . $request->file('file')->getClientOriginalName();
 
-        // $ruta = storage_path() . '\app\public\images/' . $nombre;
+        $ruta = storage_path() . '\app\public\images/' . $nombre;
 
         
 
-        // Image::make($request->file('file'))
-        //     ->resize(900, null, function($constraint){
-        //         $constraint->aspectRatio();
-        //     })
-        //     ->save($ruta);
+        Image::make($request->file('file'))
+            ->resize(900, null, function($constraint){
+                $constraint->aspectRatio();
+            })
+            ->save($ruta);
 
         $contenido->title       = $request->title;
-        $contenido->url         = '/storage/images/';
+        $contenido->url         = '/storage/images/' .$nombre;
         $contenido->autor       = $request->autor;
         $contenido->description = $request->description;
         
         $contenido->save();
 
-        return redirect()->route('dashboard.index', compact('contenido'));
+        return redirect()->route('dashboard.index', compact('contenido'))->with('actualizar','ok');
     }
 
 
@@ -130,4 +139,7 @@ class ContenidoController extends Controller
                                                     // eliminar => variable, ok => mensaje
         return redirect()->route('dashboard.index')->with('eliminar','ok');
     }
+
+
+
 }

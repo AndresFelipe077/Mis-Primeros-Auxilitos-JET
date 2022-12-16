@@ -3,12 +3,23 @@
     @section('title', 'Perfil')
 
     <x-slot name="header">
-        <h2 class="h4 font-weight-bold">
-        </h2>
     </x-slot>
 
     <div>
         @if (Laravel\Fortify\Features::canUpdateProfileInformation())
+
+
+
+            {{-- @livewire('profile.update-profile-information-form', ['item' => $item], key('item-' . $item->id)) --}}
+
+            {{-- {{Auth::user()->id}} --}}
+            {{-- @foreach ($datos as $dato)  --}}
+                {{-- @livewire('profile.update-profile-information-form', ['dato' => $dato], key('dato-' . $dato->id)) --}}
+
+                <!-- key() using Laravel 7's tag syntax -->
+                {{-- <livewire:profile.update-profile-information-form :item="$dato" :wire:key="'datp-'.$dato->id"> --}}
+             {{-- @endforeach --}}
+
             @livewire('profile.update-profile-information-form')
 
             {{-- @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
@@ -39,5 +50,5 @@
 
     <x-slot name="footer">
     </x-slot>
-    
+
 </x-app-layout>

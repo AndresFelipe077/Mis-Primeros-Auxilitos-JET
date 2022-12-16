@@ -27,7 +27,7 @@
                     </svg>p
                 </a>
 
-                <button class="btn success rounded-circle" onclick="location.href='{{ route('profile.show') }}'">
+                <button wire:key="{{ Auth::user()->id }}" class="btn success rounded-circle" onclick="location.href='{{ route('profile.show') }}'">
                         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                             <img class="rounded-circle" width="50px" height="50px" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                         @else

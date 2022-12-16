@@ -134,7 +134,7 @@
                             <label class="label" for="">Fecha de nacimiento</label>
                         </div>
                         <div class="grupo">
-                            <input class="input" type="password" name="password" id="name" required><span
+                            <input class="input" type="password" name="password" id="name" ><span
                                 class="barra"></span>
                             <label class="label" for="">Contraseña</label>
                             @if ($errors->any('password'))
@@ -146,7 +146,7 @@
 
                         <div class="grupo">
                             <input class="input" type="password" name="password_confirmation" id="name"
-                                required><span class="barra"></span>
+                                ><span class="barra"></span>
                             <label class="label" for="">Confirmar contraseña</label>
                             @if ($errors->any('password'))
                                 <div class="text-danger" role="alert">

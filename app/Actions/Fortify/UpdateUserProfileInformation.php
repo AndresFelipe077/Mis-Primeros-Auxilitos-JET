@@ -9,6 +9,7 @@ use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
 
 class UpdateUserProfileInformation implements UpdatesUserProfileInformation
 {
+    public $datos;
     /**
      * Validate and update the given user's profile information.
      *
@@ -18,6 +19,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
      */
     public function update($user, array $input)
     {
+
         Validator::make($input, [
             'name'            => ['required', 'string', 'max:255'],
             'email'           => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],

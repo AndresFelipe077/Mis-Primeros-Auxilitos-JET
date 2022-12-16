@@ -1,4 +1,4 @@
-@section('title','Crear Contenido')
+@section('title', 'Crear Contenido')
 <div>
 
     <div class="gallery">
@@ -23,6 +23,16 @@
             </script>
         @endif
 
+        @if (session('actualizar') == 'ok')
+            <script>
+                Swal.fire(
+                    '¡Contenido actualizado!',
+                    '¡Actualización exitosa!.',
+                    'success'
+                )
+            </script>
+        @endif
+
         @foreach ($contenidos as $contenido)
             <div class="col mb-4 animate__animated animate__wobble">
 
@@ -32,14 +42,8 @@
                     </div>
                     <div class="card-body ">
                         <div class="inner">
-
-                            @if(Storage::url($contenido->url))
-                            <img class="card-img-top rounded-3" src="{{ Storage::url($contenido->url) }}" alt=""
-                                width="300px" height="400px">
-                            @else
-                                <img class="card-img-top rounded-3" src="{{ asset($contenido->url) }}" alt=""
-                                width="300px" height="400px">
-                            @endif
+                            <img class="card-img-top rounded-3" src="{{ asset($contenido->url) }}" alt=""
+                                width="200px" height="200px">
                         </div>
                         {{-- <p class="text-danger">{{auth()->user()->name}}</p> --}}
                         <p><strong>Autor: </strong> {{ $contenido->autor }}</p>

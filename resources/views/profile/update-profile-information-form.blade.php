@@ -2,33 +2,34 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500&display=swap" rel="stylesheet">
+
     <link rel="shortcut icon" href="{{ asset('img/profile/profile2.png') }}" type="image/x-icon">
-    <link rel="stylesheet" href="{{asset('css/perfil.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/perfil.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="{{ asset('css/registro.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ asset('css/registro.css') }}" /> --}}
 
 </head>
 
-<body class="body-perfil">
-
+<body>
 
     <section>
-        <div class="row mt-5">
+        <div class="row mt-3">
             <div class="col-lg-4">
                 <div class="card mb-4">
                     <a class="btn btn-success" href="{{ route('dashboard.index') }}">regresar</a>
                     <div class="card-body text-center">
                         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                            <img wire:key="{{ Auth::user()->profile_photo_url }}" class="rounded-circle text-center"
-                                width="150px" height="150px" src="{{ Auth::user()->profile_photo_url }}"
+                            <img wire:key="{{ Auth::user()->id }}" class="rounded-circle text-center" width="150px"
+                                height="150px" src="{{ Auth::user()->profile_photo_url }}"
                                 alt="{{ Auth::user()->name }}" />
                         @else
                             {{ Auth::user()->name }}
@@ -42,66 +43,224 @@
                         @endif
                         <h5 class="my-3"></h5>
                         <div class="d-flex justify-content-center mb-2">
-                            <p>
-                                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseExample" aria-expanded="false"
-                                    aria-controls="collapseExample">
-                                    Editar perfil
-                                </button>
-                            </p>
-                        </div>
 
-                        @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
-                            <x-jet-action-section>
+                            <button type="button" wire:key="{{ Auth::user()->id }}" class="btn btn-primary"
+                                data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Editar perfil
+                            </button>
 
-                                <x-slot name="content">
+                            <!-- Modal -->
+                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Actualizar perfil</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
 
-                                    <div class="mt-3">
-                                        <x-jet-danger-button wire:click="confirmUserDeletion"
-                                            wire:loading.attr="disabled">
-                                            {{ __('Delete Account') }}
-                                        </x-jet-danger-button>
-                                    </div>
+                                            <x-jet-form-section submit="updateProfileInformation">
 
-                                    <!-- Delete User Confirmation Modal -->
-                                    <x-jet-dialog-modal wire:model="confirmingUserDeletion">
-                                        <x-slot name="title">
-                                            {{ __('Delete Account') }}
-                                        </x-slot>
+                                                <x-slot name="form">
 
-                                        <x-slot name="content">
-                                            {{ __('Are you sure you want to delete your account? Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.') }}
 
-                                            <div class="mt-2 w-md-75" x-data="{}"
-                                                x-on:confirming-delete-user.window="setTimeout(() => $refs.password.focus(), 250)">
-                                                <x-jet-input type="password"
-                                                    class="{{ $errors->has('password') ? 'is-invalid' : '' }}"
-                                                    placeholder="{{ __('Password') }}" x-ref="password"
-                                                    wire:model.defer="password" wire:keydown.enter="deleteUser" />
+                                                    <!-- Profile Photo -->
+                                                    @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                                                        <div x-data="{ photoName: null, photoPreview: null }" class="col-span-6 sm:col-span-4">
 
-                                                <x-jet-input-error for="password" />
-                                            </div>
-                                        </x-slot>
+                                                            {{-- ID del usuario es:{{ Auth::user()->profile_photo_url }} --}}
+                                                            <!-- Profile Photo File Input -->
+                                                            <input type="file" hidden wire:model="photo"
+                                                                x-ref="photo"
+                                                                x-on:change="
+                                                                photoName = $refs.photo.files[0].name;
+                                                                const reader = new FileReader();
+                                                                reader.onload = (e) => {
+                                                                    photoPreview = e.target.result;
+                                                                };
+                                                                reader.readAsDataURL($refs.photo.files[0]);
+                                                        " />
+                                                            @error('photo')
+                                                                {{ $message }}
+                                                            @enderror
+                                                            <x-jet-label for="photo"
+                                                                value="{{ __('Imagen de perfil') }}" />
 
-                                        <x-slot name="footer">
-                                            <x-jet-secondary-button wire:click="$toggle('confirmingUserDeletion')"
-                                                wire:loading.attr="disabled">
-                                                {{ __('Cancel') }}
-                                            </x-jet-secondary-button>
+                                                            <!-- Current Profile Photo -->
+                                                            <div class="mt-2" x-show="! photoPreview">
+                                                                <img src="{{ $this->user->profile_photo_url }}"
+                                                                    alt="{{ $this->user->name }}"
+                                                                    class="rounded-full h-100 w-100 object-cover">
+                                                            </div>
 
-                                            <x-jet-danger-button wire:click="deleteUser" wire:loading.attr="disabled">
-                                                <div wire:loading wire:target="deleteUser"
-                                                    class="spinner-border spinner-border-sm" role="status">
-                                                    <span class="visually-hidden">Loading...</span>
+                                                            <!-- New Profile Photo Preview -->
+                                                            <div class="mt-2" x-show="photoPreview">
+                                                                <img x-bind:src="photoPreview"
+                                                                    class="rounded-circle h-100 w-100">
+                                                            </div>
+
+                                                            <x-jet-secondary-button class="mt-2 mr-2" type="button"
+                                                                wire:key="{{ Auth::user()->id }}"
+                                                                x-on:click.prevent="$refs.photo.click() ">
+                                                                {{ __('Seleccionar una imagen') }}
+                                                            </x-jet-secondary-button>
+
+                                                            {{-- Eliminar foto --}}
+                                                            {{-- @if ($this->user->profile_photo_path)
+                                                                <x-jet-secondary-button type="button" class="mt-1"
+                                                                    wire:click="deleteProfilePhoto"
+                                                                    wire:key="{{ Auth::user()->id }}">
+                                                                    <div wire:loading wire:target="deleteProfilePhoto"
+                                                                        class="spinner-border spinner-border-sm"
+                                                                        role="status">
+                                                                        <span class="visually-hidden">Cargando...</span>
+                                                                    </div>
+
+                                                                    {{ __('Eliminar imagen') }}
+                                                                </x-jet-secondary-button>
+                                                            @endif --}}
+                                                            @if ($this->user->profile_photo_path)
+                                                                <x-jet-secondary-button type="button" class="mt-2"
+                                                                    wire:click="deleteProfilePhoto">
+                                                                    {{ __('Eliminar foto') }}
+                                                                </x-jet-secondary-button>
+                                                            @endif
+
+                                                            <x-jet-input-error for="photo" class="mt-2" />
+                                                        </div>
+                                                    @endif
+
+                                                    <div class="w-md-75">
+                                                        <!-- Name -->
+                                                        <div class="mb-3">
+                                                            <x-jet-label for="name" value="{{ __('Nombre') }}" />
+                                                            <x-jet-input id="name" type="text"
+                                                                class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
+                                                                wire:model.defer="state.name" autocomplete="name" />
+                                                            <x-jet-input-error for="name" />
+                                                        </div>
+
+                                                        <!-- Email -->
+                                                        {{-- <div class="mb-3">
+                                                            <x-jet-label for="email"
+                                                                value="{{ __('Correo') }}" />
+                                                            <x-jet-input id="email" type="email"
+                                                                class="{{ $errors->has('email') ? 'is-invalid' : '' }}"
+                                                                wire:model.defer="state.email" />
+                                                            <x-jet-input-error for="email" />
+                                                        </div> --}}
+
+                                                        <div class="col-span-6 sm:col-span-4">
+                                                            <x-jet-label for="email"
+                                                                value="{{ __('Correo') }}" />
+                                                            <x-jet-input id="email" type="email"
+                                                                class="mt-1 block w-full"
+                                                                wire:model.defer="state.email" />
+                                                            <x-jet-input-error for="email" class="mt-2" />
+
+                                                            {{-- @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::emailVerification()) && !$this->user->hasVerifiedEmail())
+                                                                <p class="text-sm mt-2">
+                                                                    {{ __('Su dirección de correo electrónico no está verificada.') }}
+                                                
+                                                                    <button type="button" class="underline text-sm text-gray-600 hover:text-gray-900" wire:click.prevent="sendEmailVerification">
+                                                                        {{ __('Haga clic aquí para volver a enviar el correo electrónico de verificación.') }}
+                                                                    </button>
+                                                                </p>
+                                                
+                                                                @if ($this->verificationLinkSent)
+                                                                    <p v-show="verificationLinkSent" class="mt-2 font-medium text-sm text-green-600">
+                                                                        {{ __('Se ha enviado un nuevo enlace de verificación a su dirección de correo electrónico.') }}
+                                                                    </p>
+                                                                @endif
+                                                            @endif --}}
+                                                        </div>
+
+                                                        <!-- Genero -->
+                                                        <div class="form-group m-1">
+                                                            <label for="" class="text-primary">Genero</label>
+                                                            <div>
+                                                            </div>
+                                                            <label>
+                                                                <input name="genero" class="custom-checkbox"
+                                                                    value="Masculino" type="checkbox">
+                                                                <span><label class="label1"
+                                                                        for="">Masculino</label></span>
+                                                            </label>
+                                                            <label>
+                                                                <input name="genero" class="custom-checkbox"
+                                                                    value="Femenino" type="checkbox">
+                                                                <span><label class="label1"
+                                                                        for="">Femenino</label></span>
+                                                            </label>
+                                                            <label>
+                                                                <input name="genero" class="custom-checkbox"
+                                                                    value="Otro" type="checkbox">
+                                                                <span><label class="label1"
+                                                                        for="">Otro</label></span>
+                                                            </label>
+                                                            {{-- @error('genero')
+                                                                    <br>
+                                                                        <small class="text-danger">{{$message}}</small>
+                                                                    <br>
+                                                            @enderror --}}
+
+                                                        </div>
+
+                                                        <!-- Fecha Nacimiento -->
+                                                        <div class="mb-3">
+                                                            <x-jet-label for="fechaNacimiento"
+                                                                value="{{ __('Fecha de nacimiento') }}" />
+                                                            <x-jet-input id="fechaNacimiento" type="date"
+                                                                class="{{ $errors->has('fechaNacimiento') ? 'is-invalid' : '' }}"
+                                                                wire:model.defer="state.fechaNacimiento"
+                                                                autocomplete="fechaNacimiento" />
+                                                            <x-jet-input-error for="fechaNacimiento" />
+                                                        </div>
+                                                    </div>
+
+                                                </x-slot>
+
+                                                <div class="modal-footer">
+
+                                                    {{-- <button type="button" class="btn btn-primary">Actualizar</button> --}}
+                                                    <x-slot name="actions">
+                                                        <button type="button" class="btn btn-danger"
+                                                            data-bs-dismiss="modal">Cerrar</button>
+                                                        <div class="d-flex align-items-baseline">
+
+                                                            <button type="submit" class="btn btn-success ml-3">
+                                                                <div wire:loading role="status">
+                                                                    <span class="visually-hidden">Cargando...</span>
+                                                                </div>
+
+                                                                {{ __('Actualizar') }}
+
+                                                            </button>
+                                                            <x-jet-action-message class="mr-3" on="saved">
+                                                                {{ __('Actualizado.') }}
+                                                            </x-jet-action-message>
+
+                                                            {{-- <x-jet-button wire:loading.attr="disabled" wire:target="photo">
+                                                                {{ __('Actualizar') }}
+                                                            </x-jet-button> --}}
+
+                                                        </div>
+                                                    </x-slot>
                                                 </div>
 
-                                                {{ __('Delete Account') }}
-                                            </x-jet-danger-button>
-                                        </x-slot>
-                                    </x-jet-dialog-modal>
-                                </x-slot>
+                                            </x-jet-form-section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                            </x-jet-action-section>
+                        </div>
+                        {{-- Eliminar usuario --}}
+                        @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())                         
+                            @livewire('profile.delete-user-form')
                         @endif
 
                         <!-- Authentication -->
@@ -204,145 +363,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
-                        <x-jet-form-section submit="updateProfileInformation">
-
-                            <x-slot name="form">
-
-                                <x-jet-action-message on="saved">
-                                    {{ __('Actualizar') }}
-                                </x-jet-action-message>
-
-                                <!-- Profile Photo -->
-                                @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                                    <div class="mb-3" x-data="{ photoName: null, photoPreview: null }">
-                                        <!-- Profile Photo File Input -->
-                                        <input type="file" hidden wire:model="photo" x-ref="photo"
-                                            x-on:change="
-                                            photoName = $refs.photo.files[0].name;
-                                            const reader = new FileReader();
-                                            reader.onload = (e) => {
-                                                photoPreview = e.target.result;
-                                            };
-                                            reader.readAsDataURL($refs.photo.files[0]);
-                                    " />
-
-                                        <x-jet-label for="photo" value="{{ __('Imagen perfil') }}" />
-
-                                        <!-- Current Profile Photo -->
-                                        <div class="mt-2" x-show="! photoPreview">
-                                            <img src="{{ $this->user->profile_photo_url }}" class="rounded-circle"
-                                                height="80px" width="80px">
-                                        </div>
-
-                                        <!-- New Profile Photo Preview -->
-                                        <div class="mt-2" x-show="photoPreview">
-                                            <img x-bind:src="photoPreview" class="rounded-circle" width="80px"
-                                                height="80px">
-                                        </div>
-
-                                        <x-jet-secondary-button class="mt-2 me-2" type="button"
-                                            x-on:click.prevent="$refs.photo.click()">
-                                            {{ __('Seleccionar una imagen') }}
-                                        </x-jet-secondary-button>
-
-                                        @if ($this->user->profile_photo_path)
-                                            <x-jet-secondary-button type="button" class="mt-2"
-                                                wire:click="deleteProfilePhoto">
-                                                <div wire:loading wire:target="deleteProfilePhoto"
-                                                    class="spinner-border spinner-border-sm" role="status">
-                                                    <span class="visually-hidden">Loading...</span>
-                                                </div>
-
-                                                {{ __('Eliminar imagen') }}
-                                            </x-jet-secondary-button>
-                                        @endif
-
-                                        <x-jet-input-error for="photo" class="mt-2" />
-                                    </div>
-                                @endif
-
-                                <div class="w-md-75">
-                                    <!-- Name -->
-                                    <div class="mb-3">
-                                        <x-jet-label for="name" value="{{ __('Nombre') }}" />
-                                        <x-jet-input id="name" type="text"
-                                            class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
-                                            wire:model.defer="state.name" autocomplete="name" />
-                                        <x-jet-input-error for="name" />
-                                    </div>
-
-                                    <!-- Email -->
-                                    <div class="mb-3">
-                                        <x-jet-label for="email" value="{{ __('Correo') }}" />
-                                        <x-jet-input id="email" type="email"
-                                            class="{{ $errors->has('email') ? 'is-invalid' : '' }}"
-                                            wire:model.defer="state.email" />
-                                        <x-jet-input-error for="email" />
-                                    </div>
-
-                                    <!-- Genero -->
-                                    <div class="form-group m-1">
-                                        <label for="" class="text-primary">Genero</label>
-                                        <div>
-                                            </div>
-                                            <label>
-                                                <input name="genero" class="custom-checkbox" value="Masculino" type="checkbox">
-                                                <span><label class="label1" for="">Masculino</label></span>
-                                            </label>
-                                            <label>
-                                                <input name="genero" class="custom-checkbox" value="Femenino" type="checkbox" >
-                                                <span><label class="label1" for="">Femenino</label></span>
-                                            </label>
-                                            <label>
-                                                <input name="genero" class="custom-checkbox" value="Otro" type="checkbox">
-                                                <span><label class="label1" for="">Otro</label></span>
-                                            </label>
-                                        {{-- @error('genero')
-                                                <br>
-                                                    <small class="text-danger">{{$message}}</small>
-                                                <br>
-                                        @enderror --}}
-                                        
-                                      </div> 
-
-                                    <!-- Fecha Nacimiento -->
-                                    <div class="mb-3">
-                                        <x-jet-label for="fechaNacimiento" value="{{ __('Fecha de nacimiento') }}" />
-                                        <x-jet-input id="fechaNacimiento" type="date"
-                                            class="{{ $errors->has('fechaNacimiento') ? 'is-invalid' : '' }}"
-                                            wire:model.defer="state.fechaNacimiento" autocomplete="fechaNacimiento" />
-                                        <x-jet-input-error for="fechaNacimiento" />
-                                    </div>
-                                </div>
-                            </x-slot>
-
-                            <x-slot name="actions">
-                                <div class="d-flex align-items-baseline">
-                                    <x-jet-button>
-                                        <div wire:loading role="status">
-                                            <span class="visually-hidden">Cargando...</span>
-                                        </div>
-
-                                        {{ __('Actualizar') }}
-                                    </x-jet-button>
-
-
-                                </div>
-                                <div>
-                                    <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseExample" aria-expanded="false"
-                                        aria-controls="collapseExample">
-                                        Cerrar
-                                    </button>
-                                </div>
-                            </x-slot>
-
-
-                        </x-jet-form-section>
-                    </div>
-                </div>
             </div>
         </div>
         </div>
@@ -353,7 +373,7 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+
 
 
 </body>

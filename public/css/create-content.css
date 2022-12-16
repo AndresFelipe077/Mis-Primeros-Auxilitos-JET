@@ -24,7 +24,7 @@
 }
 
 body{
-    font-family:'DynaPuff', cursive;
+    font-family:'DynaPuff', cursive !important;
     background-image:url("/img/imgs/a.jpg");
     height:100vh;
     background-size: cover;
@@ -80,4 +80,3 @@ label{
 #btn-borrar-content{
     margin-left: 100%;
 }
-  

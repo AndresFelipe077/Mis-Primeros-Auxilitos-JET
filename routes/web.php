@@ -47,5 +47,4 @@ Route::controller(ContenidoController::class)->group(function(){
     Route::get('dashboard/ajustes/','ajustes')->name('dashboard.ajustes');
     
 
-
 });

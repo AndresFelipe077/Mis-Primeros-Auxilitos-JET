@@ -81,7 +81,7 @@
                                 {{ __('Manage Account') }}
                             </h6>
 
-                            <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                            <x-jet-dropdown-link href="{{ route('profi-dropdown-linkle.show') }}">
                                 {{ __('Profile') }}
                             </x-jet-dropdown-link>
 
