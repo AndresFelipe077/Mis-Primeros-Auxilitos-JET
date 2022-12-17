@@ -2,7 +2,7 @@
 
 <div {{ $attributes->merge(['class' => 'row']) }}>
     
-    <div class="col-md-8">
+    <div class="col-md-12">
         <div class="card shadow-sm">
             <form wire:submit.prevent="{{ $submit }}">
                 <div class="card-body">

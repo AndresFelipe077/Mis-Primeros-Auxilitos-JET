@@ -14,9 +14,9 @@
                 {{ __('¿Seguro que quieres eliminar tu cuenta?') }}
             </x-slot>
 
-            <x-slot name="content">
+            <x-slot name="content" >
                 {{ __('Escribe tu contraseña para confirmar. Ten encuenta que es una acción irreversible') }}
-                <img class="m-5 ml-5" src="{{asset('img/users/caraTriste.png')}}" alt="¡¡¡QUE MAL!!!" width="250px" height="250px">
+                <img class="mx-auto" src="{{asset('img/users/caraTriste.png')}}" alt="¡¡¡QUE MAL!!!" width="250px" height="250px">
 
                 <div class="mt-2 w-md-75" x-data="{}" x-on:confirming-delete-user.window="setTimeout(() => $refs.password.focus(), 250)">
                     <x-jet-input type="password" class="{{ $errors->has('password') ? 'is-invalid' : '' }}" placeholder="{{ __('Contraseña') }}"
@@ -29,10 +29,9 @@
             </x-slot>
 
             <x-slot name="footer">
-                <x-jet-secondary-button wire:click="$toggle('confirmingUserDeletion')"
-                                        wire:loading.attr="disabled">
-                    {{ __('Cancelar') }}
-                </x-jet-secondary-button>
+                
+                <button type="button" class="btn btn-success" wire:click="$toggle('confirmingUserDeletion')"
+                wire:loading.attr="disabled">Cancelar</button>
 
                 <x-jet-danger-button wire:click="deleteUser" wire:loading.attr="disabled">
                     <div wire:loading wire:target="deleteUser" class="spinner-border spinner-border-sm" role="status">
