@@ -3,6 +3,8 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
+use Laravel\Jetstream\Http\Livewire\UpdateProfileInformationForm;
 
 class AppLayout extends Component
 {
