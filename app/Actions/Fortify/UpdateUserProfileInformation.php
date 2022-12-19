@@ -23,8 +23,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         Validator::make($input, [
             'name'            => ['required', 'string', 'max:255'],
             'email'           => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
-            'genero'          => ['required'],
-            'fechaNacimiento' => ['required'],
+            'genero'          => ['required',],
+            'fechaNacimiento' => ['required', 'date'],
             'photo'           => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
         ])->validateWithBag('updateProfileInformation');
 
@@ -41,8 +41,6 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'email'         => $input['email'],
                 'genero'        => $input['genero'],
                 'fechaNacimiento' => $input['fechaNacimiento'],
-
-
             ])->save();
         }
     }

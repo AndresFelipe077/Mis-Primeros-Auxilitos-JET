@@ -156,11 +156,6 @@
                         </div>
 
                         <div class="grupo">
-                            {{-- <div class="form-check text-primary">
-                                <input type="checkbox" name="terms-conditions" class="form-check-input text-info animate__animated animate__rotateIn" id="_vanishIn" required>
-                                <label class="form-check-label" for="exampleCheck1">Acepto las <strong><a href="#">Condiciones del servicio</a></strong> y la 
-                                    <strong><a href="#">Politica de privacidad</a></strong></label>
-                            </div> --}}
                             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                                 <div class="mt-4">
                                     <x-jet-label for="terms">
