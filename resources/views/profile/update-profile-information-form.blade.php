@@ -34,19 +34,11 @@
                     <img x-bind:src="photoPreview" class="rounded-circle mx-auto" width="250px" height="250px">
                 </div>
 
-                {{-- <x-jet-secondary-button class="mt-2 mr-2" type="button" wire:key="{{ Auth::user()->id }}"
-                    x-on:click.prevent="$refs.photo.click() ">
-                    {{ __('Seleccionar una imagen') }}
-                </x-jet-secondary-button> --}}
-
                 <button type="button" class="btn btn-success mt-2 mr-2" wire:key="{{ Auth::user()->id }}" x-on:click.prevent="$refs.photo.click() ">Seleccionar nueva imagen</button>
 
                 {{-- Eliminar foto --}}
 
                 @if ($this->user->profile_photo_path)
-                    {{-- <x-jet-secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
-                        {{ __('Eliminar foto') }}
-                    </x-jet-secondary-button> --}}
                     <button type="button" class="btn btn-danger mt-2" wire:click="deleteProfilePhoto">Eliminar foto</button>
                 @endif
 
@@ -63,6 +55,7 @@
                 <x-jet-input-error for="name" />
             </div>
 
+            <!-- Correo -->
             <div class="col-span-6 sm:col-span-4">
                 <x-jet-label for="email" value="{{ __('Correo') }}" />
                 <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
@@ -119,8 +112,13 @@
                         <label class="custom-checkbox" for="defaultCheck1">
                             Otro
                         </label>
-                    </div>
+                    </div>          
+
                 </div>
+
+                @if(Auth::user()->genero == null)
+                    <small class="text-danger">Por favor, elige una opción del genero</small> 
+                @endif
 
                 @error('genero')                   
                     <small class="text-danger">{{ $message }}</small>                 
