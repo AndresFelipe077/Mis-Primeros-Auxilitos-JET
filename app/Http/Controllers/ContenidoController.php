@@ -14,31 +14,35 @@ use Laravel\Jetstream\Http\Livewire\UpdateProfileInformationForm;
 
 class ContenidoController extends Controller
 {
-    use WithFileUploads;
-
-    public $url;
 
     //Vista home de videos
     public function index()
     {
-        $contenidos = Contenido::orderBy('id','desc')->paginate(8);
-        return view('dashboard', compact('contenidos'));
+        if(Auth::check())
+        {
+            $contenidos = Contenido::orderBy('id','desc')->paginate(8);
+            return view('dashboard', compact('contenidos'));
+        }
+        else
+        { 
+            return view('auth.login');
+        }
+        
     }
 
     // //Vista configuracion
-    // public function ajustes()
-    // {
-    //     if(Auth::check())
-    //     {
-    //         return view('home.ajustes');
-    //     }
-    //     else
-    //     {
-    //         $contenidos = Contenido::orderBy('id','desc')->paginate(5);
-    //         return view('home.index', compact('contenidos'));  
-    //     } 
+    public function ajustes()
+    {
+        if(Auth::check())
+        {
+            return view('components.Perfil.ajustes');
+        }
+        else
+        {
+            return route('login');
+        } 
         
-    // }
+    }
 
     public function create()
     {   

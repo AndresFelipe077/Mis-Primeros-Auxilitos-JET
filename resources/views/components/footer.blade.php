@@ -18,7 +18,7 @@
             </div>
 
             <div class="hijos-navbar">
-                <img src="{{ asset('img/menu/settings2.png') }}" onclick="location.href=''">
+                <img src="{{ asset('img/menu/settings2.png') }}" onclick="location.href='{{route('dashboard.ajustes')}}'">
             </div>
 
 

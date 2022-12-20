@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\HomeController;
 
 
 Route::controller(AdminController::class)->group(function(){

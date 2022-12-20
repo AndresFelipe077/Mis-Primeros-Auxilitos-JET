@@ -18,17 +18,15 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    
 });
 
-Route::controller(ContenidoController::class)->group(function(){
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->controller(ContenidoController::class)->group(function(){
 
     //Vista home de videos
     Route::get('/dashboard','index')->name('dashboard.index');
@@ -44,7 +42,7 @@ Route::controller(ContenidoController::class)->group(function(){
     Route::delete('edit/{contenido}','destroy')->name('contenido.destroy');
 
     //Acceder a vista ajustes
-    Route::get('dashboard/ajustes/','ajustes')->name('dashboard.ajustes');
+    Route::get('dashboard/ajustes','ajustes')->name('dashboard.ajustes');
     
 
 });

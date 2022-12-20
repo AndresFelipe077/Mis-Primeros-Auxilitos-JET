@@ -23,6 +23,8 @@ class User extends Authenticatable
      *
      * @var string[]
      */
+    protected $primaryKey = 'id';
+
     protected $fillable = [
         'name',
         'email',
@@ -62,10 +64,10 @@ class User extends Authenticatable
     ];
 
     // //Relaciones uno a muchos
-    // public function socialProfiles()
-    // {
-    //     return $this->hasMany(SocialProfile::class);
-    // }
+    public function socialProfiles()
+    {
+        return $this->hasMany(SocialProfile::class);
+    }
 
     //imagen del admin
     public function adminlte_image()
@@ -84,5 +86,4 @@ class User extends Authenticatable
     {
         return 'profile/username';
     }
-
-}
+}//Fin

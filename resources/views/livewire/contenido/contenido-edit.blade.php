@@ -25,10 +25,11 @@
                         @enderror
                     </div>
                 </div>
-                <div class="form-group m-1">
+                <div class="form-group m-1 mx-auto">
                     <label for="exampleFormControlFile1" id="src-file">Escoge una imagen</label><br>
-                    <img src="{{ asset($contenido->url) }}" width="100px" height="100px"><br>
-                    <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1"
+                    <img class="mx-auto text-center" src="{{ asset($contenido->url) }}" width="100px"
+                        height="100px"><br>
+                    <input type="file" name="file" class="form-control-file mx-auto" id="exampleFormControlFile1"
                         accept="image/*" value="{{ old('file', $contenido->url) }}">
                     @error('file')
                         <br>
