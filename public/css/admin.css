@@ -1,6 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap');
 
+/*Scroll-bar*/
+::-webkit-scrollbar{
+    width:1.5em;
+    background:grey;
+}
+
+::-webkit-scrollbar-track{
+    background: #334d50;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #cbcaa5, #334d50);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #cbcaa5, #334d50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius:3em;
+}
+::-webkit-scrollbar-thumb{
+    /*background-image:url(/Images/Facebook.svg);*/
+    background-size: contain; 
+    background-repeat:no-repeat;
+    background: #ffe259;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ffa751, #ffe259);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius:2em;
+}
+
+
 body{
     font-family: 'DynaPuff', cursive;
-    background-image:url("/img/imgs/fondo-ajustes.jpg");
+    background-image:url("../img/imgs/fondo-ajustes.jpg");
 }

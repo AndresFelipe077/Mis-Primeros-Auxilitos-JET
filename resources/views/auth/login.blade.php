@@ -21,9 +21,9 @@
 </head>
 <body>
   
-  <div class="intro">
+  <div class="intro text-center">
     <h1 class="logo-header">
-        <span class="logo"><img src="{{asset('img/logo/logo.png')}}" alt=""></span>
+        <span class="logo"><img src="{{asset('img/logo/logo.png')}}" alt="Auxilitos"></span>
         <span class="logo">MIS PRIMEROS</span> <span class="logo">AUXILITOS</span>
     </h1>
   </div>
