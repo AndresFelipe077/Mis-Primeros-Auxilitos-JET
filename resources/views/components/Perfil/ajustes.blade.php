@@ -10,9 +10,6 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{{ asset('css/ajustes.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
     <link rel="shortcut icon" href="{{ asset('img/menu/settings2.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
@@ -142,15 +139,14 @@
                 </a> --}}
                 <!-- Authentication -->
                 <a class="dropdown-item dropdown-item-danger d-flex gap-2 align-items-center"
-                    href="{{ route('logout') }}" 
+                    href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();
                     alert('¿Seguro que deseas cerrar sesión?');">
                     <img src="{{ asset('../img/logout.jpeg') }}" alt="" width="20px" height="20px">
                     <h3>Cerrar sesión</h3>
                 </a>
-                <form method="POST" id="logout-form" action="{{ route('logout') }}"
-                    >
+                <form method="POST" id="logout-form" action="{{ route('logout') }}">
                     @csrf
                 </form>
             </li>

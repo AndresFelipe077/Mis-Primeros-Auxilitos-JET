@@ -1,6 +1,6 @@
 @section('title', 'Crear Contenido')
 <div>
-
+        
     <div class="gallery">
         {{-- Cuando se borra algun contenido --}}
         @if (session('eliminar') == 'ok')
@@ -61,6 +61,8 @@
 
     </div>
 
+    
+
     <div class="">
         <ul class="pagination pagination-lg">
             <li class="page-item active mb-5" aria-current="page">
@@ -68,6 +70,8 @@
             </li>
         </ul>
     </div>
+
+
 
     <!--estilos-->
     <link rel="stylesheet" href="{{ asset('css/index-home.css') }}">
