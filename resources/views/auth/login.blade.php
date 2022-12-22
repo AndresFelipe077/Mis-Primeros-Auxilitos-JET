@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link id="image-head" rel="shortcut icon" href="{{asset('img/botiquin.png')}}" type="image/x-icon">
-    
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link id="image-head" rel="shortcut icon" href="{{ asset('img/botiquin.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
 
     {{-- Estilos --}}
-    <link rel="stylesheet" href="{{asset('css/styleLogin.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/styleLogin.css') }}">
+    
 
     {{-- animations css --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     {{-- Script de notificacion --}}
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 </head>
-<body>
-  
-  <div class="intro text-center">
-    <h1 class="logo-header">
-        <span class="logo"><img src="{{asset('img/logo/logo.png')}}" alt="Auxilitos"></span>
-        <span class="logo">MIS PRIMEROS</span> <span class="logo">AUXILITOS</span>
-    </h1>
-  </div>
 
+<body>
+
+    <div class="intro text-center">
+        <h1 class="logo-header">
+            <span class="logo"><img src="{{ asset('img/logo/logo.png') }}" alt="Auxilitos"></span>
+            <span class="logo">MIS PRIMEROS</span> <span class="logo">AUXILITOS</span>
+        </h1>
+    </div>
 
     <div class="container mt-5 animate__animated animate__swing rounded">
         <div class="row align-items-stretch">
@@ -74,7 +78,7 @@
             
             <div id="container-login" class="col p-5 rounded">
                 <div class="text-end">
-                    <img class="animate__animated animate__heartBeat" src="img/logo/logo.png" width="48" alt="">
+                    <img class="animate__animated animate__heartBeat" src="{{asset('img/logo/logo.png')}}" width="48" alt="">
                 </div>
                 <h2 id="container-login" class="fw-bold text-center py-5 text-primary rounded">Bienvenido</h2>
 
@@ -98,7 +102,7 @@
                 </div>                          
                 @endif
 
-                <form action="{{route('login')}}" method="POST">
+                <form action="{{ route('login') }}" method="POST">
                     @csrf
                     <div class="form-floating mb-3">
                       <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" value="{{old('email')}}">
@@ -111,9 +115,17 @@
                    <div class="d-grid">
                        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
                    </div>
+                   <div class="mb-3">
+                    <div class="custom-control custom-checkbox">
+                        <x-jet-checkbox id="remember_me" name="remember" />
+                        <label class="custom-control-label" for="remember_me">
+                            {{ __('Recuérdame') }}
+                        </label>
+                    </div>
+                </div>
                    <div class="text-center my-3">
-                       <span>¿No tienes cuenta? <a class="text-primary h5" href="{{route('register')}}">Registrate</a></span><br>
-                       <span><a class="text-primary h5" href="#">He olvidado mi contraseña</a></span>
+                       <span>¿No tienes cuenta? <a class="text-primary h5" href="{{ route('register') }}">Registrate</a></span><br>
+                       <span><a class="text-primary h5" href="{{ route('password.request') }}">He olvidado mi contraseña</a></span>
                    </div>
                 </form>
 
@@ -128,7 +140,7 @@
                             <button class="btn rounded">
                                <div class="row align-items-center">
                                     <div class="col-2 ">
-                                        <img src="{{ asset('img/Facebook.svg') }}" onclick="location.href='{{ route('facebook') }}'" alt="..." height="75px" width="75px">
+                                        <img src="{{ asset('img/Facebook.svg') }}" onclick="location.href='{{route('facebook')}}'" alt="..." height="75px" width="75px">
                                     </div>                      
                                </div>
                             </button>
@@ -156,7 +168,7 @@
 <!--Script-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{asset('js/splahScreen.js')}}"></script>
-<script src="{{asset('js/carousel.js')}}"></script>
+
 
 
 </body>

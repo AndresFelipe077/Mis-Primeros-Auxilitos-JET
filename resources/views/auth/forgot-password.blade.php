@@ -1,4 +1,5 @@
 <x-guest-layout>
+
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -7,7 +8,7 @@
         <div class="card-body">
 
             <div class="mb-3">
-                {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+                {{ __('¿Olvidaste tu contraseña? No hay problema. Simplemente escribe tu correo electrónico y te enviaremos un enlace de restablecimiento de contraseña.') }}
             </div>
 
             @if (session('status'))
@@ -22,13 +23,17 @@
                 @csrf
 
                 <div class="mb-3">
-                    <x-jet-label value="Email" />
+                    <x-jet-label value="Correo Electronico" />
                     <x-jet-input type="email" name="email" :value="old('email')" required autofocus />
                 </div>
 
                 <div class="d-flex justify-content-end mt-4">
+
+                    <button type="button" class="btn btn-danger mx-auto"
+                        onclick="location.href='{{ route('login') }}'">Cancelar</button>
+
                     <x-jet-button>
-                        {{ __('Email Password Reset Link') }}
+                        {{ __('Enlace de restablecimiento de contraseña de correo electrónico') }}
                     </x-jet-button>
                 </div>
             </form>

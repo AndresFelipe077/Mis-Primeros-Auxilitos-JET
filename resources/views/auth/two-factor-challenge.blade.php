@@ -4,7 +4,7 @@
         <x-slot name="logo">
             <div class="mx-auto">
                 <h1 class="text-center text-white mx-auto">Mis Primeros Auxilitos</h1>
-                <img class="mx-auto" src="{{ asset('../img/logo/logo.png') }}" alt="" width="200" height="200">
+                <x-jet-authentication-card-logo />
             </div>
         </x-slot>
 

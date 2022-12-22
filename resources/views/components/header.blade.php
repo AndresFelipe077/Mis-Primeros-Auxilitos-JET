@@ -26,7 +26,7 @@
 
                 <button wire:key="{{ Auth::user()->id }}" class="btn success rounded-circle" onclick="location.href='{{ route('profile.show') }}'">
                         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                            <img class="rounded-circle" width="50px" height="50px" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                            <img class="rounded-circle" width="50px" height="50px" src="{{-- Auth::user()->profile_photo_url --}}{{ (Auth::user()->google_id !== null ||  Auth::user()->facebook_id !== null ) ? Auth::user()->profile_photo_path : Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                         @else
                         {{ Auth::user()->name }}
 

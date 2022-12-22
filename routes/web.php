@@ -26,8 +26,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-
-    
+ 
 });
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->controller(ContenidoController::class)->group(function(){
@@ -51,43 +50,12 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
 });
 
-// Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->controller(SocialController::class)->group(function(){
-//     Route::get('auth/facebook',          'redirectFacebook')->name('facebook');
-//     Route::get('auth/facebook/callback', 'callbackFacebook');
-// });
+Route::get('/login-google', [SocialController::class, 'loginGoogle'])->name('google');
+    
+Route::get('/google-callback', [SocialController::class, 'callbackGoogle']);
 
 
-Route::get('/login-google', function () {
-    return Socialite::driver('google')->redirect();
-})->name('google');
- 
-Route::get('/google-callback', function () {
-    $user = Socialite::driver('google')->user();
- 
-    $userExists = User::where('external_id', $user->id)->where('external_auth', 'google')->first();
-    if($userExists)
-    {
-        Auth::login($userExists);
-        return redirect('/dashboard');
-    }
-    else
-    { 
-        $userNew = User::create([//http://mis-primeros-auxilitos-jet.com/google-callback Redireccionamiento Page Google
-            'password'      => '123456789',
-            'name'          => $user->name,
-            'email'         => $user->email,
-            'avatar'        => $user->avatar,
-            'external_id'   => $user->id,
-            'external_auth' => 'google',
-        ]);
 
-        Auth::login($userNew);
-
-        return redirect('/dashboard');
-
-    }
-
-});
 
 Route::get('/login-facebook', function () {
     return Socialite::driver('facebook')->redirect();

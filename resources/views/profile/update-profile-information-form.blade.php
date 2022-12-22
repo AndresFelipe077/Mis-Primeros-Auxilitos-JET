@@ -25,7 +25,7 @@
 
                 <!-- Current Profile Photo -->
                 <div class="mt-2" x-show="! photoPreview">
-                    <img src="{{ $this->user->profile_photo_url }}" alt="{{ $this->user->name }}"
+                    <img src="{{-- $this->user->profile_photo_url --}}{{ (Auth::user()->google_id !== null ||  Auth::user()->facebook_id !== null ) ? Auth::user()->profile_photo_path : Auth::user()->profile_photo_url }}" alt="{{ $this->user->name }}"
                         class="rounded-full object-cover mx-auto" width="250px" height="250px">
                 </div>
 
