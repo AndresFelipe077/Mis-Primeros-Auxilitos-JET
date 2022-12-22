@@ -34,6 +34,10 @@ class User extends Authenticatable
         'genero',
         'fechaNacimiento',
         'password',
+        'fb_id',
+        'avatar',
+        'external_id',
+        'external_auth',
     ];
 
     /**

@@ -128,7 +128,7 @@
                             <button class="btn rounded">
                                <div class="row align-items-center">
                                     <div class="col-2 ">
-                                        <img src="{{ asset('img/Facebook.svg') }}" onclick="location.href='https://www.facebook.com/'" alt="..." height="75px" width="75px">
+                                        <img src="{{ asset('img/Facebook.svg') }}" onclick="location.href='{{ route('facebook') }}'" alt="..." height="75px" width="75px">
                                     </div>                      
                                </div>
                             </button>
@@ -137,7 +137,7 @@
                             <button class="btn rounded">
                                 <div class="row align-items-center">
                                     <div class="col-2">
-                                        <img src="{{ asset('img/Google.svg') }}" onclick="location.href='https://accounts.google.com/v3/signin/identifier?dsh=S1426936774%3A1667332891017678&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue%26pli%3D1&ec=GAlAwAE&service=accountsettings&flowName=GlifWebSignIn&flowEntry=AddSession'" alt="..." height="75px" width="75px">
+                                        <img src="{{ asset('img/Google.svg') }}" onclick="location.href='{{route('google')}}'" alt="..." height="75px" width="75px">
                                     </div>
                                 </div>
                              </button>
