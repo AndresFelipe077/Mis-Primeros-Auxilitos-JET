@@ -50,40 +50,14 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
 });
 
-Route::get('/login-google', [SocialController::class, 'loginGoogle'])->name('google');
+Route::get('/login-facebook', [SocialController::class, 'redirectFacebook'])->name('facebook');
+ 
+Route::get('/facebook-callback', [SocialController::class, 'callbackFacebook']);
+
+Route::get('/login-google', [SocialController::class, 'redirectGoogle'])->name('google');
     
 Route::get('/google-callback', [SocialController::class, 'callbackGoogle']);
 
 
 
 
-Route::get('/login-facebook', function () {
-    return Socialite::driver('facebook')->redirect();
-})->name('facebook');
- 
-Route::get('/facebook-callback', function () {
-    $user = Socialite::driver('facebook')->user();
- 
-    $userExists = User::where('external_id', $user->id)->where('external_auth', 'facebook')->first();
-    if($userExists)
-    {
-        Auth::login($userExists);
-        return redirect('/dashboard');
-    }
-    else
-    { 
-        $userNew = User::create([
-            'password'      => $user->password,
-            'name'          => $user->name,
-            'email'         => $user->email,
-            'avatar'        => $user->avatar,
-            'external_id'   => $user->id,
-            'external_auth' => 'facebook',
-        ]);
-
-        Auth::login($userNew);
-
-        return redirect('/dashboard');
-
-    }
-});

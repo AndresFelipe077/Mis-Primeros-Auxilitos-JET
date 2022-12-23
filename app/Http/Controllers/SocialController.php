@@ -18,30 +18,30 @@ class SocialController extends Controller
 
     public function callbackFacebook()
     {
-        try {
-            $facebookUser = Socialite::driver('facebook')->user();
-            $findUser = User::where('fb_id', $facebookUser->id)->firs();
+        $user = Socialite::driver('facebook')->user();
 
-            if ($findUser) {
-                Auth::login($findUser);
-                return redirect()->intended('/dashboard');
-            } else {
-                $newUser = User::create([
-                    'name'     => $facebookUser->name,
-                    'email'    => $facebookUser->email,
-                    'fb_id'    => $facebookUser->id,
-                    'password' => encrypt('12345678'),
-                ]);
-                Auth::login($newUser);
-                return redirect()->intended('/dashboard');
-            }
-        } catch (Exception $e) {
-            dd($e->getMessage());
+        $userExists = User::where('external_id', $user->id)->where('external_auth', 'facebook')->first();
+        if ($userExists) {
+            Auth::login($userExists);
+            return redirect('/dashboard');
+        } else {
+            $userNew = User::create([
+                'password'           => $user->password,
+                'name'               => $user->name,
+                'email'              => $user->email,
+                'profile_photo_path' => $user->avatar,
+                'external_id'        => $user->id,
+                'external_auth'      => 'facebook',
+            ]);
+
+            Auth::login($userNew);
+
+            return redirect('/dashboard');
         }
     }
 
 
-    public function loginGoogle()
+    public function redirectGoogle()
     {
         return Socialite::driver('google')->redirect();
     }
@@ -59,7 +59,7 @@ class SocialController extends Controller
                 'password'           => encrypt(''),
                 'name'               => $user->name,
                 'email'              => $user->email,
-                'profile_photo_path' => $user->getAvatar,
+                'profile_photo_path' => $user->avatar,
                 'external_id'        => $user->id,
                 'genero'             => $user->genero,
                 'external_auth'      => 'google',
