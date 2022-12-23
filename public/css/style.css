@@ -1,0 +1,163 @@
+/*
+id == #
+class == .
+*/
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap');
+
+
+/*Scroll-bar*/
+::-webkit-scrollbar{
+    width:1.5em;
+    background:grey;
+}
+
+::-webkit-scrollbar-track{
+    background: #334d50;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #cbcaa5, #334d50);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #cbcaa5, #334d50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    border-radius:3em;
+}
+::-webkit-scrollbar-thumb{
+    /*background-image:url(/Images/Facebook.svg);*/
+    background-size: contain; 
+    background-repeat:no-repeat;
+    background: #ffe259;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ffa751, #ffe259);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius:2em;
+}
+
+
+:root{
+    --colorTextoPlaceholder:rgb(255, 123, 0);
+}
+
+/*Placeholder*/
+::placeholder{
+    color:var(--colorTextoPlaceholder);
+}
+
+
+/*Inicio Index*/
+
+
+body{
+    margin: 0%;
+    padding:0;
+    font-family: 'DynaPuff', cursive;
+    background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+.div-padre{
+
+    display: flex;
+    position: fixed;
+    width: 100%;
+    background-color:rgb(255, 146, 4);
+    border-radius:10px;
+    animation-name:animacionDivTitle;
+    animation-duration:2s;
+    height:5em;
+    top: 0;
+    
+}
+
+@keyframes animacionDivTitle {
+
+    0%{
+        top:-10px;
+    }
+    25%{ 
+        top:0px;
+    }
+    50%{ 
+        top:0px;
+    }
+    100%{
+        top:0px;
+    }
+
+}
+
+
+/*Invento con Youtube*/
+
+.gallery{
+    
+    width: 100%;
+    padding: 7% 0;
+    margin:0 auto;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    border-radius: 10px;
+    margin-top:5em;
+    
+}
+
+@media (min-width: 700px) { 
+
+    .col mb-4{
+        margin-top:200px;
+    }
+
+}
+
+/* Style the navigation menu */
+.navbar1 {
+    width: 100%;
+    background-color: #555;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    margin: 0 auto;
+    text-align: center;
+    display:flex;
+    justify-content:center;
+    border-radius:12px;
+    
+  }
+
+.hijos-navbar{
+   
+    margin:0 auto;
+    
+}
+
+  /* Navigation links */
+  .navbar1 img {
+    float:left;
+    display: block;
+    text-align: center; /* If you want the text to be centered */
+    padding:2%;
+    border-radius:10px;
+    width: 50px;
+    cursor: pointer;
+    
+  }
+  
+  /* Add a background color on mouse-over */
+  .navbar1 img:hover {
+    background-color: rgb(28, 230, 55);
+  }
+  
+  /* Style the current/active link */
+  .navbar1 img.active {
+    background-color: #11ffa8;
+  }
+  
+
+  
+  
+
+
+/*Parte de videos e imagenes*/
+
+
+
+/*FIN INDEX*/
+
+
