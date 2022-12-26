@@ -14,7 +14,7 @@
                 <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
                 <div class="mb-3">
-                    <x-jet-label value="{{ __('Email') }}" />
+                    <x-jet-label value="{{ __('Correo') }}" />
 
                     <x-jet-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email" name="email"
                                  :value="old('email', $request->email)" required autofocus />
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <x-jet-label value="{{ __('Password') }}" />
+                    <x-jet-label value="{{ __('Contraseña') }}" />
 
                     <x-jet-input class="{{ $errors->has('password') ? 'is-invalid' : '' }}" type="password"
                                  name="password" required autocomplete="new-password" />
@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <x-jet-label value="{{ __('Confirm Password') }}" />
+                    <x-jet-label value="{{ __('Confirmar contraseña') }}" />
 
                     <x-jet-input class="{{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}" type="password"
                                  name="password_confirmation" required autocomplete="new-password" />
@@ -40,7 +40,7 @@
                 <div class="mb-0">
                     <div class="d-flex justify-content-end">
                         <x-jet-button>
-                            {{ __('Reset Password') }}
+                            {{ __('Restablecer la contraseña') }}
                         </x-jet-button>
                     </div>
                 </div>

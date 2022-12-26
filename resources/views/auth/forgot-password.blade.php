@@ -8,7 +8,7 @@
         <div class="card-body">
 
             <div class="mb-3">
-                {{ __('¿Olvidaste tu contraseña? No hay problema. Simplemente escribe tu correo electrónico y te enviaremos un enlace de restablecimiento de contraseña.') }}
+                {{ __('¿Olvidaste tu contraseña? No hay problema 😎. Simplemente escribe tu correo electrónico y te enviaremos un enlace de restablecimiento de contraseña 😀.') }}
             </div>
 
             @if (session('status'))
@@ -33,7 +33,7 @@
                         onclick="location.href='{{ route('login') }}'">Cancelar</button>
 
                     <x-jet-button>
-                        {{ __('Enlace de restablecimiento de contraseña de correo electrónico') }}
+                        {{ __('Enlace de restablecimiento') }}
                     </x-jet-button>
                 </div>
             </form>

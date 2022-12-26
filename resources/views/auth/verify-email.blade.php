@@ -5,34 +5,38 @@
         </x-slot>
 
         <div class="card-body">
-            <div class="mb-3 small text-muted">
-                {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
+            <div class="mb-3 h5">
+                {{ __('¡¡¡ Gracias por registrarte !!! 😀 Antes de comenzar, verifica su dirección de correo electrónico 🤩 haciendo clic en el enlace que le acabamos de enviar. Si no recibiste el correo electrónico, con gusto te enviaremos otro 😎.') }}
             </div>
 
             @if (session('status') == 'verification-link-sent')
                 <div class="alert alert-success" role="alert">
-                    {{ __('A new verification link has been sent to the email address you provided during registration.') }}
+                    {{ __('Se te ha enviado un nuevo enlace de verificación a la dirección de correo electrónico 😄.') }}
                 </div>
             @endif
 
-            <div class="mt-4 d-flex justify-content-between">
-                <form method="POST" action="{{ route('verification.send') }}">
-                    @csrf
-
-                    <div>
-                        <x-jet-button type="submit">
-                            {{ __('Resend Verification Email') }}
-                        </x-jet-button>
-                    </div>
-                </form>
+            <div class="mt-4 d-flex justify-content-between mx-auto">
 
                 <form method="POST" action="/logout">
                     @csrf
 
-                    <button type="submit" class="btn btn-link">
-                        {{ __('Log Out') }}
+                    <button type="submit" class="btn bg-danger text-white mx-auto">
+                        {{ __('Cancelar') }}
                     </button>
                 </form>
+
+                <form method="POST" action="{{ route('verification.send') }}">
+                    @csrf
+
+                    <div>
+                        
+                        <button type="submit" class="btn bg-success text-white mx-auto">
+                            {{ __('Reenviar correo electrónico') }}
+                        </button>
+                    </div>
+                </form>
+
+                
             </div>
         </div>
     </x-jet-authentication-card>
