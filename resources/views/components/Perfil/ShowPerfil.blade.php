@@ -63,7 +63,9 @@
                                             </div>
                                             <div class="modal-body">
                                                 {{-- Componente Perfil --}}
+                                               
                                                 @livewire('profile.update-profile-information-form')
+                                                
                                             </div>
                                         </div>
                                     </div>

@@ -45,8 +45,7 @@ class == .
 body{
     margin: 0%;
     padding:0;
-    font-family: 'DynaPuff', cursive;
-    background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'DynaPuff', cursive !important;
 }
 
 
@@ -148,11 +147,6 @@ body{
   .navbar1 img.active {
     background-color: #11ffa8;
   }
-  
-
-  
-  
-
 
 /*Parte de videos e imagenes*/
 
