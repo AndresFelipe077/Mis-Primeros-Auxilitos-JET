@@ -21,7 +21,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('genero')->nullable();
             $table->date('fechaNacimiento')->nullable();
-            $table->string('password');
+            $table->string('password', 250);
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->timestamps();

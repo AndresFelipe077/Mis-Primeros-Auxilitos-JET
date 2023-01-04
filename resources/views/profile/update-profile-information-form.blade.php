@@ -31,7 +31,7 @@
 
                 <!-- New Profile Photo Preview -->
                 <div class="mt-2" x-show="photoPreview">
-                    <img x-bind:src="photoPreview" x-bind:style="'background-image: url(\'' + photoPreview + '\');'" class="rounded-circle mx-auto" width="250px" height="250px">
+                    <img x-bind:src="photoPreview" class="rounded-circle mx-auto" width="250px" height="250px">
                 </div>
 
                 <button type="button" class="btn btn-success mt-2 mr-2" x-on:click.prevent="$refs.photo.click() ">Seleccionar nueva imagen</button>
