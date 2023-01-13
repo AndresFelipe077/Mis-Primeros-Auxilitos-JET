@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+    <link rel="stylesheet" href="{{ asset('css/noSeleccionar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/registro.css') }}" />
     <link id="image-head" rel="shortcut icon" href="{{ asset('img/registro/faviconRegistro.png') }}" type="image/x-icon">
 
@@ -157,13 +158,17 @@
 
                         <div class="grupo">
                             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                                <div class="mt-4">
+                                <div>
                                     <x-jet-label for="terms">
-                                        <div class="flex items-center">
-                                            <x-jet-checkbox name="terms" id="terms" required />
+                                        <div class="row">
 
-                                            <div class="ml-2">
-                                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
+                                          <div class="col-1">
+                                            <x-jet-checkbox name="terms"  required />
+
+                                          </div>
+                                            
+                                            <div class="col-10" >
+                                                {!! __('Estoy de acuerdo con los :terms_of_service y :privacy_policy', [
                                                     'terms_of_service' =>
                                                         '<a target="_blank" href="' .
                                                         route('terms.show') .
@@ -178,6 +183,8 @@
                                                         '</a>',
                                                 ]) !!}
                                             </div>
+
+
                                         </div>
                                     </x-jet-label>
                                 </div>
@@ -204,6 +211,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('js/carousel.js') }}"></script>
+    <script src="{{ asset('js/noSeleccionar.js') }}"></script>
 
 
 </body>

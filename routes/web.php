@@ -26,7 +26,6 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
- 
 });
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->controller(ContenidoController::class)->group(function(){
@@ -50,6 +49,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
 });
 
+//Crear usuarios con redes sociales
 Route::get('/login-facebook', [SocialController::class, 'redirectFacebook'])->name('facebook');
  
 Route::get('/facebook-callback', [SocialController::class, 'callbackFacebook']);
