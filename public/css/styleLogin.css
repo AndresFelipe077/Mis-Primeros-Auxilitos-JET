@@ -82,6 +82,18 @@ body{
       
 }
 
+#my-label-id
+{
+    font-family:'DynaPuff', cursive;
+    color:blue;
+    font-size: 1.1em;
+}
+
+#label_password
+{
+    background-color:#fafbf8;
+}
+
 .texto-login
 {
     color:blue;

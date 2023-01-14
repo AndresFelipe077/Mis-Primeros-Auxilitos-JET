@@ -9,11 +9,24 @@
     <link id="image-head" rel="shortcut icon" href="{{ asset('img/botiquin.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    --}}
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"> 
+
+    {{-- Material design css --}}
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+
+    {{-- icons google --}}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     {{-- Estilos --}}
+    <link rel="stylesheet" href="{{ asset('css/main-style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/noSeleccionar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styleLogin.css') }}">
     
@@ -113,6 +126,29 @@
                       <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
                       <label for="floatingPassword" class="texto-login">Contraseña</label>
                     </div>
+
+                    <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon w-100" id="label_password">
+                      <span class="mdc-notched-outline">
+                        <span class="mdc-notched-outline__leading"></span>
+                        <span class="mdc-notched-outline__notch">
+                          <span class="mdc-floating-label" id="my-label-id">Contraseña</span>
+                        </span>
+                        <span class="mdc-notched-outline__trailing"></span>
+                      </span>
+                      <input class="mdc-text-field__input password" type="password" aria-labelledby="my-label-id" id="password my-label-id">
+                      
+                      {{-- <span class="mdc-text-field__icon--leading material-icons mdc-text-field__icon mdc-text-field__icon--trailing material-symbols-outlined ">
+                        visibility_off
+                        </span> --}}
+                      <span class="togglePassword mr-2">
+                          <i data-feather="eye" style="cursor: pointer"></i>
+                      </span>
+                      {{-- <span class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing material-symbols-outlined">
+                        visibility
+                        </span> --}}
+                    </label>
+
+
                    <div class="d-grid">
                        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
                    </div>
@@ -166,9 +202,17 @@
     </div>
 
 
+
+<script src="https://code.jquery.com/jquery-3.6.3.slim.js" integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+
 <!--Script-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{asset('js/splahScreen.js')}}"></script>
+
+
+<!-- Required Material Web JavaScript library -->
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script src="{{asset('js/app_material.js')}}"></script>
 
 
 
