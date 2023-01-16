@@ -87,9 +87,9 @@
                     <div class="form-check form-check-inline">
                         <input
                             class="form-check-input custom-checkbox {{ $errors->has('genero') ? 'is-invalid' : '' }}"
-                            type="checkbox" value="masculino" id="defaultCheck1" wire:model.defer="state.genero"
+                            type="checkbox" value="masculino" id="" wire:model.defer="state.genero"
                             name="genero">
-                        <label class="custom-checkbox" for="defaultCheck1">
+                        <label for="">
                             Masculino
                         </label>
                     </div>
@@ -97,9 +97,9 @@
                     <div class="form-check form-check-inline">
                         <input
                             class="form-check-input custom-checkbox {{ $errors->has('genero') ? 'is-invalid' : '' }}"
-                            type="checkbox" value="femenino" id="defaultCheck1" wire:model.defer="state.genero"
+                            type="checkbox" value="femenino" id="" wire:model.defer="state.genero"
                             name="genero">
-                        <label class="custom-checkbox" for="defaultCheck1">
+                        <label for="">
                             Femenino
                         </label>
                     </div>
@@ -107,9 +107,9 @@
                     <div class="form-check form-check-inline">
                         <input
                             class="form-check-input custom-checkbox {{ $errors->has('genero') ? 'is-invalid' : '' }}"
-                            type="checkbox" value="otro" id="defaultCheck1" wire:model.defer="state.genero"
+                            type="checkbox" value="otro" id="" wire:model.defer="state.genero"
                             name="genero">
-                        <label class="custom-checkbox" for="defaultCheck1">
+                        <label for="">
                             Otro
                         </label>
                     </div>          
@@ -127,16 +127,21 @@
             </div>
 
             <!-- Fecha Nacimiento -->
-            <div class="mb-3">
+            <div class="mb-3 input-wrapper">
                 <x-jet-label for="fechaNacimiento" value="{{ __('Fecha de nacimiento') }}" />
-                <x-jet-input id="fechaNacimiento" type="date"
-                    class="{{ $errors->has('fechaNacimiento') ? 'is-invalid' : '' }}"
-                    wire:model.defer="state.fechaNacimiento" autocomplete="fechaNacimiento" />
+                <x-jet-input type="date" class="{{ $errors->has('fechaNacimiento') ? 'is-invalid' : '' }} password input password" data-lpignore="true" id="password" wire:model.defer="state.fechaNacimiento" autocomplete="fechaNacimiento"/>
+                    <span class="togglePassword mr-2 input-icon password">
+                        <i data-feather="calendar" style="cursor: pointer"></i>
+                    </span>
                 <x-jet-input-error for="fechaNacimiento" />
             </div>
+
+
+
             <x-jet-action-message on="saved">
                 {{ __('Actualizado') }}
             </x-jet-action-message>
+
         </div>
 
     </x-slot>

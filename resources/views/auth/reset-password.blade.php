@@ -21,14 +21,25 @@
                     <x-jet-input-error for="email"></x-jet-input-error>
                 </div>
 
-                <div class="mb-3">
-                    <x-jet-label value="{{ __('Contraseña') }}" />
-
-                    <x-jet-input class="{{ $errors->has('password') ? 'is-invalid' : '' }}" type="password"
-                                 name="password" required autocomplete="new-password" />
-                    <x-jet-input-error for="password"></x-jet-input-error>
+                <div class="mb-3 input-wrapper">
+                    <x-jet-label value="{{ __('Contraseña') }}" />                   
+                    <x-jet-input id="password" class="{{ $errors->has('password') ? 'is-invalid' : '' }} password input password block mt-1 w-full" type="password"
+                                 name="password" required autocomplete="new-password" data-lpignore="true"
+                                 /> 
+                                 <span class="togglePassword input-icon password">
+                                    <i data-feather="eye" style="cursor: pointer"></i>
+                                </span>                                            
+                    <x-jet-input-error for="password"></x-jet-input-error>                   
                 </div>
 
+                <div class="form-floating mb-3 input-wrapper">
+                    <input type="password" class="form-control block mt-1 w-full password input password" data-lpignore="true" id="floatingPassword password" name="password" placeholder="Password">
+                    <label for="floatingPassword" class="texto-login">Contraseña</label>
+                        <span class="togglePassword mr-2 input-icon password">
+                            <i data-feather="eye" style="cursor: pointer"></i>
+                        </span>
+                </div>
+    
                 <div class="mb-3">
                     <x-jet-label value="{{ __('Confirmar contraseña') }}" />
 

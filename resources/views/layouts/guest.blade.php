@@ -6,20 +6,26 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
+        
+        
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{{ asset('css/eye.css') }}">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        
 
         <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        
 
         <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500&display=swap" rel="stylesheet">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('build/assets/app.ede9da46.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/app.css') }}">
 
     <link rel="shortcut icon" href="{{ asset('img/botiquin.png') }}" type="image/x-icon">
 
@@ -50,7 +56,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
     <!-- Scripts -->
-    <script src="{{ asset('build/assets/app.76ec6e4f.js') }}" defer></script>
+    <script src="{{ asset('build/assets/app.js') }}" defer></script>
     <!-- Optional JavaScript; choose one of the two! -->
     
     <!-- Jquery -->
@@ -71,6 +77,14 @@
 
     </head>
     <body class="bg-light font-sans antialiased animate__animated animate__swing">
+        {{-- <script src="{{asset('js/datepicker.js')}}"></script> --}}
         {{ $slot }}
+
+
+    {{-- <script src="{{asset('js/app_material.js')}}"></script> --}}
+    {{-- <script src="{{asset('js/eye.js')}}"></script> --}}
+    <script src="{{asset('js/noSeleccionar.js')}}"></script>
+    
+
     </body>
 </html>

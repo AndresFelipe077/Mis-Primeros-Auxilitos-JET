@@ -20,13 +20,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"> 
 
     {{-- Material design css --}}
-    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    {{-- <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"> --}}
 
     {{-- icons google --}}
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> --}}
 
     {{-- Estilos --}}
-    <link rel="stylesheet" href="{{ asset('css/main-style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/eye.css') }}">
     <link rel="stylesheet" href="{{ asset('css/noSeleccionar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styleLogin.css') }}">
     
@@ -96,17 +96,6 @@
                 </div>
                 <h2 id="container-login" class="fw-bold text-center py-5 text-primary rounded">Bienvenido</h2>
 
-                {{-- Sino funciona con un alert --}}
-                @if(session('exito') == 'ok')
-                  <script>
-                      Swal.fire(
-                          '¡Genial!',
-                          'Cuenta creada con exito!!!.',
-                          'success'
-                      )
-                  </script>
-                @endif
-
                 <!-- Login -->
                 @if($errors->any())
                 <div class="alert alert-danger animate__animated animate__swing" role="alert">                 
@@ -122,32 +111,13 @@
                       <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" value="{{old('email')}}">
                       <label for="floatingInput" class="texto-login">Correo</label>
                     </div>
-                    <div class="form-floating mb-3">
-                      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+                    <div class="form-floating mb-3 input-wrapper">
+                      <input type="password" class="form-control block mt-1 w-full password input password" data-lpignore="true" id="floatingPassword password" name="password" placeholder="Password">
                       <label for="floatingPassword" class="texto-login">Contraseña</label>
+                      <span class="togglePassword mr-2 input-icon password">
+                        <i data-feather="eye" style="cursor: pointer"></i>
+                    </span>
                     </div>
-
-                    <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon w-100" id="label_password">
-                      <span class="mdc-notched-outline">
-                        <span class="mdc-notched-outline__leading"></span>
-                        <span class="mdc-notched-outline__notch">
-                          <span class="mdc-floating-label" id="my-label-id">Contraseña</span>
-                        </span>
-                        <span class="mdc-notched-outline__trailing"></span>
-                      </span>
-                      <input class="mdc-text-field__input password" type="password" aria-labelledby="my-label-id" id="password my-label-id">
-                      
-                      {{-- <span class="mdc-text-field__icon--leading material-icons mdc-text-field__icon mdc-text-field__icon--trailing material-symbols-outlined ">
-                        visibility_off
-                        </span> --}}
-                      <span class="togglePassword mr-2">
-                          <i data-feather="eye" style="cursor: pointer"></i>
-                      </span>
-                      {{-- <span class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing material-symbols-outlined">
-                        visibility
-                        </span> --}}
-                    </label>
-
 
                    <div class="d-grid">
                        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
@@ -211,8 +181,9 @@
 
 
 <!-- Required Material Web JavaScript library -->
-<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-<script src="{{asset('js/app_material.js')}}"></script>
+{{-- <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> --}}
+<script src="{{asset('js/eye.js')}}"></script>
+<script src="{{asset('js/noSeleccionar.js')}}"></script>
 
 
 
