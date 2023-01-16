@@ -44,6 +44,7 @@
 
     {{-- Estilos --}}
     <link rel="stylesheet" href="{{ asset('css/eye.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/icon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/noSeleccionar.css') }}">
 
 
@@ -157,14 +158,15 @@
                                 <span><label class="text-primary" for="">Otro</label></span>
                             </label>
                         </div>
-                        <div class="grupo">
-                          <div class="input-group date " id="datepicker">
-                            <input class="input form-control password input password" type="text" data-lpignore="true" name="fechaNacimiento" id="name" required
+                        
+                        <div class="grupo input-wrapper">
+                          <div class="input-group date" id="datepicker">
+                            <input class="input form-control input calendario" type="text" data-lpignore="true" name="fechaNacimiento" id="name" required
                                 value="{{ old('fechaNacimiento') }}"><span class="barra"></span>
                             <label class="label" for="">Fecha de nacimiento</label>
-                            <span class="input-group-append mr-3 input-icon password">
-                              <span class="input-group-text bg-white" style="cursor: pointer;">
-                                  <i class="fa fa-calendar"></i>
+                            <span class="input-group-append mr-3 input-icon calendario">
+                              <span class="input-group-text bg-transparent rounded p-2" style="cursor: pointer;">
+                                <i data-feather="calendar"></i>
                               </span>
                           </span>
                         </div>

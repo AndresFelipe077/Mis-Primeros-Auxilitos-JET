@@ -10,8 +10,8 @@
     width: 100%;
   }
   
-  .input.password {
-    padding: 15px 35px 15px 15px;
+  .input.calendario {
+    padding: 15px 35px 15px 15px !important;
   }
   
   .input-icon {
@@ -23,8 +23,9 @@
     top: 50%;
     transform: translateY(-50%);
   }
-  
-  .input-icon.password {
+
+
+  .input-icon.calendario {
     left: unset;
     right: 12px !important;
   }
