@@ -183,7 +183,7 @@
 <!-- Required Material Web JavaScript library -->
 {{-- <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> --}}
 <script src="{{asset('js/eye.js')}}"></script>
-<script src="{{asset('js/noSeleccionar.js')}}"></script>
+{{-- <script src="{{asset('js/noSeleccionar.js')}}"></script> --}}
 
 
 

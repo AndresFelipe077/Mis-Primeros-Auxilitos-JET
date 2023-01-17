@@ -12,7 +12,6 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
 
     <!-- cdn icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -24,8 +23,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
 
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"> 
 
     {{-- Material design css --}}
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
@@ -45,6 +42,7 @@
     {{-- Estilos --}}
     <link rel="stylesheet" href="{{ asset('css/eye.css') }}">
     <link rel="stylesheet" href="{{ asset('css/icon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/iconCalendar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/noSeleccionar.css') }}">
 
 
@@ -159,17 +157,11 @@
                             </label>
                         </div>
                         
-                        <div class="grupo input-wrapper">
-                          <div class="input-group date" id="datepicker">
-                            <input class="input form-control input calendario" type="text" data-lpignore="true" name="fechaNacimiento" id="name" required
+                        
+                        <div class="grupo">
+                            <input type="date" class="input" name="fechaNacimiento" id="name" required
                                 value="{{ old('fechaNacimiento') }}"><span class="barra"></span>
-                            <label class="label" for="">Fecha de nacimiento</label>
-                            <span class="input-group-append mr-3 input-icon calendario">
-                              <span class="input-group-text bg-transparent rounded p-2" style="cursor: pointer;">
-                                <i data-feather="calendar"></i>
-                              </span>
-                          </span>
-                        </div>
+                                <label class="label" for="">Fecha de nacimiento</label>
                         </div>
 
                         <div class="grupo input-wrapper">
@@ -255,27 +247,12 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('js/carousel.js') }}"></script>
-    {{-- <script src="{{ asset('js/noSeleccionar.js') }}"></script> --}}
+    <script src="{{ asset('js/noSeleccionar.js') }}"></script>
 
     
 <!-- Required Material Web JavaScript library -->
 <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 <script src="{{asset('js/eye.js')}}"></script>
-
-<script src="js/bootstrap-datepicker.es.js"></script>
-
-    <script type="text/javascript">
-        
-        
-        
-        $( "#datepicker" ).datepicker({
-            language: 'es'
-
-        });
-      
-
-    
-    </script>
 
 
 

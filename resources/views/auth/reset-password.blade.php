@@ -23,30 +23,29 @@
 
                 <div class="mb-3 input-wrapper">
                     <x-jet-label value="{{ __('Contraseña') }}" />                   
-                    <x-jet-input id="password" class="{{ $errors->has('password') ? 'is-invalid' : '' }} password input password block mt-1 w-full" type="password"
-                                 name="password" required autocomplete="new-password" data-lpignore="true"
-                                 /> 
-                                 <span class="togglePassword input-icon password">
-                                    <i data-feather="eye" style="cursor: pointer"></i>
-                                </span>                                            
+                    <x-jet-input id="password" class="password input password w-full" type="password"  {{--{{ $errors->has('password') ? 'is-invalid' : '' }}--}}
+                                 name="password" autocomplete="new-password" data-lpignore="true"/> 
+                    <span class="togglePassword " id="icon">
+                        <i data-feather="eye"></i>
+                    </span>                            
                     <x-jet-input-error for="password"></x-jet-input-error>                   
                 </div>
-
-                <div class="form-floating mb-3 input-wrapper">
-                    <input type="password" class="form-control block mt-1 w-full password input password" data-lpignore="true" id="floatingPassword password" name="password" placeholder="Password">
-                    <label for="floatingPassword" class="texto-login">Contraseña</label>
-                        <span class="togglePassword mr-2 input-icon password">
-                            <i data-feather="eye" style="cursor: pointer"></i>
-                        </span>
-                </div>
     
-                <div class="mb-3">
+                <div class="mb-3 input-wrapper">
                     <x-jet-label value="{{ __('Confirmar contraseña') }}" />
-
-                    <x-jet-input class="{{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}" type="password"
-                                 name="password_confirmation" required autocomplete="new-password" />
+                    <x-jet-input id="password" class="password input password w-full" type="password" {{--{{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}--}}
+                                 name="password_confirmation" autocomplete="new-password" data-lpignore="true"/>
+                    <span class="togglePassword " id="icon">
+                        <i data-feather="eye"></i>
+                    </span>
                     <x-jet-input-error for="password_confirmation"></x-jet-input-error>
                 </div>
+
+                @if ($errors->any('password'))
+                    <div class="text-danger" role="alert">
+                        <p class="text-center">Las constraseñas deben coincidir y ser iguales o mayores a 8 caracteres</p>
+                    </div>
+                @endif
 
                 <div class="mb-0">
                     <div class="d-flex justify-content-end">

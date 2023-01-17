@@ -127,14 +127,26 @@
             </div>
 
             <!-- Fecha Nacimiento -->
-            <div class="mb-3 input-wrapper">
+            <div class="mb-3">
                 <x-jet-label for="fechaNacimiento" value="{{ __('Fecha de nacimiento') }}" />
-                <x-jet-input type="date" class="{{ $errors->has('fechaNacimiento') ? 'is-invalid' : '' }} password input password" data-lpignore="true" id="password" wire:model.defer="state.fechaNacimiento" autocomplete="fechaNacimiento"/>
-                    <span class="togglePassword mr-2 input-icon password">
-                        <i data-feather="calendar" style="cursor: pointer"></i>
-                    </span>
+                <x-jet-input type="date" class="{{ $errors->has('fechaNacimiento') ? 'is-invalid' : '' }}" wire:model.defer="state.fechaNacimiento" autocomplete="fechaNacimiento"/>
                 <x-jet-input-error for="fechaNacimiento" />
             </div>
+
+            {{-- <div class="mb-3 input-wrapper">
+                <x-jet-label for="fechaNacimiento" value="{{ __('Fecha de nacimiento') }}" />
+                <div class="input-group date" id="datepicker">
+                  <x-jet-input type="text"  class="{{ $errors->has('fechaNacimiento') ? 'is-invalid' : '' }} form-control input calendario" data-lpignore="true" wire:model.defer="state.fechaNacimiento" autocomplete="fechaNacimiento"/>
+                  <span class="input-group-append mr-3 input-icon calendario">
+                    <span class="input-group-text bg-transparent rounded p-2" style="cursor: pointer;">
+                      <i data-feather="calendar"></i>
+                    </span>
+                </span>
+                <x-jet-input-error for="fechaNacimiento" />
+              </div>
+            </div> --}}
+
+            
 
 
 

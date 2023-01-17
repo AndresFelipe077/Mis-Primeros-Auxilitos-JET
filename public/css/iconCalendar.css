@@ -1,0 +1,37 @@
+input[type="date"] {
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+    size: 2em;
+  }
+  
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    color: transparent;
+    background: none;
+    z-index: 1;
+    cursor: pointer;
+    size: 2em;
+  }
+  
+  input[type="date"]:before {
+    color: transparent;
+    background: none;
+    display: block;
+    font-family: 'FontAwesome', 'DynaPuff', cursive !important;
+    content: '\f073';
+    width: 15px;
+    height: 20px;
+    position: absolute;
+    top: 12px;
+    right: 6px;
+    color: rgb(1, 148, 212);
+    cursor: pointer;
+    size: 2em;
+  }
+
+  ::-webkit-calendar-picker-indicator:hover {
+    
+    -webkit-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.04);
+            font-family: 'DynaPuff', cursive !important;
+  }
