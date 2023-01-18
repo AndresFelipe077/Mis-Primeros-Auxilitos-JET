@@ -15,4 +15,10 @@ class Contenido extends Model
         'autor',
         'description',
     ];
+
+    //Relacion uno a muchos Inversa(Contenidos->user)
+    public function user(){ 
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
 }

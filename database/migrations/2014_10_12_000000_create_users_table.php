@@ -23,7 +23,6 @@ return new class extends Migration
             $table->date('fechaNacimiento')->nullable();
             $table->string('password', 250);
             $table->rememberToken();
-            $table->foreignId('current_team_id')->nullable();
             $table->timestamps();
         });
 

@@ -133,22 +133,6 @@
                 <x-jet-input-error for="fechaNacimiento" />
             </div>
 
-            {{-- <div class="mb-3 input-wrapper">
-                <x-jet-label for="fechaNacimiento" value="{{ __('Fecha de nacimiento') }}" />
-                <div class="input-group date" id="datepicker">
-                  <x-jet-input type="text"  class="{{ $errors->has('fechaNacimiento') ? 'is-invalid' : '' }} form-control input calendario" data-lpignore="true" wire:model.defer="state.fechaNacimiento" autocomplete="fechaNacimiento"/>
-                  <span class="input-group-append mr-3 input-icon calendario">
-                    <span class="input-group-text bg-transparent rounded p-2" style="cursor: pointer;">
-                      <i data-feather="calendar"></i>
-                    </span>
-                </span>
-                <x-jet-input-error for="fechaNacimiento" />
-              </div>
-            </div> --}}
-
-            
-
-
 
             <x-jet-action-message on="saved">
                 {{ __('Actualizado') }}

@@ -171,11 +171,7 @@
                             <span class="togglePassword mr-2 input-icon password">
                                 <i data-feather="eye" style="cursor: pointer"></i>
                             </span>
-                            @if ($errors->any('password'))
-                                <div class="text-danger" role="alert">
-                                    <p>La constraseña debe coincidir</p>
-                                </div>
-                            @endif
+                            
                         </div>
 
                         <div class="grupo input-wrapper">
@@ -185,12 +181,13 @@
                             <span class="togglePassword mr-2 input-icon password">
                                 <i data-feather="eye" style="cursor: pointer"></i>
                             </span>
-                            @if ($errors->any('password'))
-                                <div class="text-danger" role="alert">
-                                    <p>La constraseña debe coincidir</p>
-                                </div>
-                            @endif
                         </div>
+
+                        @if ($errors->any('password'))
+                            <div class="text-danger" role="alert">
+                                <p class="text-center m-3">Las constraseñas deben coincidir y ser mayores o iguales a 8 carácteres 😀😎</p>
+                            </div>
+                        @endif
 
                         <div class="grupo">
                             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
