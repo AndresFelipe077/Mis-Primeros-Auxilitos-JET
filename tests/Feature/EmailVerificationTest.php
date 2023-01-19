@@ -18,7 +18,7 @@ class EmailVerificationTest extends TestCase
     public function test_email_verification_screen_can_be_rendered()
     {
         if (! Features::enabled(Features::emailVerification())) {
-            return $this->markTestSkipped('Email verification not enabled.');
+            return $this->markTestSkipped('Verificacion de correo no habilitada.');
         }
 
         $user = User::factory()->withPersonalTeam()->unverified()->create();
@@ -55,7 +55,7 @@ class EmailVerificationTest extends TestCase
     public function test_email_can_not_verified_with_invalid_hash()
     {
         if (! Features::enabled(Features::emailVerification())) {
-            return $this->markTestSkipped('Email verification not enabled.');
+            return $this->markTestSkipped('Verificacion de correo no habilitada.');
         }
 
         $user = User::factory()->unverified()->create();

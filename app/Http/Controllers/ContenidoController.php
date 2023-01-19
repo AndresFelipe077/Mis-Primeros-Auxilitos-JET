@@ -4,13 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contenido;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
-use Livewire\WithFileUploads;
 use Intervention\Image\Facades\Image;
-
-use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
-use Laravel\Jetstream\Http\Livewire\UpdateProfileInformationForm;
 
 class ContenidoController extends Controller
 {
@@ -47,13 +44,8 @@ class ContenidoController extends Controller
     public function create()
     {   
         if(Auth::check())
-        {
+        {   
             return view('contenido.contenido-create');
-        }
-        else
-        {
-            $contenidos = Contenido::orderBy('id','desc')->paginate(5);
-            return view('dashboard', compact('contenidos'));  
         }
   
     }
@@ -78,11 +70,15 @@ class ContenidoController extends Controller
             })
             ->save($ruta);
 
+        $userId = Auth::user()->id;//Se obtiene id del Usuario Autenticado
+
         Contenido::create([
             'title'       => $request->title,
             'url'         => '/storage/images/' . $nombre,
             'autor'       => $request->autor,
             'description' => $request->description,
+            'user_id'     => $userId,
+                     
         ]);
 
         return redirect()->route('dashboard.index')->with('subir','ok');
@@ -97,12 +93,6 @@ class ContenidoController extends Controller
             
             return view('contenido.contenido-edit',compact('contenido'));
         }
-        else
-        {
-            $contenidos = Contenido::orderBy('id','desc')->paginate(5);
-            return view('dashboard.index', compact('contenidos'));  
-        }
-   
     }
 
     public function update(Request $request, Contenido $contenido)

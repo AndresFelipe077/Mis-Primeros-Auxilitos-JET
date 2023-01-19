@@ -14,11 +14,12 @@ class Contenido extends Model
         'url',
         'autor',
         'description',
+        'user_id',
     ];
 
     //Relacion uno a muchos Inversa(Contenidos->user)
     public function user(){ 
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo('App\Models\User');
     }
 
 }

@@ -33,7 +33,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     //Vista home de videos
     Route::get('/dashboard','index')->name('dashboard.index');
 
-    Route::get('dashboard/create/contenido','create')->name('dashboard.create');
+    Route::get('dashboard/create/contenido/','create')->name('dashboard.create');
 
     Route::post('dashboard/store/contenido', 'store')->name('contenido.store');
 

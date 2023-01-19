@@ -96,7 +96,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     //Relacion uno a muchos (Contenidos)
     public function contenidos(){
-        return $this->hasMany(Contenido::class, 'id');
+        return $this->hasMany('App\Models\Contenido');
     }
 
 
