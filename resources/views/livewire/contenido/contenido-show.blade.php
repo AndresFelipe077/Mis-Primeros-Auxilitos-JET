@@ -50,7 +50,13 @@
                         <p class="card-text">
                             {{ $contenido->description }}
                         </p>
-                        <a href="{{ route('contenido.edit', $contenido) }}" class="btn btn-primary">Editar</a>
+
+                        @if (Auth::user()->id == $contenido->user_id)
+                            <a href="{{ route('contenido.edit', $contenido) }}" class="btn btn-primary">Editar</a>
+                        @endif
+
+
+
                     </div>
 
                 </div>
