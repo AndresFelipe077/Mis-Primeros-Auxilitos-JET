@@ -47,6 +47,7 @@
                         </div>
                         {{-- <p class="text-danger">{{auth()->user()->name}}</p> --}}
                         <p><strong>Autor: </strong> {{ $contenido->autor }}</p>
+                           
                         <p class="card-text">
                             {{ $contenido->description }}
                         </p>

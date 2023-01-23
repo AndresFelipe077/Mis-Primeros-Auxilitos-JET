@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Support\Facades\File;
 
 class SocialController extends Controller
 {
+    
 
     public function redirectFacebook()
     {
@@ -24,11 +26,11 @@ class SocialController extends Controller
             return redirect('/dashboard');
         } else {
             $userNew = User::create([
-                'password'           => $user->password,
+                'external_id'        => $user->id,
                 'name'               => $user->name,
                 'email'              => $user->email,
-                'profile_photo_path' => $user->avatar,
-                'external_id'        => $user->id,
+                'profile_photo_path' => $user->getAvatar(),
+                'password'           => bcrypt($user->email),
                 'external_auth'      => 'facebook',
             ]);
 
@@ -44,6 +46,7 @@ class SocialController extends Controller
         return Socialite::driver('google')->redirect();
     }
 
+
     public function callbackGoogle()
     {
         $user = Socialite::driver('google')->user();
@@ -54,13 +57,15 @@ class SocialController extends Controller
             return redirect('/dashboard');
         } else {
             $userNew = User::create([ //http://mis-primeros-auxilitos-jet.com/google-callback Redireccionamiento Page Google
-                'password'           => encrypt(''),
+                'external_id'        => $user->id,
                 'name'               => $user->name,
                 'email'              => $user->email,
-                'profile_photo_path' => $user->avatar,
-                'external_id'        => $user->id,
+                'avatar'             => $user->getAvatar(),
                 'genero'             => $user->genero,
+                'password'           => bcrypt($user->email),
                 'external_auth'      => 'google',
+                'remember_token'       => $user->token,
+                // 'github_refresh_token' => $user->refreshToken,
             ]);
 
             Auth::login($userNew);
@@ -68,4 +73,9 @@ class SocialController extends Controller
             return redirect('/dashboard');
         }
     }
+
+    
+
+
+
 }

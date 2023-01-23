@@ -1,3 +1,3 @@
-# Terms of Service
+# Terminos de servicio
 
-Edit this file to define the terms of service for your application.
+No comentar, publicar y/o subir contenido inapropiado o fuera de contexto 😎.

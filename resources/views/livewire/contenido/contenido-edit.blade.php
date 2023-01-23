@@ -26,10 +26,11 @@
                     </div>
                 </div>
                 <div class="form-group m-1 mx-auto">
-                    <label for="exampleFormControlFile1" id="src-file">Escoge una imagen</label><br>
-                    <img class="mx-auto text-center" src="{{ asset($contenido->url) }}" width="100px"
-                        height="100px"><br>
-                    <input type="file" name="file" class="form-control-file mx-auto" id="exampleFormControlFile1"
+                    <label for="exampleFormControlFile1" id="src-file">Escoge una imagen</label>
+                    <div>
+                        <img class="" src="{{ asset($contenido->url) }}" width="120px" height="120px">
+                    </div>
+                    <input type="file" name="file" class="form-control-file mx-auto text-center" id="exampleFormControlFile1"
                         accept="image/*" value="{{ old('file', $contenido->url) }}">
                     @error('file')
                         <br>

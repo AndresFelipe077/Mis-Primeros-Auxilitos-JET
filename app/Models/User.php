@@ -34,6 +34,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'genero',
         'fechaNacimiento',
         'password',
+        'description',
         'fb_id',
         'avatar',
         'external_id',
@@ -68,6 +69,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $appends = [
         'profile_photo_url',
+        
     ];
 
     // //Relaciones uno a muchos

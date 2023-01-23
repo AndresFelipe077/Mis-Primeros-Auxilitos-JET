@@ -73,11 +73,14 @@
 <body class="font-sans antialiased bg-light">
 
     @auth
-    <audio autoplay loop>
-        <source src="{{ asset('music/musicaDivertida.mp3') }}" type="audio/mpeg">
-        Tu navegador no es compatible para reproducir audio.
-    </audio>
 
+
+    {{-- @if(Auth::user()->cancion == 1) --}}
+        <audio autoplay loop>
+            <source src="{{ asset('music/musicaDivertida.mp3') }}" type="audio/mpeg" >
+            Tu navegador no es compatible para reproducir audio.
+        </audio>
+    {{-- @endif --}}
     {{-- <audio src="{{ asset('music/musicaDivertida.mp3') }}" autoplay loop="true"></audio> --}}
 
 

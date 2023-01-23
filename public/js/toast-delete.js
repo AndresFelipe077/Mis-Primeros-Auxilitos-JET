@@ -4,13 +4,13 @@ $('.formulario-eliminar-contenido').submit(function(e){
 
     Swal.fire({
     title: '¿Estás seguro?',
-    text: "¡El contenido se eliminará definitamente!",
+    text: "¡El contenido se eliminará definitamente 😥!",
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
-    confirmButtonText: 'Sí, eliminar',
-    cancelButtonText: 'Cancelar',
+    confirmButtonText: 'Sí, eliminar 😰',
+    cancelButtonText: 'Cancelar 😃',
   }).then((result) => {
     if (result.isConfirmed) {
       // Swal.fire(

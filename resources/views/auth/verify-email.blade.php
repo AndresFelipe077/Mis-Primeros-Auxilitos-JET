@@ -6,7 +6,7 @@
 
         <div class="card-body">
             <div class="mb-3 h5">
-                {{ __('¡¡¡ Gracias por registrarte !!! 😀 Antes de comenzar, verifica su dirección de correo electrónico 🤩 haciendo clic en el enlace que le acabamos de enviar. Si no recibiste el correo electrónico, con gusto te enviaremos otro 😎.') }}
+                {{ __('¡¡¡ Gracias por registrarte !!! 😀 Antes de comenzar, verifica tu dirección de correo electrónico 🤩 haciendo clic en el enlace que le acabamos de enviar. Si no recibiste el correo electrónico, con gusto te enviaremos otro 😎.') }}
             </div>
 
             @if (session('status') == 'verification-link-sent')
@@ -17,20 +17,31 @@
 
             <div class="mt-4 d-flex justify-content-between mx-auto">
 
-                <form method="POST" action="/logout">
+                <form method="POST" action="/logout" class="mx-auto text-center">
                     @csrf
 
-                    <button type="submit" class="btn bg-danger text-white mx-auto">
+                    <button type="submit" class="btn bg-danger text-white mx-2 mt-3">
                         {{ __('Cancelar') }}
                     </button>
                 </form>
 
-                <form method="POST" action="{{ route('verification.send') }}">
+                {{-- <form method="POST" action="{{ route('dashboard.index') }}" class="mx-auto  text-center">
+                    @csrf
+
+                    <button type="submit" class="btn bg-warning text-white mx-2 ">
+                        {{ __('Más tarde') }}
+                    </button>
+                </form> --}}
+
+                {{-- <a class="btn btn-warning text-white mx-2 text-center" href="{{ route('dashboard.index') }}">Más tarde</a> --}}
+
+
+                <form method="POST" action="{{ route('verification.send') }}" class="mx-auto  text-center">
                     @csrf
 
                     <div>
                         
-                        <button type="submit" class="btn bg-success text-white mx-auto">
+                        <button type="submit" class="btn bg-success text-white mx-2">
                             {{ __('Reenviar correo electrónico') }}
                         </button>
                     </div>

@@ -1,3 +1,3 @@
-# Privacy Policy
+# Politica de privacidad
 
-Edit this file to define the privacy policy for your application.
+Tus datos personales no seran expuestos o usados con funes comerciales😎.

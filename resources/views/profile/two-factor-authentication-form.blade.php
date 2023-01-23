@@ -52,8 +52,8 @@
                     <div class="mt-4">
                         <x-jet-label for="code" value="{{ __('Codigo') }}" />
 
-                        <x-jet-input id="code" type="text" name="code" class="block mt-1 w-1/2" inputmode="numeric" autofocus autocomplete="one-time-code"
-                            wire:model.defer="code"
+                        <x-jet-input id="code" type="text" name="code" class="block mt-1 w-1/2"
+                            inputmode="numeric" autofocus autocomplete="one-time-code" wire:model.defer="code"
                             wire:keydown.enter="confirmTwoFactorAuthentication" />
 
                         <x-jet-input-error for="code" class="mt-2" />
@@ -76,13 +76,21 @@
             @endif
         @endif
 
+
+
         <div class="mt-5">
-            @if (! $this->enabled)
+            @if (!$this->enabled)
                 <x-jet-confirms-password wire:then="enableTwoFactorAuthentication">
-                    <x-jet-button type="button" wire:loading.attr="disabled">
+                    <button type="button" class="btn btn-success" wire:loading.attr="disabled">
                         {{ __('Habilitar') }}
-                    </x-jet-button>
+                    </button>
                 </x-jet-confirms-password>
+
+
+                <button type="button" class="btn btn-danger" wire:loading.attr="disabled" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdropCambiarContrasena">
+                    {{ __('Cambiar contraseña') }}
+                </button>
             @else
                 @if ($showingRecoveryCodes)
                     <x-jet-confirms-password wire:then="regenerateRecoveryCodes">

@@ -36,9 +36,6 @@ class CreateNewUser implements CreatesNewUsers
             'fechaNacimiento' => $input['fechaNacimiento'],
             'password'        => Hash::make($input['password']),
         ]);
-        
-        $user = new User();
-        return $user->id;
 
     }
 }

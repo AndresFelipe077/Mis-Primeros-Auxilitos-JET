@@ -25,8 +25,13 @@
 
                 <!-- Current Profile Photo -->
                 <div class="mt-2" x-show="! photoPreview">
-                    <img src="{{-- $this->user->profile_photo_url --}}{{ (Auth::user()->google_id !== null ||  Auth::user()->facebook_id !== null ) ? Auth::user()->profile_photo_path : Auth::user()->profile_photo_url }}" alt="{{ $this->user->name }}"
+                    @if( Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook' )
+                    <img src="{{ $this->user->avatar }}" alt="{{ $this->user->name }}"
                         class="rounded-circle object-cover mx-auto" width="250px" height="250px">
+                    @else
+                    <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ $this->user->name }}"
+                    class="rounded-circle object-cover mx-auto" width="250px" height="250px">
+                    @endif
                 </div>
 
                 <!-- New Profile Photo Preview -->
@@ -38,7 +43,7 @@
 
                 {{-- Eliminar foto --}}
 
-                @if ($this->user->profile_photo_path)
+                @if ($this->user->profile_photo_path || $this->user->avatar)
                     <button type="button" class="btn btn-danger mt-2" wire:click="deleteProfilePhoto">Eliminar foto</button>
                 @endif
 
@@ -131,6 +136,14 @@
                 <x-jet-label for="fechaNacimiento" value="{{ __('Fecha de nacimiento') }}" />
                 <x-jet-input type="date" class="{{ $errors->has('fechaNacimiento') ? 'is-invalid' : '' }}" wire:model.defer="state.fechaNacimiento" autocomplete="fechaNacimiento"/>
                 <x-jet-input-error for="fechaNacimiento" />
+            </div>
+
+            <!-- Description -->
+            <div class="mb-3">
+                <x-jet-label for="description" value="{{ __('Descripción') }}" />
+                <x-jet-input type="text" class="{{ $errors->has('description') ? 'is-invalid' : '' }}" 
+                    wire:model.defer="state.description" autocomplete="description"/>
+                <x-jet-input-error for="description" />
             </div>
 
 
