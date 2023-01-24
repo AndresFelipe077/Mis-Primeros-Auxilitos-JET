@@ -1,4 +1,4 @@
-@if(Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook')
+@if (Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook')
     @props(['title' => __('Confirma tu correo electronico'), 'content' => __('¡¡¡ Por tu seguridad, confirma tu correo electronico para continuar !!!'), 'button' => __('Confirmar')])
 @else
     @props(['title' => __('Confirma tu contraseña'), 'content' => __('¡¡¡ Por tu seguridad, confirma tu contraseña para continuar !!!'), 'button' => __('Confirmar')])
@@ -28,13 +28,18 @@
                 x-on:confirming-password.window="setTimeout(() => $refs.confirmable_password.focus(), 250)">
 
                 @if (Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook')
-                <div class="mb-3">
-                    <x-jet-input type="email"
-                        class="{{ $errors->has('confirmable_password') ? 'is-invalid' : '' }}"
-                        placeholder="{{ __('Correo electronico') }}" x-ref="confirmable_password"
-                        wire:model.defer="confirmablePassword" wire:keydown.enter="confirmPassword"
-                        />
-                </div>
+                    <div class="mb-3">
+                        <x-jet-input type="email" class="{{ $errors->has('confirmable_password') ? 'is-invalid' : '' }}"
+                            placeholder="{{ __('Correo electronico') }}" x-ref="confirmable_password"
+                            wire:model.defer="confirmablePassword" wire:keydown.enter="confirmPassword" />
+                    </div>
+                    @if ($errors->any('confirmable_password'))
+                        <div class="text-danger mt-1" role="alert">
+                            <p class="text-center font-weight-bold">El correo electronico no coincide, revisalo y vuelve a
+                                intentarlo 😎
+                            </p>
+                        </div>
+                    @endif
                 @else
                     <div class="mb-3 input-wrapper">
                         <x-jet-input type="password"
@@ -46,16 +51,17 @@
                             <i data-feather="eye"></i>
                         </span>
                     </div>
+                    @if ($errors->any('confirmable_password'))
+                        <div class="text-danger mt-1" role="alert">
+                            <p class="text-center font-weight-bold">La contraseña no coincide, revisala y vuelve a
+                                intentarlo 😎
+                            </p>
+                        </div>
+                    @endif
                 @endif
 
 
                 {{-- <x-jet-input-error for="confirmable_password" /> --}}
-                @if ($errors->any('confirmable_password'))
-                    <div class="text-danger mt-1" role="alert">
-                        <p class="text-center font-weight-bold">La contraseña no coincide, revisala y vuelve a intentarlo 😎
-                        </p>
-                    </div>
-                @endif
 
             </div>
         </x-slot>

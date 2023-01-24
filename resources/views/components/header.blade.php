@@ -30,7 +30,7 @@
                         @if (Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook')
                             <img class="rounded-circle" width="50px" height="50px"
                                 src="{{ Auth::user()->avatar }}{{-- Auth::user()->google_id !== null || Auth::user()->facebook_id !== null ? Auth::user()->profile_photo_path : Auth::user()->avatar --}}"
-                                alt="{{ Auth::user()->name }}" />
+                                alt="{{ Auth::user()->name }}" referrerpolicy="no-referrer"/>
                         @else
                             <img class="rounded-circle" width="50px" height="50px"
                                 src="{{ Auth::user()->profile_photo_url }}{{-- Auth::user()->google_id !== null || Auth::user()->facebook_id !== null ? Auth::user()->profile_photo_path : Auth::user()->profile_photo_url --}}"

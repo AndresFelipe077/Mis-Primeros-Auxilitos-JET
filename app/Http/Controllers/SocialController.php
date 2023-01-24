@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\File;
 
 class SocialController extends Controller
 {
-    
+  
 
     public function redirectFacebook()
     {
@@ -20,17 +20,20 @@ class SocialController extends Controller
     {
         $user = Socialite::driver('facebook')->user();
 
+        $avatarProfile = $user->avatar_original . "&access_token={$user->token}";
+
         $userExists = User::where('external_id', $user->id)->where('external_auth', 'facebook')->first();
         
         if ($userExists) {
             Auth::login($userExists);
             return redirect('/dashboard');
         } else {
+
             $userNew = User::create([
                 'external_id'        => $user->id,
                 'name'               => $user->name,
                 'email'              => $user->email,
-                'avatar'             => $user->getAvatar(),
+                'avatar'             => $avatarProfile,
                 'gender'             => $user->user_gender,
                 'password'           => bcrypt($user->email),
                 'external_auth'      => 'facebook',
@@ -51,7 +54,7 @@ class SocialController extends Controller
 
     public function callbackGoogle()
     {
-        $user = Socialite::driver('google')->scopes(['read:user', 'public_repo'])->user();
+        $user = Socialite::driver('google')->user();
 
         $userExists = User::where('external_id', $user->id)->where('external_auth', 'google')->first();
         if ($userExists) {
@@ -66,8 +69,7 @@ class SocialController extends Controller
                 'gender'             => $user->gender,
                 'password'           => bcrypt($user->email),
                 'external_auth'      => 'google',
-                'token'              => $user->token,
-                // 'github_refresh_token' => $user->refreshToken,
+                // 'token'              => $user->token,
             ]);
 
             Auth::login($userNew);

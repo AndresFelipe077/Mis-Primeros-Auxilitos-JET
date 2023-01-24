@@ -66,7 +66,7 @@
                                 @if (Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook')
                                     <img class="rounded-circle mx-auto" width="150px"
                                         height="150px" src="{{ Auth::user()->avatar }}"
-                                        alt="{{ Auth::user()->name }}" />
+                                        alt="{{ Auth::user()->name }}" referrerpolicy="no-referrer"/>
                                 @else
                                     <img wire:key="{{ Auth::user()->id }}" class="rounded-circle mx-auto"
                                         width="150px" height="150px" src="{{ Auth::user()->profile_photo_url }}"

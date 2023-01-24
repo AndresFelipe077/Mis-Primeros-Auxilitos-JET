@@ -16,7 +16,7 @@
                           };
                           reader.readAsDataURL($refs.photo.files[0]);
                         "
-                    class="mx-auto" />
+                    class="mx-auto" referrerpolicy="no-referrer"/>
                 @error('photo')
                     {{ $message }}
                 @enderror
@@ -25,12 +25,12 @@
 
                 <!-- Current Profile Photo -->
                 <div class="mt-2" x-show="! photoPreview">
-                    @if( Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook' )
-                    <img src="{{ $this->user->avatar }}" alt="{{ $this->user->name }}"
-                        class="rounded-circle object-cover mx-auto" width="250px" height="250px">
+                    @if (Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook')
+                        <img src="{{ $this->user->avatar }}" alt="{{ $this->user->name }}"
+                            class="rounded-circle object-cover mx-auto" width="250px" height="250px" referrerpolicy="no-referrer">
                     @else
-                    <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ $this->user->name }}"
-                    class="rounded-circle object-cover mx-auto" width="250px" height="250px">
+                        <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ $this->user->name }}"
+                            class="rounded-circle object-cover mx-auto" width="250px" height="250px">
                     @endif
                 </div>
 
@@ -39,12 +39,14 @@
                     <img x-bind:src="photoPreview" class="rounded-circle mx-auto" width="250px" height="250px">
                 </div>
 
-                <button type="button" class="btn btn-success mt-2 mr-2" x-on:click.prevent="$refs.photo.click() ">Seleccionar nueva imagen</button>
+                <button type="button" class="btn btn-success mt-2 mr-2"
+                    x-on:click.prevent="$refs.photo.click() ">Seleccionar nueva imagen</button>
 
                 {{-- Eliminar foto --}}
 
                 @if ($this->user->profile_photo_path || $this->user->avatar)
-                    <button type="button" class="btn btn-danger mt-2" wire:click="deleteProfilePhoto">Eliminar foto</button>
+                    <button type="button" class="btn btn-danger mt-2" wire:click="deleteProfilePhoto">Eliminar
+                        foto</button>
                 @endif
 
                 <x-jet-input-error for="photo" class="mt-2" />
@@ -67,7 +69,7 @@
                 <x-jet-input-error for="email" class="mt-2" />
 
                 @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::emailVerification()) &&
-                    !$this->user->hasVerifiedEmail())
+                        !$this->user->hasVerifiedEmail())
                     <p class="text-sm mt-2">
                         {{ __('Su dirección de correo electrónico no está verificada.') }}
 
@@ -117,16 +119,16 @@
                         <label for="">
                             Otro
                         </label>
-                    </div>          
+                    </div>
 
                 </div>
 
-                @if(Auth::user()->genero == null)
-                    <small class="text-danger">Por favor, elige una opción del genero</small> 
+                @if (Auth::user()->genero == null)
+                    <small class="text-danger">Por favor, elige una opción del genero</small>
                 @endif
 
-                @error('genero')                   
-                    <small class="text-danger">{{ $message }}</small>                 
+                @error('genero')
+                    <small class="text-danger">{{ $message }}</small>
                 @enderror
 
             </div>
@@ -134,15 +136,16 @@
             <!-- Fecha Nacimiento -->
             <div class="mb-3">
                 <x-jet-label for="fechaNacimiento" value="{{ __('Fecha de nacimiento') }}" />
-                <x-jet-input type="date" class="{{ $errors->has('fechaNacimiento') ? 'is-invalid' : '' }}" wire:model.defer="state.fechaNacimiento" autocomplete="fechaNacimiento"/>
+                <x-jet-input type="date" class="{{ $errors->has('fechaNacimiento') ? 'is-invalid' : '' }}"
+                    wire:model.defer="state.fechaNacimiento" autocomplete="fechaNacimiento" />
                 <x-jet-input-error for="fechaNacimiento" />
             </div>
 
             <!-- Description -->
             <div class="mb-3">
                 <x-jet-label for="description" value="{{ __('Descripción') }}" />
-                <x-jet-input type="text" class="{{ $errors->has('description') ? 'is-invalid' : '' }}" 
-                    wire:model.defer="state.description" autocomplete="description"/>
+                <x-jet-input type="text" class="{{ $errors->has('description') ? 'is-invalid' : '' }}"
+                    wire:model.defer="state.description"  />
                 <x-jet-input-error for="description" />
             </div>
 
