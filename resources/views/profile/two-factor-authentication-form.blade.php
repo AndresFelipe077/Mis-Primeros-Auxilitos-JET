@@ -86,11 +86,12 @@
                     </button>
                 </x-jet-confirms-password>
 
-
+                @if(!Auth::user()->external_auth == 'google' or !Auth::user()->external_auth == 'facebook')
                 <button type="button" class="btn btn-danger" wire:loading.attr="disabled" data-bs-toggle="modal"
                     data-bs-target="#staticBackdropCambiarContrasena">
                     {{ __('Cambiar contraseña') }}
                 </button>
+                @endif
             @else
                 @if ($showingRecoveryCodes)
                     <x-jet-confirms-password wire:then="regenerateRecoveryCodes">

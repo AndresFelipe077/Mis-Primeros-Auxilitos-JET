@@ -75,7 +75,7 @@ class User extends Authenticatable implements MustVerifyEmail
     // //Relaciones uno a muchos
     public function socialProfiles()
     {
-        return $this->hasMany(SocialProfile::class);
+        return $this->hasMany('App\Models\SocialController');
     }
 
     //imagen del admin

@@ -1,4 +1,9 @@
-@props(['title' => __('Confirma tu contraseña'), 'content' => __('¡¡¡ Por tu seguridad, confirma tu contraseña para continuar !!!'), 'button' => __('Confirmar')])
+@if(Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook')
+    @props(['title' => __('Confirma tu correo electronico'), 'content' => __('¡¡¡ Por tu seguridad, confirma tu correo electronico para continuar !!!'), 'button' => __('Confirmar')])
+@else
+    @props(['title' => __('Confirma tu contraseña'), 'content' => __('¡¡¡ Por tu seguridad, confirma tu contraseña para continuar !!!'), 'button' => __('Confirmar')])
+@endif
+
 
 @php
     $confirmableId = md5($attributes->wire('then'));
@@ -22,14 +27,26 @@
             <div class="mt-4 " x-data="{}"
                 x-on:confirming-password.window="setTimeout(() => $refs.confirmable_password.focus(), 250)">
 
-                <div class="mb-3 input-wrapper">
-                    <x-jet-input type="password" class="{{ $errors->has('confirmable_password') ? 'is-invalid' : '' }} password input password"
-                        placeholder="{{ __('Contraseña') }}" x-ref="confirmable_password"
-                        wire:model.defer="confirmablePassword" wire:keydown.enter="confirmPassword" data-lpignore="true" />
-                    <span class="togglePassword " id="icon">
-                        <i data-feather="eye"></i>
-                    </span>
+                @if (Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook')
+                <div class="mb-3">
+                    <x-jet-input type="email"
+                        class="{{ $errors->has('confirmable_password') ? 'is-invalid' : '' }}"
+                        placeholder="{{ __('Correo electronico') }}" x-ref="confirmable_password"
+                        wire:model.defer="confirmablePassword" wire:keydown.enter="confirmPassword"
+                        />
                 </div>
+                @else
+                    <div class="mb-3 input-wrapper">
+                        <x-jet-input type="password"
+                            class="{{ $errors->has('confirmable_password') ? 'is-invalid' : '' }} password input password"
+                            placeholder="{{ __('Contraseña') }}" x-ref="confirmable_password"
+                            wire:model.defer="confirmablePassword" wire:keydown.enter="confirmPassword"
+                            data-lpignore="true" />
+                        <span class="togglePassword " id="icon">
+                            <i data-feather="eye"></i>
+                        </span>
+                    </div>
+                @endif
 
 
                 {{-- <x-jet-input-error for="confirmable_password" /> --}}

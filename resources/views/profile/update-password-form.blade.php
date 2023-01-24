@@ -10,26 +10,16 @@
 
     <x-slot name="form">
         <div class="w-md-75">
-            @if (Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook')
-                <h1>por fa, cambia tu contraseña</h1>
-                <div class="mb-3 input-wrapper">
-                    <x-jet-label for="current_password" value="{{ __('Correo Electronico o contraseña actualizada') }}" />
-                    <x-jet-input name="password" id="current_password" type="email"
-                        class="{{ $errors->has('current_password') ? 'is-invalid' : '' }}"
-                        wire:model.defer="state.current_password" autocomplete="current-password" />
-                </div>
-            @else
-                <div class="mb-3 input-wrapper">
-                    <x-jet-label for="current_password" value="{{ __('Contraseña actual') }}" />
-                    <x-jet-input name="password" id="current_password password" data-lpignore="true" type="password"
-                        class="{{ $errors->has('current_password') ? 'is-invalid' : '' }} password input password"
-                        wire:model.defer="state.current_password" autocomplete="current-password" />
-                    <span class="togglePassword" id="icon">
-                        <i data-feather="eye"></i>
-                    </span>
-                    <x-jet-input-error for="current_password" />
-                </div>
-            @endif
+            <div class="mb-3 input-wrapper">
+                <x-jet-label for="current_password" value="{{ __('Contraseña actual') }}" />
+                <x-jet-input name="password" id="current_password password" data-lpignore="true" type="password"
+                    class="{{ $errors->has('current_password') ? 'is-invalid' : '' }} password input password"
+                    wire:model.defer="state.current_password" autocomplete="current-password" />
+                <span class="togglePassword" id="icon">
+                    <i data-feather="eye"></i>
+                </span>
+                <x-jet-input-error for="current_password" />
+            </div>
 
             <div class="mb-3 input-wrapper">
                 <x-jet-label for="password" value="{{ __('Nueva contraseña') }}" />
