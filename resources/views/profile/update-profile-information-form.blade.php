@@ -16,7 +16,7 @@
                           };
                           reader.readAsDataURL($refs.photo.files[0]);
                         "
-                    class="mx-auto" referrerpolicy="no-referrer"/>
+                    class="mx-auto" referrerpolicy="no-referrer" />
                 @error('photo')
                     {{ $message }}
                 @enderror
@@ -26,8 +26,14 @@
                 <!-- Current Profile Photo -->
                 <div class="mt-2" x-show="! photoPreview">
                     @if (Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook')
-                        <img src="{{ $this->user->avatar }}" alt="{{ $this->user->name }}"
-                            class="rounded-circle object-cover mx-auto" width="250px" height="250px" referrerpolicy="no-referrer">
+                        @if (Auth::user()->profile_photo_path != null)
+                            <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ $this->user->name }}"
+                                class="rounded-circle object-cover mx-auto" width="250px" height="250px">
+                        @else
+                            <img src="{{ $this->user->avatar }}" alt="{{ $this->user->name }}"
+                                class="rounded-circle object-cover mx-auto" width="250px" height="250px"
+                                referrerpolicy="no-referrer">
+                        @endif
                     @else
                         <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ $this->user->name }}"
                             class="rounded-circle object-cover mx-auto" width="250px" height="250px">
@@ -145,7 +151,7 @@
             <div class="mb-3">
                 <x-jet-label for="description" value="{{ __('Descripción') }}" />
                 <x-jet-input type="text" class="{{ $errors->has('description') ? 'is-invalid' : '' }}"
-                    wire:model.defer="state.description"  />
+                    wire:model.defer="state.description" />
                 <x-jet-input-error for="description" />
             </div>
 
