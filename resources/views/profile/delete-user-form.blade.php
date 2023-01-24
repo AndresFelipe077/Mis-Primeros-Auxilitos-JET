@@ -14,9 +14,9 @@
                 {{ __('¿Seguro que quieres eliminar tu cuenta?') }}
             </x-slot>
 
-
+            <x-slot name="content">
             @if (Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook')
-                <x-slot name="content">
+                
                     {{ __('Escribe tu correo electronico para confirmar. Ten encuenta que es una acción irreversible 😥') }}
                     <img class="mx-auto" src="{{ asset('img/users/caraTriste.png') }}" alt="¡¡¡QUE MAL!!!" width="250px"
                         height="250px">
@@ -34,9 +34,9 @@
                             </div>
                         @endif
                     </div>
-                </x-slot>
+                
             @else
-                <x-slot name="content">
+                
                     {{ __('Escribe tu contraseña para confirmar. Ten encuenta que es una acción irreversible 😥') }}
                     <img class="mx-auto" src="{{ asset('img/users/caraTriste.png') }}" alt="¡¡¡QUE MAL!!!"
                         width="250px" height="250px">
@@ -49,8 +49,14 @@
 
                         <x-jet-input-error for="password" />
                     </div>
-                </x-slot>
+                    
             @endif
+
+            
+
+
+        </x-slot>
+            
 
             <x-slot name="footer">
 

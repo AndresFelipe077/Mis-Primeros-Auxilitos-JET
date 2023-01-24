@@ -44,6 +44,9 @@
             </div>
         </div>
 
+        <x-jet-action-message on="saved">
+            {{ __('Contraseña actualizada') }}
+        </x-jet-action-message>
 
 
     </x-slot>

@@ -89,7 +89,7 @@
                 @if(!Auth::user()->external_auth == 'google' or !Auth::user()->external_auth == 'facebook')
                 <button type="button" class="btn btn-danger" wire:loading.attr="disabled" data-bs-toggle="modal"
                     data-bs-target="#staticBackdropCambiarContrasena">
-                    {{ __('Cambiar contraseña') }}
+                    {{ __('Actualizar contraseña') }}
                 </button>
                 @endif
             @else

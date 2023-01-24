@@ -25,18 +25,13 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'email'           => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'genero'          => ['required',],
             'fechaNacimiento' => ['required', 'date'],
-            'description'     => ['required', 'string', 'max:255'],
+            'description'     => ['nullable', 'string', 'max:255'],
             'photo'           => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
-            // 'avatar'           => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
         ])->validateWithBag('updateProfileInformation');
 
         if (isset($input['photo'])) {
             $user->updateProfilePhoto($input['photo']);
         }
-        // else if(isset($input['avatar']))
-        // {
-        //     $user->updateProfilePhoto($input['avatar']);
-        // }
 
         if ($input['email'] !== $user->email && $user instanceof MustVerifyEmail) {
             $this->updateVerifiedUser($user, $input);
@@ -65,6 +60,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'email'             => $input['email'],
             'genero'            => $input['genero'],
             'fechaNacimiento'   => $input['fechaNacimiento'],
+            'description'       => $input['description'],
             'email_verified_at' => null,
         ])->save();
 
