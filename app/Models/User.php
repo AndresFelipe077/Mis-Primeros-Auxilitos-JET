@@ -69,14 +69,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $appends = [
         'profile_photo_url',
-        
     ];
-
-    // //Relaciones uno a muchos
-    public function socialProfiles()
-    {
-        return $this->hasMany('App\Models\SocialController');
-    }
 
     //imagen del admin
     public function adminlte_image()

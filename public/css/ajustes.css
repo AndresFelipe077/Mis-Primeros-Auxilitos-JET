@@ -38,6 +38,21 @@ body{
   background-position: center;
 }
 
+#check{
+  width:40px;
+  height:25px;
+  background-color: aqua;
+}
+
+.switch{
+  margin-left: .5em;
+}
+
+.sonido{
+  margin-left: .1em;
+}
+
+
 a {
   border-radius: 10px;
 }

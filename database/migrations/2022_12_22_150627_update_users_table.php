@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class UpdateUsersTable extends Migration//return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -17,8 +17,6 @@ return new class extends Migration
             $table -> string('avatar', 500)    -> nullable();
             $table -> string('external_id')    -> nullable();
             $table -> string('external_auth')  -> nullable();
-            $table -> string('gender')         -> nullable();
-            $table -> string('token')          -> nullable();
             $table -> string('password')       -> nullable() -> change();
         });
     }

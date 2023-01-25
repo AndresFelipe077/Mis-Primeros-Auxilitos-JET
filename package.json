@@ -20,6 +20,7 @@
         "vite": "^3.0.0"
     },
     "dependencies": {
-        "@material/textfield": "^14.0.0"
+        "@material/textfield": "^14.0.0",
+        "mysql": "^2.18.1"
     }
 }

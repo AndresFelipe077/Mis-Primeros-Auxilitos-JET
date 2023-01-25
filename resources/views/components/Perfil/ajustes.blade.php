@@ -13,15 +13,37 @@
     <link rel="shortcut icon" href="{{ asset('img/menu/settings2.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js"
+        integrity="sha384-q9CRHqZndzlxGLOj+xrdLDJa9ittGte1NksRmgJKeCV9DrM7Kz868XYqsKWPpAmn" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+    </script>
+
+
+
 </head>
+
 
 <body class="body-ajustes">
 
-
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-
+  <audio id="music" src="{{ asset('music/musicaDivertida.mp3') }}" autoplay loop></audio>
 
 
+  <h1 class="text-center animate__animated animate__bounceInDown mt-4 text-white">MIS PRIMEROS AUXILITOS</h1>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
 
         <symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
         </symbol>
@@ -117,10 +139,12 @@
                 </a>
             </li>
             <li>
-                <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
-                    <img src="/img/audio.jpeg" alt="" width="20" height="20">
-                    <h3>Desactivar audio</h3>
-                </a>
+                <div class="switch">
+                    <div class="form-check form-switch">
+                        <input type="checkbox" class="form-check-input" id="check"  value="1" checked>
+                        <h3 class="sonido">Sonido</h3>
+                    </div>
+                </div>
             </li>
             <li>
                 <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
@@ -132,12 +156,7 @@
                 <hr class="dropdown-divider">
             </li>
             <li>
-                {{-- <a class="dropdown-item dropdown-item-danger d-flex gap-2 align-items-center"
-                    href="{{ route('logout') }}" onclick="return confirm('¿Seguro que deseas cerrar sesión?')">
-                    <img src="/img/logout.jpeg" alt="" width="20" height="20">
-                    <h3>Cerrar sesión</h3>
-                </a> --}}
-                <!-- Authentication -->
+
                 <a class="dropdown-item dropdown-item-danger d-flex gap-2 align-items-center"
                     href="{{ route('logout') }}"
                     onclick="event.preventDefault();
@@ -153,9 +172,16 @@
         </ul>
 
     </div>
+   
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.js"
+        integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
 
+    <!--Script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+<script src="{{ asset('js/sound.js') }}"></script>
 
 </html>

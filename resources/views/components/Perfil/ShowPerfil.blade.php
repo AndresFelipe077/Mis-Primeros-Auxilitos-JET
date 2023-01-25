@@ -52,8 +52,11 @@
             </div>
         </div>
 
-
-
+        @if (Auth::user()->genero == null || Auth::user()->fechaNacimiento == null)
+            <div class="alert alert-warning text-center" role="alert">
+                ¡¡¡ Actualicemos más nuestro perfil 😎😮😀 !!!
+            </div>
+        @endif
 
         <section>
             <div class="row mt-3">
@@ -250,8 +253,6 @@
 {{-- <script src="{{asset('js/noSeleccionar.js')}}"></script> --}}
 <script src="{{ asset('js/checkCheckBox.js') }}"></script>
 <script src="{{ asset('js/eye.js') }}"></script>
-
-{{-- <script src="{{ asset('js/modalPassword.js') }}"></script> --}}
 
 
 </body>

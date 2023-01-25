@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
-use Illuminate\Support\Facades\File;
 
 class SocialController extends Controller
 {
@@ -36,6 +35,7 @@ class SocialController extends Controller
                 'avatar'             => $avatarProfile,
                 'gender'             => $user->user_gender,
                 'password'           => bcrypt($user->email),
+                'email_verified_at'  => now(),
                 'external_auth'      => 'facebook',
             ]);
 
@@ -69,6 +69,7 @@ class SocialController extends Controller
                 'avatar'             => $user->getAvatar(),
                 'gender'             => $user->gender,
                 'password'           => bcrypt($user->email),
+                'email_verified_at'  => now(),
                 'external_auth'      => 'google',
                 // 'token'              => $user->token,
             ]);

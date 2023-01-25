@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('sonidos', function (Blueprint $table) {
-            $table->double('cancion', true);
+            $table->boolean('cancion') -> default(1);
             $table->foreignId('user_id')
                 ->nullable()
                 ->cascadeOnUpdate('set null')
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        
+        Schema::dropIfExists('sonidos');
     }
 };
