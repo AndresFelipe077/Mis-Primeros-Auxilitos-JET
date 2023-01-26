@@ -155,7 +155,6 @@
                 <x-jet-input-error for="description" />
             </div>
 
-
             <x-jet-action-message on="saved">
                 {{ __('Actualizado') }}
             </x-jet-action-message>

@@ -41,14 +41,6 @@ class ContenidoController extends Controller
         
     }
 
-    public function storeSound(Request $request)
-    {
-        $userSound = new User();
-        Contenido::create([ 
-            $userSound => $request -> cancion,
-        ]);
-    }
-
 
     public function create()
     {   

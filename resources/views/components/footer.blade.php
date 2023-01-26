@@ -10,7 +10,7 @@
             </div>
 
             <div class="hijos-navbar">
-                <img src="{{ asset('img/menu/challengue2.png') }}" onclick="location.href=''">
+                <img src="{{ asset('img/menu/challengue2.png') }}" onclick="location.href='{{route('dashboard.game')}}'">
             </div>
 
             <div class="hijos-navbar">

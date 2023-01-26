@@ -56,17 +56,27 @@
     {{-- animations css --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-    <!-- Scripts -->
-    <script src="{{ asset('build/assets/app.js') }}" defer></script>
-    {{-- <script src="{{asset('js/noSeleccionar.js')}}"></script> --}}
-    <script src="{{ asset('js/checkCheckBox.js') }}"></script>
-    <script src="{{ asset('js/eye.js') }}"></script>
-
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.js"
+        integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <!-- Scripts -->
+    <script src="{{ asset('build/assets/app.js') }}" defer></script>
+    {{-- <script src="{{asset('js/noSeleccionar.js')}}"></script> --}}
+
+
 
 
 
@@ -80,7 +90,7 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
 
@@ -99,18 +109,12 @@
 <body class="font-sans antialiased bg-light">
 
     @auth
-
-
-        {{-- @if (Auth::user()->cancion == 1) --}}
-        <audio autoplay loop>
-            <source src="{{ asset('music/musicaDivertida.mp3') }}" type="audio/mpeg">
-            Tu navegador no es compatible para reproducir audio.
-        </audio>
-        {{-- @endif --}}
-        {{-- <audio src="{{ asset('music/musicaDivertida.mp3') }}" autoplay loop="true"></audio> --}}
-
-
-        <!-- Page Heading -->
+        {{--@if (Auth::user()->cancion == 1)
+            
+            <object type="text/html" id="music" data=" {{ asset('music/musicaDivertida.mp3') }} " width="1px" height="1px"></object> 
+        @endif--}}
+        {{-- <audio id="music" src="{{ asset('music/musicaDivertida.mp3') }}" autoplay loop></audio> --}}
+        <!-- Header -->
         <header>
             <div class="container">
                 {{ $header }}
@@ -123,10 +127,9 @@
 
             {{ $slot }}
 
-
         </main>
 
-        <!-- Page Heading -->
+        <!-- Footer -->
         <footer>
             <div class="container">
                 {{ $footer }}
@@ -159,6 +162,10 @@
     @livewireScripts
 
     @stack('scripts')
+    
+    {{-- <script src="{{ asset('js/sound.js') }}"></script> --}}
+    <script src="{{ asset('js/checkCheckBox.js') }}"></script>
+    <script src="{{ asset('js/eye.js') }}"></script>
 
 </body>
 

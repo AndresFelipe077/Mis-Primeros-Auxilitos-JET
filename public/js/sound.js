@@ -1,24 +1,37 @@
 $($('#check')).on('change', function () {
     if ($(this).is(':checked')) {
         $('#music').prop('muted', false)//Suena
+        $('#check').prop('checked', true)
         // ajax();
         console.log($(this).is(':checked'));
     } else {
         $('#music').prop('muted', true)//No suena
+        $(this).prop('checked', false)
         console.log($(this).is(':checked'));
     }
 });
 
+
+
+
+
+
+
+
+
+
+
+
 //se utiliza $.ajax(), a la cual se le pasa un objeto {}, con la información
-$.ajax({
-    type:"POST", // la variable type guarda el tipo de la peticion GET,POST,..
-    url:"http://mis-primeros-auxilitos-jet.com/dashboard/ajustes", //url guarda la ruta hacia donde se hace la peticion
-    data:{}, // data recive un objeto con la informacion que se enviara al servidor
-    success:function(datos){ //success es una funcion que se utiliza si el servidor retorna informacion
-         console.log(datos.promedio)
-     },
-    dataType: null // El tipo de datos esperados del servidor. Valor predeterminado: Intelligent Guess (xml, json, script, text, html).
-})
+// $.ajax({
+//     type:"POST", // la variable type guarda el tipo de la peticion GET,POST,..
+//     url:"http://mis-primeros-auxilitos-jet.com/dashboard/ajustes", //url guarda la ruta hacia donde se hace la peticion
+//     data:{}, // data recive un objeto con la informacion que se enviara al servidor
+//     success:function(datos){ //success es una funcion que se utiliza si el servidor retorna informacion
+//          console.log(datos.promedio)
+//      },
+//     dataType: null // El tipo de datos esperados del servidor. Valor predeterminado: Intelligent Guess (xml, json, script, text, html).
+// })
 
 // $(document).ready(function () {
 //     $('#check').click(function () {

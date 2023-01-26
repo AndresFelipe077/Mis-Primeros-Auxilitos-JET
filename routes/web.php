@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContenidoController;
 use App\Http\Controllers\SocialController;
+use App\Http\Livewire\Game\ShowTrivia;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
@@ -48,6 +49,13 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
     Route::post('dashboard/ajustes','storeSound')->name('storeSound');
     
+
+});
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->controller(ShowTrivia::class)->group(function(){
+
+    //Vista home de videos
+    Route::get('/dashboard/games','game')->name('dashboard.game');
 
 });
 

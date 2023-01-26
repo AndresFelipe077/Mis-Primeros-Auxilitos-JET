@@ -26,14 +26,7 @@ return new class extends Migration
             $table->string('description', 250)         -> nullable();
             $table->rememberToken();
             $table->timestamps();
-        });
-
-        // if(Auth::user()->external_auth == 'google' or Auth::user()->external_auth == 'facebook')
-        // {
-        //     'email_verified_at' = now();
-        // }
-
-        
+        });        
 
     }
 
@@ -47,3 +40,4 @@ return new class extends Migration
         Schema::dropIfExists('users');
     }
 };
+            // $table->boolean('cancion')                 -> default(1) -> nullable();

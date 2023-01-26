@@ -38,6 +38,14 @@ body{
   background-position: center;
 }
 
+#title_ajustes
+{
+  background: #30E8BF !important;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FF8235, #30E8BF) !important;  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FF8235, #30E8BF) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
 #check{
   width:40px;
   height:25px;
