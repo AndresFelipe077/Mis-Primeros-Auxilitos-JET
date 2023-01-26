@@ -1,6 +1,6 @@
 ## MIS PRIMEROS AUXILITOS
 
-Es un sistema de información, para el apoyo sobre conomientos básicos en primeros auxiliares a niños entre 5 y 12 años. Sistema soportado en Web y Móvil.
+Es un sistema de información, para el apoyo sobre conomientos básicos en primeros auxiliares a niños entre 5 y 12 años. Sistema soportado en Web y Móvil (Android Studio).
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
