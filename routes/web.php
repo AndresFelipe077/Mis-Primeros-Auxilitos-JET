@@ -45,6 +45,8 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
     //Acceder a vista ajustes
     Route::get('dashboard/ajustes','ajustes')->name('dashboard.ajustes');
+
+    Route::post('dashboard/ajustes','storeSound')->name('storeSound');
     
 
 });

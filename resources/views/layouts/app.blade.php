@@ -7,16 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title') - {{ config('app.name') }}</title>
-    
+
+    <link rel="shortcut icon" href="{{ asset('img/botiquin.png') }}" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500&display=swap" rel="stylesheet">
 
+
+    <link rel="stylesheet" href="{{ asset('css/perfil.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/registro.css') }}" />
+
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('build/assets/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/eye.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/iconPasswordReset.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/iconCalendar.css') }}">
 
-    <link rel="shortcut icon" href="{{ asset('img/botiquin.png') }}" type="image/x-icon">
 
     {{-- link de guest --}}
     <link rel="stylesheet" href="{{ asset('css/plantillaGuest.css') }}">
@@ -40,22 +47,40 @@
 
     <!-- cdn icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
+        integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
     {{-- animations css --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
     <!-- Scripts -->
     <script src="{{ asset('build/assets/app.js') }}" defer></script>
-    <!-- Optional JavaScript; choose one of the two! -->
-    
+    {{-- <script src="{{asset('js/noSeleccionar.js')}}"></script> --}}
+    <script src="{{ asset('js/checkCheckBox.js') }}"></script>
+    <script src="{{ asset('js/eye.js') }}"></script>
+
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
 
@@ -76,13 +101,13 @@
     @auth
 
 
-    {{-- @if(Auth::user()->cancion == 1) --}}
+        {{-- @if (Auth::user()->cancion == 1) --}}
         <audio autoplay loop>
-            <source src="{{ asset('music/musicaDivertida.mp3') }}" type="audio/mpeg" >
+            <source src="{{ asset('music/musicaDivertida.mp3') }}" type="audio/mpeg">
             Tu navegador no es compatible para reproducir audio.
         </audio>
-    {{-- @endif --}}
-    {{-- <audio src="{{ asset('music/musicaDivertida.mp3') }}" autoplay loop="true"></audio> --}}
+        {{-- @endif --}}
+        {{-- <audio src="{{ asset('music/musicaDivertida.mp3') }}" autoplay loop="true"></audio> --}}
 
 
         <!-- Page Heading -->
@@ -97,7 +122,7 @@
         <main class="container my-5">
 
             {{ $slot }}
-            
+
 
         </main>
 

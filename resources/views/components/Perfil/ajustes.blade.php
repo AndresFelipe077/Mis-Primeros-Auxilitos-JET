@@ -139,12 +139,15 @@
                 </a>
             </li>
             <li>
+              <form action="{{route('storeSound')}}">
+                @csrf
                 <div class="switch">
                     <div class="form-check form-switch">
-                        <input type="checkbox" class="form-check-input" id="check"  value="1" checked>
+                        <input type="checkbox" class="form-check-input" name="cancion" id="check" value="1" checked>
                         <h3 class="sonido">Sonido</h3>
                     </div>
                 </div>
+              </form>
             </li>
             <li>
                 <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
@@ -178,6 +181,9 @@
     <script src="https://code.jquery.com/jquery-3.6.3.slim.js"
         integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+        
     <!--Script-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 
