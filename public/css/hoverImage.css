@@ -1,0 +1,69 @@
+.contenedor:hover .imagen {
+    -webkit-transform: scale(1.1) !important;
+    transform: scale(1.3);
+    transition: all 400ms ease-out;
+    will-change: transform;
+}
+
+.contenedor {
+    overflow: hidden;
+    transition: all 400ms ease-out;
+    will-change: transform;
+}
+
+
+#effect-hover .img {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    margin: 20px auto;
+    position: relative;
+}
+
+#effect-hover #efecto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    background-color: rgba(190, 180, 9, 0.8);
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+#effect-hover .img:hover #efecto {
+    opacity: 1;
+}
+
+#effect-hover h2 {
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 30px;
+    transition-duration: 2s;
+    margin: 0px;
+}
+
+#effect-hover .img:hover h2 {
+    top: 50px;
+}
+
+#effect-hover p {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 30px;
+    transition-duration: 2s;
+    margin: 0px;
+}
+
+#effect-hover .img:hover p {
+    bottom: 50px;
+}
