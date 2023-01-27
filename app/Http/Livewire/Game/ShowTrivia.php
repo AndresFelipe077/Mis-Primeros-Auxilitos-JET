@@ -14,7 +14,7 @@ class ShowTrivia extends Component
     }
 
     public function triviaShow(){
-        return view('mision_vision');
+        return view('games.show-trivia');
     }
 
     public function render()

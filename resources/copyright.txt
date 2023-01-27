@@ -11,8 +11,11 @@ Mision
 Vision
 <a href="https://www.flaticon.es/iconos-gratis/observacion" title="observación iconos">Observación iconos creados por Eucalyp - Flaticon</a>
 
+Trivia
+<a href="https://www.flaticon.com/free-icons/quiz" title="quiz icons">Quiz icons created by Smashicons - Flaticon</a>
 
-
+Adivinanza
+<a href="https://www.flaticon.es/iconos-gratis/adivinar" title="adivinar iconos">Adivinar iconos creados por Flat Icons - Flaticon</a>
 
 
 

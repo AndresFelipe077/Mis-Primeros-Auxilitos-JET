@@ -117,4 +117,15 @@
         </div>
 
     </div>
+
+
+    <div class="">
+        <ul class="pagination pagination-lg">
+            <li class="page-item active mb-5" aria-current="page">
+                <span class="page-link bg-light h4">1 2 3</span>
+            </li>
+        </ul>
+    </div>
+
+
 </div>
