@@ -10,7 +10,11 @@ class ShowTrivia extends Component
     //Vista home de videos
     public function game()
     {
-        return view('games.show-trivia');
+        return view('games.games');
+    }
+
+    public function triviaShow(){
+        return view('mision_vision');
     }
 
     public function render()

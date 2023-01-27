@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContenidoController;
 use App\Http\Controllers\SocialController;
+use App\Http\Livewire\Game\ShowAdivinar;
 use App\Http\Livewire\Game\ShowTrivia;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -47,9 +48,6 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     //Acceder a vista ajustes
     Route::get('dashboard/ajustes','ajustes')->name('dashboard.ajustes');
 
-    Route::post('dashboard/ajustes','storeSound')->name('storeSound');
-    
-
 });
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->controller(ShowTrivia::class)->group(function(){
@@ -57,7 +55,17 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     //Vista home de videos
     Route::get('/dashboard/games','game')->name('dashboard.game');
 
+    Route::get('/dashboard/games/trivia','triviaShow')->name('dashboard.trivia');
+
+
 });
+
+// Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->controller(ShowAdivinar::class)->group(function(){
+
+//     //Vista home de videos
+//     //Route::get('/dashboard/games','game')->name('dashboard.game');
+
+// });
 
 //Crear usuarios con redes sociales
 Route::get('/login-facebook', [SocialController::class, 'redirectFacebook'])->name('facebook');

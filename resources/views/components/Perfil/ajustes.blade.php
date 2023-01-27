@@ -114,6 +114,12 @@
                       </div> --}}
                   </li>
                   <li>
+                    <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
+                        <i class="bi bi-check2-circle h3"></i>
+                        <h3>Misión y visión</h3>
+                    </a>
+                </li>
+                  <li>
                       <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
                           <img src="/img/ayuda.jpeg" alt="" width="20" height="20">
                           <h3>Ayuda</h3>

@@ -1,4 +1,4 @@
-@section('title', 'Crear Trivia')
+@section('title', 'Trivias')
 <div>
 
     <div class="container" >
@@ -19,7 +19,6 @@
                     </div>
                 </div>
             </div>
-
 
             <div class="col-12 col-md-6 mt-5 col-lg-4">
                 <div class="card m-3 text-center rounded animate__animated animate__swing rounded">
@@ -118,3 +117,4 @@
         </div>
 
     </div>
+</div>
