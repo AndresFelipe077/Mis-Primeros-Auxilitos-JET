@@ -12,11 +12,14 @@
             <div class="col-sm-6 mt-5">
                 <div class="card m-4 text-center">
                     <div class=" card-body shadow ">
+                        <div class="h4">Trivias</div>
                         <div class="contenedor rounded">
-                            <img class="imagen rounded img-fluid mx-auto d-block" src="{{asset('img/icons/trivia_icon.png')}}" alt="Image of mision"
-                                width="250px" height="250px">
+                            <a href="{{ route('triviaShow') }}" class="btn mt-2">
+                                <img class="imagen rounded img-fluid mx-auto d-block"
+                                    src="{{ asset('img/icons/trivia_icon.png') }}" alt="Image of mision" width="250px"
+                                    height="250px">
+                            </a>
                         </div>
-                        <a href="{{route('dashboard.trivia')}}" class="btn btn-primary mt-2">Trivias</a>
                     </div>
                 </div>
             </div>
@@ -24,11 +27,14 @@
             <div class="col-sm-6 mt-5">
                 <div class="card m-4 text-center">
                     <div class=" card-body shadow ">
+                        <div class="h4">Adivinanzas</div>
                         <div class="contenedor rounded">
-                            <img class="imagen rounded img-fluid mx-auto d-block" src="{{asset('img/icons/adivinanza_icon.png')}}" alt="Image of vision"
-                                width="250px" height="250px">
+                            <a href="#" class="btn mt-2">
+                                <img class="imagen rounded img-fluid mx-auto d-block"
+                                    src="{{ asset('img/icons/adivinanza_icon.png') }}" alt="Image of vision"
+                                    width="250px" height="250px">
+                            </a>
                         </div>
-                        <a href="#" class="btn btn-primary mt-2">Adivinanza</a>
                     </div>
                 </div>
             </div>

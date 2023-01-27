@@ -6,8 +6,6 @@ use App\Http\Controllers\SocialController;
 use App\Http\Livewire\Game\ShowAdivinar;
 use App\Http\Livewire\Game\ShowTrivia;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +26,9 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+
+
 });
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->controller(ContenidoController::class)->group(function(){
@@ -52,10 +53,12 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->controller(ShowTrivia::class)->group(function(){
 
-    //Vista home de videos
+    //Vista juegos
     Route::get('/dashboard/games','game')->name('dashboard.game');
 
-    Route::get('/dashboard/games/trivia','triviaShow')->name('dashboard.trivia');
+    Route::get('/dashboard/games/trivia','triviaShow')->name('triviaShow');//Vista trivia
+
+    Route::get('/dashboard/games/trivia/create','triviaCreate')->name('triviaCreate');
 
 
 });

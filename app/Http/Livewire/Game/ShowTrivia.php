@@ -14,7 +14,11 @@ class ShowTrivia extends Component
     }
 
     public function triviaShow(){
-        return view('games.show-trivia');
+        return view('livewire.game.show-trivia');
+    }
+
+    public function triviaCreate(){
+        return view('livewire.game.create-trivia');
     }
 
     public function render()

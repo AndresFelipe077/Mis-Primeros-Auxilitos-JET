@@ -1,3 +1,18 @@
 <div>
-    {{-- Nothing in the world is as soft and yielding as water. --}}
+    <link id="image-head" rel="shortcut icon" href="{{ asset('img/menu/challengue2.png') }}" type="image/x-icon">
+    <x-app-layout>
+
+        @section('title', 'Crear Adivinanza')
+
+        <x-slot name="header">
+            <x-header />
+        </x-slot>
+
+        <h1>CREAR ADIVINANZA</h1>
+
+        <x-slot name="footer">
+            <x-footer />
+        </x-slot>
+
+    </x-app-layout>
 </div>
