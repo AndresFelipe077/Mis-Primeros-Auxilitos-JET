@@ -36,6 +36,9 @@
 
     <!--estilos-->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/hoverImage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     {{-- Fuente --}}
@@ -76,10 +79,6 @@
     <script src="{{ asset('build/assets/app.js') }}" defer></script>
     {{-- <script src="{{asset('js/noSeleccionar.js')}}"></script> --}}
 
-
-
-
-
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
@@ -109,10 +108,10 @@
 <body class="font-sans antialiased bg-light">
 
     @auth
-        {{--@if (Auth::user()->cancion == 1)
+        {{-- @if (Auth::user()->cancion == 1)
             
             <object type="text/html" id="music" data=" {{ asset('music/musicaDivertida.mp3') }} " width="1px" height="1px"></object> 
-        @endif--}}
+        @endif --}}
         {{-- <audio id="music" src="{{ asset('music/musicaDivertida.mp3') }}" autoplay loop></audio> --}}
         <!-- Header -->
         <header>
@@ -162,7 +161,7 @@
     @livewireScripts
 
     @stack('scripts')
-    
+
     {{-- <script src="{{ asset('js/sound.js') }}"></script> --}}
     <script src="{{ asset('js/checkCheckBox.js') }}"></script>
     <script src="{{ asset('js/eye.js') }}"></script>

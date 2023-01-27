@@ -67,6 +67,18 @@ body{
     top: 0;
     
 }
+.contenedor:hover .imagen {
+    -webkit-transform: scale(1.1) !important;
+    transform: scale(1.3);
+    transition: all 400ms ease-out;
+    will-change: transform;
+}
+
+.contenedor {
+    overflow: hidden;
+    transition: all 400ms ease-out;
+    will-change: transform;
+}
 
 @keyframes animacionDivTitle {
 
@@ -113,7 +125,7 @@ body{
 /* Style the navigation menu */
 .navbar1 {
     width: 100%;
-    background-color: #555;
+    background-color: white;
     bottom: 0;
     left: 0;
     position: fixed;

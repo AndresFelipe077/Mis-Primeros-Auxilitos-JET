@@ -2,7 +2,9 @@
 {
     display: flex;
     align-items: center;
+    background:#9FD5D1 !important;
 }
+
 
 #iconsvg
 {

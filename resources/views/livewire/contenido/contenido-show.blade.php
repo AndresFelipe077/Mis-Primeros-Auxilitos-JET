@@ -1,6 +1,6 @@
 @section('title', 'Crear Contenido')
 <div>
-        
+
     <div class="gallery">
         {{-- Cuando se borra algun contenido --}}
         @if (session('eliminar') == 'ok')
@@ -36,18 +36,17 @@
         @foreach ($contenidos as $contenido)
             <div class="col mb-4 animate__animated animate__wobble">
 
-                <div class="card shadow border-dark text-bg-info">
+                <div class="card shadow border-dark text-bg-white">
                     <div class="card-header">
                         {{ $contenido->title }}
                     </div>
                     <div class="card-body ">
-                        <div class="inner">
-                            <img class="card-img-top rounded-3" src="{{ asset($contenido->url) }}" alt=""
-                                width="200px" height="200px">
+                        <div class="contenedor inner rounded">
+                            <img class="imagen card-img-top rounded " src="{{ asset($contenido->url) }}"
+                                alt="Images Mis Primeros Auxilitos" width="250px" height="250px">
                         </div>
-                        {{-- <p class="text-danger">{{auth()->user()->name}}</p> --}}
                         <p><strong>Autor: </strong> {{ $contenido->autor }}</p>
-                           
+
                         <p class="card-text">
                             {{ $contenido->description }}
                         </p>
@@ -55,20 +54,14 @@
                         @if (Auth::user()->id == $contenido->user_id)
                             <a href="{{ route('contenido.edit', $contenido) }}" class="btn btn-primary">Editar</a>
                         @endif
-
-
-
                     </div>
 
                 </div>
 
             </div>
         @endforeach
-
-
     </div>
 
-    
 
     <div class="">
         <ul class="pagination pagination-lg">
@@ -77,9 +70,5 @@
             </li>
         </ul>
     </div>
-
-
-
-    <!--estilos-->
-    <link rel="stylesheet" href="{{ asset('css/index-home.css') }}">
+<link rel="stylesheet" href="{{ asset('css/index-home.css') }}">
 </div>
