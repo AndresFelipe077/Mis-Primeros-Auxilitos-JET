@@ -186,6 +186,8 @@
     {{-- <script src="{{ asset('js/sound.js') }}"></script> --}}
     <script src="{{ asset('js/checkCheckBox.js') }}"></script>
     <script src="{{ asset('js/eye.js') }}"></script>
+    <script src="{{ asset('js/toast-delete.js') }}"></script>
+    <script src="{{ asset('js/imageview.js') }}"></script>
 
 </body>
 

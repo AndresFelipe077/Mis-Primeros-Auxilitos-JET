@@ -17,10 +17,29 @@ Trivia
 Adivinanza
 <a href="https://www.flaticon.es/iconos-gratis/adivinar" title="adivinar iconos">Adivinar iconos creados por Flat Icons - Flaticon</a>
 
+nino
+<a href="https://www.flaticon.es/iconos-gratis/ninos" title="niños iconos">Niños iconos creados por Freepik - Flaticon</a>
+
+
+nina
+<a href="https://www.flaticon.es/iconos-gratis/nina" title="niña iconos">Niña iconos creados por Smashicons - Flaticon</a>
+
+mano
+<a href="https://www.flaticon.es/iconos-gratis/jardin-de-infancia" title="jardín de infancia iconos">Jardín de infancia iconos creados por Freepik - Flaticon</a>
+
+Subir
+<a href="https://www.flaticon.es/iconos-gratis/imagen" title="imagen iconos">Imagen iconos creados por mim_studio - Flaticon</a>
+
+pintura
+<a href="https://www.flaticon.es/stickers-gratis/arte" title="arte stickers">Arte stickers creadas por Stickers - Flaticon</a>
 
 
 
 
+GIFS
+
+pizarra
+<a href="https://www.flaticon.es/iconos-animados-gratis/colegio" title="colegio iconos animados">Colegio iconos animados creados por Freepik - Flaticon</a>
 
 
 

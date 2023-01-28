@@ -7,8 +7,8 @@ $('.formulario-eliminar-contenido').submit(function(e){
     text: "¡El contenido se eliminará definitamente 😥!",
     icon: 'warning',
     showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
+    confirmButtonColor: '#d33',
+    cancelButtonColor: '#3085d6',
     confirmButtonText: 'Sí, eliminar 😰',
     cancelButtonText: 'Cancelar 😃',
   }).then((result) => {
