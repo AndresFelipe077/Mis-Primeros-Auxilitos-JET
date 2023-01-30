@@ -6,12 +6,12 @@
                     height="50px"></a>
             <div id="iconsvg" class="d-flex position-absolute ">
 
-                <a class="rounded-circle" href="{{ route('admin') }}">
+                <a class="rounded-circle bg-transparent" href="{{ route('admin') }}">
                     <img src="{{ asset('img/admin/admin.png') }}" alt="Admin" width="50px" height="50px">
                 </a>
 
 
-                <a class="rounded-circle" href="{{ route('dashboard.create') }}">
+                <a class="rounded-circle bg-transparent" href="{{ route('dashboard.create') }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                         class="bi bi-plus-circle-fill text-light" viewBox="0 0 16 16">
                         <path
@@ -20,7 +20,7 @@
                 </a>
 
 
-                <button wire:key="{{ Auth::user()->id }}" class="btn success rounded-circle"
+                <button wire:key="{{ Auth::user()->id }}" class="btn success rounded-circle bg-transparent"
                     onclick="location.href='{{ route('profile.show') }}'">
                     @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                         @if (Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook')

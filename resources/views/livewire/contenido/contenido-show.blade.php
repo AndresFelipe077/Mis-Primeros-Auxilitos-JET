@@ -58,7 +58,9 @@
                             </p>
 
                             @if (Auth::user()->id == $contenido->user_id)
-                                <a href="{{ route('contenido.edit', $contenido) }}" class="btn btn-primary">Editar</a>
+                                {{-- <a href="{{ route('contenido.edit', $contenido) }}" class="btn btn-primary">Editar</a> --}}
+                                <a class="btn bg-transparent" href="{{ route('contenido.edit', $contenido) }}"><img
+                                    src="{{ asset('/img/icons/lapiz-editar.png') }}" width="50px" height="50px" alt="Editar"></a>
                             @endif
                         </div>
 

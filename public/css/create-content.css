@@ -50,41 +50,14 @@ label{
 }
 
 
-.form-control-file {
-    position: relative;
-    display: inline-block;
-    cursor: pointer !important;
-}
-  
-.form-control-file::before {
-    background-color: #5678EF;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    content: 'Seleccionar imagen';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    cursor: pointer !important;
-}
-  
-.form-control-file input[type="file"] {
-    opacity: 0;
-    height: 32px;
-    display: inline-block;
-    cursor: pointer !important;
-}
-
-
 .subir{
     padding: 5px 10px !important;
-    background: #f55d3e !important;
+    background: #5678EF !important;
     color:#fff !important; 
     border:0px solid #fff !important;
+    border-radius: 10px;
+    width: 50%;
+    cursor: pointer !important;
 }
  
 .subir:hover{
@@ -98,7 +71,7 @@ label{
 
 #image{
     animation-name:animacionDivTitle !important;
-    animation-duration:infinite !important;
+    animation-duration:4s !important;
 }
 
 

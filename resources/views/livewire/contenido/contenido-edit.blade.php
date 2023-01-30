@@ -8,16 +8,15 @@
             {{-- <x-header /> --}}
         </x-slot>
 
-        <h1 id="title-h1" class="text-center animate__animated animate__swing rounded">Vista crear videos</h1>
-        <a href="{{ route('dashboard.index') }}"><img
-                src="{{ asset('/img/icons/regresar.png') }}"id="a-regresar-perfil"></a>
-
 
         <div class="container text-center mx-auto animate__animated animate__swing rounded">
+            <h1 id="title-h1" class="text-center animate__animated animate__swing rounded">Vista crear videos</h1>
+
             <div class="row">
 
                 <div class="col-sm-2 text-center">
-                    <img src="{{asset('img/icons/nino.png')}}" id="image" alt="Imagen" class="mt-5 m-3 mx-auto" width="150px" height="150px">
+                    <img src="{{ asset('img/icons/nina.png') }}" id="image" alt="Imagen" class="mt-5 m-3 mx-auto"
+                        width="150px" height="150px">
                 </div>
 
                 <div class="col-sm-8">
@@ -46,9 +45,10 @@
                                         width="150px" height="150px">
                                 </div>
 
-                                <input type="file" name="file" {{ asset($contenido->url) }}
-                                    class="form-control-file mx-auto text-center" id="inputfile" accept="image/*"
-                                    onchange="previewImage(event, '#imgPreview')">
+                                <label for="file-upload" class="subir">
+                                    <i class="bi bi-cloud-upload-fill h5"></i> Subir imagen
+                                </label>
+                                <input type="file" name="file" class="form-control-file mx-auto text-center d-none" id="file-upload" onchange="previewImage(event, '#imgPreview')" accept="image/*" />
 
                                 @error('file')
                                     <br>
@@ -81,22 +81,41 @@
                                     <br>
                                 @enderror
                             </div>
-                            <button type="submit" class="btn btn-primary mt-2 m-3">Subir</button>
+                            <button type="submit" class="btn bg-transparent"><img
+                                    src="{{ asset('/img/icons/subir2.png') }}" width="60px" height="60px"></button>
+
                         </form>
 
                         <div>
-                            <form method="POST" class="formulario-eliminar-contenido"
-                                action="{{ route('contenido.destroy', $contenido) }}">
-                                @csrf
-                                @method('delete')
-                                <button class="btn btn-danger rounded mb-3">Borrar contenido</button>
-                            </form>
+                            <div class="row">
+
+                                <div class="col-sm-6">
+                                    <a class="btn bg-transparent" href="{{ route('dashboard.index') }}"><img
+                                            src="{{ asset('/img/icons/regresar.png') }}"></a>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <form method="POST" class="formulario-eliminar-contenido"
+                                        action="{{ route('contenido.destroy', $contenido) }}">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn bg-transparent">
+                                            <img class="mt-2" src="{{ asset('/img/icons/borrar.png') }}"
+                                                width="50px" height="50px">
+                                        </button>
+                                    </form>
+                                </div>
+
+
+                            </div>
+
                         </div>
                     </div>
                 </div>
 
                 <div class="col-sm-2 text-center">
-                  <img src="{{asset('img/icons/nina.png')}}" id="image" alt="Imagen" class="mt-5 m-3 mx-auto" width="150px" height="150px">
+                    <img src="{{ asset('img/icons/nino.png') }}" id="image" alt="Imagen" class="mt-5 m-3 mx-auto"
+                        width="150px" height="150px">
                 </div>
 
             </div>
@@ -104,15 +123,11 @@
 
 
 
+            <x-slot name="footer">
+            </x-slot>
+
+            <link rel="stylesheet" href="{{ asset('css/create-content.css') }}">
 
 
         </div>
-
-        <x-slot name="footer">
-        </x-slot>
-
-        <link rel="stylesheet" href="{{ asset('css/create-content.css') }}">
-
-
-    </div>
 </x-app-layout>

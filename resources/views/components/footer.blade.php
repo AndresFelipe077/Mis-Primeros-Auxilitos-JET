@@ -10,10 +10,6 @@
                     onclick="location.href='{{ route('dashboard.game') }}'">
             </div>
 
-            {{-- <div class="hijos-navbar">
-                <img src="{{ asset('img/menu/microphone2.png') }}" onclick="location.href=''">
-            </div> --}}
-
             <div class="hijos-navbar">
                 <img type="button" src="{{ asset('img/menu/microphone2.png') }}"
                     data-bs-toggle="modal" data-bs-target="#exampleModal">

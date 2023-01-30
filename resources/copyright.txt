@@ -33,6 +33,41 @@ Subir
 pintura
 <a href="https://www.flaticon.es/stickers-gratis/arte" title="arte stickers">Arte stickers creadas por Stickers - Flaticon</a>
 
+Subir2
+<a href="https://www.flaticon.es/iconos-gratis/subir-archivo" title="subir archivo iconos">Subir archivo iconos creados por Karacis - Flaticon</a>
+
+
+Cancelar
+<a href="https://www.flaticon.es/iconos-gratis/lista-negra" title="lista negra iconos">Lista negra iconos creados por SumberRejeki - Flaticon</a>>
+
+Cancelar2
+<a href="https://www.flaticon.es/iconos-gratis/negar" title="negar iconos">Negar iconos creados por Freepik - Flaticon</a>
+
+
+Borrar usuario
+<a href="https://www.flaticon.es/iconos-gratis/borrar-usuario" title="borrar usuario iconos">Borrar usuario iconos creados por Pixelmeetup - Flaticon</a>
+
+Borrar
+<a href="https://www.flaticon.es/iconos-gratis/eliminar" title="eliminar iconos">Eliminar iconos creados por Rizki Ahmad Fauzi - Flaticon</a>
+
+
+Editar
+<a href="https://www.flaticon.es/iconos-gratis/boton-editar" title="botón editar iconos">Botón editar iconos creados por Rizki Ahmad Fauzi - Flaticon</a>
+
+Lapiz editar
+<a href="https://www.flaticon.es/iconos-gratis/lapiz" title="lápiz iconos">Lápiz iconos creados por Vitaly Gorbachev - Flaticon</a>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -40,6 +75,13 @@ GIFS
 
 pizarra
 <a href="https://www.flaticon.es/iconos-animados-gratis/colegio" title="colegio iconos animados">Colegio iconos animados creados por Freepik - Flaticon</a>
+
+
+
+
+
+
+
 
 
 

@@ -14,19 +14,19 @@ return new class extends Migration
     public function up()
     {
         Schema::create('contenidos', function (Blueprint $table) {
+
             $table->id();
             $table->string('title',50);
             $table->string('url');
             $table->string('autor');
             $table->string('description',200);
-            $table->foreignId('user_id')
-                ->nullable()
-                ->cascadeOnUpdate('set null')
-                ->cascadeOnDelete('set null')
-                ->nullOnDelete('set null')
-                ->constrained('users');
+            $table->foreignId('user_id')->nullable()
+                ->constrained('users')
+                ->cascadeOnUpdate()
+                ->nullOnDelete(); 
             
             $table->timestamps();
+            
         });
     }
 
@@ -37,6 +37,9 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::table('contenidos', function (Blueprint $table) {
+            $table->dropForeign('user_id');
+        });
         Schema::dropIfExists('contenidos');
     }
 };
