@@ -6,15 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\Controller;
-use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
-use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
-use Laravel\Fortify\Actions\AttemptToAuthenticate;
-use Laravel\Fortify\Actions\EnsureLoginIsNotThrottled;
-use Laravel\Fortify\Actions\PrepareAuthenticatedSession;
-use Laravel\Fortify\Fortify;
-use Illuminate\Routing\Pipeline;
-use Laravel\Fortify\Features;
-use Laravel\Fortify\Http\Requests\LoginRequest;
+use PragmaRX\Google2FA\Google2FA;
 
 class SocialController extends Controller
 {
@@ -30,18 +22,10 @@ class SocialController extends Controller
         $user = Socialite::driver('google')->user();
 
         $userExists = User::where('external_id', $user->id)->where('external_auth', 'google')->first();
-        
-        if ($userExists) {
-           
-            // if(Features::enabled(Features::twoFactorAuthentication())){
-            //     return redirect('/two-factor-challenge');
-            // }
-            
-            Auth::login($userExists);
-            return redirect('/two-factor-challenge');
 
-            
-            
+        if ($userExists) {
+            Auth::login($userExists);
+            return redirect('/dashboard');
         } else {
             $userNew = User::create([ //http://mis-primeros-auxilitos-jet.com/google-callback Redireccionamiento Page Google
                 'external_id'        => $user->id,

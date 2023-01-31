@@ -62,7 +62,7 @@
                             </div>
 
 
-                            <div class="form-group m-1">
+                            {{-- <div class="form-group m-1">
                                 <label for="">Autor</label>
                                 <input type="text" name="autor" class="form-control" id=""
                                     aria-describedby="" value="{{ old('autor') }}">
@@ -71,7 +71,7 @@
                                     <small class="text-danger">{{ $message }}</small>
                                     <br>
                                 @enderror
-                            </div>
+                            </div> --}}
                             <div class="form-group m-1">
                                 <label for="">Descripción</label>
                                 <input type="text" name="description" class="form-control" id=""

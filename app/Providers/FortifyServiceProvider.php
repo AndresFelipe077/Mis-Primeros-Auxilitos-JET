@@ -10,15 +10,13 @@ use App\Models\User;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Fortify\Fortify;
+use Illuminate\Http\Request;
 use Laravel\Fortify\Actions\AttemptToAuthenticate;
-use Laravel\Fortify\Actions\EnsureLoginIsNotThrottled;
+use Laravel\Fortify\Actions\DisableTwoFactorAuthentication;
 use Laravel\Fortify\Actions\PrepareAuthenticatedSession;
 use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
 use Laravel\Fortify\Features;
-use Laravel\Fortify\Fortify;
-use Illuminate\Http\Request;
-
-
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -58,24 +56,6 @@ class FortifyServiceProvider extends ServiceProvider
         });
 
         Fortify::twoFactorChallengeView(function (Request $request) {
-            // Fortify almacena la ID de usuario en la sesión antes de redirigir al desafío 2FA, por lo que ningún usuario
-            // realmente ha iniciado sesión en este punto (por lo que $request->user() es nulo).
-            $user = User::find($request->session()->get('login.id'));
-        
-            if (! $user) {
-                return redirect()
-                    ->route('login')
-                    ->withErrors(['email' => __('auth.failed')]);
-            }
-        
-            if (! $user->two_factor_confirmed) {
-                app(DisableTwoFactorAuthentication::class)($user);
-        
-                return redirect()
-                    ->route('login')
-                    ->withErrors(__('auth.2fa_not_completed'));
-            }
-        
             return view('auth.two-factor-challenge');
         });
 

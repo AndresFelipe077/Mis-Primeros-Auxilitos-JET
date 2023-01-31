@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9f42e209164708cdadf375c9e9bba547",
+    "content-hash": "d1d83cc356cae612239d842e79a6b32a",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -4480,6 +4480,149 @@
                 "source": "https://github.com/antonioribeiro/google2fa/tree/v8.0.1"
             },
             "time": "2022-06-13T21:57:56+00:00"
+        },
+        {
+            "name": "pragmarx/google2fa-laravel",
+            "version": "v2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/antonioribeiro/google2fa-laravel.git",
+                "reference": "d8243b8f812472f1112716c5462157e0ec128fce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/antonioribeiro/google2fa-laravel/zipball/d8243b8f812472f1112716c5462157e0ec128fce",
+                "reference": "d8243b8f812472f1112716c5462157e0ec128fce",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": ">=5.4.36|^8.0|^9.0",
+                "php": ">=7.0",
+                "pragmarx/google2fa-qrcode": "^1.0|^2.0|^3.0"
+            },
+            "require-dev": {
+                "bacon/bacon-qr-code": "^2.0",
+                "orchestra/testbench": "3.4.*|3.5.*|3.6.*|3.7.*|4.*|5.*|6.*",
+                "phpunit/phpunit": "~5|~6|~7|~8|~9"
+            },
+            "suggest": {
+                "bacon/bacon-qr-code": "Required to generate inline QR Codes.",
+                "pragmarx/recovery": "Generate recovery codes."
+            },
+            "type": "library",
+            "extra": {
+                "component": "package",
+                "frameworks": [
+                    "Laravel"
+                ],
+                "branch-alias": {
+                    "dev-master": "0.2-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "PragmaRX\\Google2FALaravel\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "Google2FA": "PragmaRX\\Google2FALaravel\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PragmaRX\\Google2FALaravel\\": "src/",
+                    "PragmaRX\\Google2FALaravel\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Antonio Carlos Ribeiro",
+                    "email": "acr@antoniocarlosribeiro.com",
+                    "role": "Creator & Designer"
+                }
+            ],
+            "description": "A One Time Password Authentication package, compatible with Google Authenticator.",
+            "keywords": [
+                "Authentication",
+                "Two Factor Authentication",
+                "google2fa",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/antonioribeiro/google2fa-laravel/issues",
+                "source": "https://github.com/antonioribeiro/google2fa-laravel/tree/v2.0.2"
+            },
+            "time": "2022-03-08T18:03:04+00:00"
+        },
+        {
+            "name": "pragmarx/google2fa-qrcode",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/antonioribeiro/google2fa-qrcode.git",
+                "reference": "ce4d8a729b6c93741c607cfb2217acfffb5bf76b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/antonioribeiro/google2fa-qrcode/zipball/ce4d8a729b6c93741c607cfb2217acfffb5bf76b",
+                "reference": "ce4d8a729b6c93741c607cfb2217acfffb5bf76b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1",
+                "pragmarx/google2fa": ">=4.0"
+            },
+            "require-dev": {
+                "bacon/bacon-qr-code": "^2.0",
+                "chillerlan/php-qrcode": "^1.0|^2.0|^3.0|^4.0",
+                "khanamiryan/qrcode-detector-decoder": "^1.0",
+                "phpunit/phpunit": "~4|~5|~6|~7|~8|~9"
+            },
+            "suggest": {
+                "bacon/bacon-qr-code": "For QR Code generation, requires imagick",
+                "chillerlan/php-qrcode": "For QR Code generation"
+            },
+            "type": "library",
+            "extra": {
+                "component": "package",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PragmaRX\\Google2FAQRCode\\": "src/",
+                    "PragmaRX\\Google2FAQRCode\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Antonio Carlos Ribeiro",
+                    "email": "acr@antoniocarlosribeiro.com",
+                    "role": "Creator & Designer"
+                }
+            ],
+            "description": "QR Code package for Google2FA",
+            "keywords": [
+                "2fa",
+                "Authentication",
+                "Two Factor Authentication",
+                "google2fa",
+                "qr code",
+                "qrcode"
+            ],
+            "support": {
+                "issues": "https://github.com/antonioribeiro/google2fa-qrcode/issues",
+                "source": "https://github.com/antonioribeiro/google2fa-qrcode/tree/v3.0.0"
+            },
+            "time": "2021-08-15T12:53:48+00:00"
         },
         {
             "name": "psr/cache",

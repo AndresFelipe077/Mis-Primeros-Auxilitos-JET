@@ -18,6 +18,7 @@ class UpdateUsersTable extends Migration//return new class extends Migration
             $table -> string('external_id')    -> nullable();
             $table -> string('external_auth')  -> nullable();
             $table -> string('password')       -> nullable() -> change();
+            // $table -> text ('socialite2fa_secret')->nullable();
         });
     }
 

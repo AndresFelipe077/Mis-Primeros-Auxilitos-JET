@@ -57,8 +57,8 @@ class ContenidoController extends Controller
         $request->validate([
             'title'        => 'required|max:50',
             'file'         => 'required|image',
-            'autor'        => 'required|max:25',
-            'description'  => 'required'
+            'autor'        => 'string|max:25',
+            'description'  => 'required|max:250',
         ]);
 
         $nombre = Str::random(10) . $request->file('file')->getClientOriginalName();
@@ -72,11 +72,13 @@ class ContenidoController extends Controller
             ->save($ruta);
 
         $userId = Auth::user()->id;//Se obtiene id del Usuario Autenticado
+        $name = Auth::user()->name;//Se obtiene id del Usuario Autenticado
+
 
         Contenido::create([
             'title'       => $request->title,
             'url'         => '/storage/images/' . $nombre,
-            'autor'       => $request->autor,
+            'autor'       => $name,
             'description' => $request->description,
             'user_id'     => $userId,
                      
@@ -101,8 +103,8 @@ class ContenidoController extends Controller
         $request -> validate([
             'title'        => 'required|max:50',
             'file'         => 'required|image',
-            'autor'        => 'required|max:25',
-            'description'  => 'required'
+            'autor'        => 'string|max:25',
+            'description'  => 'required|max:250',
         ]);
         
         $nombre = Str::random(10) . $request->file('file')->getClientOriginalName();
@@ -116,10 +118,12 @@ class ContenidoController extends Controller
                 $constraint->aspectRatio();
             })
             ->save($ruta);
+        
+        $name = Auth::user()->name;
 
         $contenido->title       = $request->title;
         $contenido->url         = '/storage/images/' .$nombre;
-        $contenido->autor       = $request->autor;
+        $contenido->autor       = $name;
         $contenido->description = $request->description;
         
         $contenido->save();

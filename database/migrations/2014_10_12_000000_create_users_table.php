@@ -40,4 +40,4 @@ return new class extends Migration
         Schema::dropIfExists('users');
     }
 };
-            // $table->boolean('cancion')                 -> default(1) -> nullable();
+// $table->boolean('cancion') -> default(1) -> nullable();

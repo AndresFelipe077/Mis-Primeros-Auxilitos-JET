@@ -8,6 +8,7 @@ use App\Http\Livewire\Game\ShowTrivia;
 use App\Models\User;
 use Laravel\Fortify\Features;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
+use Laravel\Fortify\Http\Controllers\TwoFactorAuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,11 +68,11 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/dashboard/games/trivia/create', 'triviaCreate')->name('triviaCreate');
 });
 
-if (Features::enabled(Features::twoFactorAuthentication())) {
-Route::get('/two-factor-challenge', [TwoFactorAuthenticatedSessionController::class, 'create'])
-    ->middleware(['guest:' . config('fortify.guard')])
-    ->name('two-factor.login');
-}
+// if (Features::enabled(Features::twoFactorAuthentication())) {
+// Route::get('/two-factor-challenge', [TwoFactorAuthenticatedSessionController::class, 'create'])
+//     ->middleware(['guest:' . config('fortify.guard')])
+//     ->name('two-factor.login');
+// }
 // Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->controller(ShowAdivinar::class)->group(function(){
 
 //     //Vista home de videos
