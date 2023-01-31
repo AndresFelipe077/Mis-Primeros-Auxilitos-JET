@@ -105,10 +105,11 @@
                                     @livewire('profile.delete-user-form')
                                 @endif
 
+
                                 <!-- Authentication -->
                                 <a class="btn btn-outline-danger mt-3" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
-        document.getElementById('logout-form').submit();">
+                                document.getElementById('logout-form').submit();">
                                     <img src="{{ asset('img/profile/salida.png') }}" alt="" width="40px"
                                         height="40px">
                                 </a>
@@ -116,8 +117,8 @@
                                     @csrf
                                 </form>
 
-
                             </div>
+
                         </div>
                         <div class="card mb-4 mb-lg-0">
                             <h4 class="card card-title">Descripción</h4>
@@ -248,7 +249,7 @@
 
         @livewire('profile.logout-other-browser-sessions-form')
     --}}
-    
+
 
     <x-slot name="footer">
     </x-slot>

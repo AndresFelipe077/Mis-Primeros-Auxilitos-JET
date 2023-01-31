@@ -56,8 +56,8 @@ class ContenidoController extends Controller
 
         $request->validate([
             'title'        => 'required|max:50',
-            'file'         => 'required|image',
-            'autor'        => 'string|max:25',
+            'file'         => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'autor'        => 'string',
             'description'  => 'required|max:250',
         ]);
 
@@ -102,8 +102,8 @@ class ContenidoController extends Controller
     {
         $request -> validate([
             'title'        => 'required|max:50',
-            'file'         => 'required|image',
-            'autor'        => 'string|max:25',
+            'file'         => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'autor'        => 'string',
             'description'  => 'required|max:250',
         ]);
         

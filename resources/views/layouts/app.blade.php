@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/hoverImage.css') }}">
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/modal.css') }}"> --}}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -125,11 +126,11 @@
         <main class="container my-5">
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="microphone" tabindex="-1" aria-labelledby="microphoneLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Dinos algo</h1>
+                            <h1 class="modal-title fs-5" id="microphoneLabel">Dinos algo</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -143,7 +144,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> {{--exampleModalLabel--}}
 
             {{ $slot }}
 
@@ -188,6 +189,7 @@
     <script src="{{ asset('js/eye.js') }}"></script>
     <script src="{{ asset('js/toast-delete.js') }}"></script>
     <script src="{{ asset('js/imageview.js') }}"></script>
+    {{-- <script src="{{ asset('js/modal.js') }}"></script> --}}
 
 </body>
 

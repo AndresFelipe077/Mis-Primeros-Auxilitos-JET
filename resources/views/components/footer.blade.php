@@ -12,7 +12,7 @@
 
             <div class="hijos-navbar">
                 <img type="button" src="{{ asset('img/menu/microphone2.png') }}"
-                    data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    data-bs-toggle="modal" data-bs-target="#microphone">{{--exampleModal--}}
             </div>
 
             <div class="hijos-navbar">

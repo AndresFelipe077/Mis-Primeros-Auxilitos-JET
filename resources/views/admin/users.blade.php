@@ -24,6 +24,7 @@
                                         <th>Nombre</th>
                                         <th>Correo</th>
                                         <th>Fecha de Nacimiento</th>
+                                        <th>Foto</th>
                                         <th>Editar</th>
                                         <th>Eliminar</th>
                                     </thead>
@@ -35,12 +36,36 @@
                                                 <td>{{ $user->email }}</td>
                                                 <td>{{ $user->fechaNacimiento }}</td>
                                                 <td>
+
+                                                    @if (Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook')
+                                                        @if (Auth::user()->profile_photo_path != null)
+                                                            <img src="{{ asset($user->profile_photo_url) }}"
+                                                                alt="{{ $user->name }}"
+                                                                class="rounded-circle object-cover mx-auto" width="100px"
+                                                                height="80px">
+                                                        @else
+                                                            <img class="imagen card-img-top rounded "
+                                                                src="{{ asset($user->avatar) }}" alt="{{ $user->name }}"
+                                                                width="100px" height="80px" referrerpolicy="no-referrer">
+                                                        @endif
+                                                    @else
+                                                        <img src="{{ asset($user->profile_photo_url) }}"
+                                                            alt="{{ $user->name }}"
+                                                            class="rounded-circle object-cover mx-auto" width="100px"
+                                                            height="80px">
+                                                    @endif
+
+
+
+                                                </td>
+
+                                                <td>
                                                     {{-- Toca crear un get para ir a otra vista y ahi si editar --}}
                                                     <form action="" method="POST" enctype="multipart/form-data">
                                                         @csrf
                                                         @method('put')
                                                         <button
-                                                            class="text-success bg-success rounded-circle border-success">
+                                                            class="text-success bg-success rounded-circle border-success m-3">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                 height="16" fill="currentColor"
                                                                 class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -52,14 +77,20 @@
                                                         </button>
                                                     </form>
                                                 </td>
+
                                                 <td>
                                                     <form method="POST" action="">
                                                         @csrf
                                                         @method('delete')
-                                                        <button class="text-danger bg-danger rounded-circle border-danger" onclick="return confirm('¿Seguro que deseas eliminar este usuario?')">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
-                                                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                                        <button class="text-danger bg-danger rounded-circle border-danger m-3"
+                                                            onclick="return confirm('¿Seguro que deseas eliminar este usuario?')">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor" class="bi bi-x-circle"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                                <path
+                                                                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                                                             </svg>
                                                         </button>
                                                     </form>

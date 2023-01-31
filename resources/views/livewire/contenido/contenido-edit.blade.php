@@ -1,4 +1,4 @@
-<link id="image-head" rel="shortcut icon" href="{{ asset('img/menu/challengue2.png') }}" type="image/x-icon">
+<link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/editar.png') }}" type="image/x-icon">
 <x-app-layout>
     <div>
 

@@ -1,7 +1,9 @@
-<div>
-    <link id="image-head" rel="shortcut icon" href="{{ asset('img/menu/challengue2.png') }}" type="image/x-icon">
-    <x-app-layout>
+<link id="image-head" rel="shortcut icon" href="{{ asset('img/imgs/logo.png') }}" type="image/x-icon">
+@section('title','Home')
+<x-app-layout>
 
+
+    <div>
         <x-slot name="header">
             <x-header />
         </x-slot>
@@ -60,7 +62,8 @@
                             @if (Auth::user()->id == $contenido->user_id)
                                 {{-- <a href="{{ route('contenido.edit', $contenido) }}" class="btn btn-primary">Editar</a> --}}
                                 <a class="btn bg-transparent" href="{{ route('contenido.edit', $contenido) }}"><img
-                                    src="{{ asset('/img/icons/lapiz-editar.png') }}" width="50px" height="50px" alt="Editar"></a>
+                                        src="{{ asset('/img/icons/lapiz-editar.png') }}" width="50px" height="50px"
+                                        alt="Editar"></a>
                             @endif
                         </div>
 
@@ -82,6 +85,5 @@
         <x-slot name="footer">
             <x-footer />
         </x-slot>
-
-    </x-app-layout>
-</div>
+    </div>
+</x-app-layout>
