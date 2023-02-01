@@ -13,7 +13,8 @@
             <div class="row ">
     
                 <div class="text-center mt-3">
-                  <a href="{{route('triviaCreate')}}" class="btn btn-success mt-5">Crear</a>  
+                  <a href="{{route('triviaCreate')}}" class="btn btn-success mt-5">Crear</a>
+                  <a href="{{route('triviaEdit')}}" class="btn btn-danger mt-5">Editar</a> 
                 </div>
             
                 @foreach($trivias as  $trivia)

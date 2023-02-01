@@ -8,8 +8,6 @@
             <x-header />
         </x-slot>
 
-
-
         <div class="container">
 
             <div class="row">
@@ -83,7 +81,7 @@
 
                             <div class="text-center">
 
-                                <a href="{{ route('triviaShow') }}">
+                                <a class="btn bg-danger text-white" href="{{ route('triviaShow') }}">
                                     Cancelar
                                 </a>
 

@@ -66,6 +66,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/dashboard/games/trivia', 'triviaShow')->name('triviaShow'); //Vista trivia
 
     Route::get('/dashboard/games/trivia/create', 'triviaCreate')->name('triviaCreate');
+
+    Route::get('dashboard/games/trivia/edit', 'triviaEdit')->name('triviaEdit');
 });
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(ShowAdivinar::class)->group(function () {

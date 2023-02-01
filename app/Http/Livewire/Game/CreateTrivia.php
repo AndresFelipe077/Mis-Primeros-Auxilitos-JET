@@ -50,6 +50,9 @@ class CreateTrivia extends Component
 
         $this->emitTo('show-trivia', 'render');
         $this->emit('alert', 'Se creo correctamente el contenido');
+
+        return view('livewire.game.show-trivia');
+
     }
 
     public function updatingOpen()
@@ -61,11 +64,6 @@ class CreateTrivia extends Component
             $this->emit('resetCKEditor');
         }
         
-    }
-
-    public function triviaShow()
-    {
-        return view('livewire.game.create-trivia');
     }
 
     public function render()
