@@ -68,6 +68,13 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/dashboard/games/trivia/create', 'triviaCreate')->name('triviaCreate');
 });
 
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(ShowAdivinar::class)->group(function () {
+
+    Route::get('/dashboard/games/adivinar', 'adivinarShow')->name('adivinarShow'); //Vista trivia
+
+    Route::get('/dashboard/games/adivinar/create', 'adivinarCreate')->name('adivinarCreate');
+});
+
 // if (Features::enabled(Features::twoFactorAuthentication())) {
 // Route::get('/two-factor-challenge', [TwoFactorAuthenticatedSessionController::class, 'create'])
 //     ->middleware(['guest:' . config('fortify.guard')])

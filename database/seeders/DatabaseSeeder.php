@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Contenido;
 use App\Models\User;
+use App\Models\Trivia;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,7 +17,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(10)->create();
-        Contenido::factory(10)->create();
+        User::factory(10)      -> create();
+        Contenido::factory(10) -> create();
+        Trivia::factory(10)    -> create();
     }
 }

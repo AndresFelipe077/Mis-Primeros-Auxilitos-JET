@@ -13,8 +13,17 @@ class ShowAdivinar extends Component
         return view('games.show-trivia');
     }
 
+    public function adivinarShow()
+    {
+        return view('livewire.game.show-adivinar');
+    }
+
     public function render()
     {
         return view('livewire.game.show-adivinar');
     }
+
+    
+
+
 }
