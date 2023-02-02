@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContenidoController;
 use App\Http\Controllers\SocialController;
+use App\Http\Controllers\TriviaController;
 use App\Http\Livewire\Game\ShowAdivinar;
 use App\Http\Livewire\Game\ShowTrivia;
 use App\Models\User;
@@ -39,6 +40,14 @@ Route::group(['middleware' => ['guest', 'throttle:' . config('fortify.limiters.l
 
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
+
+
+
+
+
+
+
+
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(ContenidoController::class)->group(function () {
 
     //Vista home de videos
@@ -58,17 +67,40 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('dashboard/ajustes', 'ajustes')->name('dashboard.ajustes');
 });
 
-Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(ShowTrivia::class)->group(function () {
 
-    //Vista juegos
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(TriviaController::class)->group(function () {
+
     Route::get('/dashboard/games', 'game')->name('dashboard.game');
 
     Route::get('/dashboard/games/trivia', 'triviaShow')->name('triviaShow'); //Vista trivia
 
     Route::get('/dashboard/games/trivia/create', 'triviaCreate')->name('triviaCreate');
 
-    Route::get('dashboard/games/trivia/edit', 'triviaEdit')->name('triviaEdit');
+    Route::post('dashboard/games/trivia/create', 'triviaStore')->name('triviaStore');
+
+    Route::get('dashboard/games/trivia/{trivia}/edit', 'triviaEdit')->name('triviaEdit');
+
+    Route::put('dashboard/games/trivia/{trivia}/edit', 'triviaUpdate')->name('triviaUpdate');
+
+    Route::delete('dashboard/games/trivia/{trivia}/delete', 'triviaDelete')->name('triviaDelete');
+
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(ShowAdivinar::class)->group(function () {
 

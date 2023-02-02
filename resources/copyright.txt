@@ -63,7 +63,20 @@ Algodon
 Editar
 <a target="_blank" href="https://icons8.com/icon/t4mMbDEDIPOG/pencil">Pencil</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 
+Crear
+<a href="https://www.flaticon.es/iconos-gratis/crear" title="crear iconos">Crear iconos creados por wanicon - Flaticon</a>
 
+Crear2
+<a href="https://www.flaticon.com/free-icons/draw" title="draw icons">Draw icons created by Freepik - Flaticon</a>
+
+Editar3
+<a href="https://www.flaticon.es/iconos-gratis/escrito" title="escrito iconos">Escrito iconos creados por Fuzzee - Flaticon</a>
+
+Vamos
+<a href="https://www.flaticon.es/iconos-gratis/motivacion" title="motivación iconos">Motivación iconos creados por Freepik - Flaticon</a>
+
+Vamos2
+<a href="https://www.flaticon.es/iconos-gratis/ui" title="ui iconos">Ui iconos creados por Freepik - Flaticon</a>
 
 
 

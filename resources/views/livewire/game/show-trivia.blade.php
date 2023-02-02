@@ -13,8 +13,7 @@
             <div class="row ">
     
                 <div class="text-center mt-3">
-                  <a href="{{route('triviaCreate')}}" class="btn btn-success mt-5">Crear</a>
-                  <a href="{{route('triviaEdit')}}" class="btn btn-danger mt-5">Editar</a> 
+                  <a href="{{route('triviaCreate')}}" class="btn btn-outline-success mt-5"><img src="{{ asset('img/icons/crear2.png') }}" alt="Image Trivias" width="50px" height="50px"></a> 
                 </div>
             
                 @foreach($trivias as  $trivia)
@@ -29,7 +28,8 @@
                             </div>
                             {{-- <p class="card-text">{!! $trivia->content !!}</p> --}}
                             <div class="text-center">
-                                <a href="#" class="btn btn-primary ">Vamos!!! <i class="bi bi-lightbulb-fill"></i></a>
+                                <a href="#" class="btn btn-outline-primary "><img src="{{ asset('img/icons/vamos2.png') }}" alt="Image Trivias" width="50px" height="50px"></a>
+                                <a href="{{route('triviaEdit', $trivia)}}" class="btn btn-outline-danger"><img src="{{ asset('img/icons/editar3.png') }}" alt="Image Trivias" width="50px" height="50px"></a>
                             </div>
                         </div>
                     </div>

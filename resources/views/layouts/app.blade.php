@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/hoverImage.css') }}">
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/input-file.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('css/modal.css') }}"> --}}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
