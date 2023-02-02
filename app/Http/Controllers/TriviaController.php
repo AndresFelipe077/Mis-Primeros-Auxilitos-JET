@@ -32,7 +32,7 @@ class TriviaController extends Controller
         $nombre = Str::random(10) . $request->file('image')->getClientOriginalName();
         // $nombre = Image::make($request->file('photo')->getRealPath());
 
-        $ruta = storage_path() . '\app\public\images/' . $nombre;
+        $ruta = storage_path() . '\app\public\imagesTrivias/' . $nombre;
 
         Image::make($request->file('image'))
             ->resize(900, null, function($constraint){
@@ -46,7 +46,7 @@ class TriviaController extends Controller
 
         Trivia::create([
             'title'   => $request->title,
-            'image'   => '/storage/images/' . $nombre,
+            'image'   => '/storage/imagesTrivias/' . $nombre,
             'content' => $request->content,
                      
         ]);
@@ -74,7 +74,7 @@ class TriviaController extends Controller
         
         $nombre = Str::random(10) . $request->file('image')->getClientOriginalName();
 
-        $ruta = storage_path() . '\app\public\images/' . $nombre;
+        $ruta = storage_path() . '\app\public\imagesTrivias/' . $nombre;
 
         
 
@@ -87,7 +87,7 @@ class TriviaController extends Controller
         $name = Auth::user()->name;
 
         $trivia->title   = $request->title;
-        $trivia->image   = '/storage/images/' .$nombre;
+        $trivia->image   = '/storage/imagesTrivias/' .$nombre;
         $trivia->content = $request->content;
         
         $trivia->save();

@@ -2,7 +2,7 @@
     <link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/crear.png') }}" type="image/x-icon">
     <x-app-layout>
 
-        @section('title', 'Crear trivia')
+        @section('title', 'Crear adivinanza')
 
         <x-slot name="header">
             <x-header />
@@ -13,13 +13,13 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="mt-5 text-center h3">
-                        Creemos trivias!!! 😎😍😃
+                        Creemos adivinanzas!!! 😎😍😃
                     </div>
 
                     <div class="">
                         <div class="card">
                             <div class="card-body">
-                                <form action="{{ route('triviaStore') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('adivinanzaStore') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-4">
                                         <x-jet-label value="Titulo" />
@@ -71,7 +71,7 @@
                                     </div>
                                     <div class="text-center mb-5">
 
-                                        <a class="btn bg-outline-danger text-white" href="{{ route('triviaShow') }}">
+                                        <a class="btn bg-outline-danger text-white" href="{{ route('adivinanzaShow') }}">
                                             <img src="{{ asset('/img/icons/regresar2.png') }}" alt="Image Cancelar"
                                                 width="50px" height="50px">
                                         </a>
@@ -94,27 +94,5 @@
         </x-slot>
 
     </x-app-layout>
-
-    {{-- @push('js')
-        <script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/classic/ckeditor.js"></script>
-
-        {{-- <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .then(function(editor) {
-                editor.model.document.on('change:data', () => {
-                    @this.set('content', editor.getData())
-                })
-
-                Livewire.on('resetCKEditor', () => {
-                    editor.setData('');
-                });
-
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    </script> 
-    @endpush --}}
 
 </div>

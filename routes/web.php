@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdivinanzaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContenidoController;
 use App\Http\Controllers\SocialController;
@@ -42,12 +43,6 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name
 
 
 
-
-
-
-
-
-
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(ContenidoController::class)->group(function () {
 
     //Vista home de videos
@@ -83,6 +78,23 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::put('dashboard/games/trivia/{trivia}/edit', 'triviaUpdate')->name('triviaUpdate');
 
     Route::delete('dashboard/games/trivia/{trivia}/delete', 'triviaDelete')->name('triviaDelete');
+
+
+});
+
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(AdivinanzaController::class)->group(function () {
+
+    Route::get('/dashboard/games/adivinanza', 'adivinanzaShow')->name('adivinanzaShow'); //Vista trivia
+
+    Route::get('/dashboard/games/adivinanza/create', 'adivinanzaCreate')->name('adivinanzaCreate');
+
+    Route::post('dashboard/games/adivinanza/create', 'adivinanzaStore')->name('adivinanzaStore');
+
+    Route::get('dashboard/games/adivinanza/{adivinanza}/edit', 'adivinanzaEdit')->name('adivinanzaEdit');
+
+    Route::put('dashboard/games/adivinanza/{adivinanza}/edit', 'adivinanzaUpdate')->name('adivinanzaUpdate');
+
+    Route::delete('dashboard/games/adivinanza/{adivinanza}/delete', 'adivinanzaDelete')->name('adivinanzaDelete');
 
 
 });

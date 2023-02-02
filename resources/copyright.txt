@@ -78,8 +78,11 @@ Vamos
 Vamos2
 <a href="https://www.flaticon.es/iconos-gratis/ui" title="ui iconos">Ui iconos creados por Freepik - Flaticon</a>
 
+Regresar2
+<a href="https://www.flaticon.es/iconos-gratis/ui" title="ui iconos">Ui iconos creados por icon wind - Flaticon</a>
 
-
+Crear3
+<a href="https://www.flaticon.es/iconos-gratis/crear" title="crear iconos">Crear iconos creados por juicy_fish - Flaticon</a>
 
 
 

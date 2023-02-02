@@ -29,7 +29,7 @@
                     <div class=" card-body shadow ">
                         <div class="h4">Adivinanzas</div>
                         <div class="contenedor rounded">
-                            <a href="{{ route('adivinarShow') }}" class="btn mt-2">
+                            <a href="{{ route('adivinanzaShow') }}" class="btn mt-2">
                                 <img class="imagen rounded img-fluid mx-auto d-block"
                                     src="{{ asset('img/icons/adivinanza_icon.png') }}" alt="Image of adivinanza"
                                     width="250px" height="250px">

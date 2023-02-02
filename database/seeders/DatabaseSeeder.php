@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Adivinanza;
 use Illuminate\Database\Seeder;
 use App\Models\Contenido;
 use App\Models\User;
@@ -17,8 +19,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(10)      -> create();
-        Contenido::factory(10) -> create();
-        Trivia::factory(10)    -> create();
+        User::factory(10)       -> create();
+        Contenido::factory(10)  -> create();
+        Trivia::factory(10)     -> create();
+        Adivinanza::factory(10) -> create();
     }
 }

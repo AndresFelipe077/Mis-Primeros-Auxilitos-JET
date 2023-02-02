@@ -2,7 +2,7 @@
     <link id="image-head" rel="shortcut icon" href="{{ asset('img/menu/challengue2.png') }}" type="image/x-icon">
     <x-app-layout>
 
-        @section('title', 'Actualizar - Editar trivia')
+        @section('title', 'Actualizar - Editar adivinanza')
 
         <x-slot name="header">
             <x-header />
@@ -19,14 +19,14 @@
                     <div class="">
                         <div class="card">
                             <div class="card-body">
-                                <form action="{{ route('triviaUpdate', $trivia) }}" method="POST"
+                                <form action="{{ route('adivinanzaUpdate', $adivinanza) }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
                                     @method('put')
                                     <div class="mb-4">
                                         <x-jet-label value="Titulo" />
                                         <x-jet-input type="text" class="w-full" name="title"
-                                            value="{{ old('title', $trivia->title) }}" />
+                                            value="{{ old('title', $adivinanza->title) }}" />
 
                                             <div class="text-center">
                                                 @error('title')
@@ -40,7 +40,7 @@
                                             imagen</label>
 
                                         <div>
-                                            <img class="rounded mx-auto m-2" src="{{ asset($trivia->image) }}"
+                                            <img class="rounded mx-auto m-2" src="{{ asset($adivinanza->image) }}"
                                                 id="imgPreview" width="150px" height="150px">
                                         </div>
 
@@ -61,7 +61,7 @@
                                     <div class="mb-4">{{-- Nos ayuda a que cuando la pagina se renderice los estilos de CKEditor no se pierdan, lo que quire decir que ignora lo que esta dentro --}}
                                         <x-jet-label value="Descripción" />
                                         <div>
-                                            <textarea type="text" id="editor" class="form-control w-full" rows="6" name="content">{{ old('content', $trivia->content) }}</textarea>
+                                            <textarea type="text" id="editor" class="form-control w-full" rows="6" name="content">{{ old('content', $adivinanza->content) }}</textarea>
                                         </div>
                                         <div class="text-center">
                                             @error('content')
@@ -71,7 +71,7 @@
                                     </div>
                                     <div class="text-center mb-5">
 
-                                        <a class="btn bg-outline-danger text-white" href="{{ route('triviaShow') }}">
+                                        <a class="btn bg-outline-danger text-white" href="{{ route('adivinanzaShow') }}">
                                             <img src="{{ asset('/img/icons/regresar2.png') }}" alt="Image Cancelar"
                                                 width="50px" height="50px">
                                         </a>
@@ -88,7 +88,7 @@
 
                                         <div class="col-sm-12 mx-auto text-center">
                                                 <form method="POST" class="formulario-eliminar-contenido"
-                                                    action="{{ route('triviaDelete', $trivia) }}">
+                                                    action="{{ route('adivinanzaDelete', $adivinanza) }}">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="btn bg-transparent">

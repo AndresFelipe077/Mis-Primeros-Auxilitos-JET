@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\trivia>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Adivinanza>
  */
-class TriviaFactory extends Factory
+class AdivinanzaFactory extends Factory
 {
     /**
      * Define the model's default state.
