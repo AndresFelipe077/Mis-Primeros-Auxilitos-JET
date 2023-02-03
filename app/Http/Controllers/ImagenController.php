@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Contenido;
+use App\Models\Imagen;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 
-class ContenidoController extends Controller
+class ImagenController extends Controller
 {
 
     //Vista home de videos
@@ -17,8 +17,8 @@ class ContenidoController extends Controller
     {
         if(Auth::check())
         {
-            $contenidos = Contenido::orderBy('id','desc')->paginate(8);
-            return view('livewire.contenido.contenido-show', compact('contenidos'));
+            $imagenes = Imagen::orderBy('id','desc')->paginate(8);
+            return view('livewire.imagenes.imagen-show', compact('imagenes'));
         }
         else
         { 
@@ -46,7 +46,7 @@ class ContenidoController extends Controller
     {   
         if(Auth::check())
         {   
-            return view('livewire.contenido.contenido-create');
+            return view('livewire.imagenes.imagen-create');
         }
   
     }
@@ -61,7 +61,11 @@ class ContenidoController extends Controller
             'description'  => 'required|max:250',
         ]);
 
-        $nombre = Str::random(10) . $request->file('file')->getClientOriginalName();
+        $cadena = $request->file('file')->getClientOriginalName();
+
+        $cadenaConvert = strtr($cadena, " ", "_");
+
+        $nombre = Str::random(10) . $cadenaConvert;
 
         $ruta = storage_path() . '\app\public\images/' . $nombre;
 
@@ -75,7 +79,7 @@ class ContenidoController extends Controller
         $name = Auth::user()->name;//Se obtiene id del Usuario Autenticado
 
 
-        Contenido::create([
+        Imagen::create([
             'title'       => $request->title,
             'url'         => '/storage/images/' . $nombre,
             'autor'       => $name,
@@ -88,17 +92,16 @@ class ContenidoController extends Controller
     }
 
 
-    public function edit(Contenido $contenido)
+    public function edit(Imagen $imagen)
     {
 
         if(Auth::check())
         {
-            
-            return view('livewire.contenido.contenido-edit',compact('contenido'));
+            return view('livewire.imagenes.imagen-edit',compact('imagen'));
         }
     }
 
-    public function update(Request $request, Contenido $contenido)
+    public function update(Request $request, Imagen $imagen)
     {
         $request -> validate([
             'title'        => 'required|max:50',
@@ -111,8 +114,6 @@ class ContenidoController extends Controller
 
         $ruta = storage_path() . '\app\public\images/' . $nombre;
 
-        
-
         Image::make($request->file('file'))
             ->resize(900, null, function($constraint){
                 $constraint->aspectRatio();
@@ -121,20 +122,20 @@ class ContenidoController extends Controller
         
         $name = Auth::user()->name;
 
-        $contenido->title       = $request->title;
-        $contenido->url         = '/storage/images/' .$nombre;
-        $contenido->autor       = $name;
-        $contenido->description = $request->description;
+        $imagen->title       = $request->title;
+        $imagen->url         = '/storage/images/' .$nombre;
+        $imagen->autor       = $name;
+        $imagen->description = $request->description;
         
-        $contenido->save();
+        $imagen->save();
 
-        return redirect()->route('dashboard.index', compact('contenido'))->with('actualizar','ok');
+        return redirect()->route('dashboard.index', compact('imagen'))->with('actualizar','ok');
     }
 
 
-    public function destroy(Contenido $contenido)
+    public function destroy(Imagen $imagen)
     {
-        $contenido->delete();
+        $imagen->delete();
                                                     // eliminar => variable, ok => mensaje
         return redirect()->route('dashboard.index')->with('eliminar','ok');
     }

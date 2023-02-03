@@ -21,7 +21,7 @@
 
                 <div class="col-sm-8">
                     <div class="card">
-                        <form action="{{ route('contenido.update', $contenido) }}" method="POST"
+                        <form action="{{ route('contenido.update', $imagen) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             @method('put')
@@ -29,7 +29,7 @@
                             <div class="form-group">
                                 <label for="">Titulo de la imagen</label>
                                 <input type="text" name="title" class="form-control" id=""
-                                    aria-describedby="" value="{{ old('title', $contenido->title) }}">
+                                    aria-describedby="" value="{{ old('title', $imagen->title) }}">
                                 @error('title')
                                     <br>
                                     <small class="text-danger">{{ $message }}</small>
@@ -41,7 +41,7 @@
                                 <label for="exampleFormControlFile1" id="src-file">Escoge una imagen</label>
 
                                 <div>
-                                    <img class="rounded mx-auto m-2" src="{{ asset($contenido->url) }}" id="imgPreview"
+                                    <img class="rounded mx-auto m-2" src="{{ asset($imagen->url) }}" id="imgPreview"
                                         width="150px" height="150px">
                                 </div>
 
@@ -61,7 +61,7 @@
                             <div class="form-group m-1">
                                 <label for="">Descripción</label>
                                 <input type="text" name="description" class="form-control" id=""
-                                    aria-describedby="" value="{{ old('description', $contenido->description) }}">
+                                    aria-describedby="" value="{{ old('description', $imagen->description) }}">
                                 @error('description')
                                     <br>
                                     <small class="text-danger">{{ $message }}</small>
@@ -83,7 +83,7 @@
 
                                 <div class="col-sm-6">
                                     <form method="POST" class="formulario-eliminar-contenido"
-                                        action="{{ route('contenido.destroy', $contenido) }}">
+                                        action="{{ route('contenido.destroy', $imagen) }}">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn bg-transparent">

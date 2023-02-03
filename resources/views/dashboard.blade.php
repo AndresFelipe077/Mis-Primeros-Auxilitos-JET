@@ -7,7 +7,7 @@
         <x-header />
     </x-slot>
 
-    @livewire('contenido.contenido-show')
+    
 
     <x-slot name="footer">
         <x-footer />

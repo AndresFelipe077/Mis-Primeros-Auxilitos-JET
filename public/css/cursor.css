@@ -1,0 +1,11 @@
+*{
+    cursor: url('../img/icons/cursor.png'), auto !important;
+}
+
+a{
+    cursor: url('../img/icons/manoCursor.png'), auto !important;
+}
+
+button{
+    cursor: url('../img/icons/manoCursor.png'), auto !important;
+}

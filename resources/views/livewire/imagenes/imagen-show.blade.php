@@ -41,27 +41,27 @@
                 </script>
             @endif
 
-            @foreach ($contenidos as $contenido)
+            @foreach ($imagenes as $imagen)
                 <div class="col mb-4 animate__animated animate__wobble">
 
                     <div class="card shadow border-dark bg-white">
                         <div class="card-header">
-                            {{ $contenido->title }}
+                            {{ $imagen->title }}
                         </div>
                         <div class="card-body ">
                             <div class="contenedor inner rounded">
-                                <img class="imagen card-img-top rounded " src="{{ asset($contenido->url) }}"
+                                <img class="imagen card-img-top rounded " src="{{ asset($imagen->url) }}"
                                     alt="Images Mis Primeros Auxilitos" width="250px" height="250px">
                             </div>
-                            <p><strong>Autor: </strong> {{ $contenido->autor }}</p>
+                            <p><strong>Autor: </strong> {{ $imagen->autor }}</p>
 
                             <p class="card-text">
-                                {{ $contenido->description }}
+                                {{ $imagen->description }}
                             </p>
 
-                            @if (Auth::user()->id == $contenido->user_id)
+                            @if (Auth::user()->id == $imagen->user_id)
                                 {{-- <a href="{{ route('contenido.edit', $contenido) }}" class="btn btn-primary">Editar</a> --}}
-                                <a class="btn bg-transparent" href="{{ route('contenido.edit', $contenido) }}"><img
+                                <a class="btn bg-transparent" href="{{ route('contenido.edit', $imagen) }}"><img
                                         src="{{ asset('/img/icons/lapiz-editar.png') }}" width="50px" height="50px"
                                         alt="Editar"></a>
                             @endif
@@ -73,14 +73,18 @@
             @endforeach
         </div>
 
+        <a class="btn btn-success" href="{{route('video.index')}}">Videos</a>
 
         <div class="">
             <ul class="pagination pagination-lg">
                 <li class="page-item active mb-5" aria-current="page">
-                    <span class="page-link bg-light h4">{{ $contenidos->links() }}</span>
+                    <span class="page-link bg-light h4">{{ $imagenes->links() }}</span>
                 </li>
             </ul>
         </div>
+
+
+
         <link rel="stylesheet" href="{{ asset('css/index-home.css') }}">
         <x-slot name="footer">
             <x-footer />

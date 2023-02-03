@@ -17,7 +17,7 @@ class AdivinanzaFactory extends Factory
     public function definition()
     {
         return [
-            'title'       => $this -> faker -> randomElement(['Heridas','Suplementos','Analgesicos']),
+            'title'       => $this -> faker -> randomElement(['Botiquin','Suplementos','Heridas']),
             'image'       => $this -> faker -> randomElement(['/storage/imagesFactory/policia.png', '/storage/imagesFactory/peluche.png','/storage/imagesFactory/logo.png', '/storage/imagesFactory/fondo.jpg']),
             'content'     => $this -> faker -> text,
             'created_at'  => now(),

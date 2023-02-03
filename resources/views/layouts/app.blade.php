@@ -35,6 +35,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!--estilos-->
+    <link rel="stylesheet" href="{{ asset('css/cursor.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/hoverImage.css') }}">
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
@@ -124,7 +125,7 @@
 
 
         <!-- Page Content -->
-        <main class="container my-5">
+        <main class="container mt-5">
 
             <!-- Modal -->
             <div class="modal fade" id="microphone" tabindex="-1" aria-labelledby="microphoneLabel" aria-hidden="true">
@@ -206,6 +207,7 @@
     <script src="{{ asset('js/eye.js') }}"></script>
     <script src="{{ asset('js/toast-delete.js') }}"></script>
     <script src="{{ asset('js/imageview.js') }}"></script>
+    <script src="{{ asset('js/videoPreview.js') }}"></script>
     {{-- <script src="{{ asset('js/modal.js') }}"></script> --}}
 
 </body>

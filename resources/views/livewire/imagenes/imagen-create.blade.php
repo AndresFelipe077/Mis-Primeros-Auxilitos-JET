@@ -39,7 +39,7 @@
                             </div>
 
                             <div class="form-group m-1 mx-auto">
-                                <label class="pe-auto" for="exampleFormControlFile1" id="src-file">Escoge una
+                                <label class="" for="exampleFormControlFile1" id="src-file">Escoge una
                                     imagen</label>
 
                                 <div>
@@ -47,10 +47,12 @@
                                         id="imgPreview" width="150px" height="150px">
                                 </div>
 
-                                <label for="file-upload" class="subir">
-                                    <i class="bi bi-cloud-upload-fill h5"></i> Subir imagen
+                                <label for="file-upload" class="subir" id="label">
+                                    <i class="bi bi-cloud-upload-fill h2"></i> Subir imagen
                                 </label>
-                                <input type="file" name="file" value="{{ old('file') }}" class="form-control-file mx-auto text-center d-none" id="file-upload" onchange="previewImage(event, '#imgPreview')" accept="image/*" />
+                                <input type="file" name="file" value="{{ old('file') }}"
+                                    class="form-control-file d-none" id="file-upload"
+                                    onchange="previewImage(event, '#imgPreview')" accept="image/*" />
 
 
                                 @error('file')
@@ -61,17 +63,6 @@
 
                             </div>
 
-
-                            {{-- <div class="form-group m-1">
-                                <label for="">Autor</label>
-                                <input type="text" name="autor" class="form-control" id=""
-                                    aria-describedby="" value="{{ old('autor') }}">
-                                @error('autor')
-                                    <br>
-                                    <small class="text-danger">{{ $message }}</small>
-                                    <br>
-                                @enderror
-                            </div> --}}
                             <div class="form-group m-1">
                                 <label for="">Descripción</label>
                                 <input type="text" name="description" class="form-control" id=""

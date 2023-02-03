@@ -2,15 +2,12 @@
 
 use App\Http\Controllers\AdivinanzaController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ContenidoController;
+use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\TriviaController;
+use App\Http\Controllers\VideoController;
 use App\Http\Livewire\Game\ShowAdivinar;
-use App\Http\Livewire\Game\ShowTrivia;
-use App\Models\User;
-use Laravel\Fortify\Features;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
-use Laravel\Fortify\Http\Controllers\TwoFactorAuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,8 +39,7 @@ Route::group(['middleware' => ['guest', 'throttle:' . config('fortify.limiters.l
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 
-
-Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(ContenidoController::class)->group(function () {
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(ImagenController::class)->group(function () {
 
     //Vista home de videos
     Route::get('/dashboard', 'index')->name('dashboard.index');
@@ -52,14 +48,24 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::post('dashboard/store/contenido', 'store')->name('contenido.store');
 
-    Route::get('/dashboard/{contenido}/edit', 'edit')->name('contenido.edit');
+    Route::get('/dashboard/{imagen}/edit', 'edit')->name('contenido.edit');
 
-    Route::put('/dashboard/{contenido}', 'update')->name('contenido.update');
+    Route::put('/dashboard/{imagen}', 'update')->name('contenido.update');
 
-    Route::delete('edit/{contenido}', 'destroy')->name('contenido.destroy');
+    Route::delete('edit/{imagen}', 'destroy')->name('contenido.destroy');
 
     //Acceder a vista ajustes
     Route::get('dashboard/ajustes', 'ajustes')->name('dashboard.ajustes');
+});
+
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(VideoController::class)->group(function () {
+    Route::get('dashboard/videos', 'index')->name('video.index');
+    Route::any('dashboard/videos/create', 'create')->name('video.create');
+    Route::any('dashboard/videos/store', 'store')->name('video.store');
+    Route::any('dashboard/videos/show/{id}', 'show')->name('video.show');
+    Route::any('dashboard/videos/edit/{id}', 'edit')->name('video.edit');
+    Route::any('dashboard/videos/destroy/{id}', 'destroy')->name('video.destroy');
+    Route::any('dashboard/videos/update/{id}', 'update')->name('video.update');
 });
 
 
@@ -78,8 +84,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::put('dashboard/games/trivia/{trivia}/edit', 'triviaUpdate')->name('triviaUpdate');
 
     Route::delete('dashboard/games/trivia/{trivia}/delete', 'triviaDelete')->name('triviaDelete');
-
-
 });
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(AdivinanzaController::class)->group(function () {
@@ -95,31 +99,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::put('dashboard/games/adivinanza/{adivinanza}/edit', 'adivinanzaUpdate')->name('adivinanzaUpdate');
 
     Route::delete('dashboard/games/adivinanza/{adivinanza}/delete', 'adivinanzaDelete')->name('adivinanzaDelete');
-
-
 });
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(ShowAdivinar::class)->group(function () {
-
-    Route::get('/dashboard/games/adivinar', 'adivinarShow')->name('adivinarShow'); //Vista trivia
-
-    Route::get('/dashboard/games/adivinar/create', 'adivinarCreate')->name('adivinarCreate');
-});
 
 // if (Features::enabled(Features::twoFactorAuthentication())) {
 // Route::get('/two-factor-challenge', [TwoFactorAuthenticatedSessionController::class, 'create'])

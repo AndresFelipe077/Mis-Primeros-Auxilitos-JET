@@ -84,6 +84,9 @@ Regresar2
 Crear3
 <a href="https://www.flaticon.es/iconos-gratis/crear" title="crear iconos">Crear iconos creados por juicy_fish - Flaticon</a>
 
+ManoCursor
+<a href="https://www.flaticon.es/iconos-gratis/click-izquierdo" title="click izquierdo iconos">Click izquierdo iconos creados por Freepik - Flaticon</a>
+
 
 
 
