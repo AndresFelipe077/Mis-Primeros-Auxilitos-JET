@@ -34,7 +34,7 @@
                             <a href="#" class="btn btn-outline-primary "><img
                                     src="{{ asset('img/icons/vamos2.png') }}" alt="Image Trivias" width="50px"
                                     height="50px"></a>
-                            <a href="{{ route('triviaEdit', $video) }}" class="btn btn-outline-danger"><img
+                            <a href="{{ route('video.edit', $video) }}" class="btn btn-outline-danger"><img
                                     src="{{ asset('img/icons/editar3.png') }}" alt="Image Trivias" width="50px"
                                     height="50px"></a>
                         </div>
