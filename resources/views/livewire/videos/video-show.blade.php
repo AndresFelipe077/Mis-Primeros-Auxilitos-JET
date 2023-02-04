@@ -1,5 +1,6 @@
 <link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/algodon.png') }}" type="image/x-icon">
 <x-app-layout>
+    
     <div>
         @section('title', 'Videos')
 
@@ -23,9 +24,8 @@
                         <h5 class="card-title">{{ $video->video_title }}</h5>
                         <div class="contenedor rounded">
                             <video id="video-tagg"
-                                class="mx-auto m-3 rounded text-white bg-white fm-video video-js vjs-16-9 vjs-big-play-centered"
-                                data-setup="{}" controls>
-                                <source id="video-source" class="rounded" src="{{ asset($video->video_url) }}">
+                                class="mx-auto m-3 rounded" controls>
+                                <source src="{{ asset($video->video_url) }}">
                                 Tu navegador no soporta elementos de video😥.
                             </video>
                         </div>
@@ -60,5 +60,5 @@
     <x-slot name="footer">
         <x-footer />
     </x-slot>
-
+    
 </x-app-layout>

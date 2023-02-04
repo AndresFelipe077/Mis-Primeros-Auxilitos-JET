@@ -6,29 +6,29 @@
 
 .video-tagg .vjs-control-bar {
 	background: #F4F4F4;
-	color: #2d5f85;
+	color: #a0a8ae;
 }
 
 .video-tagg .vjs-play-progress,
 .video-tagg .vjs-volume-level {
-	background: #1d87d8;
+	background: #F4F4F4 !important;
 }
 
 .video-tagg .vjs-slider {
-	background: #2d5f85;
+	background: #F4F4F4 !important;
 }
 
 .video-tagg:hover .vjs-big-play-button {
-	background: rgba(0,0,0,.2);
+	background: rgba(0,0,0,.2) !important;
 }
 
 .video-tagg .vjs-big-play-button {
-	background: rgba(0,0,0,.2);
-	width: 80px;
-	height: 80px;
-	line-height: 80px;
-	border-radius: 100%;
-	border:none;
+	background: rgba(0,0,0,.2) !important;
+	width: 80px !important;
+	height: 80px !important;
+	line-height: 80px !important;
+	border-radius: 100% !important;
+	border:none !important;
 }
 
 .video-tagg .vjs-big-play-button:hover {

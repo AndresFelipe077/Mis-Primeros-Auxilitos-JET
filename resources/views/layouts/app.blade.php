@@ -43,7 +43,6 @@
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/input-file.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('css/modal.css') }}"> --}}
-    <link href="{{ asset('css/video-js.min.css')}} " rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,7 +83,6 @@
     <!-- Scripts -->
     <script src="{{ asset('build/assets/app.js') }}" defer></script>
     {{-- <script src="{{asset('js/noSeleccionar.js')}}"></script> --}}
-    <script src="{{ asset('js/video.min.js')}}"></script>
 
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -200,9 +198,7 @@
     <script src="{{ asset('js/eye.js') }}"></script>
     <script src="{{ asset('js/toast-delete.js') }}"></script>
     <script src="{{ asset('js/imageview.js') }}"></script>
-    <script src="{{ asset('js/videoPreview.js') }}"></script>
-    <script src="{{ asset('js/video-show.js') }}"></script>
-    {{-- <script src="{{ asset('js/modal.js') }}"></script> --}}
+    {{--<script src="{{ asset('js/modal.js') }}"></script>--}}
 
 </body>
 

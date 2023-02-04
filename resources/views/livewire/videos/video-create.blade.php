@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="text-center mb-5">
 
-                                    <a class="btn bg-outline-danger text-white" href="{{ route('triviaShow') }}">
+                                    <a class="btn bg-outline-danger text-white" href="{{ route('video.index') }}">
                                         <img src="{{ asset('/img/icons/regresar2.png') }}" alt="Image Cancelar"
                                             width="50px" height="50px">
                                     </a>
@@ -93,5 +93,7 @@
     <x-slot name="footer">
         <x-footer />
     </x-slot>
+
+    <script src="{{ asset('js/videoPreview.js') }}"></script>
 
 </x-app-layout>
