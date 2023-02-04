@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 
 class VideoController extends Controller
 {
-    
+
     public function index()
     {
         $videos = Video::orderBy('id', 'desc')->paginate(9);
@@ -20,11 +20,14 @@ class VideoController extends Controller
     {
         return view('livewire.videos.video-create');
     }
-    
+
     public function store(Request $request)
     {
-        $this->validate($request, ['video_title' => 'required|string|max:255', 
-                                    'video_url' => 'required|file|mimetypes:video/mp4']);
+        $request->validate([
+            'video_title' => 'required|string|max:255',
+            'video_url'   => 'required|file|mimetypes:video/mp4',
+            'description' => 'required|max:255',
+        ]);
 
         $cadena = $request->file('video_url')->getClientOriginalName();
 
@@ -46,7 +49,6 @@ class VideoController extends Controller
             ]);
 
             return redirect()->route('video.index')->with('ok', 'Tu video se ha creado exitosamente!!!😎');
-
         }
 
         return back()
@@ -61,8 +63,12 @@ class VideoController extends Controller
 
     public function update(Request $request, Video $video)
     {
-        $this->validate($request, ['video_title' => 'required|string|max:255', 'video_url' => 'required|file|mimetypes:video/mp4']);
-
+        $request->validate([
+            'video_title' => 'required|string|max:255',
+            'video_url'   => 'file|mimetypes:video/mp4',
+            'description' => 'required|max:255',
+        ]);
+        
         $cadena = $request->file('video_url')->getClientOriginalName();
 
         $cadenaConvert = strtr($cadena, " ", "_");
@@ -79,22 +85,19 @@ class VideoController extends Controller
             $video->video_title = $request->video_title;
             $video->video_url   = '/storage/' . $filePath;
             $video->description = $request->description;
-            
+
             $video->save();
 
             return redirect()->route('video.index')->with('ok', 'Tu video se ha creado exitosamente!!!😎');
-
         }
 
         return back()
             ->with('error', 'Ups ha ocurrido un problema 😥, intentalo nuevamente');
-
     }
-    
+
     public function destroy(Video $video)
     {
         $video->delete();
         return redirect()->route('video.index')->with('success', 'Video deleted Successfully');
     }
-    
 }

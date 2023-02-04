@@ -27,7 +27,7 @@
                                     <x-jet-input type="text" class="w-full" name="video_title"
                                         value="{{ old('video_title', $video->video_title) }}" />
                                     <div class="text-center">
-                                        @error('title')
+                                        @error('video_title')
                                             <span class="text-danger text-center">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -52,8 +52,9 @@
 
                                 </div>
                                 <div class="text-center">
-                                    @error('image')
-                                        <span class="text-danger text-center">{{ $message }}</span>
+                                    @error('video_url')
+                                        <p class="text-danger text-center">{{ $message }}</p>
+                                        <p class="text-danger text-center">Por favor, escoge nuevamente tu video 🤗</p>
                                     @enderror
                                 </div>
 
@@ -64,7 +65,7 @@
                                         <textarea type="text" id="editor" class="form-control w-full" rows="6" name="description">{{ old('description', $video->description) }}</textarea>
                                     </div>
                                     <div class="text-center">
-                                        @error('content')
+                                        @error('description')
                                             <span class="text-danger text-center">{{ $message }}</span>
                                         @enderror
                                     </div>
