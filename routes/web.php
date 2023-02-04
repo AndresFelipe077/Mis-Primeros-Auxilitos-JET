@@ -42,15 +42,15 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(ImagenController::class)->group(function () {
 
     //Vista home de videos
-    Route::get('/dashboard', 'index')->name('dashboard.index');
+    Route::get('dashboard', 'index')->name('dashboard.index');
 
     Route::get('dashboard/create/contenido/', 'create')->name('dashboard.create');
 
     Route::post('dashboard/store/contenido', 'store')->name('contenido.store');
 
-    Route::get('/dashboard/{imagen}/edit', 'edit')->name('contenido.edit');
+    Route::get('dashboard/{imagen}/edit', 'edit')->name('contenido.edit');
 
-    Route::put('/dashboard/{imagen}', 'update')->name('contenido.update');
+    Route::put('dashboard/{imagen}', 'update')->name('contenido.update');
 
     Route::delete('edit/{imagen}', 'destroy')->name('contenido.destroy');
 
@@ -59,23 +59,28 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 });
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(VideoController::class)->group(function () {
+    
     Route::get('dashboard/videos', 'index')->name('video.index');
-    Route::any('dashboard/videos/create', 'create')->name('video.create');
-    Route::any('dashboard/videos/store', 'store')->name('video.store');
-    Route::any('dashboard/videos/show/{id}', 'show')->name('video.show');
-    Route::any('dashboard/videos/edit/{id}', 'edit')->name('video.edit');
-    Route::any('dashboard/videos/destroy/{id}', 'destroy')->name('video.destroy');
-    Route::any('dashboard/videos/update/{id}', 'update')->name('video.update');
-});
 
+    Route::get('dashboard/videos/create', 'create')->name('video.create');
+
+    Route::post('dashboard/videos/store', 'store')->name('video.store');
+
+    Route::get('dashboard/videos/{video}/edit', 'edit')->name('video.edit');
+
+    Route::put('dashboard/videos/{video}/update', 'update')->name('video.update');
+
+    Route::delete('dashboard/videos/{video}/destroy', 'destroy')->name('video.destroy');
+
+});
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(TriviaController::class)->group(function () {
 
-    Route::get('/dashboard/games', 'game')->name('dashboard.game');
+    Route::get('dashboard/games', 'game')->name('dashboard.game');
 
-    Route::get('/dashboard/games/trivia', 'triviaShow')->name('triviaShow'); //Vista trivia
+    Route::get('dashboard/games/trivia', 'triviaShow')->name('triviaShow'); //Vista trivia
 
-    Route::get('/dashboard/games/trivia/create', 'triviaCreate')->name('triviaCreate');
+    Route::get('dashboard/games/trivia/create', 'triviaCreate')->name('triviaCreate');
 
     Route::post('dashboard/games/trivia/create', 'triviaStore')->name('triviaStore');
 
@@ -88,9 +93,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(AdivinanzaController::class)->group(function () {
 
-    Route::get('/dashboard/games/adivinanza', 'adivinanzaShow')->name('adivinanzaShow'); //Vista trivia
+    Route::get('dashboard/games/adivinanza', 'adivinanzaShow')->name('adivinanzaShow'); //Vista trivia
 
-    Route::get('/dashboard/games/adivinanza/create', 'adivinanzaCreate')->name('adivinanzaCreate');
+    Route::get('dashboard/games/adivinanza/create', 'adivinanzaCreate')->name('adivinanzaCreate');
 
     Route::post('dashboard/games/adivinanza/create', 'adivinanzaStore')->name('adivinanzaStore');
 
@@ -117,7 +122,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 // });
 
 //Crear usuarios con redes sociales
-
 Route::get('/login-facebook', [SocialController::class, 'redirectFacebook'])->name('facebook');
 
 Route::get('/facebook-callback', [SocialController::class, 'callbackFacebook']);

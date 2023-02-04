@@ -1,36 +1,33 @@
-.video-tagg {
-	border-radius: 10px !important;
+.fm-video {
 	width: 100%;
 	box-shadow: 0px 0px 6px 0px rgba(0,0,0,.5);
 }
 
-.video-tagg .vjs-control-bar {
+.fm-video .vjs-control-bar {
 	background: #F4F4F4;
-	color: #a0a8ae;
+	color: #1d87d8/*#2d5f85*/;
+	border-radius: 5px;
 }
 
-.video-tagg .vjs-play-progress,
-.video-tagg .vjs-volume-level {
-	background: #F4F4F4 !important;
+.fm-video .vjs-play-progress,
+.fm-video .vjs-volume-level {
+	background: #1d87d8;
 }
 
-.video-tagg .vjs-slider {
-	background: #F4F4F4 !important;
+.fm-video .vjs-slider {
+	background: #2d5f85;
+	height: 5px;
 }
 
-.video-tagg:hover .vjs-big-play-button {
-	background: rgba(0,0,0,.2) !important;
+.video-js:hover .vjs-big-play-button {
+	background: #00000033;
 }
 
-.video-tagg .vjs-big-play-button {
-	background: rgba(0,0,0,.2) !important;
-	width: 80px !important;
-	height: 80px !important;
-	line-height: 80px !important;
-	border-radius: 100% !important;
-	border:none !important;
+.fm-video .vjs-big-play-button {
+	background: #00000033;
+	border: none;
 }
 
-.video-tagg .vjs-big-play-button:hover {
-	background: rgba(0,0,0,.5);
+.fm-video .vjs-big-play-button:hover {
+	background: #00000080;
 }

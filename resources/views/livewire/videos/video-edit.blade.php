@@ -18,11 +18,14 @@
                 <div class="">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('video.update', $video) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('video.update', $video) }}" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
+                                @method('put')
                                 <div class="mb-4">
                                     <x-jet-label value="Titulo" />
-                                    <x-jet-input type="text" class="w-full" name="video_title" value="{{ old('video_title', $video->video_title) }}"/>
+                                    <x-jet-input type="text" class="w-full" name="video_title"
+                                        value="{{ old('video_title', $video->video_title) }}" />
                                     <div class="text-center">
                                         @error('title')
                                             <span class="text-danger text-center">{{ $message }}</span>
@@ -67,7 +70,7 @@
                                     </div>
 
                                 </div>
-                                <div class="text-center mb-5">
+                                <div class="text-center">
 
                                     <a class="btn bg-outline-danger text-white" href="{{ route('video.index') }}">
                                         <img src="{{ asset('/img/icons/regresar2.png') }}" alt="Image Cancelar"
@@ -82,6 +85,25 @@
                                 </div>
                             </form>
                         </div>
+
+                        <div class="text-center mb-5">
+
+                            <form method="POST" class="formulario-eliminar-contenido"
+                                action="{{ route('video.destroy', $video) }}">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn bg-transparent">
+                                    <img class="" src="{{ asset('/img/icons/borrar.png') }}" width="50px"
+                                        height="50px">
+                                </button>
+                                
+
+                            </form>
+
+                            
+
+                        </div>
+
                     </div>
                 </div>
             </div>

@@ -1,3 +1,3 @@
-var reproductor = videojs('video-tagg', {
-    fluid:true
+var reproductor = videojs('fm-video', {
+    fluid: true
 });

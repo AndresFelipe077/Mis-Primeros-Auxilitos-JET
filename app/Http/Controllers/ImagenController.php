@@ -140,7 +140,4 @@ class ImagenController extends Controller
         return redirect()->route('dashboard.index')->with('eliminar','ok');
     }
 
-
-
-
 }

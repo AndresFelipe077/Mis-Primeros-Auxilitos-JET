@@ -1,6 +1,8 @@
 <link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/algodon.png') }}" type="image/x-icon">
 <x-app-layout>
-    
+    <link href="https://vjs.zencdn.net/7.2/video-js.min.css" rel="stylesheet">
+	<script src="https://vjs.zencdn.net/7.2/video.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/video.css') }}">
     <div>
         @section('title', 'Videos')
 
@@ -23,17 +25,14 @@
                     <div class="card-body shadow">
                         <h5 class="card-title">{{ $video->video_title }}</h5>
                         <div class="contenedor rounded">
-                            <video id="video-tagg"
-                                class="mx-auto m-3 rounded" controls>
-                                <source src="{{ asset($video->video_url) }}">
+                            <video id="fm-video"
+                                class="mx-auto m-3 rounded fm-video video-js vjs-16-9 vjs-big-play-centered" data-setup="{}" controls>
+                                <source src="{{ asset($video->video_url) }}" type="video/mp4">
                                 Tu navegador no soporta elementos de video😥.
                             </video>
                         </div>
                         <p class="card-text">{{ $video->description }}</p>
                         <div class="text-center mt-3">
-                            <a href="#" class="btn btn-outline-primary "><img
-                                    src="{{ asset('img/icons/vamos2.png') }}" alt="Image Trivias" width="50px"
-                                    height="50px"></a>
                             <a href="{{ route('video.edit', $video) }}" class="btn btn-outline-danger"><img
                                     src="{{ asset('img/icons/editar3.png') }}" alt="Image Trivias" width="50px"
                                     height="50px"></a>
@@ -60,5 +59,7 @@
     <x-slot name="footer">
         <x-footer />
     </x-slot>
+
+    <script src="{{ asset('js/video-show.js') }}"></script>
     
 </x-app-layout>

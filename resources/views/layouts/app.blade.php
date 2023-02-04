@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{ asset('css/eye.css') }}">
     <link rel="stylesheet" href="{{ asset('css/iconPasswordReset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/iconCalendar.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/video.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/video.css') }}"> --}}
 
 
 
@@ -190,15 +190,15 @@
 
     @stack('js')
     {{-- Escuchar evento de Scritp --}}
-    <script src="{{ asset('js/alert-modal.js') }}"></script>
+    {{-- <script src="{{ asset('js/alert-modal.js') }}"></script> --}}
     @stack('scripts')
 
     {{-- <script src="{{ asset('js/sound.js') }}"></script> --}}
-    <script src="{{ asset('js/checkCheckBox.js') }}"></>
+    <script src="{{ asset('js/checkCheckBox.js') }}"></script>
     <script src="{{ asset('js/eye.js') }}"></script>
     <script src="{{ asset('js/toast-delete.js') }}"></script>
     <script src="{{ asset('js/imageview.js') }}"></script>
-    {{--<script src="{{ asset('js/modal.js') }}"></script>--}}
+    {{-- <script src="{{ asset('js/modal.js') }}"></script> --}}
 
 </body>
 
