@@ -87,7 +87,8 @@ Crear3
 ManoCursor
 <a href="https://www.flaticon.es/iconos-gratis/click-izquierdo" title="click izquierdo iconos">Click izquierdo iconos creados por Freepik - Flaticon</a>
 
-
+Video
+<a href="https://www.flaticon.es/iconos-gratis/video" title="vídeo iconos">Vídeo iconos creados por Eucalyp - Flaticon</a>
 
 
 GIFS

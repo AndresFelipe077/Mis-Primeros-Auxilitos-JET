@@ -35,7 +35,8 @@
 
                                     <label class="pe-auto" for="exampleFormControlFile1" id="src-file">Escoge un
                                         video</label>
-                                    <video controls autoplay id="video-tag" class="mx-auto m-3 rounded">
+                                    <video autoplay id="video-tag" class="mx-auto m-3 rounded text-white bg-white"
+                                        controls poster="{{ asset('img/icons/video.png') }}">
                                         <source id="video-source">
                                         Tu navegador no soporta elementos de video😥.
                                     </video>
@@ -86,6 +87,8 @@
             </div>
         </div>
     </div>
+
+
 
     <x-slot name="footer">
         <x-footer />

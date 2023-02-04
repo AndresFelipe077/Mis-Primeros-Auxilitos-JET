@@ -7,36 +7,45 @@
             <x-header />
         </x-slot>
 
+        <div class="container" >
+
+          <div class="row ">
+
         <div class="text-center mt-3">
             <a href="{{ route('video.create') }}" class="btn btn-outline-success mt-5"><img
                     src="{{ asset('img/icons/crear2.png') }}" alt="Image Trivias" width="50px" height="50px"></a>
         </div>
 
         @foreach ($videos as $video)
-            <div class="col mb-4 animate__animated animate__wobble">
-
-                <div class="card shadow border-dark bg-white">
-                    <div class="card-header">
-                        {{ $video->video_title }}
-                    </div>
-                    <div class="card-body ">
-                        <div class="rounded">
-                            <video class="imagen card-img-top rounded " src="{{ asset($video->video_url) }}"
-                                alt="Images Mis Primeros Auxilitos" width="200px" height="200px" controls>
-                                {{-- <iframe width="100%" src="{{ $video->video_url }}" frameborder="0"
-                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe> --}}
+            <div class="col-12 col-md-6 mt-5 col-lg-4">
+                <div class="card m-3 text-center rounded animate__animated animate__bounceIn">
+                    <div class="card-body shadow">
+                        <h5 class="card-title">{{ $video->video_title }}</h5>
+                        <div class="contenedor rounded">
+                            <video id="video-tagg"
+                                class="mx-auto m-3 rounded text-white bg-white fm-video video-js vjs-16-9 vjs-big-play-centered"
+                                data-setup="{}" controls>
+                                <source id="video-source" class="rounded" src="{{ asset($video->video_url) }}">
+                                Tu navegador no soporta elementos de video😥.
+                            </video>
                         </div>
-
-                        <p class="card-text">
-                            {{ $video->description }}
-                        </p>
+                        <p class="card-text">{{ $video->description }}</p>
+                        <div class="text-center mt-3">
+                            <a href="#" class="btn btn-outline-primary "><img
+                                    src="{{ asset('img/icons/vamos2.png') }}" alt="Image Trivias" width="50px"
+                                    height="50px"></a>
+                            <a href="{{ route('triviaEdit', $video) }}" class="btn btn-outline-danger"><img
+                                    src="{{ asset('img/icons/editar3.png') }}" alt="Image Trivias" width="50px"
+                                    height="50px"></a>
+                        </div>
                     </div>
-
                 </div>
-
             </div>
+
+{{--  --}}
         @endforeach
+      </div>
+    
     </div>
 
 

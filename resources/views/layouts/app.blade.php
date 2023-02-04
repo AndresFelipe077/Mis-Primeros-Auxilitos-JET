@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="{{ asset('css/eye.css') }}">
     <link rel="stylesheet" href="{{ asset('css/iconPasswordReset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/iconCalendar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/video.css') }}">
+
 
 
     {{-- link de guest --}}
@@ -41,6 +43,7 @@
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/input-file.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('css/modal.css') }}"> --}}
+    <link href="{{ asset('css/video-js.min.css')}} " rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,6 +84,8 @@
     <!-- Scripts -->
     <script src="{{ asset('build/assets/app.js') }}" defer></script>
     {{-- <script src="{{asset('js/noSeleccionar.js')}}"></script> --}}
+    <script src="{{ asset('js/video.min.js')}}"></script>
+
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -187,27 +192,16 @@
 
     @stack('js')
     {{-- Escuchar evento de Scritp --}}
-    <script>
-        Livewire.on('alert', function(message) {
-            Swal.fire({
-                title: message,
-                width: 600,
-                padding: '3em',
-                color: '#008000',
-                background: 'fff# url(/images/trees.png)',
-                backdrop: `rgba(0,0,123,0.4) url("img/astro.jpg") left top no-repeat`
-            })
-        })
-    </script>
-
+    <script src="{{ asset('js/alert-modal.js') }}"></script>
     @stack('scripts')
 
     {{-- <script src="{{ asset('js/sound.js') }}"></script> --}}
-    <script src="{{ asset('js/checkCheckBox.js') }}"></script>
+    <script src="{{ asset('js/checkCheckBox.js') }}"></>
     <script src="{{ asset('js/eye.js') }}"></script>
     <script src="{{ asset('js/toast-delete.js') }}"></script>
     <script src="{{ asset('js/imageview.js') }}"></script>
     <script src="{{ asset('js/videoPreview.js') }}"></script>
+    <script src="{{ asset('js/video-show.js') }}"></script>
     {{-- <script src="{{ asset('js/modal.js') }}"></script> --}}
 
 </body>
