@@ -6,6 +6,7 @@ use App\Models\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class VideoController extends Controller
 {
@@ -68,36 +69,58 @@ class VideoController extends Controller
             'video_url'   => 'file|mimetypes:video/mp4',
             'description' => 'required|max:255',
         ]);
-        
-        $cadena = $request->file('video_url')->getClientOriginalName();
 
-        $cadenaConvert = strtr($cadena, " ", "_");
+        // $cadena = $request->file('video_url')->getClientOriginalName();
 
-        $nombre = Str::random(10) . $cadenaConvert;
+        // $cadenaConvert = strtr($cadena, " ", "_");
 
-        $fileName = $nombre;
-        $filePath = 'videos/' . $fileName;
+        // $nombre = Str::random(10) . $cadenaConvert;
 
-        $isFileUploaded = Storage::disk('public')->put($filePath, file_get_contents($request->video_url));
+        // $fileName = $nombre;
+        // $filePath = 'videos/' . $fileName;
 
-        if ($isFileUploaded) {
+        // $isFileUploaded = Storage::disk('public')->put($filePath, file_get_contents($request->video_url));
 
-            $video->video_title = $request->video_title;
-            $video->video_url   = '/storage/' . $filePath;
-            $video->description = $request->description;
+        // if ($isFileUploaded) {
 
-            $video->save();
+        $video->video_title = $request->video_title;
+        if ($request->has('video_url')) {
+            
+            if ($video->video_url != '') {
+                unlink(public_path() . '/' . $video->video_url);
+            }
 
-            return redirect()->route('video.index')->with('ok', 'Tu video se ha creado exitosamente!!!😎');
+            $file = $request->file('video_url');
+
+            $cadena = $file->getClientOriginalName();
+
+            $cadenaConvert = strtr($cadena, " ", "_");
+
+            $nombre = Str::random(10) . $cadenaConvert;
+
+            $file->move('storage/videos/', $nombre);
+
+            $video->video_url = '/storage/videos/' . $nombre;
+            // return $video;
+
         }
+        $video->description = $request->description;
 
-        return back()
-            ->with('error', 'Ups ha ocurrido un problema 😥, intentalo nuevamente');
+        $video->update();
+
+        return redirect()->route('video.index')->with('ok', 'Tu video se ha creado exitosamente!!!😎');
+        // }
+
+        // return back()
+        //     ->with('error', 'Ups ha ocurrido un problema 😥, intentalo nuevamente');
     }
 
     public function destroy(Video $video)
     {
-        $video->delete();
+        if (file_exists(public_path()  . $video->video_url) && $video->video_url != '') {
+            unlink(public_path()  . $video->video_url);
+            $video->delete();
+        }
         return redirect()->route('video.index')->with('success', 'Video deleted Successfully');
     }
 }

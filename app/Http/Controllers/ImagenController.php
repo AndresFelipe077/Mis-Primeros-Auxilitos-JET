@@ -105,13 +105,6 @@ class ImagenController extends Controller
 
         if ($request->has('file')) {
             $destination = public_path() . $imagen->url;
-            // if (File::exists($destination)) {
-            //     File::delete($destination);
-            // }
-            // if (file_exists(public_path() . $imagen->url)) {
-            // if(File::exists(public_path() . $imagen->url)){
-            //     unlink(public_path() . $imagen->url);
-            // }
 
             if($imagen->url != '')
             {
@@ -128,7 +121,7 @@ class ImagenController extends Controller
 
             $file->move('storage/images/', $nombre);
 
-            $imagen->url = 'storage/images/' . $nombre;
+            $imagen->url = '/storage/images/' . $nombre;
         }
 
         $imagen->autor       = $name;
@@ -142,17 +135,11 @@ class ImagenController extends Controller
 
     public function destroy(Imagen $imagen)
     {
-        // unlink('C:\xampp\htdocs\Mis-Primeros-Auxilitos-Jet\public' . $imagen->url);
-        // if (file_exists(public_path() . $imagen->url)) {
-        //     unlink(public_path() . $imagen->url);
-        //     $imagen->delete();
-        // }
         if($imagen->url != '')
         {
             unlink(public_path() . '/' . $imagen->url);
             $imagen->delete();
         }
-        // $imagen->delete();
         return redirect()->route('dashboard.index')->with('eliminar', 'ok');
     }
 }
