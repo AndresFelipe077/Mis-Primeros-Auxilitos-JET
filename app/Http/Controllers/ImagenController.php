@@ -93,48 +93,36 @@ class ImagenController extends Controller
 
     public function update(Request $request, Imagen $imagen)
     {
-        $data = $request->validate([
+        $request->validate([
             'title'        => 'required|max:50',
             'file'         => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'autor'        => 'string',
             'description'  => 'required|max:250',
         ]);
 
-        // $nombre = Str::random(10) . $request->file('file')->getClientOriginalName();
-
-        // $ruta = storage_path() . '\app\public\images/' . $nombre;
-
-        // Image::make($request->file('file'))
-        //     ->resize(900, null, function ($constraint) {
-        //         $constraint->aspectRatio();
-        //     })
-        //     ->save($ruta);
-
         $name = Auth::user()->name;
+        $imagen->title = $request->title;
 
-        $imagen->title       = $request->title;
         if ($request->has('file')) {
             $destination = $imagen->url;
-            if (File::exists($destination)) 
-            {
+            if (File::exists($destination)) {
                 File::delete($destination);
             }
 
             $file = $request->file('file');
-            $name = $file->getClientOriginalName();
-            $file->move('storage/images/', $name);
 
-            if (file_exists(public_path($name =  $file->getClientOriginalName()))) {
-                unlink(public_path($name));
-            };
-            
-            $imagen->url = 'storage/images/' . $name;
+            $cadena = $file->getClientOriginalName();
 
+            $cadenaConvert = strtr($cadena, " ", "_");
+
+            $nombre = Str::random(10) . $cadenaConvert;
+
+            $file->move('storage/images/', $nombre);
+
+            $imagen->url = 'storage/images/' . $nombre;
         }
 
-
-
-        $imagen->autor       = Auth::user()->name;
+        $imagen->autor       = $name;
         $imagen->description = $request->description;
 
         $imagen->update();
