@@ -82,6 +82,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('build/assets/app.js') }}" defer></script>
+    <script src="{{ asset('js/audio_context.js') }}"></script>
+    
     {{-- <script src="{{asset('js/noSeleccionar.js')}}"></script> --}}
 
 

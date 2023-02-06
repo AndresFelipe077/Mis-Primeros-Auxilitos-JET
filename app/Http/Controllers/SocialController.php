@@ -36,7 +36,6 @@ class SocialController extends Controller
                 'password'           => bcrypt($user->email),
                 'email_verified_at'  => now(),
                 'external_auth'      => 'google',
-                // 'token'              => $user->token,
             ]);
 
             Auth::login($userNew);
@@ -60,35 +59,6 @@ class SocialController extends Controller
         $userExists = User::where('external_id', $user->id)->where('external_auth', 'facebook')->first();
 
         if ($userExists) {
-
-            // $this->validateLogin($request);
-
-            // if ($this->hasTooManyLoginAttempts($request)) {
-            //     $this->fireLockoutEvent($request);
-
-            //     return $this->sendLockoutResponse($request);
-            // }
-
-            // $user = User::where($this->username(), '=', $request->email)->first();
-
-            // if (password_verify($request->password, optional($userExists)->password)) {
-            //     $this->clearLoginAttempts($request);
-
-            //     $user->update(['token_login' => (new Google2FA)->generateSecretKey()]);
-
-            //     $urlQR = $this->createUserUrlQR($user);
-
-            //     return view("auth.2fa", compact('urlQR', 'user'));
-            // }
-
-            // $this->incrementLoginAttempts($request);
-
-            // return $this->sendFailedLoginResponse($request);
-
-
-
-
-
             Auth::login($userExists);
             return redirect('/dashboard');
         } else {

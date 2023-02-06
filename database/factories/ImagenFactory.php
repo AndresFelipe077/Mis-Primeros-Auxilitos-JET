@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Contenido>
@@ -18,14 +19,11 @@ class ImagenFactory extends Factory
     public function definition()
     {
         $user = User::all()->random();
-
-        // $collection = User::where('user_id', 1)->pluck('name');
-        // if (!$collection->isEmpty()) {
-        //     $user = $collection->random();
-        // }
-
+        $url_title = $this -> faker -> randomElement(['Curar Heridas','Botiquin','Accidentes']);
+        
         return [
-            'title'       => $this -> faker -> randomElement(['Curar Heridas','Botiquin','Accidentes']),
+            'title'       => $url_title,
+            'slug'        => Str::slug($url_title, '-'),
             'url'         => $this -> faker -> randomElement(['/storage/imagesFactory/policia.png', '/storage/imagesFactory/peluche.png','/storage/imagesFactory/logo.png', '/storage/imagesFactory/fondo.jpg']),
             'autor'       => $user -> name,
             'description' => $this -> faker -> text('200'),

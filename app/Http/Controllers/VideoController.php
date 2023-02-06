@@ -43,8 +43,12 @@ class VideoController extends Controller
 
         if ($isFileUploaded) {
 
+        $video_title = $request->video_title;
+        $video_url = Str::slug($video_title, '-');
+
             Video::create([
-                'video_title'       => $request->video_title,
+                'video_title'       => $video_title,
+                'slug'              => $video_url,
                 'video_url'         => '/storage/' . $filePath,
                 'description'       => $request->description,
             ]);
@@ -56,9 +60,8 @@ class VideoController extends Controller
             ->with('error', 'Ups ha ocurrido un problema 😥, intentalo nuevamente');
     }
 
-    public function edit($video)
+    public function edit(Video $video)
     {
-        $video = Video::find($video);
         return view('livewire.videos.video-edit', compact('video'));
     }
 
@@ -70,20 +73,12 @@ class VideoController extends Controller
             'description' => 'required|max:255',
         ]);
 
-        // $cadena = $request->file('video_url')->getClientOriginalName();
+        $video_title = $request->video_title;
+        $video_url = Str::slug($video_title, '-');
 
-        // $cadenaConvert = strtr($cadena, " ", "_");
+        $video->video_title = $video_title;
+        $video->slug        = $video_url;
 
-        // $nombre = Str::random(10) . $cadenaConvert;
-
-        // $fileName = $nombre;
-        // $filePath = 'videos/' . $fileName;
-
-        // $isFileUploaded = Storage::disk('public')->put($filePath, file_get_contents($request->video_url));
-
-        // if ($isFileUploaded) {
-
-        $video->video_title = $request->video_title;
         if ($request->has('video_url')) {
             
             if ($video->video_url != '') {
@@ -104,6 +99,7 @@ class VideoController extends Controller
             // return $video;
 
         }
+
         $video->description = $request->description;
 
         $video->update();

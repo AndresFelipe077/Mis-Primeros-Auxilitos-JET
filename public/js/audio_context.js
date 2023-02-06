@@ -1,0 +1,4 @@
+function touchStarted() {
+    getAudioContext().resume();
+}
+  

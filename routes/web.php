@@ -48,7 +48,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::post('dashboard/store/contenido', 'store')->name('contenido.store');
 
-    Route::get('dashboard/{imagen}/edit', 'edit')->name('contenido.edit');
+    Route::get('dashboard/edit/{imagen}', 'edit')->name('contenido.edit');
 
     Route::put('dashboard/{imagen}', 'update')->name('contenido.update');
 
@@ -66,11 +66,11 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::post('dashboard/videos/store', 'store')->name('video.store');
 
-    Route::get('dashboard/videos/{video}/edit', 'edit')->name('video.edit');
+    Route::get('dashboard/videos/edit/{video}', 'edit')->name('video.edit');
 
-    Route::put('dashboard/videos/{video}/update', 'update')->name('video.update');
+    Route::put('dashboard/videos/update/{video}', 'update')->name('video.update');
 
-    Route::delete('dashboard/videos/{video}/destroy', 'destroy')->name('video.destroy');
+    Route::delete('dashboard/videos/destroy/{video}', 'destroy')->name('video.destroy');
 
 });
 
@@ -84,11 +84,11 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::post('dashboard/games/trivia/create', 'triviaStore')->name('triviaStore');
 
-    Route::get('dashboard/games/trivia/{trivia}/edit', 'triviaEdit')->name('triviaEdit');
+    Route::get('dashboard/games/trivia/edit/{trivia}', 'triviaEdit')->name('triviaEdit');
 
-    Route::put('dashboard/games/trivia/{trivia}/edit', 'triviaUpdate')->name('triviaUpdate');
+    Route::put('dashboard/games/trivia/edit/{trivia}', 'triviaUpdate')->name('triviaUpdate');
 
-    Route::delete('dashboard/games/trivia/{trivia}/delete', 'triviaDelete')->name('triviaDelete');
+    Route::delete('dashboard/games/trivia/delete/{trivia}', 'triviaDelete')->name('triviaDelete');
 });
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(AdivinanzaController::class)->group(function () {
@@ -99,11 +99,11 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::post('dashboard/games/adivinanza/create', 'adivinanzaStore')->name('adivinanzaStore');
 
-    Route::get('dashboard/games/adivinanza/{adivinanza}/edit', 'adivinanzaEdit')->name('adivinanzaEdit');
+    Route::get('dashboard/games/adivinanza/edit/{adivinanza}', 'adivinanzaEdit')->name('adivinanzaEdit');
 
-    Route::put('dashboard/games/adivinanza/{adivinanza}/edit', 'adivinanzaUpdate')->name('adivinanzaUpdate');
+    Route::put('dashboard/games/adivinanza/edit/{adivinanza}', 'adivinanzaUpdate')->name('adivinanzaUpdate');
 
-    Route::delete('dashboard/games/adivinanza/{adivinanza}/delete', 'adivinanzaDelete')->name('adivinanzaDelete');
+    Route::delete('dashboard/games/adivinanza/delete/{adivinanza}', 'adivinanzaDelete')->name('adivinanzaDelete');
 });
 
 

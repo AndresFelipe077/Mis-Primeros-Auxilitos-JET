@@ -7,8 +7,6 @@ use App\Models\Imagen;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
 
 class ImagenController extends Controller
 {
@@ -66,12 +64,14 @@ class ImagenController extends Controller
             })
             ->save($ruta);
 
+        $title  = $request->title;
+        $title_url  = Str::slug($title,'-');
         $userId = Auth::user()->id; //Se obtiene id del Usuario Autenticado
-        $name = Auth::user()->name; //Se obtiene id del Usuario Autenticado
-
+        $name   = Auth::user()->name;
 
         Imagen::create([
-            'title'       => $request->title,
+            'title'       => $title,
+            'slug'        => $title_url,
             'url'         => '/storage/images/' . $nombre,
             'autor'       => $name,
             'description' => $request->description,
@@ -99,9 +99,12 @@ class ImagenController extends Controller
             'autor'        => 'string',
             'description'  => 'required|max:250',
         ]);
+        $title  = $request->title;
+        $title_url  = Str::slug($title,'-');
 
         $name = Auth::user()->name;
-        $imagen->title = $request->title;
+        $imagen->title = $title;
+        $imagen->slug  = $title_url;
 
         if ($request->has('file')) {
             $destination = public_path() . $imagen->url;

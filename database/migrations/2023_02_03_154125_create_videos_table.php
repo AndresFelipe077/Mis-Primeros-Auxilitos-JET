@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
             $table->string('video_title');
+            $table->string('slug');
             $table->string('video_url');
             $table->text('description');
             $table->tinyInteger('status',0)->nullable();
