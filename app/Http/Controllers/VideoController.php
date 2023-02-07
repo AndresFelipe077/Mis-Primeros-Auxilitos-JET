@@ -113,15 +113,8 @@ class VideoController extends Controller
 
     public function destroy(Video $video)
     {
-        // if (file_exists(public_path()  . $video->video_url) && $video->video_url != '') {
-        //     unlink(public_path()  . $video->video_url);
-        //     $video->delete();
-        // }
         $url = str_replace('storage', 'public', $video->video_url);
-
-        $a = Storage::delete($url);
-        return $a;
-        if (file_exists(storage_path()  . $url) && $video->video_url != '') {
+        if ($video->video_url != '') {
             Storage::delete($url);
             $video->delete();
         }
