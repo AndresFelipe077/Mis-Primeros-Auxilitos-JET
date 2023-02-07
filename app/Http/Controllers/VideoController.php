@@ -43,8 +43,8 @@ class VideoController extends Controller
 
         if ($isFileUploaded) {
 
-        $video_title = $request->video_title;
-        $video_url = Str::slug($video_title, '-');
+            $video_title = $request->video_title;
+            $video_url = Str::slug($video_title, '-');
 
             Video::create([
                 'video_title'       => $video_title,
@@ -80,7 +80,7 @@ class VideoController extends Controller
         $video->slug        = $video_url;
 
         if ($request->has('video_url')) {
-            
+
             if ($video->video_url != '') {
                 unlink(public_path() . '/' . $video->video_url);
             }
@@ -113,8 +113,16 @@ class VideoController extends Controller
 
     public function destroy(Video $video)
     {
-        if (file_exists(public_path()  . $video->video_url) && $video->video_url != '') {
-            unlink(public_path()  . $video->video_url);
+        // if (file_exists(public_path()  . $video->video_url) && $video->video_url != '') {
+        //     unlink(public_path()  . $video->video_url);
+        //     $video->delete();
+        // }
+        $url = str_replace('storage', 'public', $video->video_url);
+
+        $a = Storage::delete($url);
+        return $a;
+        if (file_exists(storage_path()  . $url) && $video->video_url != '') {
+            Storage::delete($url);
             $video->delete();
         }
         return redirect()->route('video.index')->with('success', 'Video deleted Successfully');
