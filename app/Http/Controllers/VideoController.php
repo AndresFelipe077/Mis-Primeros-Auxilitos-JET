@@ -120,4 +120,5 @@ class VideoController extends Controller
         }
         return redirect()->route('video.index')->with('success', 'Video deleted Successfully');
     }
+    
 }
