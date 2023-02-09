@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AdivinanzaController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ImagenController;
+use App\Http\Controllers\ContenidoController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\TriviaController;
 use App\Http\Controllers\VideoController;
@@ -39,7 +39,7 @@ Route::group(['middleware' => ['guest', 'throttle:' . config('fortify.limiters.l
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 
-Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(ImagenController::class)->group(function () {
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(ContenidoController::class)->group(function () {
 
     //Vista home de videos
     Route::get('dashboard', 'index')->name('dashboard.index');
@@ -48,11 +48,11 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::post('dashboard/store/contenido', 'store')->name('contenido.store');
 
-    Route::get('dashboard/edit/{imagen}', 'edit')->name('contenido.edit');
+    Route::get('dashboard/edit/{contenido}', 'edit')->name('contenido.edit');
 
-    Route::put('dashboard/{imagen}', 'update')->name('contenido.update');
+    Route::put('dashboard/{contenido}', 'update')->name('contenido.update');
 
-    Route::delete('edit/{imagen}', 'destroy')->name('contenido.destroy');
+    Route::delete('edit/{contenido}', 'destroy')->name('contenido.destroy');
 
     //Acceder a vista ajustes
     Route::get('dashboard/ajustes', 'ajustes')->name('dashboard.ajustes');

@@ -3,20 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Imagen;
+use App\Models\Contenido;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 
-class ImagenController extends Controller
+class ContenidoController extends Controller
 {
 
     //Vista home de videos
     public function index()
     {
         if (Auth::check()) {
-            $imagenes = Imagen::orderBy('id', 'desc')->paginate(9);
-            return view('livewire.imagenes.imagen-show', compact('imagenes'));
+            $contenidos = Contenido::orderBy('id', 'desc')->paginate(9);
+            return view('livewire.imagenes.imagen-show', compact('contenidos'));
         } else {
             return view('auth.login');
         }
@@ -69,7 +69,7 @@ class ImagenController extends Controller
         $userId = Auth::user()->id; //Se obtiene id del Usuario Autenticado
         $name   = Auth::user()->name;
 
-        Imagen::create([
+        Contenido::create([
             'title'       => $title,
             'slug'        => $title_url,
             'url'         => '/storage/images/' . $nombre,
@@ -83,15 +83,15 @@ class ImagenController extends Controller
     }
 
 
-    public function edit(Imagen $imagen)
+    public function edit(Contenido $contenido)
     {
 
         if (Auth::check()) {
-            return view('livewire.imagenes.imagen-edit', compact('imagen'));
+            return view('livewire.imagenes.imagen-edit', compact('contenido'));
         }
     }
 
-    public function update(Request $request, Imagen $imagen)
+    public function update(Request $request, Contenido $contenido)
     {
         $request->validate([
             'title'        => 'required|max:50',
@@ -103,15 +103,15 @@ class ImagenController extends Controller
         $title_url  = Str::slug($title,'-');
 
         $name = Auth::user()->name;
-        $imagen->title = $title;
-        $imagen->slug  = $title_url;
+        $contenido->title = $title;
+        $contenido->slug  = $title_url;
 
         if ($request->has('file')) {
-            $destination = public_path() . $imagen->url;
+            $destination = public_path() . $contenido->url;
 
-            if($imagen->url != '')
+            if($contenido->url != '')
             {
-                unlink(public_path() . '/' . $imagen->url);
+                unlink(public_path() . '/' . $contenido->url);
             }
 
             $file = $request->file('file');
@@ -124,24 +124,24 @@ class ImagenController extends Controller
 
             $file->move('storage/images/', $nombre);
 
-            $imagen->url = '/storage/images/' . $nombre;
+            $contenido->url = '/storage/images/' . $nombre;
         }
 
-        $imagen->autor       = $name;
-        $imagen->description = $request->description;
+        $contenido->autor       = $name;
+        $contenido->description = $request->description;
 
-        $imagen->update();
+        $contenido->update();
 
-        return redirect()->route('dashboard.index', compact('imagen'))->with('actualizar', 'ok');
+        return redirect()->route('dashboard.index', compact('contenido'))->with('actualizar', 'ok');
     }
 
 
-    public function destroy(Imagen $imagen)
+    public function destroy(Contenido $contenido)
     {
-        if($imagen->url != '')
+        if($contenido->url != '')
         {
-            unlink(public_path() . '/' . $imagen->url);
-            $imagen->delete();
+            unlink(public_path() . '/' . $contenido->url);
+            $contenido->delete();
         }
         return redirect()->route('dashboard.index')->with('eliminar', 'ok');
     }

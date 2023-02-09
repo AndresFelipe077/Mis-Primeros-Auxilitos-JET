@@ -122,20 +122,20 @@
                     {{-- <a href="{{route('triviaCreate')}}" class="btn btn-outline-success mt-5"><img src="{{ asset('img/icons/crear2.png') }}" alt="Image Trivias" width="50px" height="50px"></a>  --}}
                 </div>
 
-                @foreach ($imagenes as $imagen)
+                @foreach ($contenidos as $contenido)
                     <div class="col-12 col-md-6 mt-5 col-lg-4">
                         <div class="card m-3 text-center rounded animate__animated animate__wobble">
                             <div class="card-body shadow">
-                                <h5 class="card-title">{{ $imagen->title }}</h5>
+                                <h5 class="card-title">{{ $contenido->title }}</h5>
                                 <div class="contenedor rounded">
-                                    <img class="imagen rounded mx-auto d-block" src="{{ $imagen->url }}"
+                                    <img class="imagen rounded mx-auto d-block" src="{{ $contenido->url }}"
                                         alt="Image of trivia" id="img-content">
                                 </div>
-                                <p><strong>Autor: </strong> {{ $imagen->autor }}</p>
+                                <p><strong>Autor: </strong> {{ $contenido->autor }}</p>
                                 {{-- <p class="card-text">{!! $trivia->content !!}</p> --}}
                                 <div class="text-center mt-3">
-                                    @if (Auth::user()->id == $imagen->user_id)
-                                        <a class="btn bg-transparent" href="{{ route('contenido.edit', $imagen) }}"><img
+                                    @if (Auth::user()->id == $contenido->user_id)
+                                        <a class="btn bg-transparent" href="{{ route('contenido.edit', $contenido) }}"><img
                                                 src="{{ asset('/img/icons/lapiz-editar.png') }}" width="50px"
                                                 height="50px" alt="Editar"></a>
                                     @endif
@@ -152,7 +152,7 @@
         <div class="">
             <ul class="pagination pagination-lg">
                 <li class="page-item active mb-5" aria-current="page">
-                    <span class="page-link bg-light h4">{{ $imagenes->links() }}</span>
+                    <span class="page-link bg-light h4">{{ $contenidos->links() }}</span>
                 </li>
             </ul>
         </div>
