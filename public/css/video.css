@@ -1,13 +1,17 @@
 .fm-video {
 	width: 100%;
-	box-shadow: 0px 0px 6px 0px rgba(0,0,0,.5);
+	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, .5);
 }
 
 .fm-video .vjs-control-bar {
 	background: #F4F4F4;
-	color: #1d87d8/*#2d5f85*/;
+	color: #1d87d8;
 	border-radius: 5px;
 }
+
+/* .fm-video .vjs-control .vjs-volume-panel-horizontal {
+	color: yellow;
+} */
 
 .fm-video .vjs-play-progress,
 .fm-video .vjs-volume-level {
@@ -31,3 +35,5 @@
 .fm-video .vjs-big-play-button:hover {
 	background: #00000080;
 }
+
+/*http://players.brightcove.net/1752604059001/4yP1PnWcg_default/index.min.js*/

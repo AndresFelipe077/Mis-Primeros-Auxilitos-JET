@@ -23,7 +23,7 @@ class VideoFactory extends Factory
         return [
             'video_title' => $video_title,
             'slug'        => $video_url,
-            'video_url'   => $this -> faker -> randomElement(['/storage/videos/auxilios.mp4']),
+            'video_url'   => $this -> faker -> randomElement(['/storage/videoFactory/auxilios.mp4']),
             'description' => $this -> faker -> text('200'),
             'status'      => $this -> faker -> randomElement(['1','0']),
             'created_at'  => now(),

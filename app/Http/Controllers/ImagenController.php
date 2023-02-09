@@ -15,7 +15,7 @@ class ImagenController extends Controller
     public function index()
     {
         if (Auth::check()) {
-            $imagenes = Imagen::orderBy('id', 'desc')->paginate(8);
+            $imagenes = Imagen::orderBy('id', 'desc')->paginate(9);
             return view('livewire.imagenes.imagen-show', compact('imagenes'));
         } else {
             return view('auth.login');
