@@ -1,4 +1,7 @@
 <link id="image-head" rel="shortcut icon" href="{{ asset('img/imgs/logo.png') }}" type="image/x-icon">
+<link href="{{ asset('css/video-js.min.css') }}" rel="stylesheet">
+<script src="{{ asset('js/video.min.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('css/video.css') }}">
 @section('title', 'Home')
 <x-app-layout>
 
@@ -131,14 +134,13 @@
                                     @if ($contenido->url)
                                         @php
                                             $extension = pathinfo($contenido->url)['extension'];
-                                            
                                         @endphp
                                         @if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' || $extension == 'svg')
                                             <img class="imagen rounded mx-auto d-block" src="{{ $contenido->url }}"
                                                 alt="Image of trivia" id="img-content">
                                         @else
-                                            <video id="fm-video" class="mx-auto m-3 rounded {{-- fm-video video-js vjs-16-9 vjs-big-play-centered --}}"
-                                                {{-- data-setup="{}" --}} controls>
+                                            <video id="fm-video" class="mx-auto m-3 rounded fm-video video-js vjs-16-9 vjs-big-play-centered"
+                                                data-setup="{}" controls poster="{{ asset('img/icons/video.png') }}">
                                                 <source src="{{ asset($contenido->url) }}">
                                                 Tu navegador no soporta elementos de video😥.
                                             </video>
@@ -173,6 +175,7 @@
 
 
         <link rel="stylesheet" href="{{ asset('css/contenido.css') }}">
+        <script src="{{ asset('js/video-show.js') }}"></script>
         <x-slot name="footer">
             <x-footer />
         </x-slot>

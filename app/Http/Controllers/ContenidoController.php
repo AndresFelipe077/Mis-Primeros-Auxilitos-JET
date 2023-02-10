@@ -17,7 +17,7 @@ class ContenidoController extends Controller
   {
     if (Auth::check()) {
       $contenidos = Contenido::orderBy('id', 'desc')->paginate(9);
-    return view('livewire.imagenes.imagen-show', compact('contenidos'));
+      return view('livewire.imagenes.imagen-show', compact('contenidos'));
     } else {
       return view('auth.login');
     }
@@ -61,7 +61,7 @@ class ContenidoController extends Controller
       $nombre = Str::random(10) . $cadenaConvert;
 
       $fileName = $nombre;
-      $filePath = 'videos/' . $fileName;
+      $filePath = 'contenidos/' . $fileName;
 
       $isFileUploaded = Storage::disk('public')->put($filePath, file_get_contents($request->file));
 
@@ -89,7 +89,7 @@ class ContenidoController extends Controller
 
       $nombre = Str::random(10) . $cadenaConvert;
 
-      $ruta = storage_path() . '\app\public\images/' . $nombre;
+      $ruta = storage_path() . '\app\public\contenidos/' . $nombre;
 
       Image::make($request->file('file'))
         ->resize(900, null, function ($constraint) {
@@ -130,7 +130,7 @@ class ContenidoController extends Controller
   {
     $request->validate([
       'title'        => 'required|max:50',
-      'file'         => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+      'file'         => 'file',
       'autor'        => 'string',
       'description'  => 'required|max:250',
     ]);
@@ -156,9 +156,9 @@ class ContenidoController extends Controller
 
       $nombre = Str::random(10) . $cadenaConvert;
 
-      $file->move('storage/images/', $nombre);
+      $file->move('storage/contenidos/', $nombre);
 
-      $contenido->url = '/storage/images/' . $nombre;
+      $contenido->url = '/storage/contenidos/' . $nombre;
     }
 
     $contenido->autor       = $name;
@@ -172,8 +172,9 @@ class ContenidoController extends Controller
 
   public function destroy(Contenido $contenido)
   {
+    $url = str_replace('storage', 'public', $contenido->url);
     if ($contenido->url != '') {
-      unlink(public_path() . '/' . $contenido->url);
+      Storage::delete($url);
       $contenido->delete();
     }
     return redirect()->route('dashboard.index')->with('eliminar', 'ok');

@@ -10,7 +10,7 @@
 
 
         <div class="container text-center mx-auto animate__animated animate__swing rounded">
-            <h1 id="title-h1" class="text-center animate__animated animate__swing rounded">Vista crear videos</h1>
+            <h1 id="title-h1" class="text-center animate__animated animate__swing rounded">Edita tu contenido 🤗</h1>
 
             <div class="row">
 
@@ -27,8 +27,8 @@
                             @method('put')
 
                             <div class="form-group">
-                                <label for="">Titulo de la imagen</label>
-                                <input type="text" name="title" class="form-control" id=""
+                                <label for="">Titulo</label>
+                                <input type="text" name="title" class="form-control"
                                     aria-describedby="" value="{{ old('title', $contenido->title) }}">
                                 @error('title')
                                     <br>
@@ -38,17 +38,37 @@
                             </div>
 
                             <div class="form-group m-1 mx-auto">
-                                <label for="exampleFormControlFile1" id="src-file">Escoge una imagen</label>
-
+                                <label class="h5" for="exampleFormControlFile1" id="src-file">Escoge tu contenido
+                                    😋😊😉</label>
                                 <div>
-                                    <img class="rounded mx-auto m-2" src="{{ asset($contenido->url) }}" id="imgPreview"
-                                        width="150px" height="150px">
+                                    @if ($contenido->url)
+                                        @php
+                                            $extension = pathinfo($contenido->url)['extension'];
+                                        @endphp
+                                        @if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' || $extension == 'svg')
+                                            <img class="rounded mx-auto m-2" src="{{ asset($contenido->url) }}"
+                                                id="imgPreview" width="150px" height="150px">
+                                        @else
+                                            <video controls autoplay id="video-tag"
+                                                class="mx-auto m-3 rounded text-white bg-white">
+                                                <source id="video-source" src="{{ old('url', $contenido->url) }}">
+                                                Tu navegador no soporta elementos de video😥.
+                                            </video>
+                                        @endif
+                                    @endif
+
+                                    {{-- <img class="rounded mx-auto m-2" src="{{ asset($contenido->url) }}" id="imgPreview"
+                                        width="150px" height="150px"> --}}
+
+
                                 </div>
 
                                 <label for="file-upload" class="subir">
-                                    <i class="bi bi-cloud-upload-fill h5"></i> Subir imagen
+                                    <i class="bi bi-cloud-upload-fill h5"></i> Escoger contenido
                                 </label>
-                                <input type="file" name="file" class="form-control-file mx-auto text-center d-none" id="file-upload" onchange="previewImage(event, '#imgPreview')"  accept="*"/>
+                                <input type="file" name="file"
+                                    class="form-control-file mx-auto text-center d-none" id="file-upload"
+                                    onchange="previewImage(event, '#imgPreview')" accept="image/*, video/*" />
                                 @error('file')
                                     <br>
                                     <small class="text-danger">{{ $message }}</small>
@@ -113,7 +133,7 @@
             </x-slot>
 
             <link rel="stylesheet" href="{{ asset('css/create-content.css') }}">
-
+            <script src="{{ asset('js/videoPreview.js') }}"></script>
 
         </div>
 </x-app-layout>
