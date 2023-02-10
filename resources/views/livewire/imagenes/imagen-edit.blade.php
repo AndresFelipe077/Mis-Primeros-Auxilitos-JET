@@ -48,8 +48,7 @@
                                 <label for="file-upload" class="subir">
                                     <i class="bi bi-cloud-upload-fill h5"></i> Subir imagen
                                 </label>
-                                <input type="file" name="file" class="form-control-file mx-auto text-center d-none" id="file-upload" onchange="previewImage(event, '#imgPreview')" accept="image/*" />
-
+                                <input type="file" name="file" class="form-control-file mx-auto text-center d-none" id="file-upload" onchange="previewImage(event, '#imgPreview')"  accept="*"/>
                                 @error('file')
                                     <br>
                                     <small class="text-danger">{{ $message }}</small>

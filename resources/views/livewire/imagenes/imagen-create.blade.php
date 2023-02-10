@@ -50,9 +50,11 @@
                                 <label for="file-upload" class="subir" id="label">
                                     <i class="bi bi-cloud-upload-fill h2"></i> Subir imagen
                                 </label>
-                                <input type="file" name="file" value="{{ old('file') }}"
+                                {{-- <input type="file" name="file" value="{{ old('file') }}"
                                     class="form-control-file d-none" id="file-upload"
-                                    onchange="previewImage(event, '#imgPreview')" accept="image/*" />
+                                    onchange="previewImage(event, '#imgPreview')" accept="image/*" /> --}}
+
+                                <input type="file" name="file">
 
 
                                 @error('file')

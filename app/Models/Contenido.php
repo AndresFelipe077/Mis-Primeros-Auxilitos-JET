@@ -9,12 +9,13 @@ class Contenido extends Model
 {
     use HasFactory;
 
-    protected $table = "imagenes";
+    protected $table = "contenidos";
 
     protected $fillable = [
         'title',
         'slug',
         'url',
+        'video_url',
         'autor',
         'description',
         'user_id',

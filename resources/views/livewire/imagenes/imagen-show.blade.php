@@ -128,14 +128,28 @@
                             <div class="card-body shadow">
                                 <h5 class="card-title">{{ $contenido->title }}</h5>
                                 <div class="contenedor rounded">
-                                    <img class="imagen rounded mx-auto d-block" src="{{ $contenido->url }}"
-                                        alt="Image of trivia" id="img-content">
+                                    @if ($contenido->url)
+                                        @php
+                                            $extension = pathinfo($contenido->url)['extension'];
+                                            
+                                        @endphp
+                                        @if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif')
+                                            <img class="imagen rounded mx-auto d-block" src="{{ $contenido->url }}"
+                                                alt="Image of trivia" id="img-content">
+                                        @else
+                                            <video id="fm-video" class="mx-auto m-3 rounded {{-- fm-video video-js vjs-16-9 vjs-big-play-centered --}}"
+                                                {{-- data-setup="{}" --}} controls>
+                                                <source src="{{ asset($contenido->url) }}">
+                                                Tu navegador no soporta elementos de video😥.
+                                            </video>
+                                        @endif
+                                    @endif
                                 </div>
                                 <p><strong>Autor: </strong> {{ $contenido->autor }}</p>
-                                {{-- <p class="card-text">{!! $trivia->content !!}</p> --}}
                                 <div class="text-center mt-3">
                                     @if (Auth::user()->id == $contenido->user_id)
-                                        <a class="btn bg-transparent" href="{{ route('contenido.edit', $contenido) }}"><img
+                                        <a class="btn bg-transparent"
+                                            href="{{ route('contenido.edit', $contenido) }}"><img
                                                 src="{{ asset('/img/icons/lapiz-editar.png') }}" width="50px"
                                                 height="50px" alt="Editar"></a>
                                     @endif
@@ -148,7 +162,7 @@
 
         </div>
 
-        <a class="btn btn-success" href="{{route('video.index')}}">Videos</a>
+        <a class="btn btn-success" href="{{ route('video.index') }}">Videos</a>
         <div class="">
             <ul class="pagination pagination-lg">
                 <li class="page-item active mb-5" aria-current="page">
