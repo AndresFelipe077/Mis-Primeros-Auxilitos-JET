@@ -16,19 +16,8 @@ class ContenidoController extends Controller
   public function index()
   {
     if (Auth::check()) {
-      // $extensionVideo = 'mp4' ||
-      //   'mov' ||
-      //   'wmv' ||
-      //   'avi' ||
-      //   'avchd' ||
-      //   'flv' ||
-      //   'f4v' ||
-      //   'swf' ||
-      //   'mkv' ||
-      //   'webm' ||
-      //   'html5';
       $contenidos = Contenido::orderBy('id', 'desc')->paginate(9);
-    return view('livewire.imagenes.imagen-show', compact('contenidos'/*, ['extensionVideo']*/));
+    return view('livewire.imagenes.imagen-show', compact('contenidos'));
     } else {
       return view('auth.login');
     }

@@ -133,7 +133,7 @@
                                             $extension = pathinfo($contenido->url)['extension'];
                                             
                                         @endphp
-                                        @if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif')
+                                        @if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' || $extension == 'svg')
                                             <img class="imagen rounded mx-auto d-block" src="{{ $contenido->url }}"
                                                 alt="Image of trivia" id="img-content">
                                         @else
