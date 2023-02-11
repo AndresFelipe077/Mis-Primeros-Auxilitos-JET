@@ -28,8 +28,8 @@
 
                             <div class="form-group">
                                 <label for="">Titulo</label>
-                                <input type="text" name="title" class="form-control"
-                                    aria-describedby="" value="{{ old('title', $contenido->title) }}">
+                                <input type="text" name="title" class="form-control" aria-describedby=""
+                                    value="{{ old('title', $contenido->title) }}">
                                 @error('title')
                                     <br>
                                     <small class="text-danger">{{ $message }}</small>
@@ -48,12 +48,37 @@
                                         @if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' || $extension == 'svg')
                                             <img class="rounded mx-auto m-2" src="{{ asset($contenido->url) }}"
                                                 id="imgPreview" width="150px" height="150px">
+
+                                            <label for="file-upload" class="subir">
+                                                <i class="bi bi-cloud-upload-fill h5"></i> Escoger contenido
+                                            </label>
+                                            <input type="file" name="file"
+                                                class="form-control-file mx-auto text-center d-none" id="file-upload"
+                                                onchange="previewImage(event, '#imgPreview')"
+                                                accept="image/*" />
+                                            @error('file')
+                                                <br>
+                                                <small class="text-danger">{{ $message }}</small>
+                                                <br>
+                                            @enderror
                                         @else
                                             <video controls autoplay id="video-tag"
                                                 class="mx-auto m-3 rounded text-white bg-white">
                                                 <source id="video-source" src="{{ old('url', $contenido->url) }}">
                                                 Tu navegador no soporta elementos de video😥.
                                             </video>
+
+                                            <label for="file-upload" class="subir">
+                                              <i class="bi bi-cloud-upload-fill h5"></i> Escoger contenido
+                                          </label>
+                                          <input type="file" name="file"
+                                              class="form-control-file mx-auto text-center d-none" id="file-upload"
+                                              onchange="previewImage(event, '#imgPreview')" accept="video/*" />
+                                          @error('file')
+                                              <br>
+                                              <small class="text-danger">{{ $message }}</small>
+                                              <br>
+                                          @enderror
                                         @endif
                                     @endif
 
@@ -63,7 +88,7 @@
 
                                 </div>
 
-                                <label for="file-upload" class="subir">
+                                {{-- <label for="file-upload" class="subir">
                                     <i class="bi bi-cloud-upload-fill h5"></i> Escoger contenido
                                 </label>
                                 <input type="file" name="file"
@@ -73,7 +98,7 @@
                                     <br>
                                     <small class="text-danger">{{ $message }}</small>
                                     <br>
-                                @enderror
+                                @enderror --}}
 
                             </div>
 

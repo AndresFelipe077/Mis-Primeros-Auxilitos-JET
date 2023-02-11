@@ -17,7 +17,7 @@ class ContenidoController extends Controller
   {
     if (Auth::check()) {
       $contenidos = Contenido::orderBy('id', 'desc')->paginate(9);
-      return view('livewire.imagenes.imagen-show', compact('contenidos'));
+      return view('livewire.contenido.contenido-show', compact('contenidos'));
     } else {
       return view('auth.login');
     }
@@ -37,7 +37,7 @@ class ContenidoController extends Controller
   public function create()
   {
     if (Auth::check()) {
-      return view('livewire.imagenes.imagen-create');
+      return view('livewire.contenido.contenido-create');
     }
   }
 
@@ -122,7 +122,7 @@ class ContenidoController extends Controller
   {
 
     if (Auth::check()) {
-      return view('livewire.imagenes.imagen-edit', compact('contenido'));
+      return view('livewire.contenido.contenido-edit', compact('contenido'));
     }
   }
 
