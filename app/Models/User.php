@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
@@ -74,7 +75,11 @@ class User extends Authenticatable implements MustVerifyEmail
     //imagen del admin
     public function adminlte_image()
     {
-        return 'https://picsum.photos/300/300';
+        if(Auth::user()->external_auth == 'google' ||Auth::user()->external_auth == 'facebook'){
+            return Auth::user()->avatar;//'https://picsum.photos/300/300';
+        }else{
+            return Auth::user()->profile_photo_path;
+        }
     }
 
     //rol
