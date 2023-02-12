@@ -21,7 +21,7 @@
 
                 <div class="col-sm-8">
 
-                    <form class="p-3 m-3" action="{{ route('contenido.store') }}" method="POST"
+                    <form class="p-3 m-3" action="{{ route('contenido.store.video') }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         <div class="card">
@@ -39,31 +39,19 @@
                             </div>
 
                             <div class="form-group m-1 mx-auto">
-                                <label class="h5" for="exampleFormControlFile1">Escoge tu contenido 😁😎😋</label>
+                                <label class="h5" for="exampleFormControlFile1">Escoge tu video 😁😎😋</label>
 
-                                <div>
-                                    {{-- @php
-                                        $extension = pathinfo()['extension'];
-                                    @endphp --}}
-                                    {{-- @if (Auth::user()->id) --}}
-                                    <img class="rounded mx-auto m-2" src="{{ asset('img/icons/subir.png') }}"
-                                        id="imgPreview" width="150px" height="150px">
-                                    {{-- @else --}}
-                                    <video autoplay id="video-tag" class="mx-auto m-3 rounded text-white bg-white"
-                                        controls poster="{{ asset('img/icons/video.png') }}">
-                                        <source id="video-source">
-                                        Tu navegador no soporta elementos de video😥.
-                                    </video>
-                                    {{-- @endif --}}
-                                </div>
-
+                                <video autoplay id="video-tag" class="mx-auto m-3 rounded text-white bg-white" controls
+                                    poster="{{ asset('img/icons/video.png') }}">
+                                    <source id="video-source">
+                                    Tu navegador no soporta elementos de video😥.
+                                </video>
                                 <label for="file-upload" class="subir" id="label">
                                     <i class="bi bi-cloud-upload-fill h2"></i> Subir
                                 </label>
 
                                 <input type="file" name="file" value="{{ old('file') }}"
-                                    class="form-control-file d-none" id="file-upload"
-                                    onchange=" previewImage(event, '#imgPreview');" accept="image/*, video/*" />
+                                    class="form-control-file d-none" id="file-upload" accept="video/*" />
 
                                 @error('file')
                                     <br>
@@ -115,20 +103,8 @@
 
         <link rel="stylesheet" href="{{ asset('css/create-content.css') }}" />
         <script src="{{ asset('js/videoPreview.js') }}"></script>
+        <script src="{{ asset('js/form-extension.js') }}"></script>
 
-        <script>
-            var extension = document.getElementById('imgPreview');
-            function validate(file) {
-                var ext = file.split(".");
-                ext = ext[ext.length - 1].toLowerCase();
-                var arrayExtensions = ["jpg", "jpeg", "png", "svg", "gif"];
-
-                if (arrayExtensions.lastIndexOf(ext) == -1) {
-                    //insert an image with the use of the "ext" variable
-                   return arrayExtensions;
-                }
-            }
-        </script>
 
     </div>
 </x-app-layout>

@@ -44,13 +44,21 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     //Vista home de videos
     Route::get('dashboard', 'index')->name('dashboard.index');
 
-    Route::get('dashboard/create/contenido/', 'create')->name('dashboard.create');
+    Route::get('dashboard/create/contenido/image', 'createImage')->name('dashboard.create.image');
 
-    Route::post('dashboard/store/contenido', 'store')->name('contenido.store');
+    Route::get('dashboard/create/contenido/video', 'createVideo')->name('dashboard.create.video');
 
-    Route::get('dashboard/edit/{contenido}', 'edit')->name('contenido.edit');
+    Route::post('dashboard/store/contenido/image', 'storeImage')->name('contenido.store.image');
 
-    Route::put('dashboard/{contenido}', 'update')->name('contenido.update');
+    Route::post('dashboard/store/contenido/video', 'storeVideo')->name('contenido.store.video');
+
+    Route::get('dashboard/edit/image/{contenido}', 'editImage')->name('contenido.edit.image');
+
+    Route::get('dashboard/edit/video/{contenido}', 'editVideo')->name('contenido.edit.video');
+
+    Route::put('dashboard/image/{contenido}', 'updateImage')->name('contenido.update.image');
+
+    Route::put('dashboard/video/{contenido}', 'updateVideo')->name('contenido.update.video');
 
     Route::delete('edit/{contenido}', 'destroy')->name('contenido.destroy');
 

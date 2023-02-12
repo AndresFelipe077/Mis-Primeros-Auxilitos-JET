@@ -90,6 +90,26 @@ ManoCursor
 Video
 <a href="https://www.flaticon.es/iconos-gratis/video" title="vídeo iconos">Vídeo iconos creados por Eucalyp - Flaticon</a>
 
+VideoShow
+<a href="https://www.flaticon.es/iconos-gratis/acecho" title="acecho iconos">Acecho iconos creados por Hilmy Abiyyu A. - Flaticon</a>
+
+
+ImagenShow
+<a href="https://www.flaticon.es/iconos-gratis/galeria-de-fotos" title="galería de fotos iconos">Galería de fotos iconos creados por Anggara - Flaticon</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 GIFS
 

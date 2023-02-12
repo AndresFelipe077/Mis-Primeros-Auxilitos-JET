@@ -21,7 +21,7 @@
 
                 <div class="col-sm-8">
                     <div class="card">
-                        <form action="{{ route('contenido.update', $contenido) }}" method="POST"
+                        <form action="{{ route('contenido.update.video', $contenido) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             @method('put')
@@ -41,64 +41,26 @@
                                 <label class="h5" for="exampleFormControlFile1" id="src-file">Escoge tu contenido
                                     😋😊😉</label>
                                 <div>
-                                    @if ($contenido->url)
-                                        @php
-                                            $extension = pathinfo($contenido->url)['extension'];
-                                        @endphp
-                                        @if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' || $extension == 'svg')
-                                            <img class="rounded mx-auto m-2" src="{{ asset($contenido->url) }}"
-                                                id="imgPreview" width="150px" height="150px">
+                                    <video controls autoplay id="video-tag"
+                                        class="mx-auto m-3 rounded text-white bg-white">
+                                        <source id="video-source" src="{{ old('url', $contenido->url) }}">
+                                        Tu navegador no soporta elementos de video😥.
+                                    </video>
 
-                                            <label for="file-upload" class="subir">
-                                                <i class="bi bi-cloud-upload-fill h5"></i> Escoger contenido
-                                            </label>
-                                            <input type="file" name="file"
-                                                class="form-control-file mx-auto text-center d-none" id="file-upload"
-                                                onchange="previewImage(event, '#imgPreview')"
-                                                accept="image/*" />
-                                            @error('file')
-                                                <br>
-                                                <small class="text-danger">{{ $message }}</small>
-                                                <br>
-                                            @enderror
-                                        @else
-                                            <video controls autoplay id="video-tag"
-                                                class="mx-auto m-3 rounded text-white bg-white">
-                                                <source id="video-source" src="{{ old('url', $contenido->url) }}">
-                                                Tu navegador no soporta elementos de video😥.
-                                            </video>
-
-                                            <label for="file-upload" class="subir">
-                                              <i class="bi bi-cloud-upload-fill h5"></i> Escoger contenido
-                                          </label>
-                                          <input type="file" name="file"
-                                              class="form-control-file mx-auto text-center d-none" id="file-upload"
-                                              onchange="previewImage(event, '#imgPreview')" accept="video/*" />
-                                          @error('file')
-                                              <br>
-                                              <small class="text-danger">{{ $message }}</small>
-                                              <br>
-                                          @enderror
-                                        @endif
-                                    @endif
-
-                                    {{-- <img class="rounded mx-auto m-2" src="{{ asset($contenido->url) }}" id="imgPreview"
-                                        width="150px" height="150px"> --}}
+                                    <label for="file-upload" class="subir">
+                                        <i class="bi bi-cloud-upload-fill h5"></i> Escoger contenido
+                                    </label>
+                                    <input type="file" name="file"
+                                        class="form-control-file mx-auto text-center d-none" id="file-upload"
+                                        onchange="previewImage(event, '#imgPreview')" accept="video/*" />
+                                    @error('file')
+                                        <br>
+                                        <small class="text-danger">{{ $message }}</small>
+                                        <br>
+                                    @enderror
 
 
                                 </div>
-
-                                {{-- <label for="file-upload" class="subir">
-                                    <i class="bi bi-cloud-upload-fill h5"></i> Escoger contenido
-                                </label>
-                                <input type="file" name="file"
-                                    class="form-control-file mx-auto text-center d-none" id="file-upload"
-                                    onchange="previewImage(event, '#imgPreview')" accept="image/*, video/*" />
-                                @error('file')
-                                    <br>
-                                    <small class="text-danger">{{ $message }}</small>
-                                    <br>
-                                @enderror --}}
 
                             </div>
 

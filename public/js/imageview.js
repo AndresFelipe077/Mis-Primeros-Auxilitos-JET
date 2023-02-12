@@ -17,8 +17,23 @@ function previewImage(event, querySelector) {
     objectURL = URL.createObjectURL(file);
 
     //Modificamos el atributo src de la etiqueta img
+
     $imgPreview.src = objectURL;
 
-    
+
 
 }
+
+// function ocultar() {
+//     document.getElementById('video-tag').style.display = 'none';
+// }
+
+// const div = document.querySelector("imgPreview");
+
+// document.querySelector("#file-upload").addEventListener("click", () => {
+//     document.getElementById('file-upload').style.display = 'none';
+// });
+
+// document.querySelector("#file-upload").addEventListener("click", () => {
+//     document.getElementById('file-upload').style.display = 'block';
+// });
