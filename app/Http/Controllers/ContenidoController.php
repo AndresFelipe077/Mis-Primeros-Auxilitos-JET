@@ -63,7 +63,7 @@ class ContenidoController extends Controller
 
       $nombre = Str::random(10) . $cadenaConvert;
 
-      $ruta = storage_path() . '\app\public\contenidos/' . $nombre;
+      $ruta = storage_path() . '\app\public\contenidos\images/' . $nombre;
 
       Image::make($request->file('file'))
         ->resize(900, null, function ($constraint) {
@@ -71,15 +71,17 @@ class ContenidoController extends Controller
         })
         ->save($ruta);
 
+      
       $title  = $request->title;
       $title_url  = Str::slug($title, '-');
+      $slug_title_url = Str::random(1) . $title_url;
       $userId = Auth::user()->id; //Se obtiene id del Usuario Autenticado
       $name   = Auth::user()->name;
 
       Contenido::create([
         'title'       => $title,
-        'slug'        => $title_url,
-        'url'         => '/storage/contenidos/' . $nombre,
+        'slug'        => $slug_title_url,
+        'url'         => '/storage/contenidos/images/' . $nombre,
         'autor'       => $name,
         'description' => $request->description,
         'user_id'     => $userId,
@@ -104,7 +106,7 @@ class ContenidoController extends Controller
     $nombre = Str::random(10) . $cadenaConvert;
 
     $fileName = $nombre;
-    $filePath = 'contenidos/' . $fileName;
+    $filePath = 'contenidos/videos/' . $fileName;
 
     $isFileUploaded = Storage::disk('public')->put($filePath, file_get_contents($request->file));
 
@@ -112,12 +114,13 @@ class ContenidoController extends Controller
 
       $title  = $request->title;
       $title_url  = Str::slug($title, '-');
+      $slug_title_url = Str::random(1) . $title_url;
       $userId = Auth::user()->id; //Se obtiene id del Usuario Autenticado
       $name   = Auth::user()->name;
 
       Contenido::create([
         'title'       => $title,
-        'slug'        => $title_url,
+        'slug'        => $slug_title_url,
         'url'         => '/storage/' . $filePath,
         'autor'       => $name,
         'description' => $request->description,
@@ -177,9 +180,9 @@ class ContenidoController extends Controller
 
       $nombre = Str::random(10) . $cadenaConvert;
 
-      $file->move('storage/contenidos/', $nombre);
+      $file->move('storage/contenidos/images/', $nombre);
 
-      $contenido->url = '/storage/contenidos/' . $nombre;
+      $contenido->url = '/storage/contenidos/images/' . $nombre;
     }
 
     $contenido->autor       = $name;
@@ -219,9 +222,9 @@ class ContenidoController extends Controller
 
       $nombre = Str::random(10) . $cadenaConvert;
 
-      $file->move('storage/contenidos/', $nombre);
+      $file->move('storage/contenidos/videos/', $nombre);
 
-      $contenido->url = '/storage/contenidos/' . $nombre;
+      $contenido->url = '/storage/contenidos/videos/' . $nombre;
     }
 
     $contenido->autor       = $name;

@@ -52,7 +52,7 @@
                                     </label>
                                     <input type="file" name="file"
                                         class="form-control-file mx-auto text-center d-none" id="file-upload"
-                                        onchange="previewImage(event, '#imgPreview')" accept="video/*" />
+                                       accept="video/*" />
                                     @error('file')
                                         <br>
                                         <small class="text-danger">{{ $message }}</small>
