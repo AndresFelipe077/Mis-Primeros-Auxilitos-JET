@@ -64,6 +64,12 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     //Acceder a vista ajustes
     Route::get('dashboard/ajustes', 'ajustes')->name('dashboard.ajustes');
+
+    //Acceder a vista mision y vision
+    Route::get('dashboard/mision_y_vision', 'misionvision')->name('dashboard.mision.vision');
+
+    Route::get('dashboard/creditos', 'showCreditos')->name('dashboard.creditos');
+
 });
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(VideoController::class)->group(function () {

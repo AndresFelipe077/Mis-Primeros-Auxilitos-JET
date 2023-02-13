@@ -17,7 +17,7 @@ class ContenidoController extends Controller
   {
     if (Auth::check()) {
       $contenidos = Contenido::orderBy('id', 'desc')->paginate(9);
-      return view('livewire.contenido.contenido-show', compact('contenidos'));
+      return view('contenido.contenido-show', compact('contenidos'));
     } else {
       return view('auth.login');
     }
@@ -33,18 +33,17 @@ class ContenidoController extends Controller
     }
   }
 
-
   public function createImage()
   {
     if (Auth::check()) {
-      return view('livewire.contenido.contenido-create-image');
+      return view('contenido.create.contenido-create-image');
     }
   }
 
   public function createVideo()
   {
     if (Auth::check()) {
-      return view('livewire.contenido.contenido-create-video');
+      return view('contenido.create.contenido-create-video');
     }
   }
 
@@ -133,12 +132,11 @@ class ContenidoController extends Controller
 
   }
 
-
   public function editImage(Contenido $contenido)
   {
 
     if (Auth::check()) {
-      return view('livewire.contenido.contenido-edit-image', compact('contenido'));
+      return view('contenido.edit.contenido-edit-image', compact('contenido'));
     }
   }
 
@@ -146,7 +144,7 @@ class ContenidoController extends Controller
   {
 
     if (Auth::check()) {
-      return view('livewire.contenido.contenido-edit-video', compact('contenido'));
+      return view('contenido.edit.contenido-edit-video', compact('contenido'));
     }
   }
 
@@ -159,7 +157,7 @@ class ContenidoController extends Controller
       'description'  => 'required|max:250',
     ]);
     $title  = $request->title;
-    $title_url  = Str::slug($title, '-');
+    $title_url  = Str::random(1) . $title;
 
     $name = Auth::user()->name;
     $contenido->title = $title;
@@ -189,6 +187,9 @@ class ContenidoController extends Controller
     $contenido->description = $request->description;
 
     $contenido->update();
+
+    return redirect()->route('dashboard.index', compact('contenido'))->with('actualizar', 'ok');
+
   }
 
   public function updateVideo(Request $request, Contenido $contenido)
@@ -236,7 +237,6 @@ class ContenidoController extends Controller
     return redirect()->route('dashboard.index', compact('contenido'))->with('actualizar', 'ok');
   }
 
-
   public function destroy(Contenido $contenido)
   {
     $url = str_replace('storage', 'public', $contenido->url);
@@ -246,4 +246,20 @@ class ContenidoController extends Controller
     }
     return redirect()->route('dashboard.index')->with('eliminar', 'ok');
   }
+
+
+  public function misionvision()
+  {
+    if (Auth::check()) {
+      return view('mision_vision');
+    } else {
+      return route('login');
+    }
+  }
+
+  public function showCreditos()
+  {
+    return view('creditos');
+  }
+
 }

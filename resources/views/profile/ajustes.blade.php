@@ -115,13 +115,13 @@
                       </div> --}}
             </li>
             <li>
-                <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
+                <a class="dropdown-item d-flex gap-2 align-items-center" href="{{ route('dashboard.mision.vision') }}">
                     <i class="bi bi-check2-circle h4"></i>
                     <h3>Misión y visión</h3>
                 </a>
             </li>
             <li>
-                <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
+                <a class="dropdown-item d-flex gap-2 align-items-center" href=" {{ route('dashboard.creditos') }} ">
                     <i class="bi bi-people-fill"></i>
                     <h3>Créditos</h3>
                 </a>

@@ -49,8 +49,10 @@
 
         </div>
 
-        <div class="text-center">
-            <a href="#" class="btn btn-primary mb-5"><i class="bi bi-arrow-bar-left"></i></a>
+        <div class="text-center mb-5">
+                      
+            <img class="mx-auto" src="{{ asset('img/icons/house.png') }}" alt="Home" height="100px" width="100px" onclick="location.href='{{ route('dashboard.index') }}'">
+        
         </div>
 
     </div>
