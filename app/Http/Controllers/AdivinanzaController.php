@@ -7,6 +7,7 @@ use App\Models\Adivinanza;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class AdivinanzaController extends Controller
 {
@@ -16,43 +17,51 @@ class AdivinanzaController extends Controller
         return view('livewire.game.show-adivinanza', compact('adivinanzas'));
     }
 
-    public function adivinanzaStore(Request $adivinanza)
+    public function adivinanzaCreate()
     {
-        $adivinanza->validate([
+        return view('livewire.game.create-adivinanza');
+    }
+
+    public function adivinanzaStore(Request $request)
+    {
+        $request->validate([
             'title'    => 'required|max:50',
             'image'    => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'content'  => 'required|max:250',
         ]);
 
-        $nombre = Str::random(10) . $adivinanza->file('image')->getClientOriginalName();
-        // $nombre = Image::make($request->file('photo')->getRealPath());
+        $cadena = $request->file('image')->getClientOriginalName();
+
+        $cadenaConvert = strtr($cadena, " ", "_");
+
+        $nombre = Str::random(10) . $cadenaConvert;
 
         $ruta = storage_path() . '\app\public\imagesAdivinanzas/' . $nombre;
 
-        Image::make($adivinanza->file('image'))
-            ->resize(900, null, function($constraint){
+        Image::make($request->file('image'))
+            ->resize(900, null, function ($constraint) {
                 $constraint->aspectRatio();
             })
             ->save($ruta);
 
-        $userId = Auth::user()->id;//Se obtiene id del Usuario Autenticado
-        $name = Auth::user()->name;//Se obtiene id del Usuario Autenticado
+        $title  = $request->title;
+        $title_url  = Str::slug($title, '-');
+        $slug_title_url = Str::random(1) . $title_url;
+        $userId = Auth::user()->id; //Se obtiene id del Usuario Autenticado
+        $name = Auth::user()->name; //Se obtiene id del Usuario Autenticado
 
 
         Adivinanza::create([
-            'title'   => $adivinanza->title,
+            'title'   => $request->title,
+            'slug'    => $slug_title_url,
             'image'   => '/storage/imagesAdivinanzas/' . $nombre,
-            'content' => $adivinanza->content,
-                     
+            'content' => $request->content,
+
         ]);
 
-        return redirect()->route('adivinanzaShow')->with('subir','ok');
+        return redirect()->route('adivinanzaShow')->with('subir', 'ok');
     }
 
-    public function adivinanzaCreate()
-    {
-        return view('livewire.game.create-adivinanza');
-    }
 
     public function adivinanzaEdit(Adivinanza $adivinanza)
     {
@@ -61,38 +70,54 @@ class AdivinanzaController extends Controller
 
     public function adivinanzaUpdate(Request $request, Adivinanza $adivinanza)
     {
-        $request -> validate([
+        $request->validate([
             'title'    => 'required|max:50',
-            'image'    => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image'    => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'content'  => 'required|max:250',
         ]);
-        
-        $nombre = Str::random(10) . $request->file('image')->getClientOriginalName();
 
-        $ruta = storage_path() . '\app\public\imagesAdivinanzas/' . $nombre;
+        $title  = $request->title;
+        $title_url  = Str::random(1) . Str::slug($title, '-');
 
-        
+        $adivinanza->title = $title;
+        $adivinanza->slug  = $title_url;
 
-        Image::make($request->file('image'))
-            ->resize(900, null, function($constraint){
-                $constraint->aspectRatio();
-            })
-            ->save($ruta);
-        
         $name = Auth::user()->name;
 
-        $adivinanza->title   = $request->title;
-        $adivinanza->image   = '/storage/imagesAdivinanzas/' .$nombre;
-        $adivinanza->content = $request->content;
-        
-        $adivinanza->save();
+        if ($request->has('image')) {
+            $destination = public_path() . $adivinanza->image;
 
-        return redirect()->route('adivinanzaShow', compact('adivinanza'))->with('actualizar','ok');
+            if ($adivinanza->image != '') {
+                unlink(public_path() . '/' . $adivinanza->image);
+            }
+
+            $file = $request->file('image');
+
+            $cadena = $file->getClientOriginalName();
+
+            $cadenaConvert = strtr($cadena, " ", "_");
+
+            $nombre = Str::random(10) . $cadenaConvert;
+
+            $file->move('storage/imagesAdivinanzas/', $nombre);
+
+            $adivinanza->image = '/storage/imagesAdivinanzas/' . $nombre;
+        }
+
+        $adivinanza->content = $request->content;
+
+        $adivinanza->update();
+
+        return redirect()->route('adivinanzaShow', compact('adivinanza'))->with('actualizar', 'ok');
     }
 
-    public function adivinanzaDelete(Adivinanza $trivia)
+    public function adivinanzaDelete(Adivinanza $adivinanza)
     {
-        $trivia->delete();
-        return redirect()->route('adivinanzaShow')->with('eliminar','ok');
+        $url = str_replace('storage', 'public', $adivinanza->image);
+        if ($adivinanza->image != '') {
+            Storage::delete($url);
+            $adivinanza->delete();
+        }
+        return redirect()->route('adivinanzaShow')->with('eliminar', 'ok');
     }
 }

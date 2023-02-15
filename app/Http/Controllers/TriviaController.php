@@ -82,7 +82,7 @@ class TriviaController extends Controller
     ]);
 
     $title  = $request->title;
-    $title_url  = Str::random(1) . $title;
+    $title_url  = Str::random(1) . Str::slug($title, '-');
 
     $trivia->title = $title;
     $trivia->slug  = $title_url;
