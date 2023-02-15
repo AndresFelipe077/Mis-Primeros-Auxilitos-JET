@@ -15,36 +15,18 @@ class ContenidoController extends Controller
   //Vista home de videos
   public function index()
   {
-    if (Auth::check()) {
-      $contenidos = Contenido::orderBy('id', 'desc')->paginate(9);
-      return view('contenido.contenido-show', compact('contenidos'));
-    } else {
-      return view('auth.login');
-    }
-  }
-
-  // //Vista configuracion
-  public function ajustes()
-  {
-    if (Auth::check()) {
-      return view('Profile.ajustes');
-    } else {
-      return route('login');
-    }
+    $contenidos = Contenido::orderBy('id', 'desc')->paginate(9);
+    return view('contenido.contenido-show', compact('contenidos'));
   }
 
   public function createImage()
   {
-    if (Auth::check()) {
-      return view('contenido.create.contenido-create-image');
-    }
+    return view('contenido.create.contenido-create-image');
   }
 
   public function createVideo()
   {
-    if (Auth::check()) {
-      return view('contenido.create.contenido-create-video');
-    }
+    return view('contenido.create.contenido-create-video');
   }
 
   public function storeImage(Request $request)
@@ -56,40 +38,41 @@ class ContenidoController extends Controller
       'description'  => 'required|max:250',
     ]);
 
-      $cadena = $request->file('file')->getClientOriginalName();
+    $cadena = $request->file('file')->getClientOriginalName();
 
-      $cadenaConvert = strtr($cadena, " ", "_");
+    $cadenaConvert = strtr($cadena, " ", "_");
 
-      $nombre = Str::random(10) . $cadenaConvert;
+    $nombre = Str::random(10) . $cadenaConvert;
 
-      $ruta = storage_path() . '\app\public\contenidos\images/' . $nombre;
+    $ruta = storage_path() . '\app\public\contenidos\images/' . $nombre;
 
-      Image::make($request->file('file'))
-        ->resize(900, null, function ($constraint) {
-          $constraint->aspectRatio();
-        })
-        ->save($ruta);
+    Image::make($request->file('file'))
+      ->resize(900, null, function ($constraint) {
+        $constraint->aspectRatio();
+      })
+      ->save($ruta);
 
-      
-      $title  = $request->title;
-      $title_url  = Str::slug($title, '-');
-      $slug_title_url = Str::random(1) . $title_url;
-      $userId = Auth::user()->id; //Se obtiene id del Usuario Autenticado
-      $name   = Auth::user()->name;
 
-      Contenido::create([
-        'title'       => $title,
-        'slug'        => $slug_title_url,
-        'url'         => '/storage/contenidos/images/' . $nombre,
-        'autor'       => $name,
-        'description' => $request->description,
-        'user_id'     => $userId,
+    $title  = $request->title;
+    $title_url  = Str::slug($title, '-');
+    $slug_title_url = Str::random(1) . $title_url;
+    $userId = Auth::user()->id; //Se obtiene id del Usuario Autenticado
+    $name   = Auth::user()->name;
 
-      ]);
+    Contenido::create([
+      'title'       => $title,
+      'slug'        => $slug_title_url,
+      'url'         => '/storage/contenidos/images/' . $nombre,
+      'autor'       => $name,
+      'description' => $request->description,
+      'user_id'     => $userId,
+
+    ]);
     return redirect()->route('dashboard.index')->with('subir', 'ok');
   }
 
-  public function storeVideo(Request $request) {
+  public function storeVideo(Request $request)
+  {
 
     $request->validate([
       'title'        => 'required|max:50',
@@ -129,23 +112,16 @@ class ContenidoController extends Controller
     }
 
     return redirect()->route('dashboard.index')->with('subir', 'ok');
-
   }
 
   public function editImage(Contenido $contenido)
   {
-
-    if (Auth::check()) {
-      return view('contenido.edit.contenido-edit-image', compact('contenido'));
-    }
+    return view('contenido.edit.contenido-edit-image', compact('contenido'));
   }
 
   public function editVideo(Contenido $contenido)
   {
-
-    if (Auth::check()) {
-      return view('contenido.edit.contenido-edit-video', compact('contenido'));
-    }
+    return view('contenido.edit.contenido-edit-video', compact('contenido'));
   }
 
   public function updateImage(Request $request, Contenido $contenido)
@@ -189,7 +165,6 @@ class ContenidoController extends Controller
     $contenido->update();
 
     return redirect()->route('dashboard.index', compact('contenido'))->with('actualizar', 'ok');
-
   }
 
   public function updateVideo(Request $request, Contenido $contenido)
@@ -233,7 +208,6 @@ class ContenidoController extends Controller
 
     $contenido->update();
 
-
     return redirect()->route('dashboard.index', compact('contenido'))->with('actualizar', 'ok');
   }
 
@@ -247,14 +221,15 @@ class ContenidoController extends Controller
     return redirect()->route('dashboard.index')->with('eliminar', 'ok');
   }
 
+  //Vista configuracion
+  public function ajustes()
+  {
+    return view('Profile.ajustes');
+  }
 
   public function misionvision()
   {
-    if (Auth::check()) {
-      return view('mision_vision');
-    } else {
-      return route('login');
-    }
+    return view('mision_vision');
   }
 
   public function showCreditos()

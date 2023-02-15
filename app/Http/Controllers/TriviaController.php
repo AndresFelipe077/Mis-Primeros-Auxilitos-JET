@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Trivia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,23 +36,23 @@ class TriviaController extends Controller
         $ruta = storage_path() . '\app\public\imagesTrivias/' . $nombre;
 
         Image::make($request->file('image'))
-            ->resize(900, null, function($constraint){
+            ->resize(900, null, function ($constraint) {
                 $constraint->aspectRatio();
             })
             ->save($ruta);
 
-        $userId = Auth::user()->id;//Se obtiene id del Usuario Autenticado
-        $name = Auth::user()->name;//Se obtiene id del Usuario Autenticado
+        $userId = Auth::user()->id; //Se obtiene id del Usuario Autenticado
+        $name = Auth::user()->name; //Se obtiene id del Usuario Autenticado
 
 
         Trivia::create([
             'title'   => $request->title,
             'image'   => '/storage/imagesTrivias/' . $nombre,
             'content' => $request->content,
-                     
+
         ]);
 
-        return redirect()->route('triviaShow')->with('subir','ok');
+        return redirect()->route('triviaShow')->with('subir', 'ok');
     }
 
     public function triviaCreate()
@@ -66,40 +67,48 @@ class TriviaController extends Controller
 
     public function triviaUpdate(Request $request, Trivia $trivia)
     {
-        $request -> validate([
+        $request->validate([
             'title'    => 'required|max:50',
-            'image'    => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image'    => 'file', //'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'content'  => 'required|max:250',
         ]);
-        
-        $nombre = Str::random(10) . $request->file('image')->getClientOriginalName();
 
-        $ruta = storage_path() . '\app\public\imagesTrivias/' . $nombre;
+        $title  = $request->title;
+        $title_url  = Str::random(1) . $title;
 
-        
+        $trivia->title = $title;
+        $trivia->slug  = $title_url;
 
-        Image::make($request->file('image'))
-            ->resize(900, null, function($constraint){
-                $constraint->aspectRatio();
-            })
-            ->save($ruta);
-        
-        $name = Auth::user()->name;
+        if ($request->has('image')) {
+            $destination = public_path() . $trivia->image;
+      
+            if ($trivia->image != '') {
+              unlink(public_path() . '/' . $trivia->image);
+            }
+      
+            $file = $request->file('image');
+      
+            $cadena = $file->getClientOriginalName();
+      
+            $cadenaConvert = strtr($cadena, " ", "_");
+      
+            $nombre = Str::random(10) . $cadenaConvert;
+      
+            $file->move('storage/imageTrivias/', $nombre);
+      
+            $trivia->image = '/storage/imageTrivias/' . $nombre;
+          }
 
-        $trivia->title   = $request->title;
-        $trivia->image   = '/storage/imagesTrivias/' .$nombre;
         $trivia->content = $request->content;
-        
-        $trivia->save();
 
-        return redirect()->route('triviaShow', compact('trivia'))->with('actualizar','ok');
+        $trivia->update();
+
+        return redirect()->route('triviaShow', compact('trivia'))->with('actualizar', 'ok');
     }
 
     public function triviaDelete(Trivia $trivia)
     {
         $trivia->delete();
-        return redirect()->route('triviaShow')->with('eliminar','ok');
+        return redirect()->route('triviaShow')->with('eliminar', 'ok');
     }
-
-
 }
