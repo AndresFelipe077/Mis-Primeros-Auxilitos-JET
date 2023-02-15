@@ -20,10 +20,10 @@ class ContenidoFactory extends Factory
     {
         $user = User::all()->random();
         $url_title = $this -> faker -> randomElement(['Curar Heridas','Botiquin','Accidentes']);
-        
+        $slug_title_url = Str::random(1) . " " . $url_title;
         return [
             'title'       => $url_title,
-            'slug'        => Str::slug($url_title, '-'),
+            'slug'        => Str::slug($slug_title_url, '-'),
             'url'         => $this -> faker -> randomElement(['/storage/imagesFactory/policia.png', '/storage/imagesFactory/peluche.png','/storage/imagesFactory/logo.png', '/storage/imagesFactory/fondo.jpg', '/storage/videoFactory/auxilios.mp4']),
             'autor'       => $user -> name,
             'description' => $this -> faker -> text('200'),
