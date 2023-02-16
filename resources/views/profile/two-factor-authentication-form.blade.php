@@ -91,6 +91,7 @@
                     <button type="button" class="btn btn-danger" wire:loading.attr="disabled" data-bs-toggle="modal"
                         data-bs-target="#staticBackdropCambiarContrasena">
                         {{ __('Actualizar contraseña') }}
+                        <img class="mx-auto" src="{{ asset('img/icons/changePassword.png') }}" alt="Cambiar contraseña" width="45px" height="45px">
                     </button>
                 @endif
             @else

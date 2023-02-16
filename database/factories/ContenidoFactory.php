@@ -24,7 +24,7 @@ class ContenidoFactory extends Factory
         return [
             'title'       => $url_title,
             'slug'        => Str::slug($slug_title_url, '-'),
-            'url'         => $this -> faker -> randomElement(['/storage/imagesFactory/policia.png', '/storage/imagesFactory/peluche.png','/storage/imagesFactory/logo.png', '/storage/imagesFactory/fondo.jpg', '/storage/videoFactory/auxilios.mp4']),
+            'url'         => $this -> faker -> randomElement(['/storage/imagesFactory/policia.png', '/storage/imagesFactory/peluche.png','/storage/imagesFactory/logo.png', '/storage/videoFactory/auxilios.mp4']),
             'autor'       => $user -> name,
             'description' => $this -> faker -> text('200'),
             'user_id'     => $user -> id,
