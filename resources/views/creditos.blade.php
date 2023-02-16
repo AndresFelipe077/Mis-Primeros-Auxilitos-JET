@@ -264,6 +264,11 @@
                                     title="borrar usuario iconos">Borrar usuario iconos creados por Freepik -
                                     Flaticon</a>
                             </li>
+                            <li>
+                                Games
+                                <a target="_blank" href="https://icons8.com/icon/JxlMt02gvXeq/games">Games</a> icon by
+                                <a target="_blank" href="https://icons8.com">Icons8</a>
+                            </li>
                         </ul>
                     </div>
 

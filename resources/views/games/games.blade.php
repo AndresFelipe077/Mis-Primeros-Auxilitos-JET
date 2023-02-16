@@ -9,6 +9,19 @@
     <div class="container animate__animated animate__fadeInUp">
 
         <div class="row">
+
+            <div class="row mt-5 mx-auto text-center">
+                <div class="col-sm-4">
+                    <img class="mx-auto" src="{{ asset('img/icons/games.png') }}" alt="Games"/>
+                </div>
+                <div class="col-sm-4">
+                    <h2>Juegos</h2>
+                </div>
+                <div class="col-sm-4">
+                    <img class="mx-auto" src="{{ asset('img/icons/games.png') }}" alt="Games"/>
+                </div>
+            </div>
+
             <div class="col-sm-6 mt-5">
                 <div class="card m-4 text-center">
                     <div class=" card-body shadow ">
