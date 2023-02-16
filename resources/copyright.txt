@@ -103,14 +103,21 @@ home
 <a href="https://www.flaticon.com/free-icons/house" title="house icons">House icons created by Freepik - Flaticon</a>
 
 
+Reenviar email
+<a href="https://www.flaticon.es/iconos-gratis/reenviar" title="reenviar iconos">Reenviar iconos creados por Freepik - Flaticon</a>
 
 
+Reestablecer
+<a href="https://www.flaticon.es/iconos-gratis/restablecer-la-contrasena" title="restablecer la contraseña iconos">Restablecer la contraseña iconos creados por Pixel perfect - Flaticon</a>
 
+Habilitar
+<a href="https://www.flaticon.es/iconos-gratis/campana" title="campana iconos">Campana iconos creados por Assia Benkerroum  - Flaticon</a>
 
+EditarCuenta
+<a href="https://www.flaticon.es/iconos-gratis/cuenta" title="cuenta iconos">Cuenta iconos creados por Freepik - Flaticon</a>
 
-
-
-
+EliminarCuenta
+<a href="https://www.flaticon.es/iconos-gratis/borrar-usuario" title="borrar usuario iconos">Borrar usuario iconos creados por Freepik - Flaticon</a>
 
 GIFS
 

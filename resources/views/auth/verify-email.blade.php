@@ -5,15 +5,10 @@
         </x-slot>
 
         <div class="card-body">
-            @if (Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook')
-                <div class="mb-3 h5">
-                    {{ __('¡¡¡ Gracias por registrarte !!! 😀 Antes de comenzar, tenemos que verificar tu correo,🤩 haciendo clic en el enlace que te acabamos de enviar. Si no recibiste el correo electrónico, con gusto te enviaremos otro 😎.') }}
-                </div>
-            @else
-                <div class="mb-3 h5">
-                    {{ __('¡¡¡ Gracias por registrarte !!! 😀 Antes de comenzar, verifica tu dirección de correo electrónico 🤩 haciendo clic en el enlace que te acabamos de enviar. Si no recibiste el correo electrónico, con gusto te enviaremos otro 😎.') }}
-                </div>
-            @endif
+
+            <div class="mb-3 h5">
+                {{ __('¡¡¡ Gracias por registrarte !!! 😀 Antes de comenzar, verifiquemos tu correo electrónico 🤩, clic en el enlace que te acabamos de enviar. Si no recibiste el correo electrónico, con gusto te enviaremos otro 😎.') }}
+            </div>
 
             @if (session('status') == 'verification-link-sent')
                 <div class="alert alert-success" role="alert">
@@ -26,8 +21,9 @@
                 <form method="POST" action="/logout" class="mx-auto text-center">
                     @csrf
 
-                    <button type="submit" class="btn bg-danger text-white mx-2 ">
-                        {{ __('Cancelar') }}
+                    <button type="submit" class="btn btn-outline-danger text-white mx-2" id="btn">
+                        {{-- {{ __('Cancelar') }} --}}
+												<img src="{{ asset('/img/icons/cancel2.png') }}" alt="Cancelar" width="50" height="50">
                     </button>
                 </form>
 
@@ -47,8 +43,9 @@
 
                     <div>
 
-                        <button type="submit" class="btn bg-success text-white mx-2">
-                            {{ __('Reenviar correo electrónico') }}
+                        <button type="submit" class="btn btn-outline-success text-white mx-2">
+                            {{-- {{ __('Reenviar correo electrónico') }} --}}
+														<img src="{{ asset('img/icons/reenviaremail.png') }}" alt="reenviar correo" width="50" height="50">
                         </button>
                     </div>
                 </form>

@@ -237,6 +237,33 @@
                                 <a href="https://www.flaticon.com/free-icons/house" title="house icons">House icons
                                     created by Freepik - Flaticon</a>
                             </li>
+                            <li>
+                                Reenviar Email
+                                <a href="https://www.flaticon.es/iconos-gratis/reenviar"
+                                    title="reenviar iconos">Reenviar iconos creados por Freepik - Flaticon</a>
+                            </li>
+                            <li>
+                                Reestablecer contraseña
+                                <a href="https://www.flaticon.es/iconos-gratis/restablecer-la-contrasena"
+                                    title="restablecer la contraseña iconos">Restablecer la contraseña iconos creados
+                                    por Pixel perfect - Flaticon</a>
+                            </li>
+                            <li>
+                                Habilitar
+                                <a href="https://www.flaticon.es/iconos-gratis/campana" title="campana iconos">Campana
+                                    iconos creados por Assia Benkerroum - Flaticon</a>
+                            </li>
+                            <li>
+                                Editar cuenta
+                                <a href="https://www.flaticon.es/iconos-gratis/cuenta" title="cuenta iconos">Cuenta
+                                    iconos creados por Freepik - Flaticon</a>
+                            </li>
+                            <li>
+                                Eliminar cuenta
+                                <a href="https://www.flaticon.es/iconos-gratis/borrar-usuario"
+                                    title="borrar usuario iconos">Borrar usuario iconos creados por Freepik -
+                                    Flaticon</a>
+                            </li>
                         </ul>
                     </div>
 
@@ -254,12 +281,13 @@
                     </div>
 
                     <div class="text-center mr-5">
-                      
-                        <img class="mx-auto" src="{{ asset('img/icons/house.png') }}" alt="Home" height="100px" width="100px" onclick="location.href='{{ route('dashboard.index') }}'">
-                    
+
+                        <img class="mx-auto" src="{{ asset('img/icons/house.png') }}" alt="Home" height="100px"
+                            width="100px" onclick="location.href='{{ route('dashboard.index') }}'">
+
                     </div>
 
-                    
+
 
                 </div>
             </div>

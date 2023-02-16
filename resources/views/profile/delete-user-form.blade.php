@@ -4,7 +4,7 @@
 
         <div class="mt-3">
             <x-jet-danger-button wire:click="confirmUserDeletion" wire:loading.attr="disabled">
-                {{ __('Eliminar cuenta') }}
+                <img class="mx-auto" src=" {{asset('/img/icons/eliminarCuenta.png')}} " alt="Eliminar cuenta" width="55px" height="50px">
             </x-jet-danger-button>
         </div>
 

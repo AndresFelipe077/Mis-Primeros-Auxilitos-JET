@@ -83,6 +83,7 @@
                 <x-jet-confirms-password wire:then="enableTwoFactorAuthentication">
                     <button type="button" class="btn btn-success" wire:loading.attr="disabled">
                         {{ __('Habilitar') }}
+                        <img class="mx-auto" src="{{ asset('img/icons/habilitar.png') }}" alt="Habilitar" width="45px" height="45px">
                     </button>
                 </x-jet-confirms-password>
 
