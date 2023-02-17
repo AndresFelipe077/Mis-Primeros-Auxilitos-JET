@@ -8,7 +8,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title') - {{ config('app.name') }}</title>
 
-    <link rel="shortcut icon" href="{{ asset('img/botiquin.png') }}" type="image/x-icon">
+    {{-- <link rel="shortcut icon" href="{{ asset('img/botiquin.png') }}" type="image/x-icon"> --}}
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -146,12 +147,14 @@
                         </div>
                         <div class="modal-body">
                             <div class="text-center">
-                                <i class="bi bi-mic-fill"></i>
+                                <img class="mx-auto" src="{{ asset('img/gifs/microfono.gif') }}" alt="microfono" width="100px" height="100px">
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-success">Aceptar</button>
+                        <div class="modal-footer mx-auto">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                                <img class="mx-auto" src="{{ asset('img/icons/cancel2.png') }}" alt="Cancelar" width="40px" height="40px">
+                            </button>
+                            {{-- <button type="button" class="btn btn-success">Aceptar</button> --}}
                         </div>
                     </div>
                 </div>

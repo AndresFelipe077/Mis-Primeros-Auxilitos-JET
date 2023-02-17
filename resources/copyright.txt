@@ -132,13 +132,17 @@ GIFS
 pizarra
 <a href="https://www.flaticon.es/iconos-animados-gratis/colegio" title="colegio iconos animados">Colegio iconos animados creados por Freepik - Flaticon</a>
 
+Microfono
+<a href="https://www.flaticon.es/iconos-animados-gratis/microfono" title="micrófono iconos animados">Micrófono iconos animados creados por Freepik - Flaticon</a>
 
+Admin
+<a href="https://www.flaticon.com/free-icons/admin" title="admin icons">Admin icons created by rsetiawan - Flaticon</a>
 
+User admin
+<a href="https://www.flaticon.com/free-icons/people" title="people icons">People icons created by Freepik - Flaticon</a>
 
-
-
-
-
+ContentAdmin
+<a href="https://www.flaticon.com/free-icons/content" title="content icons">Content icons created by Freepik - Flaticon</a>
 
 
 //////////////// COPYRIGHT MUSICA //////////////

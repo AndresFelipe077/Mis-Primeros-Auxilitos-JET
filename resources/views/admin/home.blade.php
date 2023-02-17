@@ -2,6 +2,8 @@
 
 @section('title','Admin home')
 
+<link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/admin.png') }}" type="image/x-icon">
+
 @section('content_header')
     <h1>Mis Primeros Auxilitos</h1>
 @stop

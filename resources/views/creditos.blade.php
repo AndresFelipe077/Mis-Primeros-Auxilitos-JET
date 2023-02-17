@@ -274,6 +274,27 @@
                                 <a href="https://www.flaticon.es/iconos-gratis/bloquear"
                                     title="bloquear iconos">Bloquear iconos creados por Those Icons - Flaticon</a>
                             </li>
+                            <li>
+                                Microfono gif
+                                <a href="https://www.flaticon.es/iconos-animados-gratis/microfono"
+                                    title="micrófono iconos animados">Micrófono iconos animados creados por Freepik -
+                                    Flaticon</a>
+                            </li>
+                            <li>
+                                Admin
+                                <a href="https://www.flaticon.com/free-icons/admin" title="admin icons">Admin icons
+                                    created by rsetiawan - Flaticon</a>
+                            </li>
+                            <li>
+                                User admin
+                                <a href="https://www.flaticon.com/free-icons/people" title="people icons">People icons
+                                    created by Freepik - Flaticon</a>
+                            </li>
+                            <li>
+                                Contenido Admin
+                                <a href="https://www.flaticon.com/free-icons/content" title="content icons">Content
+                                    icons created by Freepik - Flaticon</a>
+                            </li>
                         </ul>
                     </div>
 

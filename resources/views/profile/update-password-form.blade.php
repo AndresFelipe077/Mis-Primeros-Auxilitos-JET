@@ -52,13 +52,16 @@
     </x-slot>
 
     <x-slot name="actions">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar
+            <img class="mx-auto" src=" {{ asset('img/icons/cancel2.png') }} " alt="Actualizar contraseña" width="50px" height="50px"/>
+        </button>
         <x-jet-button>
             <div wire:loading class="" role="status">
                 <span class="visually-hidden">Cargando...</span>
             </div>
 
-            {{ __('Actualizar contraseña') }}
+            {{ __('Actualizar') }}
+            <img class="mx-auto" src=" {{ asset('img/icons/changePassword.png') }} " alt="Actualizar contraseña" width="50px" height="50px"/>
         </x-jet-button>
     </x-slot>
 </x-jet-form-section>

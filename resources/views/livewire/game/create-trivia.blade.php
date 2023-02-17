@@ -1,5 +1,5 @@
+<link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/crear.png') }}" type="image/x-icon">
 <div>
-    <link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/crear.png') }}" type="image/x-icon">
     <x-app-layout>
 
         @section('title', 'Crear trivia')
