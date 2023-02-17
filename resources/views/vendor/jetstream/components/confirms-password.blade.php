@@ -66,16 +66,21 @@
             </div>
         </x-slot>
 
-        <x-slot name="footer">
-            <button type="button" wire:click="stopConfirmingPassword" wire:loading.attr="disabled"
-                class="btn btn-danger">Cancelar</button>
+        <x-slot name="footer" >
+            <button type="button" wire:click="stopConfirmingPassword" wire:loading.attr="disabled" class="btn btn-danger mx-auto">
+                <img class="mx-auto" src="{{ asset('img/icons/cancel2.png') }}" alt="Cambiar contraseña" width="45px"
+                    height="45px">
+            </button>
 
-            <x-jet-button class="ms-2" wire:click="confirmPassword" wire:loading.attr="disabled">
-                <div wire:loading wire:target="confirmPassword" class="spinner-border spinner-border-sm" role="status">
+            <x-jet-button class="ms-2" wire:click="confirmPassword" wire:loading.attr="disabled" class="mx-auto">
+                <div wire:loading wire:target="confirmPassword" class="" role="status">
                     <span class="visually-hidden">Cargando...</span>
                 </div>
 
-                {{ $button }}
+                {{-- {{ $button }} --}}
+                <img class="mx-auto" src="{{ asset('img/icons/habilitar.png') }}" alt="Habilitar" width="45px"
+                    height="45px">
+
             </x-jet-button>
         </x-slot>
     </x-jet-dialog-modal>

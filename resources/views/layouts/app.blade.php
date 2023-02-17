@@ -43,6 +43,8 @@
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/input-file.css') }}">
     <link rel="stylesheet" href="{{ asset('css/btn-height.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/img-size.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/card-size.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('css/modal.css') }}"> --}}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -269,6 +269,11 @@
                                 <a target="_blank" href="https://icons8.com/icon/JxlMt02gvXeq/games">Games</a> icon by
                                 <a target="_blank" href="https://icons8.com">Icons8</a>
                             </li>
+                            <li>
+                                Cambiar contraseña
+                                <a href="https://www.flaticon.es/iconos-gratis/bloquear"
+                                    title="bloquear iconos">Bloquear iconos creados por Those Icons - Flaticon</a>
+                            </li>
                         </ul>
                     </div>
 

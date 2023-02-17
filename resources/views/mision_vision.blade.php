@@ -5,7 +5,7 @@
         {{-- <x-header /> --}}
     </x-slot>
 
-    <div class="container">
+    <div class="container animate__animated animate__bounceInDown">
 
         <div class="text-center">
             <div class="mt-3">
