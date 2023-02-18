@@ -37,7 +37,7 @@
 
 <body>
 
-    {{-- <div class="menu-btn">
+     <div class="menu-btn">
     <i class="fas fa-bars fa-2x"></i>
   </div> --}}
 
@@ -76,6 +76,7 @@
 
         <!-- SHOWCASE -->
 
+
         <header class="showcase">
             <h2 class="titulo">Mis primeros Auxilitos</h2>
             <p class="subtitulo">Enseñando al
@@ -86,44 +87,84 @@
         </header>
 
         <!-- NEWS CARDS -->
-        <div class="news-cards">
-            <div>
-                <img src="img/1 card.webp" alt="" />
-                <h3>Primeros auxilios.</h3>
-                <p>Tener conocimientos de primeros auxilios puede salvar vidas en situaciones de emergencia. Estos
-                    procedimientos son sumamente útiles para atender a la persona en peligro, mientras se espera la
-                    llegada de atención médica adecuada. Cada segundo cuenta y es muy importante tener conocimientos
-                    básicos de asistencia.
-                </p>
-
+                                                                 
+                                                        <!-- HOVER -1 -->
+            <body>
+            <div class="contenedor">
+               <a href="#">
+                    <figure>
+                    <img src="img/1 card.webp" alt="" />
+                        <div class="capa">
+                            <h3>Niños</h3>
+                            <p>CONOCIMIENTOS EN PRIMEROS AUXILIOS.</p>
+                        </div>
+                    </figure>
+                </a>
             </div>
-            <div>
-                <img src="img/card 2.jpg" alt="" />
-                <h3>¿Qué debe saber un niño de primeros auxilios?</h3>
-                <p>Enseñar primeros auxilios desde edades tempranas es una manera de prepararles ante situaciones
-                    difíciles. Estos pueden impartirse fácilmente desde casa a través de juegos y actividades que les
-                    muestran cómo actuar, con los que perder el miedo y sean capaces de reaccionar de manera rápida y
-                    eficiente. </p>
+        </body>
 
+                                                                 <!-- HOVER -2 -->
+        <body>
+        <body>
+            <div class="contenedor2">
+               <a href="#">
+                    <figure>
+                    <img src="img/card 2.jpg" alt="" />
+                        <div class="capa2">
+                            <h3>Titulo</h3>
+                            <p>Enseñar Primeros Auxilios desde edades tempranas es una manera de prepararles ante situaciones
+                    de emergencia.</p>
+                        </div>
+                    </figure>
+                </a>
             </div>
-            <div>
-                <img src="img/card3.jpeg" alt="" />
-                <h3>Reanimación cardiopulmonar.</h3>
-                <p>Todos sabemos lo importante que es aprender matemáticas, lengua, ciencias…
+        </body>                                                             
+                                                                <!-- HOVER -3 -->
+            <body>
+            <div class="contenedor3">
+               <a href="#">
+                    <figure>
+                    <img src="img/card3.jpeg" alt="" />
+                        <div class="capa3">
+                            <h3>Titulo</h3>
+                            <p>Todos sabemos lo importante que es aprender matemáticas, lengua, ciencias…
                     Es imprescindible para la vida, pero también lo es aprender primeros auxilios,por ello es ncesesario
                     que se aprenda también desde la infancia la reanimación cardiopulmonar (RCP) que es una técnica útil
-                    para salvar vidas en emergencias. </p>
-
+                    para salvar vidas en emergencias.</p>
+                        </div>
+                    </figure>
+                </a>
             </div>
-            <div>
-                <img src="img/card.jpg" alt="" />
-                <h3>Nuestra aplicacion permitira que:</h3>
-                <p>los niños aprendan todas éstas técnicas y les de la confianza necesaria para poder intervenir o
-                    ayudar a alguien en un caso extremo, donde podrían salvar una vida.
-                </p>
-
+        </body>                                                                  
+                                                                 <!-- HOVER -4 -->
+                <div class="contenedor4">
+               <a href="#">
+                    <figure>
+                    <img src="img/card.jpg" alt="" />
+                        <div class="capa4">
+                            <h3>Titulo</h3>
+                            <p>los niños aprendan todas éstas técnicas y les de la confianza necesaria para poder intervenir o
+                    ayudar a alguien en un caso extremo, donde podrían salvar una vida.</p>
+                        </div>
+                    </figure>
+                </a>
             </div>
-        </div>
+        </body> 
+                                                                <!-- HOVER -5 -->
+
+            <div class="contenedor5">
+               <a href="#">
+                    <figure>
+                    <img src="img/niños 5hover.avif" alt="" />
+                        <div class="capa5">
+                            <h3>Titulo</h3>
+                            <p>los niños aprendan todas éstas técnicas y les de la confianza necesaria para poder intervenir o
+                    ayudar a alguien en un caso extremo, donde podrían salvar una vida.</p>
+                        </div>
+                    </figure>
+                </a>
+            </div>
+        </body> 
 
         <!-- Card Banner 1-->
         <section class="cards-banner-one">
