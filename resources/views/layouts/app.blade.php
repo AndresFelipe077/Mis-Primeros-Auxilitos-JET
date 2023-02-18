@@ -189,7 +189,6 @@
 
     @livewireScripts
 
-
     @stack('js')
     {{-- Escuchar evento de Scritp --}}
     {{-- <script src="{{ asset('js/alert-modal.js') }}"></script> --}}

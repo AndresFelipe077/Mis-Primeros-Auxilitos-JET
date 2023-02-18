@@ -24,6 +24,11 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+
+Route::get('/Menus',[ContenidoController::class,'topMenu'])->name(' Menus.topMenu');
+
+
+
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -72,21 +77,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
 });
 
-Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(VideoController::class)->group(function () {
-    
-    Route::get('dashboard/videos', 'index')->name('video.index');
 
-    Route::get('dashboard/videos/create', 'create')->name('video.create');
-
-    Route::post('dashboard/videos/store', 'store')->name('video.store');
-
-    Route::get('dashboard/videos/edit/{video}', 'edit')->name('video.edit');
-
-    Route::put('dashboard/videos/update/{video}', 'update')->name('video.update');
-
-    Route::delete('dashboard/videos/destroy/{video}', 'destroy')->name('video.destroy');
-
-});
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(TriviaController::class)->group(function () {
 
@@ -121,7 +112,21 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 });
 
 
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(VideoController::class)->group(function () {
+    
+    Route::get('dashboard/videos', 'index')->name('video.index');
 
+    Route::get('dashboard/videos/create', 'create')->name('video.create');
+
+    Route::post('dashboard/videos/store', 'store')->name('video.store');
+
+    Route::get('dashboard/videos/edit/{video}', 'edit')->name('video.edit');
+
+    Route::put('dashboard/videos/update/{video}', 'update')->name('video.update');
+
+    Route::delete('dashboard/videos/destroy/{video}', 'destroy')->name('video.destroy');
+
+});
 
 // if (Features::enabled(Features::twoFactorAuthentication())) {
 // Route::get('/two-factor-challenge', [TwoFactorAuthenticatedSessionController::class, 'create'])
