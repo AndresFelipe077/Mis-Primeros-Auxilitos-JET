@@ -20,12 +20,12 @@ use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/Menus', function () {
     return view('auth.login');
 });
 
 
-Route::get('/Menus',[ContenidoController::class,'topMenu'])->name(' Menus.topMenu');
+Route::get('/',[ContenidoController::class,'topMenu'])->name(' Menus.topMenu');
 
 
 

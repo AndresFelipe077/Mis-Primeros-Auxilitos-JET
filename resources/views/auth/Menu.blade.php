@@ -60,7 +60,7 @@
       <h2 class="titulo">Mis primeros Auxilitos</h2>
       <p class="subtitulo">Enseñando al 
         héroe del mañana</p>
-      <a href="#" class="btn">
+      <a href="/login" class="btn">
         Entrar <i class="fas fa-chevron-right"></i>
       </a>
     </header>
