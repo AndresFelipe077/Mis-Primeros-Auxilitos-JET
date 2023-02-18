@@ -237,6 +237,64 @@
                                 <a href="https://www.flaticon.com/free-icons/house" title="house icons">House icons
                                     created by Freepik - Flaticon</a>
                             </li>
+                            <li>
+                                Reenviar Email
+                                <a href="https://www.flaticon.es/iconos-gratis/reenviar"
+                                    title="reenviar iconos">Reenviar iconos creados por Freepik - Flaticon</a>
+                            </li>
+                            <li>
+                                Reestablecer contraseña
+                                <a href="https://www.flaticon.es/iconos-gratis/restablecer-la-contrasena"
+                                    title="restablecer la contraseña iconos">Restablecer la contraseña iconos creados
+                                    por Pixel perfect - Flaticon</a>
+                            </li>
+                            <li>
+                                Habilitar
+                                <a href="https://www.flaticon.es/iconos-gratis/campana" title="campana iconos">Campana
+                                    iconos creados por Assia Benkerroum - Flaticon</a>
+                            </li>
+                            <li>
+                                Editar cuenta
+                                <a href="https://www.flaticon.es/iconos-gratis/cuenta" title="cuenta iconos">Cuenta
+                                    iconos creados por Freepik - Flaticon</a>
+                            </li>
+                            <li>
+                                Eliminar cuenta
+                                <a href="https://www.flaticon.es/iconos-gratis/borrar-usuario"
+                                    title="borrar usuario iconos">Borrar usuario iconos creados por Freepik -
+                                    Flaticon</a>
+                            </li>
+                            <li>
+                                Games
+                                <a target="_blank" href="https://icons8.com/icon/JxlMt02gvXeq/games">Games</a> icon by
+                                <a target="_blank" href="https://icons8.com">Icons8</a>
+                            </li>
+                            <li>
+                                Cambiar contraseña
+                                <a href="https://www.flaticon.es/iconos-gratis/bloquear"
+                                    title="bloquear iconos">Bloquear iconos creados por Those Icons - Flaticon</a>
+                            </li>
+                            <li>
+                                Microfono gif
+                                <a href="https://www.flaticon.es/iconos-animados-gratis/microfono"
+                                    title="micrófono iconos animados">Micrófono iconos animados creados por Freepik -
+                                    Flaticon</a>
+                            </li>
+                            <li>
+                                Admin
+                                <a href="https://www.flaticon.com/free-icons/admin" title="admin icons">Admin icons
+                                    created by rsetiawan - Flaticon</a>
+                            </li>
+                            <li>
+                                User admin
+                                <a href="https://www.flaticon.com/free-icons/people" title="people icons">People icons
+                                    created by Freepik - Flaticon</a>
+                            </li>
+                            <li>
+                                Contenido Admin
+                                <a href="https://www.flaticon.com/free-icons/content" title="content icons">Content
+                                    icons created by Freepik - Flaticon</a>
+                            </li>
                         </ul>
                     </div>
 
@@ -254,12 +312,13 @@
                     </div>
 
                     <div class="text-center mr-5">
-                      
-                        <img class="mx-auto" src="{{ asset('img/icons/house.png') }}" alt="Home" height="100px" width="100px" onclick="location.href='{{ route('dashboard.index') }}'">
-                    
+
+                        <img class="mx-auto" src="{{ asset('img/icons/house.png') }}" alt="Home" height="100px"
+                            width="100px" onclick="location.href='{{ route('dashboard.index') }}'">
+
                     </div>
 
-                    
+
 
                 </div>
             </div>

@@ -29,12 +29,13 @@
 
                 <div class="d-flex justify-content-end mt-4">
 
-                    <button type="button" class="btn btn-danger mx-auto"
-                        onclick="location.href='{{ route('login') }}'">Cancelar</button>
+                    <a type="button" class="btn btn-outline-danger mx-auto" href=" {{ route('login') }}"><img
+                            src="{{ asset('/img/icons/cancel2.png') }}" alt="Cancelar" width="50"
+                            height="50"></a>
 
-                    <x-jet-button>
-                        {{ __('Enlace de restablecimiento') }}
-                    </x-jet-button>
+                    <button class="btn btn-outline-success mx-auto">
+                        <img src="{{ asset('/img/icons/reestablecer.png') }}" alt="Cancelar" width="50" height="50">
+                    </button>
                 </div>
             </form>
         </div>

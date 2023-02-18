@@ -83,6 +83,8 @@
                 <x-jet-confirms-password wire:then="enableTwoFactorAuthentication">
                     <button type="button" class="btn btn-success" wire:loading.attr="disabled">
                         {{ __('Habilitar') }}
+                        <img class="mx-auto" src="{{ asset('img/icons/habilitar.png') }}" alt="Habilitar"
+                            width="45px" height="45px">
                     </button>
                 </x-jet-confirms-password>
 
@@ -90,6 +92,8 @@
                     <button type="button" class="btn btn-danger" wire:loading.attr="disabled" data-bs-toggle="modal"
                         data-bs-target="#staticBackdropCambiarContrasena">
                         {{ __('Actualizar contraseña') }}
+                        <img class="mx-auto" src="{{ asset('img/icons/changePassword.png') }}" alt="Cambiar contraseña"
+                            width="45px" height="45px">
                     </button>
                 @endif
             @else
@@ -103,6 +107,8 @@
                     <x-jet-confirms-password wire:then="confirmTwoFactorAuthentication">
                         <x-jet-button type="button" class="mr-3" wire:loading.attr="disabled">
                             {{ __('Confirmar') }}
+                            <img class="mx-auto" src="{{ asset('img/icons/habilitar.png') }}" alt="Habilitar"
+                                width="45px" height="45px">
                         </x-jet-button>
                     </x-jet-confirms-password>
                 @else
@@ -115,8 +121,10 @@
 
                 @if ($showingConfirmation)
                     <x-jet-confirms-password wire:then="disableTwoFactorAuthentication">
-                        <x-jet-secondary-button wire:loading.attr="disabled">
+                        <x-jet-secondary-button wire:loading.attr="disabled" class="btn bg-danger text-white">
                             {{ __('Cancelar') }}
+                            <img class="mx-auto" src="{{ asset('img/icons/cancel2.png') }}" alt="Cambiar contraseña"
+                                width="45px" height="45px">
                         </x-jet-secondary-button>
                     </x-jet-confirms-password>
                 @else

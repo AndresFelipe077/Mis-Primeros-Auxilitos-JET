@@ -1,5 +1,5 @@
+<link id="image-head" rel="shortcut icon" href="{{ asset('img/menu/challengue2.png') }}" type="image/x-icon">
 <div>
-    <link id="image-head" rel="shortcut icon" href="{{ asset('img/menu/challengue2.png') }}" type="image/x-icon">
     <x-app-layout>
     
         @section('title', 'Trivias')
@@ -19,11 +19,11 @@
                 @foreach($trivias as  $trivia)
 
                 <div class="col-12 col-md-6 mt-5 col-lg-4" >
-                    <div class="card m-3 text-center rounded animate__animated animate__bounceIn">
+                    <div class="card m-3 text-center rounded animate__animated animate__bounceIn" id="card-contenido">
                         <div class="card-body shadow">
                             <h5 class="card-title">{{ $trivia->title }}</h5>
                             <div class="contenedor rounded">
-                                <img class="imagen rounded mx-auto d-block" src="{{ $trivia->image }}" alt="Image of trivia"
+                                <img class="imagen rounded mx-auto d-block" id="img" src="{{ $trivia->image }}" alt="Image of trivia"
                                     width="250px" height="250px">
                             </div>
                             {{-- <p class="card-text">{!! $trivia->content !!}</p> --}}

@@ -103,13 +103,28 @@ home
 <a href="https://www.flaticon.com/free-icons/house" title="house icons">House icons created by Freepik - Flaticon</a>
 
 
+Reenviar email
+<a href="https://www.flaticon.es/iconos-gratis/reenviar" title="reenviar iconos">Reenviar iconos creados por Freepik - Flaticon</a>
 
 
+Reestablecer
+<a href="https://www.flaticon.es/iconos-gratis/restablecer-la-contrasena" title="restablecer la contraseña iconos">Restablecer la contraseña iconos creados por Pixel perfect - Flaticon</a>
+
+Habilitar
+<a href="https://www.flaticon.es/iconos-gratis/campana" title="campana iconos">Campana iconos creados por Assia Benkerroum  - Flaticon</a>
+
+EditarCuenta
+<a href="https://www.flaticon.es/iconos-gratis/cuenta" title="cuenta iconos">Cuenta iconos creados por Freepik - Flaticon</a>
+
+EliminarCuenta
+<a href="https://www.flaticon.es/iconos-gratis/borrar-usuario" title="borrar usuario iconos">Borrar usuario iconos creados por Freepik - Flaticon</a>
+
+Games
+<a target="_blank" href="https://icons8.com/icon/JxlMt02gvXeq/games">Games</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 
 
-
-
-
+Cambiar contraseña
+<a href="https://www.flaticon.es/iconos-gratis/bloquear" title="bloquear iconos">Bloquear iconos creados por Those Icons - Flaticon</a>
 
 
 GIFS
@@ -117,13 +132,17 @@ GIFS
 pizarra
 <a href="https://www.flaticon.es/iconos-animados-gratis/colegio" title="colegio iconos animados">Colegio iconos animados creados por Freepik - Flaticon</a>
 
+Microfono
+<a href="https://www.flaticon.es/iconos-animados-gratis/microfono" title="micrófono iconos animados">Micrófono iconos animados creados por Freepik - Flaticon</a>
 
+Admin
+<a href="https://www.flaticon.com/free-icons/admin" title="admin icons">Admin icons created by rsetiawan - Flaticon</a>
 
+User admin
+<a href="https://www.flaticon.com/free-icons/people" title="people icons">People icons created by Freepik - Flaticon</a>
 
-
-
-
-
+ContentAdmin
+<a href="https://www.flaticon.com/free-icons/content" title="content icons">Content icons created by Freepik - Flaticon</a>
 
 
 //////////////// COPYRIGHT MUSICA //////////////

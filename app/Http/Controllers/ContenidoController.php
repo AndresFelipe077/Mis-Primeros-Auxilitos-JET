@@ -143,11 +143,12 @@ class ContenidoController extends Controller
       'description'  => 'required|max:250',
     ]);
     $title  = $request->title;
-    $title_url  = Str::random(1) . $title;
+    $title_url  = Str::random(1) . Str::slug($title, '-');
 
     $name = Auth::user()->name;
     $contenido->title = $title;
     $contenido->slug  = $title_url;
+    
 
     if ($request->has('file')) {
       $destination = public_path() . $contenido->url;

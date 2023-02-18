@@ -11,6 +11,18 @@ class Adivinanza extends Model
 
     protected $table = "adivinanzas";
 
-    protected $fillable = ['title', 'image' ,'content'];
+    protected $fillable =
+    [
+        'title',
+        'slug',
+        'image',
+        'content'
+    ];
+
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
 }

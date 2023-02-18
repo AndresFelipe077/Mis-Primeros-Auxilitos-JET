@@ -5,10 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Registro=</title>
     <link rel="stylesheet" href="{{ asset('css/noSeleccionar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/registro.css') }}" />
+=======
+    <title>Registro</title>
+
+>>>>>>> b0da66013f5da5f1272adae7282b4efbd48a6917
     <link id="image-head" rel="shortcut icon" href="{{ asset('img/registro/faviconRegistro.png') }}" type="image/x-icon">
+
+    {{-- Estilos --}}
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/eye.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/icon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/iconCalendar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/noSeleccionar.css') }}">
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -21,7 +36,9 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
+        integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous">
+    </script>
 
 
     {{-- Material design css --}}
@@ -32,21 +49,12 @@
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-
-
-    {{-- Estilos --}}
-    <link rel="stylesheet" href="{{ asset('css/eye.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/icon.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/iconCalendar.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/noSeleccionar.css') }}">
-
-
-
 
 </head>
 
@@ -156,27 +164,28 @@
                                 <span><label class="text-primary" for="">Otro</label></span>
                             </label>
                         </div>
-                        
-                        
+
+
                         <div class="grupo">
-                            <input type="date" class="input" name="fechaNacimiento" id="name" required
+                            <input type="date" class="input" name="fechaNacimiento" id="date" required
                                 value="{{ old('fechaNacimiento') }}"><span class="barra"></span>
-                                <label class="label" for="">Fecha de nacimiento</label>
+                            <label class="label" for="">Fecha de nacimiento</label>
                         </div>
+                        
 
                         <div class="grupo input-wrapper">
-                            <input class="input password input password" data-lpignore="true" type="password" name="password" id="name password" ><span
-                                class="barra"></span>
+                            <input class="input password input password" data-lpignore="true" type="password"
+                                name="password" id="name password"><span class="barra"></span>
                             <label class="label" for="">Contraseña</label>
                             <span class="togglePassword mr-2 input-icon password">
                                 <i data-feather="eye" style="cursor: pointer"></i>
                             </span>
-                            
+
                         </div>
 
                         <div class="grupo input-wrapper">
-                            <input class="input password input password" data-lpignore="true" type="password" name="password_confirmation" id="name password"
-                                ><span class="barra"></span>
+                            <input class="input password input password" data-lpignore="true" type="password"
+                                name="password_confirmation" id="name password"><span class="barra"></span>
                             <label class="label" for="">Confirmar contraseña</label>
                             <span class="togglePassword mr-2 input-icon password">
                                 <i data-feather="eye" style="cursor: pointer"></i>
@@ -185,7 +194,8 @@
 
                         @if ($errors->any('password'))
                             <div class="text-danger" role="alert">
-                                <p class="text-center m-3">Las constraseñas deben coincidir y ser mayores o iguales a 8 carácteres 😀😎</p>
+                                <p class="text-center m-3">Las constraseñas deben coincidir y ser mayores o iguales a 8
+                                    carácteres 😀😎</p>
                             </div>
                         @endif
 
@@ -195,12 +205,12 @@
                                     <x-jet-label for="terms">
                                         <div class="row">
 
-                                          <div class="ml-3">
-                                            <x-jet-checkbox name="terms"  required />
+                                            <div class="ml-3">
+                                                <x-jet-checkbox name="terms" required />
 
-                                          </div>
-                                            
-                                            <div class="ml-3" >
+                                            </div>
+
+                                            <div class="ml-3">
                                                 {!! __('Estoy de acuerdo con los :terms_of_service y :privacy_policy', [
                                                     'terms_of_service' =>
                                                         '<a target="_blank" href="' .
@@ -226,12 +236,12 @@
 
 
                         <button type="submit" id="btn_Registrar">Registrarse</button>
-                        <button type="submit" id="btn_Regresar"
-                            onclick="location.href='{{ route('login') }}'">Regresar</button>
+                        <a id="btn_Regresar" class="btn btn" href="{{ route('login') }}">Regresar</a>
 
                     </div>
 
                 </form>
+
             </div>
 
 
@@ -244,13 +254,12 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('js/carousel.js') }}"></script>
-    <script src="{{ asset('js/noSeleccionar.js') }}"></script>
 
-    
-<!-- Required Material Web JavaScript library -->
-<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-<script src="{{asset('js/eye.js')}}"></script>
-
+    <!-- Required Material Web JavaScript library -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="{{ asset('js/eye.js') }}"></script>
+    <script src="{{ asset('js/input-date.js') }}"></script>
+    <script src="{{asset('js/noSeleccionar.js')}}"></script>
 
 
 </body>

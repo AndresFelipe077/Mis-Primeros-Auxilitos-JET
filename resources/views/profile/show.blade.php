@@ -38,7 +38,10 @@
                 <div class="row mt-3">
                     <div class="col-lg-4">
                         <div class="card mb-4">
-                            <a class="btn btn-success" href="{{ route('dashboard.index') }}">regresar</a>
+                            <a class="btn btn-success" href="{{ route('dashboard.index') }}">
+                                Regresar
+                                {{-- <img class="mx-auto" src="{{ asset('img/icons/regresar2.png') }}" alt="Regresar" width="50px" height="50px"> --}}
+                            </a>
 
                             <div class="card-body text-center">
                                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
@@ -73,7 +76,7 @@
 
                                     <button type="button" wire:key="{{ Auth::user()->id }}" class="btn btn-primary"
                                         data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                        Editar perfil
+                                        <img src=" {{asset('/img/icons/editarCuenta.png')}} " alt="Editar cuenta" width="60px" height="50px">
                                     </button>
 
                                     <!-- Modal -->

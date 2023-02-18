@@ -1,8 +1,8 @@
+<link rel="shortcut icon" href="{{ asset('img/menu/challengue2.png') }}" type="image/x-icon">
 <div>
-    <link id="image-head" rel="shortcut icon" href="{{ asset('img/menu/challengue2.png') }}" type="image/x-icon">
     <x-app-layout>
-
         @section('title', 'Actualizar - Editar trivia')
+
 
         <x-slot name="header">
             <x-header />

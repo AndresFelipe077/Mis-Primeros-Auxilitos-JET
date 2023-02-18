@@ -1,5 +1,5 @@
+<link id="image-head" rel="shortcut icon" href="{{ asset('img/menu/challengue2.png') }}" type="image/x-icon">
 <div>
-    <link id="image-head" rel="shortcut icon" href="{{ asset('img/menu/challengue2.png') }}" type="image/x-icon">
     <x-app-layout>
 
         @section('title', 'Actualizar - Editar adivinanza')
@@ -28,11 +28,11 @@
                                         <x-jet-input type="text" class="w-full" name="title"
                                             value="{{ old('title', $adivinanza->title) }}" />
 
-                                            <div class="text-center">
-                                                @error('title')
+                                        <div class="text-center">
+                                            @error('title')
                                                 <span class="text-danger text-center">{{ $message }}</span>
                                             @enderror
-                                            </div>
+                                        </div>
                                     </div>
 
                                     <div class="form-group m-3 mx-auto text-center">
@@ -50,11 +50,11 @@
                                         <input type="file" class="form-control-file mx-auto text-center d-none"
                                             id="file-upload" onchange="previewImage(event, '#imgPreview')"
                                             accept="image/*" name="image" />
-                                            <div class="text-center">
-                                                @error('image')
+                                        <div class="text-center">
+                                            @error('image')
                                                 <span class="text-danger text-center">{{ $message }}</span>
                                             @enderror
-                                            </div>
+                                        </div>
 
                                     </div>
 
@@ -65,18 +65,20 @@
                                         </div>
                                         <div class="text-center">
                                             @error('content')
-                                             <span class="text-danger text-center">{{ $message }}</span>
-                                         @enderror 
-                                         </div>
+                                                <span class="text-danger text-center">{{ $message }}</span>
+                                            @enderror
+                                        </div>
                                     </div>
                                     <div class="text-center mb-5">
 
-                                        <a class="btn bg-outline-danger text-white" href="{{ route('adivinanzaShow') }}">
+                                        <a class="btn bg-outline-danger text-white"
+                                            href="{{ route('adivinanzaShow') }}">
                                             <img src="{{ asset('/img/icons/regresar2.png') }}" alt="Image Cancelar"
                                                 width="50px" height="50px">
                                         </a>
 
-                                        <button type="submit" class="btn bg-transparent"><img src="{{ asset('/img/icons/editar.png') }}" alt="Image Cancelar"
+                                        <button type="submit" class="btn bg-transparent"><img
+                                                src="{{ asset('/img/icons/editar.png') }}" alt="Image Cancelar"
                                                 width="50px" height="50px"></button>
                                     </div>
                                 </form>
@@ -87,27 +89,21 @@
                                     <div class="row">
 
                                         <div class="col-sm-12 mx-auto text-center">
-                                                <form method="POST" class="formulario-eliminar-contenido"
-                                                    action="{{ route('adivinanzaDelete', $adivinanza) }}">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <button type="submit" class="btn bg-transparent">
-                                                        <img class="mt-2" src="{{ asset('/img/icons/borrar.png') }}"
-                                                            width="50px" height="50px">
-                                                    </button>
-                                                </form>
+                                            <form method="POST" class="formulario-eliminar-contenido"
+                                                action="{{ route('adivinanzaDelete', $adivinanza) }}">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit" class="btn bg-transparent">
+                                                    <img class="mt-2" src="{{ asset('/img/icons/borrar.png') }}"
+                                                        width="50px" height="50px">
+                                                </button>
+                                            </form>
                                         </div>
 
 
                                     </div>
 
                                 </div>
-
-                                
-
-
-
-
 
                             </div>
                         </div>
