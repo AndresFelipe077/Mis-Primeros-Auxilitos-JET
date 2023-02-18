@@ -1,4 +1,30 @@
 /* Global */
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap');
+
+/*Scroll-bar*/
+::-webkit-scrollbar{
+  width:1em;
+  background:grey;
+  display: none !important;
+}
+
+::-webkit-scrollbar-track{
+  background: #334d50;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #cbcaa5, #334d50);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #cbcaa5, #334d50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  border-radius:3em;
+}
+
+::-webkit-scrollbar-thumb{
+  background-size: contain; 
+  background-repeat:no-repeat;
+  background: #ffe259;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #ffa751, #ffe259);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius:2em;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,14 +32,15 @@
 }
 
 body {
-  font-family: "Oswald", sans-serif;
-  background-color: #000000;
-  /* Pattern from https://www.heropatterns.com/ */
-  background-color: #000000;
-background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231f0d3c' fill-opacity='1'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  font-family: 'DynaPuff', cursive !important;
   color: #1e272e;
-  color: #fff;
   font-size: 16px;
+  background-image: url("/img/imgs/a.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 a {
@@ -26,8 +53,10 @@ ul {
 }
 
 .container {
+  margin-top: 30px !important;
   width: 90%;
   margin: auto;
+  border-radius: 10px;
 }
 
 /* Navegacion */
@@ -92,28 +121,28 @@ hr {
   color: #fff;
   font-size: 15px;
   border: 1px solid #fff;
+  border-radius: 10px;
 }
 
 .btn:hover {
   opacity: 0.9;
 }
-.titulo{
 
-position: relative;
-top: -300px;
-color: blue;
-font-size: 40px;
-text-align: center;
-text-emphasis-color: #ff0000;
+.titulo {
+  position: relative;
+  top: -300px;
+  color: blue;
+  font-size: 40px;
+  text-align: center;
+  text-emphasis-color: #ff0000;
 }
 
-.subtitulo{
-
-position: relative;
-top: -100px;
-font-size: 30px;
-color: rgb(215, 0, 0);
-text-align: center;
+.subtitulo {
+  position: relative;
+  top: -250px;
+  font-size: 30px;
+  color: rgb(215, 0, 0);
+  text-align: center;
 }
 
 .showcase {
@@ -129,7 +158,7 @@ text-align: center;
   margin-bottom: 20px;
   color: #02caf6;
   opacity: -100px;
-  
+  border-radius: 10px !important;
 }
 
 .showcase h2,
@@ -139,6 +168,7 @@ text-align: center;
 
 .showcase .btn {
   margin-top: 20px;
+  border-radius: 10px;
 }
 
 /* News Cards */
@@ -173,6 +203,7 @@ text-align: center;
   height: 350px;
   background: url("/img/ninos-disfrazados-superheroes-apretando-punos_251859-6512.jpg");
   margin-bottom: 40px;
+  border-radius: 10px !important;
 }
 
 .cards-banner-one .content {
@@ -202,23 +233,33 @@ text-align: center;
 .social {
   margin: 50px;
 }
+
 .social p {
   text-align: center;
   font-size: 30px;
   margin-bottom: 20px;
 }
+
 .links {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: black;
+  border-radius:100%;
 }
 
 .links a {
   margin: 0 30px;
+  background-color:black
+  
 }
 
 .links a i {
   font-size: 3rem;
+}
+
+.links img{
+  cursor: pointer;
 }
 
 /* Links */
@@ -243,6 +284,12 @@ text-align: center;
 
 .footer-links li {
   line-height: 2.8;
+  color: white !important;
+}
+
+a{
+  color: white !important;
+  cursor: pointer;
 }
 
 .footer {
@@ -285,6 +332,7 @@ text-align: center;
     border-bottom: #ccc solid 1px;
     font-size: 14px;
   }
+
   .nav-main ul.nav-menu li:last-child {
     border-bottom: 0;
   }
@@ -321,6 +369,7 @@ text-align: center;
     width: 100%;
     padding: 60px 20px;
   }
+
   .footer-links .footer-container {
     grid-template-columns: 1fr;
   }
@@ -328,4 +377,8 @@ text-align: center;
   .footer-links .footer-container ul {
     text-align: center;
   }
+}
+
+img{
+  border-radius: 10px !important;
 }

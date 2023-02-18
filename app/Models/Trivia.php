@@ -11,14 +11,6 @@ class Trivia extends Model
 
     protected $table = "trivias";
 
-<<<<<<< HEAD
-    protected $fillable = ['title', /*'slug',*/ 'image' ,'content'];
-
-    // public function getRouteKeyName()
-    // {
-    //     return 'slug';
-    // }
-=======
     protected $fillable =
     [
         'title',
@@ -31,6 +23,5 @@ class Trivia extends Model
     {
         return 'slug';
     }
->>>>>>> b0da66013f5da5f1272adae7282b4efbd48a6917
 
 }
