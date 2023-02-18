@@ -24,11 +24,6 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-
-Route::get('/Menus',[ContenidoController::class,'topMenu'])->name(' Menus.topMenu');
-
-
-
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -45,6 +40,8 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name
 
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(ContenidoController::class)->group(function () {
+
+    Route::get('/menu','menuShow')->name('menu');
 
     //Vista home de videos
     Route::get('dashboard', 'index')->name('dashboard.index');

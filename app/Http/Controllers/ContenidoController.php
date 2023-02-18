@@ -12,15 +12,10 @@ use Intervention\Image\Facades\Image;
 class ContenidoController extends Controller
 {
 
-  public function topMenu()
+  public function menuShow()
   {
-    
     return view('auth.Menu');
   }
-
-
-
-
 
   //Vista home de videos
   public function index()
