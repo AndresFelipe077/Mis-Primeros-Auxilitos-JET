@@ -1,3 +1,4 @@
+<link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/mision-vision.png') }}" type="image/x-icon">
 @section('title', 'Misión - Visión')
 <x-app-layout>
 

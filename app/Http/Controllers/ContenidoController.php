@@ -14,14 +14,19 @@ class ContenidoController extends Controller
 
   public function menuShow()
   {
-    return view('auth.Menu');
+    // return view('auth.Menu');
+    $contenidos = Contenido::orderBy('id', 'desc')->paginate(9);
+    return view('contenido.contenido-show', compact('contenidos'));
+
   }
 
   //Vista home de videos
   public function index()
   {
     $contenidos = Contenido::orderBy('id', 'desc')->paginate(9);
-    return view('contenido.contenido-show', compact('contenidos'));
+    // return view('contenido.contenido-show', compact('contenidos'));
+    return view('auth.Menu');
+
   }
 
   public function createImage()

@@ -2,7 +2,7 @@
     <nav
         class="navbar navbar-default rounded bg-info w-100 p-3 fixed-top vh-md-100 animate__animated animate__backInDown" id="header">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{route('dashboard.index')}}"><img src="{{ asset('img/imgs/logo.png') }}" alt="" width="65px"
+            <a class="navbar-brand" href="{{route('dashboard.index')}}"><img src="{{ asset('img/imgs/logo.png') }}" alt="" width="60px"
                     height="50px"></a>
             <div id="iconsvg" class="d-flex position-absolute ">
 

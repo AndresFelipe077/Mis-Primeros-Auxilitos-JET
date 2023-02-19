@@ -16,7 +16,6 @@ class SocialController extends Controller
         return Socialite::driver('google')->redirect();
     }
 
-
     public function callbackGoogle()
     {
         $user = Socialite::driver('google')->user();
@@ -43,7 +42,6 @@ class SocialController extends Controller
             return redirect('/two-factor-challenge');
         }
     }
-
 
     public function redirectFacebook()
     {
