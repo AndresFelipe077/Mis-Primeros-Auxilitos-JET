@@ -26,10 +26,10 @@
                                         <x-jet-input type="text" class="w-full" name="title" />
                                         <div class="text-center">
                                             @error('title')
-                                            <span class="text-danger text-center">{{ $message }}</span>
-                                        @enderror
+                                                <span class="text-danger text-center">{{ $message }}</span>
+                                            @enderror
                                         </div>
-                                        
+
                                     </div>
 
                                     <div class="form-group m-3 mx-auto text-center">
@@ -52,10 +52,10 @@
                                     </div>
                                     <div class="text-center">
                                         @error('image')
-                                        <span class="text-danger text-center">{{ $message }}</span>
-                                    @enderror
+                                            <span class="text-danger text-center">{{ $message }}</span>
+                                        @enderror
                                     </div>
-                                    
+
 
                                     <div class="mb-4">{{-- Nos ayuda a que cuando la pagina se renderice los estilos de CKEditor no se pierdan, lo que quire decir que ignora lo que esta dentro --}}
                                         <x-jet-label value="Descripción" />
@@ -63,11 +63,11 @@
                                             <textarea type="text" id="editor" class="form-control w-full" rows="6" name="content"></textarea>
                                         </div>
                                         <div class="text-center">
-                                           @error('content')
-                                            <span class="text-danger text-center">{{ $message }}</span>
-                                        @enderror 
+                                            @error('content')
+                                                <span class="text-danger text-center">{{ $message }}</span>
+                                            @enderror
                                         </div>
-                                        
+
                                     </div>
                                     <div class="text-center mb-5">
 

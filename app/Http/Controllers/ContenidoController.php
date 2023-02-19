@@ -12,21 +12,21 @@ use Intervention\Image\Facades\Image;
 class ContenidoController extends Controller
 {
 
+  public function preguntas5_7Show()
+  {
+    return view('livewire.game.preguntas.preguntas5_7');
+  }
+
   public function menuShow()
   {
-    // return view('auth.Menu');
-    $contenidos = Contenido::orderBy('id', 'desc')->paginate(9);
-    return view('contenido.contenido-show', compact('contenidos'));
-
+    return view('auth.Menu');
   }
 
   //Vista home de videos
   public function index()
   {
     $contenidos = Contenido::orderBy('id', 'desc')->paginate(9);
-    // return view('contenido.contenido-show', compact('contenidos'));
-    return view('auth.Menu');
-
+    return view('contenido.contenido-show', compact('contenidos'));
   }
 
   public function createImage()

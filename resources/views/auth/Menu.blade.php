@@ -84,61 +84,61 @@
                 Entrar <i class="fas fa-chevron-right"></i>
             </a>
         </header>
-            <div class="contenedor">
-                <a href="#">
-                    <figure>
-                        <img src="img/1 card.webp" alt="" />
-                        <div class="capa">
-                            <h3>Niños</h3>
-                            <p>CONOCIMIENTOS EN PRIMEROS AUXILIOS.</p>
-                        </div>
-                    </figure>
-                </a>
-            </div>
-                <div class="contenedor2">
-                    <a href="#">
-                        <figure>
-                            <img src="img/card 2.jpg" alt="" />
-                            <div class="capa2">
-                                <h3>Titulo</h3>
-                                <p>Enseñar Primeros Auxilios desde edades tempranas es una manera de prepararles
-                                    ante situaciones
-                                    de emergencia.</p>
-                            </div>
-                        </figure>
-                    </a>
-                </div>
-            
-                <div class="contenedor3">
-                    <a href="#">
-                        <figure>
-                            <img src="img/card3.jpeg" alt="" />
-                            <div class="capa3">
-                                <h3>Titulo</h3>
-                                <p>Todos sabemos lo importante que es aprender matemáticas, lengua, ciencias…
-                                    Es imprescindible para la vida, pero también lo es aprender primeros
-                                    auxilios,por ello es ncesesario
-                                    que se aprenda también desde la infancia la reanimación cardiopulmonar (RCP)
-                                    que es una técnica útil
-                                    para salvar vidas en emergencias.</p>
-                            </div>
-                        </figure>
-                    </a>
-                </div>
-            <!-- HOVER -4 -->
-            <div class="contenedor4">
-                <a href="#">
-                    <figure>
-                        <img src="img/card.jpg" alt="" />
-                        <div class="capa4">
-                            <h3>Titulo</h3>
-                            <p>los niños aprendan todas éstas técnicas y les de la confianza necesaria para
-                                poder intervenir o
-                                ayudar a alguien en un caso extremo, donde podrían salvar una vida.</p>
-                        </div>
-                    </figure>
-                </a>
-            </div>
+        <div class="contenedor">
+            <a href="#">
+                <figure>
+                    <img src="img/1 card.webp" alt="" />
+                    <div class="capa">
+                        <h3>Niños</h3>
+                        <p>CONOCIMIENTOS EN PRIMEROS AUXILIOS.</p>
+                    </div>
+                </figure>
+            </a>
+        </div>
+        <div class="contenedor2">
+            <a href="#">
+                <figure>
+                    <img src="img/card 2.jpg" alt="" />
+                    <div class="capa2">
+                        <h3>Titulo</h3>
+                        <p>Enseñar Primeros Auxilios desde edades tempranas es una manera de prepararles
+                            ante situaciones
+                            de emergencia.</p>
+                    </div>
+                </figure>
+            </a>
+        </div>
+
+        <div class="contenedor3">
+            <a href="#">
+                <figure>
+                    <img src="img/card3.jpeg" alt="" />
+                    <div class="capa3">
+                        <h3>Titulo</h3>
+                        <p>Todos sabemos lo importante que es aprender matemáticas, lengua, ciencias…
+                            Es imprescindible para la vida, pero también lo es aprender primeros
+                            auxilios,por ello es ncesesario
+                            que se aprenda también desde la infancia la reanimación cardiopulmonar (RCP)
+                            que es una técnica útil
+                            para salvar vidas en emergencias.</p>
+                    </div>
+                </figure>
+            </a>
+        </div>
+        <!-- HOVER -4 -->
+        <div class="contenedor4">
+            <a href="#">
+                <figure>
+                    <img src="img/card.jpg" alt="" />
+                    <div class="capa4">
+                        <h3>Titulo</h3>
+                        <p>los niños aprendan todas éstas técnicas y les de la confianza necesaria para
+                            poder intervenir o
+                            ayudar a alguien en un caso extremo, donde podrían salvar una vida.</p>
+                    </div>
+                </figure>
+            </a>
+        </div>
         </body>
         <!-- HOVER -5 -->
 

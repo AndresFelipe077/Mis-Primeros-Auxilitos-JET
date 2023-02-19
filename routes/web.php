@@ -42,6 +42,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::get('/menu','menuShow')->name('menu');
 
+    Route::get('/preguntas','preguntas5_7Show')->name('preguntas');
+
     //Vista home de videos
     Route::get('dashboard', 'index')->name('dashboard.index');
 
