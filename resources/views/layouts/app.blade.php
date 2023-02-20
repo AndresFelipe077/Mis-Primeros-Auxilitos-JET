@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{ asset('css/eye.css') }}">
     <link rel="stylesheet" href="{{ asset('css/iconPasswordReset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/iconCalendar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/preguntas.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('css/video.css') }}"> --}}
 
 

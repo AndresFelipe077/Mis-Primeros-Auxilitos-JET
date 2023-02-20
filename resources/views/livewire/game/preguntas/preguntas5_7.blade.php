@@ -1,29 +1,36 @@
 <link id="image-head" rel="shortcut icon" href="{{ asset('img/imgs/logo.png') }}" type="image/x-icon">
 <x-app-layout>
 
-    @section('title', 'Home')
+    @section('title', 'Preguntitas 5 - 7')
 
     <x-slot name="header">
         <x-header />
     </x-slot>
 
-    <div class="container text-center" style="margin-top: 100px;">
+    <script src="{{asset('js/show-preguntas.js')}}"></script>
+
+    <div class="container text-center" id="container-padre">
         <h1>Edad 5 - 7</h1>
-        <p>Recuerda que no puedes saturar a los niños con muchas preguntas</p>
+        <div class="alert alert-warning text-center" role="alert">
+            Recuerda que no puedes saturar a los niños con muchas preguntas
+        </div>
         <p>¿Cuántas preguntas deseas hacer?</p>
 
-        {{-- <input type="text" placeholder="Cantidad de preguntas"> --}}
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com"
-                value="{{ old('email') }}">
-            <label for="floatingInput" class="texto-login">Cantidad de preguntas</label>
+        <div>
+            <div class="form-floating ">
+                <input type="number" class="form-control" id="floatingInput" name=""
+                    placeholder="name@example.com">
+                <label for="floatingInput" class="texto-login">Cantidad de preguntas</label>
+            </div>
+            <a href="javascript:mostrar();" class="btn btn-success m-3">Aceptar</a>
         </div>
 
-        <div>
-            {{-- <input class="m-3" type="text" placeholder="Titulo"><br> --}}
+
+
+        <div class="pregunta-container" id="pregunta-container" style="display:none;">
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" name="email"
-                    placeholder="name@example.com" value="{{ old('email') }}">
+                <input type="text" class="form-control" id="floatingInput" name="email"
+                    placeholder="name@example.com">
                 <label for="floatingInput" class="texto-login">Titulo</label>
             </div>
             <img class="m-3 mx-auto" src="{{ asset('img/logo/logo.png') }}" alt="Imagen de pregunta" width="100px"
@@ -33,25 +40,24 @@
             </label>
             <input type="file" value="{{ old('file') }}" class="form-control-file mx-auto text-center d-none"
                 id="file-upload" onchange="previewImage(event, '#imgPreview')" accept="image/*" name="image" />
-            <div class="row mt-4" style="margin-bottom: 100px !important;">
+            <div class="row mt-4">
                 <div class="col-sm-6">
-                    {{-- <input class="m-1" type="text" placeholder="pregunta 1"> --}}
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" name="email"
-                            placeholder="name@example.com" value="{{ old('email') }}">
-                        <label for="floatingInput" class="texto-login">pregunta 1</label>
+                        <input type="text" class="form-control" id="floatingInput" name=""
+                            placeholder="name@example.com">
+                        <label for="floatingInput" class="texto-login">respuesta 1</label>
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    {{-- <input class="m-1" type="text" placeholder="pregunta 2"> --}}
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" name="email"
-                            placeholder="name@example.com" value="{{ old('email') }}">
-                        <label for="floatingInput" class="texto-login">pregunta 2</label>
+                    <div class="form-floating mb-5">
+                        <input type="text" class="form-control" id="floatingInput" name=""
+                            placeholder="name@example.com">
+                        <label for="floatingInput" class="texto-login">respuesta 2</label>
                     </div>
                 </div>
             </div>
         </div>
+
 
     </div>
 
