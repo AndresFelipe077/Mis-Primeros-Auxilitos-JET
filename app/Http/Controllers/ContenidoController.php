@@ -12,15 +12,6 @@ use Intervention\Image\Facades\Image;
 class ContenidoController extends Controller
 {
 
-  public function preguntas5_7Show()
-  {
-    return view('livewire.game.preguntas.preguntas5_7');
-  }
-
-  public function menuShow()
-  {
-    return view('auth.Menu');
-  }
 
   //Vista home de videos
   public function index()
@@ -230,22 +221,6 @@ class ContenidoController extends Controller
       $contenido->delete();
     }
     return redirect()->route('dashboard.index')->with('eliminar', 'ok');
-  }
-
-  //Vista configuracion
-  public function ajustes()
-  {
-    return view('Profile.ajustes');
-  }
-
-  public function misionvision()
-  {
-    return view('mision_vision');
-  }
-
-  public function showCreditos()
-  {
-    return view('creditos');
   }
 
 }

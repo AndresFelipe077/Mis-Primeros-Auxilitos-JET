@@ -6,6 +6,7 @@ use App\Http\Controllers\ContenidoController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\TriviaController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\VistasController;
 use App\Http\Livewire\Game\ShowAdivinar;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
@@ -40,10 +41,6 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(ContenidoController::class)->group(function () {
 
-    Route::get('/menu','menuShow')->name('menu');
-
-    Route::get('/preguntas','preguntas5_7Show')->name('preguntas');
-
     //Vista home de videos
     Route::get('dashboard', 'index')->name('dashboard.index');
 
@@ -65,13 +62,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::delete('edit/{contenido}', 'destroy')->name('contenido.destroy');
 
-    //Acceder a vista ajustes
-    Route::get('dashboard/ajustes', 'ajustes')->name('dashboard.ajustes');
-
-    //Acceder a vista mision y vision
-    Route::get('dashboard/mision_y_vision', 'misionvision')->name('dashboard.mision.vision');
-
-    Route::get('dashboard/creditos', 'showCreditos')->name('dashboard.creditos');
 
 });
 
@@ -90,6 +80,23 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::put('dashboard/games/trivia/edit/{trivia}', 'triviaUpdate')->name('triviaUpdate');
 
     Route::delete('dashboard/games/trivia/delete/{trivia}', 'triviaDelete')->name('triviaDelete');
+});
+
+//Vistas
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(VistasController::class)->group(function () {
+    
+    Route::get('preguntas','preguntas5_7Show')->name('preguntas');
+
+    //Acceder a vista ajustes
+    Route::get('dashboard/ajustes', 'ajustes')->name('dashboard.ajustes');
+
+    //Acceder a vista mision y vision
+    Route::get('dashboard/mision_y_vision', 'misionvision')->name('dashboard.mision.vision');
+
+    Route::get('dashboard/creditos', 'showCreditos')->name('dashboard.creditos');
+
+    Route::get('ayuda','showAyuda')->name('ayuda');
+
 });
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(AdivinanzaController::class)->group(function () {
@@ -122,18 +129,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::delete('dashboard/videos/destroy/{video}', 'destroy')->name('video.destroy');
 
 });
-
-// if (Features::enabled(Features::twoFactorAuthentication())) {
-// Route::get('/two-factor-challenge', [TwoFactorAuthenticatedSessionController::class, 'create'])
-//     ->middleware(['guest:' . config('fortify.guard')])
-//     ->name('two-factor.login');
-// }
-// Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->controller(ShowAdivinar::class)->group(function(){
-
-//     //Vista home de videos
-//     //Route::get('/dashboard/games','game')->name('dashboard.game');
-
-// });
 
 //Crear usuarios con redes sociales
 Route::get('/login-facebook', [SocialController::class, 'redirectFacebook'])->name('facebook');

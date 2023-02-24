@@ -4,6 +4,10 @@
             <x-jet-authentication-card-logo />
         </x-slot>
 
+        <div class="alert alert-warning text-center" role="alert">
+            🤩 !!! Procura haber escrito bien tu correo electrónico !!! 😋
+        </div>
+
         <div class="card-body">
 
             <div class="mb-3 h5">
@@ -16,6 +20,8 @@
                 </div>
             @endif
 
+            <p class="h5">Correo electronico: {{Auth::user()->email}}</p>
+
             <div class="mt-4 d-flex justify-content-between ">
 
                 <form method="POST" action="/logout" class="mx-auto text-center">
@@ -23,7 +29,7 @@
 
                     <button type="submit" class="btn btn-outline-danger text-white mx-2" id="btn">
                         {{-- {{ __('Cancelar') }} --}}
-												<img src="{{ asset('/img/icons/cancel2.png') }}" alt="Cancelar" width="50" height="50">
+                        <img src="{{ asset('/img/icons/cancel2.png') }}" alt="Cancelar" width="50" height="50">
                     </button>
                 </form>
 
@@ -45,7 +51,8 @@
 
                         <button type="submit" class="btn btn-outline-success text-white mx-2">
                             {{-- {{ __('Reenviar correo electrónico') }} --}}
-														<img src="{{ asset('img/icons/reenviaremail.png') }}" alt="reenviar correo" width="50" height="50">
+                            <img src="{{ asset('img/icons/reenviaremail.png') }}" alt="reenviar correo" width="50"
+                                height="50">
                         </button>
                     </div>
                 </form>
