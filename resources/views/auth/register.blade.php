@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ asset('css/icon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/iconCalendar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/noSeleccionar.css') }}">
-    
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
@@ -164,7 +164,7 @@
                                 value="{{ old('fechaNacimiento') }}"><span class="barra"></span>
                             <label class="label" for="">Fecha de nacimiento</label>
                         </div>
-                        
+
 
                         <div class="grupo input-wrapper">
                             <input class="input password input password" data-lpignore="true" type="password"
@@ -187,8 +187,10 @@
 
                         @if ($errors->any('password'))
                             <div class="text-danger" role="alert">
-                                <p class="text-center m-3">Las constraseñas deben coincidir y ser mayores o iguales a 8
-                                    carácteres 😀😎</p>
+                                <p class="text-center m-3">Las constraseñas deben coincidir, ser mayores o iguales
+                                    a 8
+                                    carácteres 😀😎, contener números,
+                                    mayúsculas, minúsculas y caracteres especiales 😅😄</p>
                             </div>
                         @endif
 
@@ -247,12 +249,15 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('js/carousel.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
     <!-- Required Material Web JavaScript library -->
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    <script src="{{ asset('js/eye.js') }}"></script>
-    <script src="{{ asset('js/input-date.js') }}"></script>
-    <script src="{{asset('js/noSeleccionar.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
+        integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
 </body>
