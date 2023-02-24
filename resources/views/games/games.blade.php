@@ -6,7 +6,7 @@
         <x-header />
     </x-slot>
 
-    <div class="container animate__animated animate__fadeInUp">
+    <div class="container">
 
         <div class="row">
 
@@ -22,7 +22,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-6 mb-5">
+            <div class="col-sm-6 mb-5" data-aos="fade-right">
                 <div class="card m-4 text-center">
                     <div class=" card-body shadow ">
                         <div class="h4">Preguntitas 5 - 7 años</div>
@@ -50,7 +50,7 @@
               </div>
             </div>
 
-            <div class="col-sm-6 mb-5">
+            <div class="col-sm-6 mb-5" data-aos="fade-left">
                 <div class="card m-4 text-center">
                     <div class=" card-body shadow ">
                         <div class="h4">Adivinanzas 5 - 7 años</div>

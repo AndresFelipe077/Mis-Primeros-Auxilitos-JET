@@ -6,7 +6,7 @@
     <x-slot name="header">
     </x-slot>
 
-    <div>
+    <div data-aos="fade-down">
         @if (Laravel\Fortify\Features::canUpdateProfileInformation())
 
             <div class="modal fade" id="staticBackdropCambiarContrasena" data-bs-backdrop="static" data-bs-keyboard="false"
@@ -76,7 +76,8 @@
 
                                     <button type="button" wire:key="{{ Auth::user()->id }}" class="btn btn-primary"
                                         data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                        <img src=" {{asset('/img/icons/editarCuenta.png')}} " alt="Editar cuenta" width="60px" height="50px">
+                                        <img src=" {{ asset('/img/icons/editarCuenta.png') }} " alt="Editar cuenta"
+                                            width="60px" height="50px">
                                     </button>
 
                                     <!-- Modal -->
