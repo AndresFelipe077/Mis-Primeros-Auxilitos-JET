@@ -23,6 +23,11 @@ class TriviaController extends Controller
     return view('livewire.game.show-trivia', compact('trivias'));
   }
 
+  public function preguntas()
+  {
+    return view('livewire.game.preguntas.preguntas5_7');
+  }
+
   public function triviaCreate()
   {
     return view('livewire.game.create-trivia');

@@ -6,10 +6,6 @@ use Illuminate\Http\Request;
 
 class VistasController extends Controller
 {
-    public function preguntas5_7Show()
-    {
-        return view('livewire.game.preguntas.preguntas5_7');
-    }
 
     public function showAyuda()
     {

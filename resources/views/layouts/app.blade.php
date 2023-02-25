@@ -146,7 +146,7 @@
         <main class="container mt-5">
 
             <!-- Modal -->
-            <div class="modal fade" id="microphone" tabindex="-1" aria-labelledby="microphoneLabel" aria-hidden="true">
+            {{-- <div class="modal fade" id="microphone" tabindex="-1" aria-labelledby="microphoneLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -162,11 +162,11 @@
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
                                 <img class="mx-auto" src="{{ asset('img/icons/cancel2.png') }}" alt="Cancelar" width="40px" height="40px">
                             </button>
-                            {{-- <button type="button" class="btn btn-success">Aceptar</button> --}}
+                            {{-- <button type="button" class="btn btn-success">Aceptar</button>
                         </div>
                     </div>
                 </div>
-            </div> {{--exampleModalLabel--}}
+            </div>--}}
 
             {{ $slot }}
 

@@ -100,7 +100,7 @@
                     <div class="form-check form-check-inline">
                         <input
                             class="form-check-input custom-checkbox {{ $errors->has('genero') ? 'is-invalid' : '' }}"
-                            type="checkbox" value="masculino" id="" wire:model.defer="state.genero"
+                            type="checkbox" value="masculino" wire:model.defer="state.genero"
                             name="genero">
                         <label for="">
                             Masculino
@@ -110,7 +110,7 @@
                     <div class="form-check form-check-inline">
                         <input
                             class="form-check-input custom-checkbox {{ $errors->has('genero') ? 'is-invalid' : '' }}"
-                            type="checkbox" value="femenino" id="" wire:model.defer="state.genero"
+                            type="checkbox" value="femenino" wire:model.defer="state.genero"
                             name="genero">
                         <label for="">
                             Femenino
@@ -120,7 +120,7 @@
                     <div class="form-check form-check-inline">
                         <input
                             class="form-check-input custom-checkbox {{ $errors->has('genero') ? 'is-invalid' : '' }}"
-                            type="checkbox" value="otro" id="" wire:model.defer="state.genero"
+                            type="checkbox" value="otro" wire:model.defer="state.genero"
                             name="genero">
                         <label for="">
                             Otro

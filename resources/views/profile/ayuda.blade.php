@@ -10,7 +10,7 @@
         <i class="fas fa-bars fa-2x"></i>
     </div>
 
-    <div class="container1">
+    <div class="">
 
         <div class="animate__animated animate__bounceInUp">
             <header class="showcase ">
@@ -63,7 +63,7 @@
         </div>
 
 
-        <div class="container1">
+        <div class="">
             <header class="showcase2 ">
                 <h2 class="titulo2">Mis primeros Auxilitos</h2>
                 <p class="subtitulo2" data-aos="fade-down">Tiene como finalidad poder instruir de manera

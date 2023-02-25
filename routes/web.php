@@ -69,6 +69,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::get('dashboard/games', 'game')->name('dashboard.game');
 
+    Route::get('dashboard/games/preguntas', 'preguntas')->name('game.preguntas');
+
     Route::get('dashboard/games/trivia', 'triviaShow')->name('triviaShow'); //Vista trivia
 
     Route::get('dashboard/games/trivia/create', 'triviaCreate')->name('triviaCreate');
@@ -85,7 +87,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 //Vistas
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(VistasController::class)->group(function () {
     
-    Route::get('preguntas','preguntas5_7Show')->name('preguntas');
 
     //Acceder a vista ajustes
     Route::get('dashboard/ajustes', 'ajustes')->name('dashboard.ajustes');
