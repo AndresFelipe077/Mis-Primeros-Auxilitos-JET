@@ -16,7 +16,11 @@ class Trivia extends Model
         'title',
         'slug',
         'image',
-        'content'
+        'content',
+        'respuesta1',
+        'respuesta2',
+        'respuesta3',
+        'respuesta4',
     ];
 
     public function getRouteKeyName()

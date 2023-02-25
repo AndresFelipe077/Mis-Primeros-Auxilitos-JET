@@ -27,7 +27,7 @@
                     <div class=" card-body shadow ">
                         <div class="h4">Preguntitas 5 - 7 años</div>
                         <div class="contenedor rounded">
-                            <a href="{{ route('triviaShow') }}" class="btn mt-2">
+                            <a href="{{ route('triviaShow5_7') }}" class="btn mt-2">
                                 <img class="imagen rounded img-fluid mx-auto d-block"
                                     src="{{ asset('img/icons/trivia_icon.png') }}" alt="Image of trivia" width="250px"
                                     height="250px">
@@ -38,9 +38,9 @@
 
                 <div class="card m-4 text-center">
                   <div class=" card-body shadow ">
-                      <div class="h4">Preguntitas 8 - 12 años</div>
+                      <div class="h4">Preguntitas 8 - 10 años</div>
                       <div class="contenedor rounded">
-                          <a href="{{ route('triviaShow') }}" class="btn mt-2">
+                          <a href="{{ route('triviaShow8_10') }}" class="btn mt-2">
                               <img class="imagen rounded img-fluid mx-auto d-block"
                                   src="{{ asset('img/icons/trivia_icon.png') }}" alt="Image of trivia" width="250px"
                                   height="250px">
@@ -48,6 +48,21 @@
                       </div>
                   </div>
               </div>
+
+
+              <div class="card m-4 text-center">
+                <div class=" card-body shadow ">
+                    <div class="h4">Preguntitas 11 - 12 años</div>
+                    <div class="contenedor rounded">
+                        <a href="{{ route('triviaShow11_12') }}" class="btn mt-2">
+                            <img class="imagen rounded img-fluid mx-auto d-block"
+                                src="{{ asset('img/icons/trivia_icon.png') }}" alt="Image of trivia" width="250px"
+                                height="250px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             </div>
 
             <div class="col-sm-6 mb-5" data-aos="fade-left">

@@ -69,9 +69,46 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::get('dashboard/games', 'game')->name('dashboard.game');
 
-    Route::get('dashboard/games/preguntas', 'preguntas')->name('game.preguntas');
 
-    Route::get('dashboard/games/trivia', 'triviaShow')->name('triviaShow'); //Vista trivia
+    // Muestra la vista de preguntas 5 a 7 años
+    Route::get('dashboard/games/preguntas_5_7', 'triviaShow5_7')->name('triviaShow5_7'); //Vista trivia
+
+    // Muestra la vista de crear preguntas de 5 a 7 años
+    Route::get('dashboard/games/create/preguntas_5_7', 'create_preguntas5_7')->name('game.preguntas5_7');
+
+    // Almacena los datos de vista 5 a 7 años
+    Route::post('dashboard/games/store/preguntas_5_7', 'storePreguntas5_7')->name('storePreguntas5_7');
+
+
+
+
+    Route::get('dashboard/games/preguntas_8_10', 'triviaShow8_10')->name('triviaShow8_10');
+
+    Route::get('dashboard/games/create/preguntas_8_10', 'create_preguntas8_10')->name('game.preguntas8_10');
+
+    Route::post('dashboard/games/preguntas_8_10', 'storePreguntas8_10')->name('storePreguntas8_10');
+
+
+    Route::get('dashboard/games/preguntas_11_12', 'triviaShow11_12')->name('triviaShow11_12');
+
+    Route::get('dashboard/games/create/preguntas_11_12', 'create_preguntas11_12')->name('game.preguntas11_12');
+
+    Route::post('dashboard/games/preguntas_11_12', 'storePreguntas11_12')->name('storePreguntas11_12');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     Route::get('dashboard/games/trivia/create', 'triviaCreate')->name('triviaCreate');
 

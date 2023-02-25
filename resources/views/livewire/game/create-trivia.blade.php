@@ -89,6 +89,8 @@
                 </div>
             </div>
         </div>
+
+        
         <x-slot name="footer">
             <x-footer />
         </x-slot>
