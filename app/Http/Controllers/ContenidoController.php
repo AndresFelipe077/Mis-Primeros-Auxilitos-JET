@@ -12,6 +12,14 @@ use Intervention\Image\Facades\Image;
 class ContenidoController extends Controller
 {
 
+  public function check()
+  {
+    return view('metodos.card');
+  }
+
+
+
+
   public function menuShow()
   {
     return view('auth.Menu');

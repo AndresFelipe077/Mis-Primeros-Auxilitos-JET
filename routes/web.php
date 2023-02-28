@@ -20,9 +20,13 @@ use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 |
 */
 
-Route::get('/Menus', function () {
+Route::get('/', function () {
     return view('auth.login');
 });
+
+Route::get('/checkout' ,[ContenidoController::class,'check'])->name('checkout.check');
+
+
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', function () {

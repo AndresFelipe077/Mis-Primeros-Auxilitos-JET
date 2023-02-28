@@ -125,4 +125,7 @@ class TriviaController extends Controller
 
     return redirect()->route('triviaShow')->with('eliminar', 'ok');
   }
-}
+  }
+
+  
+

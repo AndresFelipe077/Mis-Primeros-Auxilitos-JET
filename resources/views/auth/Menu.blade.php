@@ -74,16 +74,6 @@
     </nav>
     <hr> --}}
 
-    <!-- SHOWCASE -->
-    
-    <header class="showcase">
-      <h2 class="titulo">Mis primeros Auxilitos</h2>
-      <p class="subtitulo">Enseñando al 
-        héroe del mañana</p>
-      <a href="/login" class="btn">
-        Entrar <i class="fas fa-chevron-right"></i>
-      </a>
-    </header>
         <!-- SHOWCASE -->
 
         <header class="showcase">

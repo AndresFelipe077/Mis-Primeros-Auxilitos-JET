@@ -5,14 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>Registro=</title>
-    <link rel="stylesheet" href="{{ asset('css/noSeleccionar.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/registro.css') }}" />
-=======
     <title>Registro</title>
 
->>>>>>> b0da66013f5da5f1272adae7282b4efbd48a6917
     <link id="image-head" rel="shortcut icon" href="{{ asset('img/registro/faviconRegistro.png') }}" type="image/x-icon">
 
     {{-- Estilos --}}
