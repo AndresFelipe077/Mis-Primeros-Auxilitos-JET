@@ -13,7 +13,7 @@
             <div class="row ">
     
                 <div class="text-center mt-3">
-                  <a href="{{route('triviaCreate')}}" class="btn btn-outline-success mt-5"><img src="{{ asset('img/icons/crear2.png') }}" alt="Image Trivias" width="50px" height="50px"></a> 
+                  <a href="{{route('game.preguntas8_10')}}" class="btn btn-outline-success mt-5"><img src="{{ asset('img/icons/crear2.png') }}" alt="Image Trivias" width="50px" height="50px"></a> 
                 </div>
             
                 @foreach($trivias as  $trivia)

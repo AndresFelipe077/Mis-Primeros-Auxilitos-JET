@@ -78,7 +78,7 @@ class User extends Authenticatable implements MustVerifyEmail
         if(Auth::user()->external_auth == 'google' ||Auth::user()->external_auth == 'facebook'){
             return Auth::user()->avatar;//'https://picsum.photos/300/300';
         }else{
-            return Auth::user()->profile_photo_path;
+            return Auth::user()->profile_photo_url;
         }
     }
 

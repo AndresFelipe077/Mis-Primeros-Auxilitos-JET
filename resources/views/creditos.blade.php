@@ -1,3 +1,4 @@
+<link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/creditos.png') }}" type="image/x-icon">
 @section('title', 'Créditos')
 <x-app-layout>
 
@@ -20,13 +21,15 @@
                     <div class="text-center h5">
                         <ul>
                             <li>
-                                <a href="https://www.flaticon.es/iconos-gratis/salida" title="salida iconos">Salida iconos
+                                <a href="https://www.flaticon.es/iconos-gratis/salida" title="salida iconos">Salida
+                                    iconos
                                     creados
                                     por
                                     Freepik - Flaticon</a>
                             </li>
                             <li>
-                                <a href="https://www.flaticon.es/iconos-gratis/formar" title="formar iconos">Formar iconos
+                                <a href="https://www.flaticon.es/iconos-gratis/formar" title="formar iconos">Formar
+                                    iconos
                                     creados
                                     por Eucalyp - Flaticon</a>
                             </li>
@@ -309,6 +312,11 @@
                                 Facebook
                                 <a href="https://www.flaticon.es/iconos-gratis/facebook"
                                     title="facebook iconos">Facebook iconos creados por justicon - Flaticon</a>
+                            </li>
+                            <li>
+                                Mision y vision
+                                <a href="https://www.flaticon.es/iconos-gratis/mision" title="misión iconos">Misión
+                                    iconos creados por ultimatearm - Flaticon</a>
                             </li>
                         </ul>
                     </div>

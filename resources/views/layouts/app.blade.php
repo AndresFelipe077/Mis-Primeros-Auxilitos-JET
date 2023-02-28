@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{ asset('css/eye.css') }}">
     <link rel="stylesheet" href="{{ asset('css/iconPasswordReset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/iconCalendar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/preguntas.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('css/video.css') }}"> --}}
 
 
@@ -46,6 +47,7 @@
     <link rel="stylesheet" href="{{ asset('css/btn-height.css') }}">
     <link rel="stylesheet" href="{{ asset('css/img-size.css') }}">
     <link rel="stylesheet" href="{{ asset('css/card-size.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/menu.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('css/modal.css') }}"> --}}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,12 +59,18 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
 
-    <!-- cdn icons -->
+    <!-- cdn -->
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> {{--animaciones Animate Scroll--}}
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
         integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
 
     {{-- animations css --}}
@@ -154,11 +162,11 @@
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
                                 <img class="mx-auto" src="{{ asset('img/icons/cancel2.png') }}" alt="Cancelar" width="40px" height="40px">
                             </button>
-                            {{-- <button type="button" class="btn btn-success">Aceptar</button> --}}
+                            {{-- <button type="button" class="btn btn-success">Aceptar</button>--}}
                         </div>
                     </div>
                 </div>
-            </div> {{--exampleModalLabel--}}
+            </div>
 
             {{ $slot }}
 
@@ -208,6 +216,14 @@
     <script src="{{ asset('js/imageview.js') }}"></script>
     {{-- <script src="{{ asset('js/modal.js') }}"></script> --}}
 
-</body>
+    {{-- CDN --}}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> {{--Animate Scroll--}}
+    <script>
+        AOS.init({
+            duration: 1000,
+        });
+        AOS.refresh();
+    </script>
 
+</body>
 </html>

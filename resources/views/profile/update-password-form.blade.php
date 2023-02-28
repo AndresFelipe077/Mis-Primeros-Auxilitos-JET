@@ -44,6 +44,15 @@
             </div>
         </div>
 
+        @if ($errors->any('password'))
+            <div class="text-danger" role="alert">
+                <p class="text-center m-3">Las constraseñas deben coincidir, ser mayores o iguales
+                    a 8
+                    carácteres 😀😎, contener números,
+                    mayúsculas, minúsculas y caracteres especiales 😅😄</p>
+            </div>
+        @endif
+
         <x-jet-action-message on="saved">
             {{ __('Contraseña actualizada') }}
         </x-jet-action-message>
@@ -53,7 +62,8 @@
 
     <x-slot name="actions">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar
-            <img class="mx-auto" src=" {{ asset('img/icons/cancel2.png') }} " alt="Actualizar contraseña" width="50px" height="50px"/>
+            <img class="mx-auto" src=" {{ asset('img/icons/cancel2.png') }} " alt="Actualizar contraseña" width="50px"
+                height="50px" />
         </button>
         <x-jet-button>
             <div wire:loading class="" role="status">
@@ -61,7 +71,8 @@
             </div>
 
             {{ __('Actualizar') }}
-            <img class="mx-auto" src=" {{ asset('img/icons/changePassword.png') }} " alt="Actualizar contraseña" width="50px" height="50px"/>
+            <img class="mx-auto" src=" {{ asset('img/icons/changePassword.png') }} " alt="Actualizar contraseña"
+                width="50px" height="50px" />
         </x-jet-button>
     </x-slot>
 </x-jet-form-section>

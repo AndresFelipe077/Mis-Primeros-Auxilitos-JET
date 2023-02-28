@@ -2,6 +2,7 @@
 
 @section('title', 'Contenidos')
 
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/contentAdmin.png') }}" type="image/x-icon">
 
 @section('content_header')
@@ -11,7 +12,7 @@
 @section('content')
 
     <body>
-        <section class="container mt-2">
+        <section class="container mt-2" data-aos="fade-down">
             <div class="row justify-content-center">
                 <div class="col-md-11">
                     <div class="card">
@@ -32,7 +33,7 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($contenidos as $contenido)
-                                            <tr>
+                                            <tr data-aos="fade-right">
                                                 <td scope="row">{{ $contenido->id }}</td>
                                                 <td>{{ $contenido->title }}</td>
                                                 <td>{{ $contenido->autor }}</td>
@@ -50,11 +51,12 @@
                                                         @if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' || $extension == 'svg')
                                                             <img class="imagen rounded mx-auto d-block"
                                                                 src="{{ $contenido->url }}" alt="Image of trivia"
-                                                                id="img-content" width="100px" height="80px">
+                                                                id="img-content" width="80px" height="80px">
                                                         @else
                                                             <video id="fm-video"
                                                                 class="mx-auto m-3 rounded fm-video video-js vjs-16-9 vjs-big-play-centered"
-                                                                data-setup="{}" controls {{-- poster="{{ asset('img/icons/video.png') }}" --}} width="100px" height="80px">
+                                                                data-setup="{}" controls {{-- poster="{{ asset('img/icons/video.png') }}" --}}
+                                                                width="80px" height="80px">
                                                                 <source src="{{ asset($contenido->url) }}">
                                                                 Tu navegador no soporta elementos de video😥.
                                                             </video>
@@ -62,14 +64,15 @@
                                                     @endif
 
                                                 </td>
-                                                <td>
+                                                <td class="align-middle">
+
                                                     <form action="{{ route('contenido.update.image', $contenido) }}"
                                                         method="POST" enctype="multipart/form-data">
 
                                                         @csrf
                                                         @method('put')
                                                         <button
-                                                            class="text-success bg-success rounded-circle border-success m-3">
+                                                            class="btn btn-success text-success bg-success rounded m-2">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                 height="16" fill="currentColor"
                                                                 class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -81,14 +84,16 @@
                                                         </button>
 
                                                     </form>
+
                                                 </td>
-                                                <td>
+                                                <td class="align-middle">
+
                                                     <form method="POST"
                                                         action="{{ route('contenido.destroy', $contenido) }}">
                                                         @csrf
                                                         @method('delete')
                                                         <button
-                                                            class="text-danger bg-danger rounded-circle border-danger m-3"
+                                                            class="btn btn-danger text-danger bg-danger rounded m-2"
                                                             onclick="return confirm('¿Seguro que deseas eliminar este contenido?')">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                 height="16" fill="currentColor" class="bi bi-x-circle"
@@ -101,6 +106,7 @@
                                                         </button>
 
                                                     </form>
+
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -122,6 +128,14 @@
 
         </div>
         </div>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000,
+                once: true
+            });
+        </script>
 
     </body>
 @endsection

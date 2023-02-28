@@ -22,8 +22,12 @@ class TriviaFactory extends Factory
         return [
             'title'       => $name_title,
             'slug'        => Str::slug($slug_title_url, '-'),
-            'image'       => $this -> faker -> randomElement(['/storage/imagesFactory/policia.png', '/storage/imagesFactory/peluche.png','/storage/imagesFactory/logo.png', '/storage/imagesFactory/fondo.jpg']),
+            'image'       => $this -> faker -> randomElement(['/storage/imagesFactory/policia.png', '/storage/imagesFactory/peluche.png','/storage/imagesFactory/logo.png', '/storage/imagesFactory/fondo.png']),
             'content'     => $this -> faker -> text,
+            'respuesta1'  => $this -> faker -> randomElement(['respuesta1']),
+            'respuesta2'  => $this -> faker -> randomElement(['respuesta2']),
+            'respuesta3'  => $this -> faker -> randomElement(['respuesta3']),
+            'respuesta4'  => $this -> faker -> randomElement(['respuesta4']),
             'created_at'  => now(),
         ];
     }

@@ -127,7 +127,7 @@
                 </a>
             </li>
             <li>
-                <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
+                <a class="dropdown-item d-flex gap-2 align-items-center" href="{{ route('ayuda') }}">
                     <img src="/img/ayuda.jpeg" alt="" width="20" height="20">
                     <h3>Ayuda</h3>
                 </a>

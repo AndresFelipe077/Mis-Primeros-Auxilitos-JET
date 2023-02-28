@@ -2,6 +2,7 @@
 
 @section('title', 'Admin users')
 
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/usersAdmin.png') }}" type="image/x-icon">
 
 @section('content_header')
@@ -11,7 +12,7 @@
 @section('content')
 
     <body>
-        <section class="container mt-2">
+        <section class="container mt-2" data-aos="fade-down">
             <div class="row justify-content-center">
                 <div class="col-md-11">
                     <div class="card">
@@ -32,7 +33,7 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($users as $user)
-                                            <tr>
+                                            <tr data-aos="fade-right">
                                                 <td scope="row">{{ $user->id }}</td>
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>
@@ -43,17 +44,17 @@
                                                         @if (Auth::user()->profile_photo_path != null)
                                                             <img src="{{ asset($user->profile_photo_url) }}"
                                                                 alt="{{ $user->name }}"
-                                                                class="rounded-circle object-cover mx-auto" width="100px"
+                                                                class="rounded-circle object-cover mx-auto" width="80px"
                                                                 height="80px">
                                                         @else
                                                             <img class="imagen card-img-top rounded "
                                                                 src="{{ asset($user->avatar) }}" alt="{{ $user->name }}"
-                                                                width="100px" height="80px" referrerpolicy="no-referrer">
+                                                                width="80px" height="80px" referrerpolicy="no-referrer">
                                                         @endif
                                                     @else
                                                         <img src="{{ asset($user->profile_photo_url) }}"
                                                             alt="{{ $user->name }}"
-                                                            class="rounded-circle object-cover mx-auto" width="100px"
+                                                            class="rounded-circle object-cover mx-auto" width="80px"
                                                             height="80px">
                                                     @endif
 
@@ -61,13 +62,13 @@
 
                                                 </td>
 
-                                                <td>
+                                                <td class="align-middle">
                                                     {{-- Toca crear un get para ir a otra vista y ahi si editar --}}
                                                     <form action="" method="POST" enctype="multipart/form-data">
                                                         @csrf
                                                         @method('put')
                                                         <button
-                                                            class="text-success bg-success rounded-circle border-success m-3">
+                                                            class="btn btn-success text-success bg-success rounded m-2">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                 height="16" fill="currentColor"
                                                                 class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -80,11 +81,12 @@
                                                     </form>
                                                 </td>
 
-                                                <td>
+                                                <td class="align-middle">
                                                     <form method="POST" action="">
                                                         @csrf
                                                         @method('delete')
-                                                        <button class="text-danger bg-danger rounded-circle border-danger m-3"
+                                                        <button
+                                                            class="btn btn-danger text-danger bg-danger rounded m-2"
                                                             onclick="return confirm('¿Seguro que deseas eliminar este usuario?')">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                 height="16" fill="currentColor" class="bi bi-x-circle"
@@ -153,6 +155,14 @@
             </div> --}}
         </div>
         </div>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({
+              duration: 1000,
+              once: true
+            });
+        </script>
 
     </body>
 @endsection
