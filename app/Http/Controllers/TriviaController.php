@@ -335,5 +335,14 @@ class TriviaController extends Controller
       Storage::delete($url);
       $trivia->delete();
     }
+
+    return redirect()->route('triviaShow')->with('eliminar', 'ok');
   }
+  }
+<<<<<<< HEAD
+
+  
+
+=======
 }
+>>>>>>> 3f8690285843aec4c6b25b98e6f0a17b7fad5074
