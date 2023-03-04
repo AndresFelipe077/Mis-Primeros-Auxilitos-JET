@@ -23,6 +23,9 @@ return new class extends Migration
             $table->string('respuesta2')->nullable();
             $table->string('respuesta3')->nullable();
             $table->string('respuesta4')->nullable();
+
+            $table->string('preguntas_respuestas')->nullable();
+
             $table->timestamps();
         });
     }

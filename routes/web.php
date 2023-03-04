@@ -82,11 +82,13 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
 
 
-    Route::get('dashboard/games/preguntas_8_10', 'triviaShow8_10')->name('triviaShow8_10');
+    Route::get('dashboard/games/preguntas-8-10', 'triviaShow8_10')->name('triviaShow8_10');
 
-    Route::get('dashboard/games/create/preguntas_8_10', 'create_preguntas8_10')->name('game.preguntas8_10');
+    Route::get('dashboard/games/create/preguntas-8-10-array', 'create_preguntas_array8_10')->name('game.preguntas_array8_10');
 
-    Route::post('dashboard/games/preguntas_8_10', 'storePreguntas8_10')->name('storePreguntas8_10');
+    Route::get('dashboard/games/create/preguntas-8-10', 'create_preguntas8_10')->name('game.preguntas8_10');
+
+    Route::post('dashboard/games/preguntas-8-10', 'storePreguntas8_10')->name('storePreguntas8_10');
 
 
     Route::get('dashboard/games/preguntas_11_12', 'triviaShow11_12')->name('triviaShow11_12');

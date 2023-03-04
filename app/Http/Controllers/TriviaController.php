@@ -76,12 +76,17 @@ class TriviaController extends Controller
   public function triviaShow8_10()
   {
     $trivias = Trivia::orderBy('id', 'desc')->paginate(9);
-    return view('livewire.game.preguntas.show-trivia8_10', compact('trivias'));
+    return view('livewire.game.preguntas.preguntas8_10.preguntas-show8_10', compact('trivias'));
+  }
+
+  public function create_preguntas_array8_10()
+  {
+    return view("livewire.game.preguntas.preguntas8_10.preguntas-create-array8_10");
   }
 
   public function create_preguntas8_10()
   {
-    return view("livewire.game.preguntas.preguntas8_10");
+    return view('livewire.game.preguntas.preguntas8_10.preguntas-create8_10');
   }
 
   public function storePreguntas8_10(Request $request)
@@ -127,7 +132,7 @@ class TriviaController extends Controller
 
     ]);
 
-    return redirect()->route('triviaShow8_10')->with('subir', 'ok');
+    return redirect()->route('game.preguntas_array8_10')->with('subir', 'ok');
   }
 
 
@@ -137,6 +142,9 @@ class TriviaController extends Controller
   public function triviaShow11_12()
   {
     $trivias = Trivia::orderBy('id', 'desc')->paginate(9);
+    $arreglo = array(1,2,3,4);
+    print_r($arreglo);
+    var_dump($arreglo);
     return view('livewire.game.preguntas.show-trivia11_12', compact('trivias'));
   }
 
@@ -192,9 +200,7 @@ class TriviaController extends Controller
     return redirect()->route('triviaShow11_12')->with('subir', 'ok');
   }
 
-
-
-
+  
 
 
 
