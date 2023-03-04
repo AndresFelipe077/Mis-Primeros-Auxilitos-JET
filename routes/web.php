@@ -25,16 +25,11 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/checkout' ,[ContenidoController::class,'check'])->name('checkout.check');
-
-
-
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 });
-
 
 Route::group(['middleware' => ['guest', 'throttle:' . config('fortify.limiters.login')]], function () {
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
@@ -129,7 +124,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
 //Vistas
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(VistasController::class)->group(function () {
-    
 
     //Acceder a vista ajustes
     Route::get('dashboard/ajustes', 'ajustes')->name('dashboard.ajustes');
@@ -140,6 +134,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('dashboard/creditos', 'showCreditos')->name('dashboard.creditos');
 
     Route::get('ayuda','showAyuda')->name('ayuda');
+
+    Route::get('/pago-mercado-pago', 'check')->name('checkout.check');
+
 
 });
 

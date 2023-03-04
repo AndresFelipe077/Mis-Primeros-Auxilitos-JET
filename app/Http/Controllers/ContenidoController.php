@@ -12,21 +12,10 @@ use Intervention\Image\Facades\Image;
 class ContenidoController extends Controller
 {
 
-<<<<<<< HEAD
-  public function check()
-  {
-    return view('metodos.card');
-  }
-
-
-
-
   public function menuShow()
   {
     return view('auth.Menu');
   }
-=======
->>>>>>> 3f8690285843aec4c6b25b98e6f0a17b7fad5074
 
   //Vista home de videos
   public function index()

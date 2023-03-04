@@ -27,4 +27,10 @@ class VistasController extends Controller
     {
         return view('creditos');
     }
+
+    public function check()
+    {
+      return view('metodos.card');
+    }
+
 }

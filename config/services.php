@@ -43,9 +43,9 @@ return [
         'redirect'      => env('GOOGLE_OAUTH_REDIRECT'),
     ],
 
-    'mercadopago'=>[
-        'key'=> env('MP_PUBLIC_KEY'),
-        'token'=> env('MP_ACCES_TOKEN'),
+    'mercadopago' => [
+        'key'     => env('MP_PUBLIC_KEY'),
+        'token'   => env('MP_ACCESS_TOKEN'),
     ],
 
 ];
