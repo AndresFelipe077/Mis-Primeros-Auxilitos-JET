@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('title', 'Contenidos')
-
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/contentAdmin.png') }}" type="image/x-icon">
 
@@ -71,8 +71,7 @@
 
                                                         @csrf
                                                         @method('put')
-                                                        <button
-                                                            class="btn btn-success text-success bg-success rounded m-2">
+                                                        <button class="btn btn-success text-success bg-success rounded m-2">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                 height="16" fill="currentColor"
                                                                 class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -92,8 +91,7 @@
                                                         action="{{ route('contenido.destroy', $contenido) }}">
                                                         @csrf
                                                         @method('delete')
-                                                        <button
-                                                            class="btn btn-danger text-danger bg-danger rounded m-2"
+                                                        <button class="btn btn-danger text-danger bg-danger rounded m-2"
                                                             onclick="return confirm('¿Seguro que deseas eliminar este contenido?')">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                 height="16" fill="currentColor" class="bi bi-x-circle"

@@ -2,6 +2,7 @@
 
 @section('title', 'Admin users')
 
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/usersAdmin.png') }}" type="image/x-icon">
 
@@ -67,8 +68,7 @@
                                                     <form action="" method="POST" enctype="multipart/form-data">
                                                         @csrf
                                                         @method('put')
-                                                        <button
-                                                            class="btn btn-success text-success bg-success rounded m-2">
+                                                        <button class="btn btn-success text-success bg-success rounded m-2">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                 height="16" fill="currentColor"
                                                                 class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -85,8 +85,7 @@
                                                     <form method="POST" action="">
                                                         @csrf
                                                         @method('delete')
-                                                        <button
-                                                            class="btn btn-danger text-danger bg-danger rounded m-2"
+                                                        <button class="btn btn-danger text-danger bg-danger rounded m-2"
                                                             onclick="return confirm('¿Seguro que deseas eliminar este usuario?')">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                 height="16" fill="currentColor" class="bi bi-x-circle"
@@ -159,8 +158,8 @@
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
             AOS.init({
-              duration: 1000,
-              once: true
+                duration: 1000,
+                once: true
             });
         </script>
 

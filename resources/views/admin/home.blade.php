@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('title', 'Admin home')
-
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/admin.png') }}" type="image/x-icon">
 
@@ -12,7 +12,7 @@
 
 @section('content')
 
-    <body >
+    <body>
         <main data-aos="fade-down">
 
             <section class="py-5 text-center container">
@@ -35,9 +35,10 @@
                         <div class="col">
                             <div class="card shadow-sm">
                                 Video
-                                <img data-aos="fade-right" class="bd-placeholder-img card-img-top rounded" width="100%" height="225"
-                                    src="{{ asset('/img/police.png') }}" role="img" aria-label="Placeholder: Thumbnail"
-                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <img data-aos="fade-right" class="bd-placeholder-img card-img-top rounded" width="100%"
+                                    height="225" src="{{ asset('/img/police.png') }}" role="img"
+                                    aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                                    focusable="false">
                                 {{-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                   <title>Video</title>
                   <rect width="100%" height="100%" fill="#55595c"/>
@@ -59,9 +60,10 @@
                         <div class="col">
                             <div class="card shadow-sm">
                                 Imagen
-                                <img data-aos="fade-down" class="bd-placeholder-img card-img-top rounded" width="100%" height="225"
-                                    src="{{ asset('/img/imgs/a.jpg') }}" role="img" aria-label="Placeholder: Thumbnail"
-                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <img data-aos="fade-down" class="bd-placeholder-img card-img-top rounded" width="100%"
+                                    height="225" src="{{ asset('/img/imgs/a.jpg') }}" role="img"
+                                    aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                                    focusable="false">
 
                                 {{-- <rect width="100%" height="100%" fill="#55595c"/> --}}
                                 {{-- <text x="50%" y="50%" fill="#eceeef" dy=".3em">Atrapa el botiquin</text> --}}
@@ -81,8 +83,8 @@
                         <div class="col">
                             <div class="card shadow-sm">
                                 Juego
-                                <img data-aos="fade-left" class="bd-placeholder-img card-img-top rounded" width="100%" height="225"
-                                    src="{{ asset('/img/menu/challengue2.png') }}" role="img"
+                                <img data-aos="fade-left" class="bd-placeholder-img card-img-top rounded" width="100%"
+                                    height="225" src="{{ asset('/img/menu/challengue2.png') }}" role="img"
                                     aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
                                     focusable="false">
                                 {{-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -119,8 +121,8 @@
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
             AOS.init({
-              duration: 1000,
-              once: true
+                duration: 1000,
+                once: true
             });
         </script>
 
