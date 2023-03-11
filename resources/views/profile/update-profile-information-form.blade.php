@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <x-jet-form-section submit="updateProfileInformation">
     <x-slot name="form">
 
