@@ -1,4 +1,6 @@
 <x-guest-layout>
+<link rel="shortcut icon" href="{{ asset('img/botiquin.png') }}" type="image/x-icon">
+
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -29,7 +31,7 @@
 
                     <button type="submit" class="btn btn-outline-danger text-white mx-2" id="btn">
                         {{-- {{ __('Cancelar') }} --}}
-                        <img src="{{ asset('/img/icons/cancel2.png') }}" alt="Cancelar" width="50" height="50">
+                        <img src="{{ asset('img/icons/cancel2.png') }}" alt="Cancelar" width="50" height="50">
                     </button>
                 </form>
 

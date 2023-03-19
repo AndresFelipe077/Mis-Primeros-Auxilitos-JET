@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    {{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
     <title>Registro</title>
 
     <link id="image-head" rel="shortcut icon" href="{{ asset('img/registro/faviconRegistro.png') }}" type="image/x-icon">
@@ -190,8 +190,7 @@
                             <div class="text-danger" role="alert">
                                 <p class="text-center m-3">Las constraseñas deben coincidir, ser mayores o iguales
                                     a 8
-                                    carácteres 😀😎, contener números,
-                                    mayúsculas, minúsculas y caracteres especiales 😅😄</p>
+                                    carácteres 😀😎</p>
                             </div>
                         @endif
 

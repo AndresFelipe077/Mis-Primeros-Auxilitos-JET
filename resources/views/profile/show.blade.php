@@ -1,4 +1,3 @@
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <link rel="shortcut icon" href="{{ asset('img/profile/profile2.png') }}" type="image/x-icon">
 <link rel="stylesheet" href="{{ asset('css/eye.css') }}">
 
