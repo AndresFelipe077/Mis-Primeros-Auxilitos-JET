@@ -1,8 +1,12 @@
 <?php
 
 use App\Http\Controllers\AdivinanzaController;
+use App\Http\Controllers\AnswerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContenidoController;
+use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\QuizController;
+use App\Http\Controllers\QuizResultController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\TriviaController;
 use App\Http\Controllers\VideoController;
@@ -60,8 +64,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::put('dashboard/video/{contenido}', 'updateVideo')->name('contenido.update.video');
 
     Route::delete('edit/{contenido}', 'destroy')->name('contenido.destroy');
-
-
 });
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(TriviaController::class)->group(function () {
@@ -133,11 +135,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::get('dashboard/creditos', 'showCreditos')->name('dashboard.creditos');
 
-    Route::get('ayuda','showAyuda')->name('ayuda');
+    Route::get('ayuda', 'showAyuda')->name('ayuda');
 
     Route::get('/pago-mercado-pago', 'check')->name('checkout.check');
-
-
 });
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(AdivinanzaController::class)->group(function () {
@@ -155,8 +155,57 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::delete('dashboard/games/adivinanza/delete/{adivinanza}', 'adivinanzaDelete')->name('adivinanzaDelete');
 });
 
+
+
+// Rutas para Quizzes
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(QuizController::class)->group(function () {
+    Route::get('/quizzes', 'index')->name('quiz.index');
+    Route::get('/quizzes/create', 'create')->name('quiz.create');
+    Route::post('/quizzes', 'store')->name('quiz.store');
+    Route::get('/quiz/{quiz}', 'show')->name('quiz.show');
+    Route::get('/quiz/{quiz}/edit', 'edit')->name('quiz.edit');
+    Route::put('/quiz/{quiz}', 'update')->name('quiz.update');
+    Route::delete('/quiz/{quiz}', 'destroy')->name('quiz.destroy');
+
+    Route::get('/quiz/{quiz}/response', 'showQuiz')->name('quiz_responder.show');
+
+    // Route::post('/quiz/submit', 'submit')->name('quiz.submit');
+
+    Route::post('/quiz/{quiz}/submit', 'submit')->name('quiz.submit');
+});
+
+// Rutas para preguntas
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(QuestionController::class)->group(function () {
+
+    Route::get('/quizzes/questions', 'index')->name('questions.index');
+    Route::get('/quizzes/{quiz}/questions/create', 'create')->name('questions.create');
+    Route::post('/quizzes/{quiz}/questions', 'store')->name('questions.store');
+    Route::get('/question/{question}', 'show')->name('questions.show');
+    Route::get('/question/{question}/edit', 'edit')->name('questions.edit');
+    Route::put('/question/{question}', 'update')->name('questions.update');
+    Route::delete('/question/{question}', 'destroy')->name('questions.destroy');
+});
+
+// Rutas para respuestas
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(AnswerController::class)->group(function () {
+
+    Route::get('/questions/{question}/answers/create', 'create')->name('answers.create');
+    Route::post('/questions/{question}/answers', 'store')->name('answers.store');
+    Route::get('/questions/{answer}/answer/edit', 'edit')->name('answers.edit');
+    Route::put('/questions/{answer}/answer/update', 'update')->name('answers.update');
+    Route::delete('/answers/{question}', 'destroy')->name('answers.destroy');
+});
+
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(QuizResultController::class)->group(function () {
+
+    Route::get('/resultado', 'mostrarResultado')->name('resultado');
+});
+
+
+
+
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(VideoController::class)->group(function () {
-    
+
     Route::get('dashboard/videos', 'index')->name('video.index');
 
     Route::get('dashboard/videos/create', 'create')->name('video.create');
@@ -168,7 +217,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::put('dashboard/videos/update/{video}', 'update')->name('video.update');
 
     Route::delete('dashboard/videos/destroy/{video}', 'destroy')->name('video.destroy');
-
 });
 
 //Crear usuarios con redes sociales
