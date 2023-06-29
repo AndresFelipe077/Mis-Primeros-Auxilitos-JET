@@ -99,7 +99,7 @@ class QuizResultController extends Controller
             $score = $quizResult->score;
             // $questions = $quizResult->quiz->questions;, 'questions'
 
-            return view('responder_quiz.vista_resultado', compact('score'));
+            return view('livewire.game.responder_quiz.vista_resultado', compact('score'));
         } else {
             return redirect()->back()->with('error', 'No se encontró un resultado de quiz.');
         }
