@@ -1,6 +1,10 @@
-@extends('layouts.app')
+<x-app-layout>
 
-@section('content')
+    @section('title', 'Preguntitas')
+
+    <x-slot name="header">
+        <x-header />
+    </x-slot>
     <div class="container">
         <div class="card">
             <div class="card-header">
@@ -21,4 +25,8 @@
             </div>
         </div>
     </div>
-@endsection
+    <x-slot name="footer">
+        <x-footer />
+    </x-slot>
+
+</x-app-layout>

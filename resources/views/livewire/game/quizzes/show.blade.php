@@ -9,7 +9,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <a href="{{ route('home') }}" class="btn btn-success">Home</a>
+                    <a href="{{ route('quiz.index') }}" class="btn btn-success">Home</a>
 
                     <div class="card-header h1">{{ __('QUIZ') }}</div>
 

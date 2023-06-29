@@ -1,8 +1,10 @@
-<x-slot name="footer">
-    <x-footer />
-</x-slot>
+<x-app-layout>
 
-</x-app-layout>
+    @section('title', 'Preguntitas')
+
+    <x-slot name="header">
+        <x-header />
+    </x-slot>
     <h1>Add Answer</h1>
 
     <form method="POST" action="{{ route('answers.store', $question) }}">
@@ -20,8 +22,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Crear</button>
-        <a href="{{ route('questions.show', $question->id) }}"
-            class="btn btn-danger">Regresar</a>
+        <a href="{{ route('questions.show', $question->id) }}" class="btn btn-danger">Regresar</a>
     </form>
 
 
@@ -32,8 +33,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous">
     </script>
-<x-slot name="footer">
-    <x-footer />
-</x-slot>
+    <x-slot name="footer">
+        <x-footer />
+    </x-slot>
 
 </x-app-layout>

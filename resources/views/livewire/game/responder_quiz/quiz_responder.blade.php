@@ -1,6 +1,10 @@
-@extends('layouts.app')
+<x-app-layout>
 
-@section('content')
+    @section('title', 'Preguntitas 5 - 7')
+
+    <x-slot name="header">
+        <x-header />
+    </x-slot>
     <div class="container">
         <div class="card">
             <div class="card-header">{{ $quiz->title }}</div>
@@ -33,9 +37,13 @@
                     @endforeach
 
                     <button type="submit" class="btn btn-primary mt-3">Enviar respuestas</button>
-                    <a class="btn btn-danger mt-3" href="{{ route('home') }}">Regresar al home</a>
+                    <a class="btn btn-danger mt-3" href="{{ route('quiz.index') }}">Regresar al home</a>
                 </form>
             </div>
         </div>
     </div>
-@endsection
+    <x-slot name="footer">
+        <x-footer />
+    </x-slot>
+
+</x-app-layout>

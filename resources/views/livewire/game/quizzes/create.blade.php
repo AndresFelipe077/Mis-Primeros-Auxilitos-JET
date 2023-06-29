@@ -1,13 +1,15 @@
-<x-slot name="footer">
-    <x-footer />
-</x-slot>
+<x-app-layout>
 
-</x-app-layout>
-    <div class="container">
+    @section('title', 'Preguntitas')
+
+    <x-slot name="header">
+        <x-header />
+    </x-slot>
+    <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <a class="btn btn-success" href="{{ route('home') }}">Home</a>
+                    <a class="btn btn-success" href="{{ route('quiz.index') }}">Home</a>
                     <div class="card-header">{{ __('QUIZ') }}</div>
 
                     <div class="card-body">

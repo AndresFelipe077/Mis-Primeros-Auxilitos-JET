@@ -1,8 +1,10 @@
-<x-slot name="footer">
-    <x-footer />
-</x-slot>
+<x-app-layout>
 
-</x-app-layout>
+    @section('title', 'Preguntitas')
+
+    <x-slot name="header">
+        <x-header />
+    </x-slot>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
