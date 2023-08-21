@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\AuthControllerApi;
+use App\Http\Controllers\Api\ContenidoControllerApi;
+use App\Http\Controllers\ContenidoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
@@ -85,3 +87,10 @@ Route::middleware('auth:samctum')->group(
 
     }
 );
+
+
+// Apis about contenido
+
+Route::resource('contenidos', ContenidoController::class);
+
+Route::get('contenidos_by_user/{id}', [ContenidoControllerApi::class, 'contenidosByUser']);
