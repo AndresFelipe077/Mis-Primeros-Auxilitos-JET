@@ -1,8 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthControllerApi;
-use App\Http\Controllers\Api\ContenidoControllerApi;
-use App\Http\Controllers\ContenidoController;
+use App\Http\Controllers\Api\UserControllerApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
@@ -29,19 +28,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 //Rutas de API USER
-Route::controller(AuthControllerApi::class)->group(function (){
+Route::controller(AuthControllerApi::class)->group(function () {
     Route::post('/register', 'register');
-    Route::post('/login'   , 'login');
+    Route::post('/login', 'login');
 });
 
-Route::middleware(['auth:sanctum'])->controller(AuthControllerApi::class)->group(function (){
+Route::middleware(['auth:sanctum'])->controller(AuthControllerApi::class)->group(function () {
     Route::get('/logout', 'logout');
     Route::get('/delete', 'delete');
 });
 
 
 Route::middleware('guest')->group(
-    function(){
+    function () {
         $limiter = config('fortify-limiters.login');
 
         /*Route::post('/login', [AuthenticatedSessionController::class, 'store'])->middleware(
@@ -50,24 +49,23 @@ Route::middleware('guest')->group(
 
         Route::post('/auth/token', [AuthControllerApi::class, 'store']);
 
-        if(Features::enabled(Features::twoFactorAuthentication())){
+        if (Features::enabled(Features::twoFactorAuthentication())) {
             Route::post('/two-factor-challenge', [TwoFactorAuthenticatedSessionController::class, 'store']);
         }
-        if(Features::enabled(Features::registration())){
+        if (Features::enabled(Features::registration())) {
             Route::post('/register', [AuthControllerApi::class, 'register']);
         }
 
-        if(Features::enabled(Features::resetPasswords())){
+        if (Features::enabled(Features::resetPasswords())) {
             Route::post('/forgot-password', [PasswordResetLinkController::class, 'store']);
             Route::post('/reset-password', [NewPasswordController::class, 'store']);
         }
-
     }
 );
 
 
 Route::middleware('auth:samctum')->group(
-    function(){
+    function () {
         Route::delete('/auth/token', [AuthControllerApi::class, 'destroy']);
         Route::post('/logout', [AuthenticatedSessionController::class, 'destroy']);
 
@@ -75,16 +73,14 @@ Route::middleware('auth:samctum')->group(
         // Route::get('/tickets',[TicketController::class, 'index']);
 
         Route::post('/user/confirm-password', [ConfirmablePasswordController::class, 'store']);
-        Route::get('/user/confirmed-password-status',[ConfirmedPasswordStatusController::class, 'show']);
+        Route::get('/user/confirmed-password-status', [ConfirmedPasswordStatusController::class, 'show']);
 
         //Two Factor Authentication
-        if(Features::enabled(Features::twoFactorAuthentication())){
+        if (Features::enabled(Features::twoFactorAuthentication())) {
             $twoFactorMiddleware = Features::optionEnabled(Features::twoFactorAuthentication(), 'confirmPassword')
-            ? ['password-confirm']
-            : [];
-
+                ? ['password-confirm']
+                : [];
         }
-
     }
 );
 
@@ -94,3 +90,8 @@ Route::middleware('auth:samctum')->group(
 Route::resource('contenidos', ContenidoController::class);
 
 Route::get('contenidos_by_user/{id}', [ContenidoControllerApi::class, 'contenidosByUser']);
+Route::middleware('auth:samctum')->group(
+    function () {
+        Route::resource('users', UserControllerApi::class);
+    }
+);
