@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthControllerApi;
+use App\Http\Controllers\Api\ContenidoControllerApi;
 use App\Http\Controllers\Api\UserControllerApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -87,9 +88,14 @@ Route::middleware('auth:samctum')->group(
 
 // Apis about contenido
 
-Route::resource('contenidos', ContenidoController::class);
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::resource('contenidos', ContenidoControllerApi::class);
+});
 
-Route::get('contenidos_by_user/{id}', [ContenidoControllerApi::class, 'contenidosByUser']);
+// Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('contenidos_by_user/{id}', [ContenidoControllerApi::class, 'contenidosByUser']);
+// });
+
 Route::middleware('auth:samctum')->group(
     function () {
         Route::resource('users', UserControllerApi::class);

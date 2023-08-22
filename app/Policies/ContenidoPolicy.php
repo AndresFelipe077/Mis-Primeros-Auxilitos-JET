@@ -1,0 +1,95 @@
+<?php
+
+namespace App\Policies;
+
+use App\Models\Contenido;
+use App\Models\User;
+use Illuminate\Auth\Access\HandlesAuthorization;
+
+class ContenidoPolicy
+{
+    use HandlesAuthorization;
+
+    /**
+     * Determine whether the user can view any models.
+     *
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function viewAny(User $user)
+    {
+        // Implementa aquí la lógica para verificar si el usuario puede ver todos los contenidos.
+        return true; // Cambia esto según tus necesidades y lógica de autorización.
+    }
+
+    /**
+     * Determine whether the user can view the model.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Contenido  $contenido
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function view(User $user, Contenido $contenido)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can create models.
+     *
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function create(User $user)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can update the model.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Contenido  $contenido
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function update(User $user, Contenido $contenido)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can delete the model.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Contenido  $contenido
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function delete(User $user, Contenido $contenido)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can restore the model.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Contenido  $contenido
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function restore(User $user, Contenido $contenido)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can permanently delete the model.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Contenido  $contenido
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function forceDelete(User $user, Contenido $contenido)
+    {
+        //
+    }
+}
