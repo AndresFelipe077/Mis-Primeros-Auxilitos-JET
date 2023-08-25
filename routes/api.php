@@ -88,16 +88,8 @@ Route::middleware('auth:samctum')->group(
 
 // Apis about contenido
 
-// Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::resource('contenidos', ContenidoControllerApi::class);
-// });
+Route::resource('contenidos', ContenidoControllerApi::class);
 
-// Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('contenidos_by_user/{id}', [ContenidoControllerApi::class, 'contenidosByUser']);
-// });
+Route::get('contenidos_by_user/{id}', [ContenidoControllerApi::class, 'contenidosByUser']);
 
-Route::middleware('auth:samctum')->group(
-    function () {
-        Route::resource('users', UserControllerApi::class);
-    }
-);
+Route::resource('users', UserControllerApi::class);
