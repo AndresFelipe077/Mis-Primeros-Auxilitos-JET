@@ -93,4 +93,3 @@ Route::resource('contenidos', ContenidoControllerApi::class);
 Route::get('contenidos_by_user/{id}', [ContenidoControllerApi::class, 'contenidosByUser']);
 
 Route::resource('users', UserControllerApi::class);
-
