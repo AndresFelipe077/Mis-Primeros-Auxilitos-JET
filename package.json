@@ -21,7 +21,9 @@
     },
     "dependencies": {
         "@material/textfield": "^14.0.0",
+        "i": "^0.3.7",
         "jquery": "^3.6.3",
-        "mysql": "^2.18.1"
+        "mysql": "^2.18.1",
+        "update": "^0.7.4"
     }
 }
