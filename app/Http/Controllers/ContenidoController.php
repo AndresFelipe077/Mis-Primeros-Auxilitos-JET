@@ -36,46 +36,44 @@ class ContenidoController extends Controller
 
   public function storeImage(Request $request)
   {
-    $request->validate([
-      'title'        => 'required|max:50',
-      'file'         => 'required|image',
-      'autor'        => 'string',
-      'description'  => 'required|max:250',
-    ]);
-
-    $cadena = $request->file('file')->getClientOriginalName();
-
-    $cadenaConvert = strtr($cadena, " ", "_");
-
-    $nombre = Str::random(10) . $cadenaConvert;
-
-    $ruta = storage_path() . '\app\public\contenidos\images/' . $nombre;
-
-    Image::make($request->file('file'))
-      ->resize(900, null, function ($constraint) {
-        $constraint->aspectRatio();
-      })
-      ->save($ruta);
-
-
-    $title  = $request->title;
-    $title_url  = Str::slug($title, '-');
-    $slug_title_url = Str::random(1) . $title_url;
-    $userId = Auth::user()->id; //Se obtiene id del Usuario Autenticado
-    $name   = Auth::user()->name;
-
-    Contenido::create([
-      'title'       => $title,
-      'slug'        => $slug_title_url,
-      'url'         => '/storage/contenidos/images/' . $nombre,
-      'autor'       => $name,
-      'description' => $request->description,
-      'user_id'     => $userId,
-
-    ]);
-    return redirect()->route('dashboard.index')->with('subir', 'ok');
+      $request->validate([
+          'title' => 'required|max:50',
+          'file' => 'required|image',
+          'autor' => 'string',
+          'description' => 'required|max:250',
+      ]);
+  
+      $cadena = $request->file('file')->getClientOriginalName();
+  
+      $cadenaConvert = strtr($cadena, " ", "_");
+  
+      $nombre = Str::random(10) . $cadenaConvert;
+  
+      $ruta = storage_path('app/public/contenidos/imagenes/') . $nombre; // Corrección en la construcción de la ruta
+  
+      Image::make($request->file('file'))
+          ->resize(900, null, function ($constraint) {
+              $constraint->aspectRatio();
+          })
+          ->save($ruta);
+  
+      $title = $request->title;
+      $title_url = Str::slug($title, '-');
+      $slug_title_url = Str::random(1) . $title_url;
+      $userId = Auth::user()->id;
+      $name = Auth::user()->name;
+  
+      Contenido::create([
+          'title' => $title,
+          'slug' => $slug_title_url,
+          'url' => '/storage/contenidos/imagenes/' . $nombre, // Corrección en la ruta de almacenamiento
+          'autor' => $name,
+          'description' => $request->description,
+          'user_id' => $userId,
+      ]);
+  
+      return redirect()->route('dashboard.index')->with('subir', 'ok');
   }
-
   public function storeVideo(Request $request)
   {
 
