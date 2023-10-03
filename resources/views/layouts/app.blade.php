@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="{{ asset('css/registro.css') }}" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('build/assets/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/eye.css') }}">
     <link rel="stylesheet" href="{{ asset('css/iconPasswordReset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/iconCalendar.css') }}">
@@ -94,7 +93,6 @@
 
 
     <!-- Scripts -->
-    <script src="{{ asset('build/assets/app.js') }}" defer></script>
     <script src="{{ asset('js/audio_context.js') }}"></script>
     <script src="{{ asset('js/img-noseleccionar.js') }}"></script>
     
