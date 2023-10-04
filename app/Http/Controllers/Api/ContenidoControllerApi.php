@@ -36,16 +36,6 @@ class ContenidoControllerApi extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -53,7 +43,9 @@ class ContenidoControllerApi extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $contenido = Contenido::create($request->all());
+
+        return response()->json($contenido, 200);
     }
 
     /**
@@ -64,18 +56,14 @@ class ContenidoControllerApi extends Controller
      */
     public function show($id)
     {
-        //
-    }
+        $content = Contenido::find($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        if(!$content) {
+            return response()->json(['error' => 'Content not found']);
+        }
+
+        return response()->json($content, 200);
+
     }
 
     /**
@@ -87,7 +75,17 @@ class ContenidoControllerApi extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $contenido = Contenido::findOrFail($id);
+
+        if(!$contenido) {
+            return response()->json(['error' => 'Content not found'], 404);
+        }
+
+        $contenido->update($request->all());
+
+        return response()->json($contenido, 200);
+
     }
 
     /**
@@ -98,6 +96,14 @@ class ContenidoControllerApi extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Contenido::findOrFail($id);
+
+        if($data){
+            $data->delete();
+        }
+
+        return response()->json("Delete content successfully!!!");
+
     }
+    
 }
