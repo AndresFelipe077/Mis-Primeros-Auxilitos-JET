@@ -21,8 +21,7 @@
 
                 <div class="col-sm-8">
 
-                    <form class="p-3 m-3" action="{{ route('contenido.store.video') }}" method="POST"
-                        enctype="multipart/form-data">
+                    <form action="{{ route('contenido.store.video') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card">
                             <div class="card-title m-1">
