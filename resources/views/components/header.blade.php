@@ -1,4 +1,6 @@
 
+
+
 <nav class="navbar navbar-expand-lg bg-purple text-white">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"></a>
@@ -51,6 +53,9 @@
                     </svg>
                 </a> --}}
 
+
+
+              
 
                 <button wire:key="{{ Auth::user()->id }}" class="btn success rounded-circle bg-transparent"
                     onclick="location.href='{{ route('profile.show') }}'">

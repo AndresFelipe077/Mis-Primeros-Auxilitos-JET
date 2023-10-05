@@ -7,8 +7,6 @@
             <x-header />
         </x-slot>
 
-
-
         <div class="container text-center mx-auto animate__animated animate__swing rounded">
             <h1 id="title-h1" class="text-center animate__animated animate__jackInTheBox">Crear contenido</h1>
 
