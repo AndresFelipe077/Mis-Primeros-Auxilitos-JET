@@ -7,6 +7,8 @@ use App\Models\Contenido;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 
 class ContenidoControllerApi extends Controller
 {
@@ -44,7 +46,42 @@ class ContenidoControllerApi extends Controller
    */
   public function store(Request $request)
   {
-    $contenido = Contenido::create($request->all());
+
+    $request->validate([
+      'title'       => 'required|max:50',
+      'url'        => 'nullable|mimetypes:image/jpeg,image/png,image/jpg,image/gif,image/svg+xml',
+      'autor'       => 'string',
+      'description' => 'required|max:250',
+    ]);
+
+    if ($request->hasFile('url')) {
+      $cadena = $request->file('url')->getClientOriginalName();
+
+      $cadenaConvert = strtr($cadena, " ", "_");
+
+      $nombre = Str::random(10) . $cadenaConvert;
+
+      $ruta = storage_path('app/public/contenidos/imagenes/') . $nombre; // Corrección en la construcción de la ruta
+
+      Image::make($request->file('url'))
+        ->resize(900, null, function ($constraint) {
+          $constraint->aspectRatio();
+        })
+        ->save($ruta);
+    }
+
+    $title = $request->title;
+    $title_url = Str::slug($title, '-');
+    $slug_title_url = Str::random(1) . $title_url;
+
+    $contenido = Contenido::create([
+      'title'       => $title,
+      'slug'        => $slug_title_url,
+      'url'         => '/storage/contenidos/imagenes/' . $nombre, // Corrección en la ruta de almacenamiento
+      'autor'       => $request->autor,
+      'description' => $request->description,
+      'user_id'     => $request->user_id,
+    ]);
 
     return response()->json($contenido, 200);
   }
