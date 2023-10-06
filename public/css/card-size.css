@@ -34,13 +34,13 @@
     animation: moveGradientTop 8s linear infinite;
 }
 
-.card::after {
+/* .card::after {
     content: "";
     position: absolute;
     bottom: 0;
     right: 0;
     width: 0;
-    height: 0; /* Grosor de la línea de color */
+    height: 0; 
     background-image: linear-gradient(
         90deg,
         rgb(0, 183, 255),
@@ -48,7 +48,7 @@
     );
     animation: moveGradientBottom 20s infinite;
     animation-timing-function: linear;
-}
+} */
 
 @keyframes moveGradientTop {
     0% {
