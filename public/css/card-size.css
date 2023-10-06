@@ -1,9 +1,121 @@
-#card-contenido{
-  width: 300px !important; 
-  height:500px !important;
+#card-contenido {
+    width: 300px !important;
+    height: 500px !important;
+    position: relative;
 }
 
 /* #card-body{
-  width: 300px !important; 
+  width: 300px !important;
   height:470px !important;
 } */
+/* Estilos para las tarjetas */
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 10px; /* Espacio entre tarjetas */
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 500px;
+
+    background-image: linear-gradient(
+        90deg,
+        rgb(0, 183, 255),
+        rgb(255, 48, 255)
+    );
+    animation: moveGradientTop 8s linear infinite;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0; /* Grosor de la línea de color */
+    background-image: linear-gradient(
+        90deg,
+        rgb(0, 183, 255),
+        rgb(255, 48, 255)
+    );
+    animation: moveGradientBottom 20s infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes moveGradientTop {
+    0% {
+        left: 0;
+        top: 0;
+        width: 5px;
+        height: 100%;
+    }
+    25% {
+        left: 0;
+        top: 99%;
+        width: 5px;
+        height: 100%;
+    }
+    26% {
+        left: -100%;
+        height: 5px;
+        width: 100%;
+    }
+
+    50% {
+        height: 5px;
+        width: 100%;
+        top: 99%;
+        left: 100%;
+    }
+    51% {
+        height: 100%;
+        width: 5px;
+        left: 98.5%;
+        top: 99%;
+    }
+    75%{
+        height: 100%;
+        width: 5px;
+        left: 98.5%;
+        top: 0;
+    }
+    76%{
+        height: 5px;
+        width: 100%;
+        left: 98.5%;
+        top: 0;
+    }
+    100%{
+        height: 5px;
+        width: 100%;
+        left: -100%;
+        top: 0;
+    }
+}
+
+@keyframes moveGradientBottom {
+    0% {
+        right: -100%; /* Comienza fuera de la tarjeta a la derecha */
+    }
+    100% {
+        right: 100%; /* Termina fuera de la tarjeta a la izquierda */
+    }
+}
+
+/* Estilos para la página en general */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}

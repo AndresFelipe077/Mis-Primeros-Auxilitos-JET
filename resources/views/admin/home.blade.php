@@ -25,7 +25,7 @@
                             <a href="{{ route('admin.contenido') }}" class="btn btn-secondary my-2">Ver contenidos</a>
                         </p>
                     </div>
-                </div>
+                </div> 
             </section>
 
             <div class="album py-5 bg-light">

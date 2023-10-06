@@ -15,7 +15,7 @@
 }
 ::-webkit-scrollbar-thumb{
     /*background-image:url(/Images/Facebook.svg);*/
-    background-size: contain; 
+    background-size: contain;
     background-repeat:no-repeat;
     background: #ffe259;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #ffa751, #ffe259);  /* Chrome 10-25, Safari 5.1-6 */
@@ -53,13 +53,13 @@ label{
 .subir{
     padding: 5px 10px !important;
     background: #5678EF !important;
-    color:#fff !important; 
+    color:#fff !important;
     border:0px solid #fff !important;
     border-radius: 10px;
     width: 50%;
     cursor: pointer !important;
 }
- 
+
 .subir:hover{
     color:#fff;
     background: #f7cb15;
@@ -80,10 +80,10 @@ label{
     0%{
         top:-10px;
     }
-    25%{ 
+    25%{
         top:0px;
     }
-    50%{ 
+    50%{
         top:0px;
     }
     100%{
