@@ -21,7 +21,7 @@
                         <h1 class="fw-light">Bienvenido</h1>
                         <p class="lead text-muted">¿Que deseas hacer?</p>
                         <p>
-                            <a href="{{ route('admin.user') }}" class="btn btn-primary my-2">Ver usuarios</a>
+                            <a href="{{ route('admin.users') }}" class="btn btn-primary my-2">Ver usuarios</a>
                             <a href="{{ route('admin.contenido') }}" class="btn btn-secondary my-2">Ver contenidos</a>
                         </p>
                     </div>

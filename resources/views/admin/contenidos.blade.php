@@ -110,7 +110,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                <div class="">
+                                <div>
                                     <ul class="pagination pagination-lg">
                                         <li class="page-item active mb-5" aria-current="page">
                                             <span class="page-link bg-light h4">{{ $contenidos->links() }}</span>

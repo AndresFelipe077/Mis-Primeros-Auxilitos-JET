@@ -82,7 +82,7 @@ class User extends Authenticatable implements MustVerifyEmail
     //perfil
     public function adminlte_profile_url()
     {
-        return 'profile/username';
+        return '/user/profile';
     }
 
     //Relacion uno a muchos (Contenidos)

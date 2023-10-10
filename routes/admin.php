@@ -16,7 +16,9 @@ Route::controller(AdminController::class)->group(function(){
 
 Route::controller(UserController::class)->group(function() {
 
-    Route::get('/users','adminUser')->name('admin.user');
+    Route::get('/users','users')->name('admin.users'); // Return only users
+
+    Route::get('users_admin', 'usersAdmins')->name('admin.admin.users'); // Return only users admin
 
     Route::delete('/user/delete/{user}', 'destroy')->name('admin.user.delete');
 

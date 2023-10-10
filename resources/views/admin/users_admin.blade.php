@@ -80,17 +80,12 @@
                                                 </td>
 
                                                 <td class="align-middle">
-                                                    <form method="POST"
-                                                      action="{{ route('admin.user.delete', $user) }}">
+                                                    <form method="POST" action="{{ route('admin.user.delete', $user) }}">
                                                         @csrf
                                                         @method('delete')
                                                         <button class="btn btn-danger text-danger bg-danger rounded m-2"
-
-                                                          @if (Auth::user()->id == $user->id)
-                                                            onclick="return confirm('¿Seguro que deseas eliminar a ti mismo?')"
-                                                          @endif
-
-                                                          onclick="return confirm('¿Seguro que deseas eliminar este usuario?')">
+                                                            @if (Auth::user()->id == $user->id) onclick="return confirm('¿Seguro que deseas eliminar a ti mismo?')" @endif
+                                                            onclick="return confirm('¿Seguro que deseas eliminar este usuario?')">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                 height="16" fill="currentColor" class="bi bi-x-circle"
                                                                 viewBox="0 0 16 16">
