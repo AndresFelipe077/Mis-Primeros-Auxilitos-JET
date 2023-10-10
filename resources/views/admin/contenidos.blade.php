@@ -88,7 +88,7 @@
                                                 <td class="align-middle">
 
                                                     <form method="POST"
-                                                        action="{{ route('contenido.destroy', $contenido) }}">
+                                                        action="{{ route('admin.contenido.destroy', $contenido) }}">
                                                         @csrf
                                                         @method('delete')
                                                         <button class="btn btn-danger text-danger bg-danger rounded m-2"

@@ -3,29 +3,35 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Contenido;
-use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
 
     public function admin()
-    {  
+    {
         return view('admin.home');
     }
 
 
     public function adminContent()
     {
-        $contenidos = Contenido::orderBy('id','asc')->paginate(8);
+        $contenidos = Contenido::orderBy('id', 'asc')->paginate(8);
         return view('admin.contenidos', compact('contenidos'));
     }
 
-    public function adminUser()
+
+    public function destroy(Contenido $contenido)
     {
-        $users = User::orderBy('id','asc')->paginate(10);
-        return view('admin.users',compact('users'));
+        $url = str_replace('storage', 'public', $contenido->url);
+        if ($contenido->url != '') {
+            Storage::delete($url);
+            $contenido->delete();
+        }
+
+        return redirect()->route('admin.contenido');
+
     }
 
 }
