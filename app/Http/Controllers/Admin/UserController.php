@@ -23,16 +23,20 @@ class UserController extends Controller
 
   public function usersAdmins()
   {
-    $users = User::orderBy('id', 'asc')->where('name', 'Admin example')->simplePaginate(5);
+    $users = User::whereHas('roles', function ($query) {
+      $query->where('name', 'Admin');
+    })->orderBy('id', 'asc')->simplePaginate(5);
+
     return view('admin.users_admin', compact('users'));
   }
 
-  public function update(Request $request, User $user) {
+
+  public function update(Request $request, User $user)
+  {
 
     $user->roles()->sync($request->roles);
 
     return redirect()->route('admin.users')->with('info', 'Roles asignados correctamente');
-
   }
 
   public function destroy(User $user)

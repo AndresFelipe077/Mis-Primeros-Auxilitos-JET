@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ContentController;
 
-Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(AdminController::class)->group(function(){
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified', 'admin'])->controller(AdminController::class)->group(function(){
 
     Route::get('','admin')->name('admin');
 
@@ -13,7 +13,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
 });
 
-Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(UserController::class)->group(function() {
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified', 'admin'])->controller(UserController::class)->group(function() {
 
     Route::get('/users','users')->name('admin.users'); // Return only users
 
@@ -25,7 +25,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
 });
 
-Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(ContentController::class)->group(function() {
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified', 'admin'])->controller(ContentController::class)->group(function() {
 
     Route::get('/contenido','adminContent')->name('admin.contenido');
 
