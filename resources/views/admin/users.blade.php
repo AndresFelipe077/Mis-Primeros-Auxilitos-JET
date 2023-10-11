@@ -148,11 +148,13 @@
                                     </tbody>
                                 </table>
                                 <div>
-                                    <ul class="pagination pagination-lg">
-                                        <li class="page-item active mb-5" aria-current="page">
-                                            <span class="page-link bg-light h4">{{ $users->links() }}</span>
-                                        </li>
-                                    </ul>
+                                    @if ($users->hasPages())
+                                        <ul class="pagination pagination-sm">
+                                            <li class="page-item active mb-5" aria-current="page">
+                                                <span class="page-link bg-light h4">{{ $users->links() }}</span>
+                                            </li>
+                                        </ul>
+                                    @endif
                                 </div>
                             </div>
                         </div>

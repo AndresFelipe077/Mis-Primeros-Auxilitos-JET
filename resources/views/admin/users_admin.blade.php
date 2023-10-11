@@ -6,6 +6,32 @@
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/usersAdmin.png') }}" type="image/x-icon">
 
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/usersAdmin.png') }}" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.3.slim.js"
+    integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 @section('content_header')
     <h1>Mis Primeros Auxilitos</h1>
 @stop
@@ -38,7 +64,13 @@
                                                 <td scope="row">{{ $user->id }}</td>
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>
-                                                <td>{{ $user->fechaNacimiento }}</td>
+                                                <td>
+                                                    @if($user->fechaNacimiento)
+                                                        {{ $user->fechaNacimiento }}
+                                                    @else
+                                                        Dato no disponible
+                                                    @endif
+                                                </td>
                                                 <td>
 
                                                     @if (Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook')
@@ -80,12 +112,11 @@
                                                 </td>
 
                                                 <td class="align-middle">
-                                                    <form method="POST" action="{{ route('admin.user.delete', $user) }}">
+                                                    <form method="POST" class="formulario-eliminar-usuario"
+                                                        action="{{ route('admin.user.delete', $user) }}">
                                                         @csrf
                                                         @method('delete')
-                                                        <button class="btn btn-danger text-danger bg-danger rounded m-2"
-                                                            @if (Auth::user()->id == $user->id) onclick="return confirm('¿Seguro que deseas eliminar a ti mismo?')" @endif
-                                                            onclick="return confirm('¿Seguro que deseas eliminar este usuario?')">
+                                                        <button class="btn btn-danger text-danger bg-danger rounded m-2">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                 height="16" fill="currentColor" class="bi bi-x-circle"
                                                                 viewBox="0 0 16 16">
@@ -114,11 +145,13 @@
                                     </tbody>
                                 </table>
                                 <div>
-                                    <ul class="pagination pagination-lg">
-                                        <li class="page-item active mb-5" aria-current="page">
-                                            <span class="page-link bg-light h4">{{ $users->links() }}</span>
-                                        </li>
-                                    </ul>
+                                    @if ($users->hasPages())
+                                        <ul class="pagination pagination-sm">
+                                            <li class="page-item active mb-5" aria-current="page">
+                                                <span class="page-link bg-light h4">{{ $users->links() }}</span>
+                                            </li>
+                                        </ul>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -126,32 +159,6 @@
                 </div>
             </div>
         </section>
-
-        {{-- <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        Ingresar datos:
-                    </div>
-                    <form action="" class="p-4" method="POST">
-                        <div class="mb-3">
-                            <label for="" class="form-label">Nombre: </label>
-                            <input type="text" class="form-control" name="" autofocus>
-                        </div>
-                        <div class="mb-3">
-                            <label for="" class="form-label">Correo: </label>
-                            <input type="text" class="form-control" name="" autofocus>
-                        </div>
-                        <div class="mb-3">
-                            <label for="" class="form-label">Fecha De Nacimiento: </label>
-                            <input type="text" class="form-control" name="" autofocus>
-                        </div>
-                        <div class="d-grid">
-                            <input type="hidden" name="oculto" value="1">
-                            <input type="submit" class="btn btn-primary" value="Registrar">
-                        </div>
-                    </form>
-                </div>
-            </div> --}}
         </div>
         </div>
 
@@ -162,6 +169,7 @@
                 once: true
             });
         </script>
+        <script src="{{ asset('js_css_admin/toast-delete-user.js') }}"></script>
 
     </body>
 @endsection

@@ -13,14 +13,14 @@ class UserController extends Controller
   {
     $users = User::where('name', '!=', 'Admin example')
       ->orderBy('id', 'asc')
-      ->paginate(10);
+      ->simplePaginate(10);
 
     return view('admin.users', compact('users'));
   }
 
   public function usersAdmins()
   {
-    $users = User::orderBy('id', 'asc')->where('name', 'Admin example')->paginate(10);
+    $users = User::orderBy('id', 'asc')->where('name', 'Admin example')->simplePaginate(5);
     return view('admin.users_admin', compact('users'));
   }
 

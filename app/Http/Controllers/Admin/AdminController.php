@@ -14,13 +14,11 @@ class AdminController extends Controller
         return view('admin.home');
     }
 
-
     public function adminContent()
     {
-        $contenidos = Contenido::orderBy('id', 'asc')->paginate(8);
+        $contenidos = Contenido::orderBy('id', 'asc')->simplePaginate(8);
         return view('admin.contenidos', compact('contenidos'))->with('eliminar', 'ok');
     }
-
 
     public function destroy(Contenido $contenido)
     {
