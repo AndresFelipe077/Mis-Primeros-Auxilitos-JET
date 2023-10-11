@@ -47,7 +47,7 @@
                 <div class="col-md-11">
                     <div class="card">
                         <div class="card-header">
-                            <h4> Lista de usuarios </h4>
+                            <h4> Lista de usuarios - Admin </h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
