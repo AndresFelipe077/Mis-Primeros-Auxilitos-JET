@@ -23,7 +23,8 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.estadisticas'])->assignRole($role1);
 
 
-        Permission::create(['name' => 'admin.users'])->assignRole($role1); // View screen of users for admin
+        Permission::create(['name' => 'admin.users'])->assignRole($role1); // View screen of users for admin 
+        Permission::create(['name' => 'admin.users.observacion'])->assignRole($role1);
         Permission::create(['name' => 'admin.admin.users'])->assignRole($role1);
         Permission::create(['name' => 'admin.user.update'])->assignRole($role1);
         Permission::create(['name' => 'admin.user.delete'])->assignRole($role1);

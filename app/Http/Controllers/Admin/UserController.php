@@ -30,6 +30,17 @@ class UserController extends Controller
     return view('admin.users_admin', compact('users'));
   }
 
+  public function createObservation(Request $request, User $user)
+  {
+    $observation = $request->input('observacion'); // Obtiene el valor del campo 'observacion' del formulario
+
+    // Actualiza el campo 'observacion' del usuario con el nuevo valor
+    $user->update(['observacion' => $observation]);
+
+    // Puedes agregar un mensaje de éxito si lo deseas
+    return redirect()->back()->with('success', 'Observación actualizada correctamente.');
+  }
+
 
   public function update(Request $request, User $user)
   {
