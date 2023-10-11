@@ -59,7 +59,7 @@ class ContentController extends Controller
 
         $contenido->update();
 
-        return redirect()->route('dashboard.index', compact('contenido'))->with('actualizar', 'ok');
+        return redirect()->route('admin.contenido', compact('contenido'))->with('actualizar', 'ok');
     }
 
     public function updateVideo(Request $request, Contenido $contenido)

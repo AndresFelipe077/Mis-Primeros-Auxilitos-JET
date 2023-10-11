@@ -52,6 +52,16 @@
             </script>
         @endif
 
+        @if (session('actualizar') == 'ok')
+            <script>
+                Swal.fire(
+                    '¡Contenido actualizado!',
+                    '¡Actualización exitosa!.',
+                    'success'
+                )
+            </script>
+        @endif
+
         <section class="container mt-2" data-aos="fade-down">
             <div class="row justify-content-center">
                 <div class="col-md-11">
@@ -304,11 +314,14 @@
             integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
         </script>
 
+        <script src="{{ asset('js/videoPreview.js') }}"></script>
+
+
     </body>
 @endsection
+
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <link rel="stylesheet" href="{{ asset('css/create-content.css') }}">
-    <script src="{{ asset('js/videoPreview.js') }}"></script>
 @stop
