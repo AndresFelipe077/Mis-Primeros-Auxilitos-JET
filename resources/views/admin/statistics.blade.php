@@ -4,17 +4,18 @@
 
 <!-- Custom fonts for this template-->
 <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-
+<link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/statistics.png') }}" type="image/x-icon">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 <!-- Custom styles for this template-->
 <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 
 @section('content')
 
-    <body id="page-top">
+    <body id="page-top" >
 
         <!-- Page Wrapper -->
-        <div id="wrapper">
+        <div id="wrapper" data-aos="fade-up">
 
             <!-- Content Wrapper -->
             <div id="content-wrapper" class="d-flex flex-column">
@@ -312,6 +313,14 @@
         <!-- Page level custom scripts -->
         <script src="{{ asset('js_statistics/demo/chart-area-demo.js') }}"></script>
         <script src="{{ asset('js_statistics/demo/chart-pie-demo.js') }}"></script>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000,
+                once: true
+            });
+        </script>
 
     </body>
 @endsection
