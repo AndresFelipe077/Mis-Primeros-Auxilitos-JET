@@ -121,18 +121,12 @@
                                                                         data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body">
-
                                                                     <div
                                                                         class="container text-center mx-auto animate__animated animate__swing rounded">
-
-
                                                                         <div class="row">
-
                                                                             <div class="col-sm-2 text-center"></div>
-
                                                                             <div class="col-sm-8">
                                                                                 <div class="card">
-
                                                                                     <form
                                                                                         action="{{ route('admin.users.observacion', $user) }}"
                                                                                         method="POST">
@@ -154,21 +148,13 @@
                                                                                                 class="btn btn-success">Actualizar</button>
                                                                                         </div>
                                                                                     </form>
-
-
                                                                                 </div>
                                                                             </div>
-
                                                                             <div class="col-sm-2 text-center"></div>
-
                                                                         </div>
-
                                                                     </div>
-
                                                                 </div>
-
                                                             </div>
-
                                                         </div>
                                                     </div>
 
@@ -190,24 +176,12 @@
                                                 d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                                         </svg>
                                     </button>
-
                                 </form>
-
-                                {{-- <x-jet-danger-button wire:click="deleteUser"
-                                                        wire:loading.attr="disabled">
-                                                        <div wire:loading wire:target="deleteUser"
-                                                            class="spinner-border spinner-border-sm" role="status">
-                                                            <span class="visually-hidden">Loading...</span>
-                                                        </div>
-
-                                                        {{ __('Sí, eliminar mi cuenta') }}
-                                                    </x-jet-danger-button> --}}
-
                             </td>
                             </tr>
                             @endforeach
-                            </tbody>
-                            </table>
+                      </tbody>
+                    </table>
                             <div>
                                 @if ($users->hasPages())
                                     <ul class="pagination pagination-sm">

@@ -23,12 +23,11 @@ class UserController extends Controller
 
   public function usersAdmins()
   {
-    $users = User::whereHas('roles', function ($query) {
-      $query->where('name', 'Admin');
-    })->orderBy('id', 'asc')->simplePaginate(5);
+    $users = User::has('roles')->orderBy('id', 'asc')->simplePaginate(5);
 
     return view('admin.users_admin', compact('users'));
   }
+
 
   public function createObservation(Request $request, User $user)
   {
