@@ -354,7 +354,7 @@ return [
         ],
         [
             'text' => 'change_password',
-            'url'  => '/user/profile',
+            'url'  => '/admin/change_passoword',
             'icon' => 'fas fa-fw fa-lock',
         ],
         // [

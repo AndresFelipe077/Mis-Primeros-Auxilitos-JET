@@ -58,6 +58,15 @@
                             <h4> Lista de usuarios </h4>
                         </div>
                         <div class="card-body">
+
+                            @if(session('info'))
+
+                                <div class="alert alert-success">
+                                    <strong>{{ session('info') }}</strong>
+                                </div>
+
+                            @endif
+
                             <div class="table-responsive">
                                 <table class="table table-striped table-hover">
                                     <thead>
@@ -99,11 +108,25 @@
                                                 </td>
 
                                                 <td class="align-middle">
-                                                    {{-- Toca crear un get para ir a otra vista y ahi si editar --}}
-                                                    <div class="form-check form-switch m-3">
-                                                        <input class="form-check-input" type="checkbox" role="switch"
-                                                            id="flexSwitchCheckDefault">
-                                                        <label class="form-check-label" for="flexSwitchCheckDefault">Admin</label>
+
+                                                    <div class="m-3">
+
+                                                        {!! Form::model($user, ['route' => ['admin.user.update', $user], 'method' => 'put', 'id' => 'user-form']) !!}
+                                                        @foreach ($roles as $role)
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="role-{{ $role->id }}" name="roles[]"
+                                                                    value="{{ $role->id }}"
+                                                                    {{ in_array($role->id, $user->roles->pluck('id')->toArray()) ? 'checked' : '' }}>
+                                                                <label class="form-check-label"
+                                                                    for="role-{{ $role->id }}">{{ $role->name }}</label>
+                                                            </div>
+                                                        @endforeach
+
+                                                        {!! Form::submit('Asignar rol', ['class' => 'btn btn-success']) !!}
+
+                                                        {!! Form::close() !!}
+
                                                     </div>
 
                                                 </td>

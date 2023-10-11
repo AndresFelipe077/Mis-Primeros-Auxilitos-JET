@@ -5,23 +5,27 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ContentController;
 
-Route::controller(AdminController::class)->group(function(){
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(AdminController::class)->group(function(){
 
     Route::get('','admin')->name('admin');
 
+    Route::get('change_passoword','changePassword')->name('admin.change_password');
+
 });
 
-Route::controller(UserController::class)->group(function() {
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(UserController::class)->group(function() {
 
     Route::get('/users','users')->name('admin.users'); // Return only users
 
     Route::get('users_admin', 'usersAdmins')->name('admin.admin.users'); // Return only users admin
 
+    Route::put('/user/update/admin/{user}', 'update')->name('admin.user.update');
+
     Route::delete('/user/delete/{user}', 'destroy')->name('admin.user.delete');
 
 });
 
-Route::controller(ContentController::class)->group(function() {
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(ContentController::class)->group(function() {
 
     Route::get('/contenido','adminContent')->name('admin.contenido');
 
