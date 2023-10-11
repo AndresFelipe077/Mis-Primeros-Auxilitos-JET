@@ -333,8 +333,8 @@ return [
             'label_color' => 'success',
         ],
         [
-            'text'        => 'Juegos',
-            'url'         => 'admin',
+            'text'        => 'Estadisticas',
+            'url'         => 'admin/estadisticas',
             'icon'        => 'fas fa-fw fa-gamepad',
             // 'label'       => 5,
             'label_color' => 'success',

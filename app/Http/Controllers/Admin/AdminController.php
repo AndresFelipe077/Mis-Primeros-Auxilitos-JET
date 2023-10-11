@@ -12,6 +12,11 @@ class AdminController extends Controller
         return view('admin.home');
     }
 
+    public function estadisticas()
+    {
+        return view('admin.statistics');
+    }
+
     public function changePassword()
     {
         return view('admin.change_password');
