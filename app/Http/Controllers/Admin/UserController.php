@@ -11,7 +11,10 @@ class UserController extends Controller
 
   public function users()
   {
-    $users = User::orderBy('id', 'asc')->paginate(10);
+    $users = User::where('name', '!=', 'Admin example')
+      ->orderBy('id', 'asc')
+      ->paginate(10);
+
     return view('admin.users', compact('users'));
   }
 
@@ -25,11 +28,10 @@ class UserController extends Controller
   {
     try {
       $user->delete();
-      return redirect()->route('admin.users');
+      return redirect()->route('admin.users')->with('eliminar', 'ok');
     } catch (\Exception $e) {
       // Manejar el error, por ejemplo, mostrar un mensaje de error y redirigir a una página anterior
       return back()->withError('No se pudo eliminar el usuario.');
     }
   }
-
 }

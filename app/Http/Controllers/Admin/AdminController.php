@@ -18,7 +18,7 @@ class AdminController extends Controller
     public function adminContent()
     {
         $contenidos = Contenido::orderBy('id', 'asc')->paginate(8);
-        return view('admin.contenidos', compact('contenidos'));
+        return view('admin.contenidos', compact('contenidos'))->with('eliminar', 'ok');
     }
 
 
