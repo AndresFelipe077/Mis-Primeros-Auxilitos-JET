@@ -154,3 +154,9 @@ ContentAdmin
 
 //////////////// COPYRIGHT MUSICA //////////////
 Obra: Haz Que Pase https://www.fiftysounds.com/es/
+
+Question Mark
+<a href="https://www.flaticon.com/free-icons/question-mark" title="question mark icons">Question mark icons created by Freepik - Flaticon</a>
+
+First Aid Kit
+<a href="https://www.flaticon.com/free-icons/first-aid-kit" title="first aid kit icons">First aid kit icons created by Freepik - Flaticon</a>

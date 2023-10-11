@@ -1,8 +1,7 @@
-$('.formulario-eliminar-contenido').submit(function(e){
-    e.preventDefault();
+$('.formulario-eliminar-contenido').submit(function (e) {
+  e.preventDefault();
 
-
-    Swal.fire({
+  Swal.fire({
     title: '¿Estás seguro?',
     text: "¡El contenido se eliminará definitamente 😥!",
     icon: 'warning',
@@ -13,14 +12,7 @@ $('.formulario-eliminar-contenido').submit(function(e){
     cancelButtonText: 'Cancelar 😃',
   }).then((result) => {
     if (result.isConfirmed) {
-      // Swal.fire(
-      //   'Deleted!',
-      //   'Your file has been deleted.', este texto se muestra en el index con un if
-      //   'success'
-      // )
-
       this.submit();
-
     }
-    })
-  });
+  })
+});

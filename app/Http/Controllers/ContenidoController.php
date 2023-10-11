@@ -74,6 +74,7 @@ class ContenidoController extends Controller
   
       return redirect()->route('dashboard.index')->with('subir', 'ok');
   }
+  
   public function storeVideo(Request $request)
   {
 
