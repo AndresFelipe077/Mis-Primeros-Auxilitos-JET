@@ -17,6 +17,7 @@ class RoleSeeder extends Seeder
     public function run()
     {
         $role1 = Role::create(['name' => 'Admin']);
+        $content = Role::create(['name' => 'Contenido']);
 
         Permission::create(['name' => 'admin'])->assignRole($role1); // View screen of dashboard for admin
         Permission::create(['name' => 'admin.estadisticas'])->assignRole($role1);
@@ -28,10 +29,10 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.user.delete'])->assignRole($role1);
 
 
-        Permission::create(['name' => 'admin.contenido'])->assignRole($role1); // View screen of content for admin
-        Permission::create(['name' => 'admin.update.image'])->assignRole($role1);
-        Permission::create(['name' => 'admin.update.video'])->assignRole($role1);
-        Permission::create(['name' => 'admin.contenido.destroy'])->assignRole($role1);
+        Permission::create(['name' => 'admin.contenido'])->syncRoles([$role1, $content]); // View screen of content for admin
+        Permission::create(['name' => 'admin.update.image'])->syncRoles([$role1, $content]);
+        Permission::create(['name' => 'admin.update.video'])->syncRoles([$role1, $content]);
+        Permission::create(['name' => 'admin.contenido.destroy'])->syncRoles([$role1, $content]);
 
     }
 }

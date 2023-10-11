@@ -10,6 +10,10 @@
                     <a class="rounded-circle bg-transparent" href="{{ route('admin') }}">
                         <img src="{{ asset('img/admin/admin.png') }}" alt="Admin" width="50px" height="50px">
                     </a>
+                @elseif(Auth::user()->hasRole('Contenido'))
+                    <a class="rounded-circle bg-transparent" href="{{ route('admin.contenido') }}">
+                        <img src="{{ asset('img/admin/admin.png') }}" alt="Admin" width="50px" height="50px">
+                    </a>
                 @endif
 
                 <button wire:key="{{ Auth::user()->id }}" class="btn success rounded-circle bg-transparent"
@@ -23,8 +27,8 @@
                                     alt="{{ Auth::user()->name }}" />
                             @else
                                 <img class="rounded-circle" width="50px" height="50px"
-                                    src="{{ Auth::user()->avatar }}{{-- Auth::user()->google_id !== null || Auth::user()->facebook_id !== null ? Auth::user()->profile_photo_path : Auth::user()->avatar --}}" alt="{{ Auth::user()->name }}"
-                                    referrerpolicy="no-referrer" />
+                                    src="{{ Auth::user()->avatar }}{{-- Auth::user()->google_id !== null || Auth::user()->facebook_id !== null ? Auth::user()->profile_photo_path : Auth::user()->avatar --}}"
+                                    alt="{{ Auth::user()->name }}" referrerpolicy="no-referrer" />
                             @endif
                         @else
                             <img class="rounded-circle" width="50px" height="50px"

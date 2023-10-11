@@ -20,6 +20,10 @@ class AdminMiddleware
             return $next($request);
         }
 
+        if(auth()->user()->hasRole('Contenido')) {
+            return $next($request);
+        }
+
         return redirect('/dashboard')->with('error', 'Acceso no autorizado.');
     }
 }

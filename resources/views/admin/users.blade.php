@@ -113,7 +113,7 @@
 
                                                         {!! Form::model($user, ['route' => ['admin.user.update', $user], 'method' => 'put', 'id' => 'user-form']) !!}
                                                         @foreach ($roles as $role)
-                                                            <div class="form-check form-switch">
+                                                            <div class="form-check form-switch ml-3">
                                                                 <input class="form-check-input" type="checkbox"
                                                                     id="role-{{ $role->id }}" name="roles[]"
                                                                     value="{{ $role->id }}"
@@ -123,7 +123,7 @@
                                                             </div>
                                                         @endforeach
 
-                                                        {!! Form::submit('Asignar rol', ['class' => 'btn btn-success']) !!}
+                                                        {!! Form::submit('Asignar rol', ['class' => 'btn btn-success w-100']) !!}
 
                                                         {!! Form::close() !!}
 

@@ -300,16 +300,10 @@ return [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
-
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
             'text' => 'buscar',
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
         ],
         [
             'text'        => 'Home',
@@ -317,6 +311,7 @@ return [
             'icon'        => 'fas fa-fw fa-home',
             // 'label'       => 5,
             'label_color' => 'success',
+            'can'         => 'admin'
         ],
         [
             'text'        => 'Usuarios',
@@ -324,6 +319,7 @@ return [
             'icon'        => 'fas fa-fw fa-users',
             // 'label'       => 5,
             'label_color' => 'success',
+            'can'         => 'admin.users'
         ],
         [
             'text'        => 'Contenidos',
@@ -331,6 +327,7 @@ return [
             'icon'        => 'fas fa-fw fa-folder',
             // 'label'       => 5,
             'label_color' => 'success',
+            'can'         => 'admin.contenido'
         ],
         [
             'text'        => 'Estadisticas',
@@ -338,6 +335,8 @@ return [
             'icon'        => 'fas fa-fw fa-gamepad',
             // 'label'       => 5,
             'label_color' => 'success',
+            'can'         => 'admin.estadisticas'
+
         ],
         [
             'text'        => 'Administradores',
@@ -345,6 +344,8 @@ return [
             'icon'        => 'fas fa-fw fa-user',
             'label'       => 5,
             'label_color' => 'success',
+            'can'         => 'admin.admin.users'
+
         ],
         ['header' => 'account_settings'],
         [
