@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/contentAdmin.png') }}" type="image/x-icon">
 
+<script src="{{ asset('js/imageview.js') }}"></script>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -104,15 +106,6 @@
                                                 </td>
                                                 <td class="align-middle">
 
-                                                    {{-- <form action="{{ route('contenido.update.image', $contenido) }}"
-                                                        method="POST" enctype="multipart/form-data">
-
-                                                        @csrf
-                                                        @method('put')
-                                                        
-                                                    </form>
-                                                        
-                                                        --}}
                                                     <button class="btn btn-success text-success bg-success rounded mb-3"
                                                         data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16"
@@ -131,7 +124,7 @@
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
                                                                     <h1 class="modal-title fs-5" id="exampleModalLabel">
-                                                                        Editar contenido</h1>
+                                                                        Editar contenido 🤗</h1>
                                                                     <button type="button" class="btn-close"
                                                                         data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
@@ -139,23 +132,16 @@
 
                                                                     <div
                                                                         class="container text-center mx-auto animate__animated animate__swing rounded">
-                                                                        <h1
-                                                                            class="text-center animate__animated animate__swing rounded">
-                                                                            Edita tu contenido 🤗</h1>
+
 
                                                                         <div class="row">
 
-                                                                            <div class="col-sm-2 text-center">
-                                                                                {{-- <img src="{{ asset('img/icons/nina.png') }}"
-                                                                                    id="image" alt="Imagen"
-                                                                                    class="mt-5 m-3 mx-auto" width="150px"
-                                                                                    height="150px"> --}}
-                                                                            </div>
+                                                                            <div class="col-sm-2 text-center"></div>
 
                                                                             <div class="col-sm-8">
                                                                                 <div class="card">
                                                                                     <form
-                                                                                        action="{{ route('contenido.update.image', $contenido) }}"
+                                                                                        action="{{ route('admin.update.image', $contenido) }}"
                                                                                         method="POST"
                                                                                         enctype="multipart/form-data">
                                                                                         @csrf
@@ -230,52 +216,24 @@
                                                                                                 <br>
                                                                                             @enderror
                                                                                         </div>
-                                                                                        <button type="submit"
-                                                                                            class="btn bg-transparent"><img
-                                                                                                src="{{ asset('/img/icons/subir2.png') }}"
-                                                                                                width="60px"
-                                                                                                height="60px"></button>
+
+                                                                                        <div class="modal-footer">
+                                                                                            <button type="button"
+                                                                                                class="btn btn-danger"
+                                                                                                data-bs-dismiss="modal">Cancelar</button>
+                                                                                            <button type="submit"
+                                                                                                class="btn btn-success"
+                                                                                                style="pointer">Actualizar
+                                                                                            </button>
+                                                                                        </div>
+
 
                                                                                     </form>
 
-                                                                                    <div>
-                                                                                        <div class="row">
-
-                                                                                            <div class="col-sm-6">
-                                                                                                <a class="btn bg-transparent"
-                                                                                                    href="{{ route('dashboard.index') }}"><img
-                                                                                                        src="{{ asset('/img/icons/regresar.png') }}"></a>
-                                                                                            </div>
-
-                                                                                            <div class="col-sm-6">
-                                                                                                <form method="POST"
-                                                                                                    class="formulario-eliminar-contenido"
-                                                                                                    action="{{ route('contenido.destroy', $contenido) }}">
-                                                                                                    @csrf
-                                                                                                    @method('delete')
-                                                                                                    <button type="submit"
-                                                                                                        class="btn bg-transparent">
-                                                                                                        <img class="mt-2"
-                                                                                                            src="{{ asset('/img/icons/borrar.png') }}"
-                                                                                                            width="50px"
-                                                                                                            height="50px">
-                                                                                                    </button>
-                                                                                                </form>
-                                                                                            </div>
-
-
-                                                                                        </div>
-
-                                                                                    </div>
                                                                                 </div>
                                                                             </div>
 
-                                                                            <div class="col-sm-2 text-center">
-                                                                                {{-- <img src="{{ asset('img/icons/nino.png') }}"
-                                                                                    id="image" alt="Imagen"
-                                                                                    class="mt-5 m-3 mx-auto"
-                                                                                    width="150px" height="150px"> --}}
-                                                                            </div>
+                                                                            <div class="col-sm-2 text-center"></div>
 
                                                                         </div>
 
@@ -284,12 +242,7 @@
                                                                 </div>
 
                                                             </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-danger"
-                                                                    data-bs-dismiss="modal">Cancelar</button>
-                                                                <button type="button" class="btn btn-success" style="pointer">Actualizar
-                                                                    </button>
-                                                            </div>
+
                                                         </div>
                                                     </div>
                             </div>
