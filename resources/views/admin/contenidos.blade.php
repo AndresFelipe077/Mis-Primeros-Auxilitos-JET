@@ -34,6 +34,9 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
 @section('content_header')
     <h1>Mis Primeros Auxilitos</h1>
 @stop
@@ -68,6 +71,9 @@
                     <div class="card">
                         <div class="card-header">
                             <h4> Lista de contenidos </h4>
+                            <a href="{{ route('admin.pdf.content') }}"  class="btn btn-success" target="_target">
+                                <i class="fas fa-file-pdf"></i> Generar reporte
+                            </a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -113,7 +119,8 @@
                                                 <td class="align-middle">
 
                                                     <button class="btn btn-success text-success bg-success rounded mb-3"
-                                                        data-bs-toggle="modal" data-bs-target="#exampleModal{{ $contenido->id }}">
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#exampleModal{{ $contenido->id }}">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                             height="16" fill="currentColor" class="bi bi-pencil-square"
                                                             viewBox="0 0 16 16">
@@ -124,12 +131,15 @@
                                                         </svg>
                                                     </button>
 
-                                                    <div class="modal fade" id="exampleModal{{ $contenido->id }}" tabindex="-1"
-                                                        aria-labelledby="exampleModalLabel{{ $contenido->id }}" aria-hidden="true">
+                                                    <div class="modal fade" id="exampleModal{{ $contenido->id }}"
+                                                        tabindex="-1"
+                                                        aria-labelledby="exampleModalLabel{{ $contenido->id }}"
+                                                        aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h1 class="modal-title fs-5" id="exampleModalLabel{{ $contenido->id }}">
+                                                                    <h1 class="modal-title fs-5"
+                                                                        id="exampleModalLabel{{ $contenido->id }}">
                                                                         Editar contenido 🤗</h1>
                                                                     <button type="button" class="btn-close"
                                                                         data-bs-dismiss="modal" aria-label="Close"></button>

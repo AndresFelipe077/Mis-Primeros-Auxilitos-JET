@@ -9,6 +9,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     Route::get('','admin')->name('admin');
 
+    Route::get('generate_pdf_contents','generatePdfContents')->name('admin.pdf.content');
+
+    Route::get('generate_pdf_users','generatePdfUsers')->name('admin.pdf.users');
+
     Route::get('estadisticas', 'estadisticas')->name('admin.estadisticas');
 
     Route::get('change_passoword','changePassword')->name('admin.change_password');
