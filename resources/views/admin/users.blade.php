@@ -59,12 +59,10 @@
                         </div>
                         <div class="card-body">
 
-                            @if(session('info'))
-
+                            @if (session('info'))
                                 <div class="alert alert-success">
                                     <strong>{{ session('info') }}</strong>
                                 </div>
-
                             @endif
 
                             <div class="table-responsive">
@@ -107,28 +105,22 @@
 
                                                 </td>
 
-                                                <td class="align-middle">
+                                                <td class="align-middle m-2">
+                                                    {!! Form::model($user, ['route' => ['admin.user.update', $user], 'method' => 'put', 'id' => 'user-form']) !!}
+                                                    @foreach ($roles as $role)
+                                                        <div class="form-check form-switch ml-3">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="role-{{ $role->id }}" name="roles[]"
+                                                                value="{{ $role->id }}"
+                                                                {{ in_array($role->id, $user->roles->pluck('id')->toArray()) ? 'checked' : '' }}>
+                                                            <label class="form-check-label"
+                                                                for="role-{{ $role->id }}">{{ $role->name }}</label>
+                                                        </div>
+                                                    @endforeach
 
-                                                    <div class="m-3">
+                                                    {!! Form::submit('Asignar rol', ['class' => 'btn btn-success w-100']) !!}
 
-                                                        {!! Form::model($user, ['route' => ['admin.user.update', $user], 'method' => 'put', 'id' => 'user-form']) !!}
-                                                        @foreach ($roles as $role)
-                                                            <div class="form-check form-switch ml-3">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    id="role-{{ $role->id }}" name="roles[]"
-                                                                    value="{{ $role->id }}"
-                                                                    {{ in_array($role->id, $user->roles->pluck('id')->toArray()) ? 'checked' : '' }}>
-                                                                <label class="form-check-label"
-                                                                    for="role-{{ $role->id }}">{{ $role->name }}</label>
-                                                            </div>
-                                                        @endforeach
-
-                                                        {!! Form::submit('Asignar rol', ['class' => 'btn btn-success w-100']) !!}
-
-                                                        {!! Form::close() !!}
-
-                                                    </div>
-
+                                                    {!! Form::close() !!}
                                                 </td>
 
                                                 <td class="align-middle">
@@ -136,8 +128,7 @@
                                                         action="{{ route('admin.user.delete', $user) }}">
                                                         @csrf
                                                         @method('delete')
-                                                        <button class="btn btn-danger text-danger bg-danger rounded m-2"
-                                                            {{-- @if (Auth::user()->id == $user->id) onclick="return confirm('¿Seguro que deseas eliminar a ti mismo?')" @endif --}} {{-- onclick="return confirm('¿Seguro que deseas eliminar este usuario?')" --}}>
+                                                        <button class="btn btn-danger text-danger bg-danger rounded m-2">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                 height="16" fill="currentColor" class="bi bi-x-circle"
                                                                 viewBox="0 0 16 16">

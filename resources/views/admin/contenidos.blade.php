@@ -90,10 +90,6 @@
                                                 <td>{{ $contenido->description }}</td>
                                                 <td>
 
-                                                    {{-- <img class="imagen card-img-top rounded "
-                                                        src="{{ asset($contenido->url) }}"
-                                                        alt="Images Mis Primeros Auxilitos" width="100px" height="80px"> --}}
-
                                                     @if ($contenido->url)
                                                         @php
                                                             $extension = pathinfo($contenido->url)['extension'];
@@ -117,7 +113,7 @@
                                                 <td class="align-middle">
 
                                                     <button class="btn btn-success text-success bg-success rounded mb-3"
-                                                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                        data-bs-toggle="modal" data-bs-target="#exampleModal{{ $contenido->id }}">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                             height="16" fill="currentColor" class="bi bi-pencil-square"
                                                             viewBox="0 0 16 16">
@@ -128,12 +124,12 @@
                                                         </svg>
                                                     </button>
 
-                                                    <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal fade" id="exampleModal{{ $contenido->id }}" tabindex="-1"
+                                                        aria-labelledby="exampleModalLabel{{ $contenido->id }}" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                                                                    <h1 class="modal-title fs-5" id="exampleModalLabel{{ $contenido->id }}">
                                                                         Editar contenido 🤗</h1>
                                                                     <button type="button" class="btn-close"
                                                                         data-bs-dismiss="modal" aria-label="Close"></button>

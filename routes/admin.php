@@ -33,9 +33,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     Route::get('/contenido','adminContent')->name('admin.contenido');
 
-    Route::put('/content_image','updateImage')->name('admin.update.image');
+    Route::put('/content_image/{contenido}','updateImage')->name('admin.update.image');
 
-    Route::put('content_video', 'updateVideo')->name('admin.update.video');
+    Route::put('content_video/{contenido}', 'updateVideo')->name('admin.update.video');
 
     Route::delete('edit/content/admin/{contenido}', 'destroy')->name('admin.contenido.destroy');
 

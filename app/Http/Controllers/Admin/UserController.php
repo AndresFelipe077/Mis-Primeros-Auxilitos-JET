@@ -31,6 +31,7 @@ class UserController extends Controller
 
   public function createObservation(Request $request, User $user)
   {
+
     $observation = $request->input('observacion'); // Obtiene el valor del campo 'observacion' del formulario
 
     // Actualiza el campo 'observacion' del usuario con el nuevo valor
