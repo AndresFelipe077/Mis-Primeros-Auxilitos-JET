@@ -132,7 +132,7 @@ class ContenidoController extends Controller
   {
     $request->validate([
       'title'        => 'required|max:50',
-      'file'         => 'mimetypes:jpeg,png,jpg,gif,svg',
+      'file'         => 'image',
       'autor'        => 'string',
       'description'  => 'required|max:250',
     ]);
