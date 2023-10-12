@@ -300,10 +300,16 @@ return [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
+
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
             'text' => 'buscar',
+        ],
+        [
+            'text' => 'blog',
+            'url'  => 'admin/blog',
+            'can'  => 'manage-blog',
         ],
         [
             'text'        => 'Home',
@@ -311,7 +317,6 @@ return [
             'icon'        => 'fas fa-fw fa-home',
             // 'label'       => 5,
             'label_color' => 'success',
-            'can'         => 'admin'
         ],
         [
             'text'        => 'Usuarios',
@@ -319,7 +324,6 @@ return [
             'icon'        => 'fas fa-fw fa-users',
             // 'label'       => 5,
             'label_color' => 'success',
-            'can'         => 'admin.users'
         ],
         [
             'text'        => 'Contenidos',
@@ -327,91 +331,86 @@ return [
             'icon'        => 'fas fa-fw fa-folder',
             // 'label'       => 5,
             'label_color' => 'success',
-            'can'         => 'admin.contenido'
         ],
         [
-            'text'        => 'Estadisticas',
-            'url'         => 'admin/estadisticas',
+            'text'        => 'Juegos',
+            'url'         => 'admin',
             'icon'        => 'fas fa-fw fa-gamepad',
             // 'label'       => 5,
             'label_color' => 'success',
-            'can'         => 'admin.estadisticas'
-
         ],
         [
             'text'        => 'Administradores',
-            'url'         => 'admin/users_admin',
+            'url'         => 'admin',
             'icon'        => 'fas fa-fw fa-user',
             'label'       => 5,
             'label_color' => 'success',
-            'can'         => 'admin.admin.users'
-
         ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
-            'url'  => '/user/profile',
+            'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'change_password',
-            'url'  => '/admin/change_passoword',
+            'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
-        // [
-        //     'text'    => 'multilevel',
-        //     'icon'    => 'fas fa-fw fa-share',
-        //     'submenu' => [
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //         [
-        //             'text'    => 'level_one',
-        //             'url'     => '#',
-        //             'submenu' => [
-        //                 [
-        //                     'text' => 'level_two',
-        //                     'url'  => '#',
-        //                 ],
-        //                 [
-        //                     'text'    => 'level_two',
-        //                     'url'     => '#',
-        //                     'submenu' => [
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                     ],
-        //                 ],
-        //             ],
-        //         ],
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //     ],
-        // ],
-        // ['header' => 'labels'],
-        // [
-        //     'text'       => 'important',
-        //     'icon_color' => 'red',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'warning',
-        //     'icon_color' => 'yellow',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'information',
-        //     'icon_color' => 'cyan',
-        //     'url'        => '#',
-        // ],
+        [
+            'text'    => 'multilevel',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'level_one',
+                    'url'  => '#',
+                ],
+                [
+                    'text'    => 'level_one',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'level_two',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'level_two',
+                            'url'     => '#',
+                            'submenu' => [
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'text' => 'level_one',
+                    'url'  => '#',
+                ],
+            ],
+        ],
+        ['header' => 'labels'],
+        [
+            'text'       => 'important',
+            'icon_color' => 'red',
+            'url'        => '#',
+        ],
+        [
+            'text'       => 'warning',
+            'icon_color' => 'yellow',
+            'url'        => '#',
+        ],
+        [
+            'text'       => 'information',
+            'icon_color' => 'cyan',
+            'url'        => '#',
+        ],
     ],
 
     /*

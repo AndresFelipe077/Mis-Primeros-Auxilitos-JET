@@ -1,0 +1,14 @@
+.footer2 {
+    position: relative !important;
+    left: 200px !important;
+    background: rgb(155,64,167);
+    background: linear-gradient(90deg, rgba(155,64,167,1) 0%, rgba(121,9,107,1) 32%, rgba(72,91,167,1) 64%, rgba(0,212,255,1) 80%, rgba(0,254,255,1) 100%);
+width: 1530px;
+height: 300px;
+    
+}
+
+.footerPrincipal{
+    position: relative;
+    top: 100px;
+}

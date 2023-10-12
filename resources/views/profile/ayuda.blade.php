@@ -1,4 +1,5 @@
 <link id="image-head" rel="shortcut icon" href="{{ asset('img/imgs/logo.png') }}" type="image/x-icon">
+<link rel="stylesheet" href="{{ asset('css/ayuda.css') }}">
 @section('title', 'Ayuda')
 <x-app-layout>
 
@@ -80,15 +81,15 @@
     </div>
 
     <div class="d-flex flex-column">
-        <footer class="w-100 py-4 flex-shrink-0 rounded">
-            <div class="container py-4">
-                <div class="row gy-4 gx-5">
+      
+            <div class="footerPrincipal">
+                <div class="row gy-4 gx-5 footer2">
                     <div class="col-lg-4 col-md-6">
                         <h5 class="h1 text-white">MIS PRIMEROS AUXILITOS</h5>
-                        <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing
+                        <p class="small text-white">Lorem ipsum dolor sit amet, consectetur adipisicing
                             elit, sed do
                             eiusmod tempor incididunt.</p>
-                        <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary"
+                        <p class="small text-white">&copy; Copyrights. All rights reserved. <a class="text-primary"
                                 href="#">Bootstrapious.com</a></p>
                     </div>
                     <div class="col-lg-2 col-md-6">
@@ -123,7 +124,7 @@
 
                     </div>
 
-                    <div class="col-lg-2 col-md-6">
+                    <div class="col-lg-2 col-md-6 ">
                         <h5 class="text-white mb-3">Quick links</h5>
                         <ul class="list-unstyled text-muted">
                             <li><a href="#">Home</a></li>
@@ -134,7 +135,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <h5 class="text-white mb-3">Newsletter</h5>
-                        <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing
+                        <p class="small text-white">Lorem ipsum dolor sit amet, consectetur adipisicing
                             elit, sed do
                             eiusmod tempor incididunt.</p>
                         <form action="#">
@@ -148,7 +149,7 @@
                     </div>
                 </div>
             </div>
-        </footer>
+    
     </div>
 
 

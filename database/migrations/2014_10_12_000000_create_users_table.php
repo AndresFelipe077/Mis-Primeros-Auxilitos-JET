@@ -19,12 +19,11 @@ return new class extends Migration
             $table->string('profile_photo_path', 2048) -> nullable();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at') -> nullable();
-            $table->string('genero')               -> nullable();
-            $table->date('fechaNacimiento')        -> nullable();
+            $table->timestamp('email_verified_at')     -> nullable();
+            $table->string('genero')                   -> nullable();
+            $table->date('fechaNacimiento')            -> nullable();
             $table->string('password', 20);
-            $table->string('description', 250)     -> nullable();
-            $table->text('observacion')            -> nullable();
+            $table->string('description', 250)         -> nullable();
             $table->rememberToken();
             $table->timestamps();
         });        

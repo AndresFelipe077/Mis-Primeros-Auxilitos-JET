@@ -3,23 +3,29 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\Contenido;
+use App\Models\User;
 
 class AdminController extends Controller
 {
 
     public function admin()
-    {
+    {  
         return view('admin.home');
     }
 
-    public function estadisticas()
+
+    public function adminContent()
     {
-        return view('admin.statistics');
+        $contenidos = Contenido::orderBy('id','asc')->paginate(8);
+        return view('admin.contenidos', compact('contenidos'));
     }
 
-    public function changePassword()
+    public function adminUser()
     {
-        return view('admin.change_password');
+        $users = User::orderBy('id','asc')->paginate(10);
+        return view('admin.users',compact('users'));
     }
 
 }
