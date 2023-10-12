@@ -1,0 +1,41 @@
+.logo {
+    width: 100px;
+    height: 100px;
+    background-image: url('ruta-de-tu-imagen-del-helicoptero.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    animation: moverHelicoptero 20s linear infinite, ondaHelicoptero 2s ease-in-out infinite;
+  }
+  
+  @keyframes moverHelicoptero {
+    0% {
+      left: -100px;
+    }
+    100% {
+      left: calc(100% + 100px);
+    }
+  }
+  
+  @keyframes ondaHelicoptero {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  
+  .navbar-brand{
+    position: relative;
+    top: -110px;
+    left: -70px;
+  }
+  
+  
+  .logoimagen{
+    position: relative;
+    right: 300px;
+  }
+  

@@ -199,8 +199,8 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        
 
-        Collective\Html\HtmlServiceProvider::class,
     ],
 
     /*
@@ -215,8 +215,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
+        // 'ExampleClass' => App\Example\ExampleClass::class,
         'Image'     => Intervention\Image\Facades\Image::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ])->toArray()
