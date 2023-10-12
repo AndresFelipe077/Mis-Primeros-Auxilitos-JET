@@ -411,7 +411,7 @@ return [
         //     'text'       => 'information',
         //     'icon_color' => 'cyan',
         //     'url'        => '#',
-        // ],
+        // ], // This code is commented
     ],
 
     /*
