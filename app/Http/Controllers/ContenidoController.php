@@ -158,9 +158,9 @@ class ContenidoController extends Controller
   
           $nombre = Str::random(10) . $cadenaConvert;
   
-          $file->move('storage/contenidos/images/', $nombre);
+          $file->move('storage/contenidos/imagenes/', $nombre);
   
-          $contenido->url = '/storage/contenidos/images/' . $nombre;
+          $contenido->url = '/storage/contenidos/imagenes/' . $nombre;
       }
   
       $contenido->autor = $name;
