@@ -27,7 +27,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     Route::delete('/user/delete/{user}', 'destroy')->name('admin.user.delete');
 
-});
+}); // new routes
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified', 'admin'])->controller(ContentController::class)->group(function() {
 
