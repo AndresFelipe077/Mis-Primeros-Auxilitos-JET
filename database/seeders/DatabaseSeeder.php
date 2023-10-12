@@ -23,13 +23,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+        // Create seeder of roles and permissions
+        $this->call(RoleSeeder::class);
+
+        $this->call(UserSeeder::class);
+
+
         User::factory(10)       -> create();
         Contenido::factory(10)  -> create();
         Trivia::factory(10)     -> create();
         Adivinanza::factory(10) -> create();
         Video::factory(10)      -> create();
-        Quiz::factory(10)     -> create();
-        Question::factory(10) -> create();
-        Answer::factory(4)    -> create();
+        Quiz::factory(10)       -> create();
+        Question::factory(10)   -> create();
+        Answer::factory(4)      -> create();
     }
 }

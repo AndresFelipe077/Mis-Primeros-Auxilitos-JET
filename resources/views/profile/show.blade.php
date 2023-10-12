@@ -223,39 +223,16 @@
                         <div class="card mt-4 mb-lg-0">
                             @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
                                 @livewire('profile.two-factor-authentication-form')
+                                {{-- @livewire('profile.logout-other-browser-sessions-form') --}}
                             @endif
                         </div>
-
-
-
-
-                    </div>
                 </div>
-    </div>
+            </div>
+        </div>
     </section>
     @endif
 
-    {{-- @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
-                <x-jet-section-border />
-
-                @livewire('profile.delete-user-form')
-            @endif 
-
-    @endif 
-     @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
-            @livewire('profile.update-password-form')
-
-            <x-jet-section-border />
-        @endif
-
-        @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
-            @livewire('profile.two-factor-authentication-form')
-
-            <x-jet-section-border />
-        @endif
-
-        @livewire('profile.logout-other-browser-sessions-form')
-    --}}
+   
 
     <script src="{{ asset('js/eye.js') }}"></script>
 
