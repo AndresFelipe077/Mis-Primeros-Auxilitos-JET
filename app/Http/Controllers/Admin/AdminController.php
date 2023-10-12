@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\ContentsExport;
+use App\Exports\UsersExport;
 use App\Http\Controllers\Controller;
 use App\Models\Contenido;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
 {
@@ -36,6 +39,10 @@ class AdminController extends Controller
 
   }
 
+  public function exportExcelContents() {
+    return Excel::download(new ContentsExport, 'contenidos.xlsx');
+  }
+
   public function generatePdfUsers()
   {
     $users = User::all();
@@ -54,6 +61,10 @@ class AdminController extends Controller
 
     return $pdf->download('reporte-usuarios-auxilitos.pdf');
 
+  }
+
+  public function exportExcelUsers() {
+    return Excel::download(new UsersExport, 'usuarios.xlsx');
   }
 
 

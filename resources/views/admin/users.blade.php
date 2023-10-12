@@ -57,8 +57,11 @@
                         <div class="card-header">
                             <h4> Lista de usuarios </h4>
                             <a href="{{ route('admin.pdf.users') }}" class="btn btn-success" target="_target">
-                                <i class="fas fa-file-pdf"></i> Generar reporte
+                                <i class="fas fa-file-pdf fa-2x"></i>
                             </a>
+                            <a href="{{ route('admin.excel.users') }}" class="btn btn-info">
+                                <i class="fas fa-file-excel fa-2x"></i>
+                            </a>                            
                         </div>
                         <div class="card-body">
 

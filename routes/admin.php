@@ -11,7 +11,11 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     Route::get('generate_pdf_contents','generatePdfContents')->name('admin.pdf.content');
 
+    Route::get('generate_excel_contents', 'exportExcelContents')->name('admin.excel.contents');
+
     Route::get('generate_pdf_users','generatePdfUsers')->name('admin.pdf.users');
+
+    Route::get('generate_excel_users', 'exportExcelUsers')->name('admin.excel.users');
 
     Route::get('estadisticas', 'estadisticas')->name('admin.estadisticas');
 

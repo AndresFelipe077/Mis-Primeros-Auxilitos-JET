@@ -36,7 +36,6 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-
 @section('content_header')
     <h1>Mis Primeros Auxilitos</h1>
 @stop
@@ -72,8 +71,11 @@
                         <div class="card-header">
                             <h4> Lista de contenidos </h4>
                             <a href="{{ route('admin.pdf.content') }}"  class="btn btn-success" target="_target">
-                                <i class="fas fa-file-pdf"></i> Generar reporte
+                                <i class="fas fa-file-pdf fa-2x"></i>
                             </a>
+                            <a href="{{ route('admin.excel.contents') }}" class="btn btn-info">
+                                <i class="fas fa-file-excel fa-2x"></i>
+                            </a> 
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
