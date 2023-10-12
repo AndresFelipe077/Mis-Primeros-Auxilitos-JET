@@ -24,7 +24,8 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable()
                 ->constrained('users')
                 ->cascadeOnUpdate()
-                ->nullOnDelete(); 
+                ->nullOnDelete();
+            $table->text('observacion')->nullable();
             
             $table->timestamps();
             

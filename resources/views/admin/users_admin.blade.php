@@ -128,7 +128,7 @@
                                                                             <div class="col-sm-8">
                                                                                 <div class="card">
                                                                                     <form
-                                                                                        action="{{ route('admin.users.observacion', $user) }}"
+                                                                                        action="{{ route('admin.users.observacion', $user->id) }}"
                                                                                         method="POST">
                                                                                         @csrf
                                                                                         @method('put')
