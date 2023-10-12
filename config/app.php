@@ -199,8 +199,9 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
-
+        
         Collective\Html\HtmlServiceProvider::class,
+
     ],
 
     /*

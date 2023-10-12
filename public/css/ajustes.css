@@ -204,3 +204,8 @@ a {
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
 }
+
+.d-flex{
+  position: relative;
+left: 10px;
+}

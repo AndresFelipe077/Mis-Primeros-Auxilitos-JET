@@ -1,239 +1,410 @@
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap');
 
-:root{
-    --colorTextoPlaceholder:rgb(255, 123, 0);
-}
-
-/*Placeholder*/
-::placeholder{
-    color:var(--colorTextoPlaceholder);
-}
-
-/*Scroll-bar*/
-::-webkit-scrollbar{
-    width:1.5em;
-    background:grey;
-}
-
-::-webkit-scrollbar-track{
-    background: #334d50;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #cbcaa5, #334d50);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #cbcaa5, #334d50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    border-radius:3em;
-}
-::-webkit-scrollbar-thumb{
-    /*background-image:url(/Images/Facebook.svg);*/
-    background-size: contain; 
-    background-repeat:no-repeat;
-    background: #ffe259;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #ffa751, #ffe259);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    border-radius:2em;
-}
-
-
-input[type='date']:in-range::-webkit-datetime-edit-year-field,
-input[type='date']:in-range::-webkit-datetime-edit-month-field,
-input[type='date']:in-range::-webkit-datetime-edit-day-field,
-input[type='date']:in-range::-webkit-datetime-edit-text {
-    color: transparent !important;
-}
-
-
-
-/*REGISTRO*/
-
-:root{
-    --colorTextos:rgb(0, 38, 255);
-}
-
-::before,
-::after{
-    margin:0;
-    padding:0;
+*{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.body-registro{
+body{
 
-    background-image: url("/img/login/background.png");
+    background-image:url("/img/imgs/a.jpg");
+    background-size: cover;
+    max-height: 100vh; 
+    overflow-y: auto;
     font-family: 'DynaPuff', cursive;
-    height: 1000px;
+  
+}
+
+.container {
     display: flex;
-    justify-content:center;
-    align-items:center;
-    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#tituloAuxilitos{
-    font-size:2em;
-    text-align:center;
-    background:linear-gradient(to right, #ff1500, #25f71e);
-    border-radius:10px;
-    color: white;
-}
-
-#tituloRegistro{
-
-    font-size:2em;
-    text-align:center;
-    color:red;
-
-}
-
-.form{
-    
-    padding: 40px 0;
-    box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
-    border-radius:10px;
-    width:100%;
-    margin:auto;
-    position:relative;
-    animation-name:mianimacion;
-    animation-duration:3s;
-    background-color: white;
-    
-    
-
-}
-
-@keyframes mianimacion {
-
-    0%{
-        top:0px;
-    }
-    
-    25%{ 
-        top:-50px;   
-    }
-    50%{
-        top:-50px;      
-    }
-    100%{ 
-        top:0px;   
-    }
-
-}
-
-/*Espaciado entre inputs y botones*/
-.form .grupo{
-    position:relative;
-    margin:25px;
-    /*background:black;*/
-}
-
-.input{
-
-    background:none;
-    color:var(--colorTextoPlaceholder);
-    font-size:18px;
-    padding:10px 10px 10px 5px;
-    display:block;
-    width:100%;
-    border:none;
-    border-bottom: 1px solid var(--colorTextos);
-    font-family: 'DynaPuff', cursive;
-
-}
-
-.input:focus{
-    outline:none;
-    color:var(--colorTextoPlaceholder);
-}
-
-.label{ 
-    color:var(--colorTextos);
-    /*color:white;*/
-    font-size:16px;
-    position:absolute;
-    left:5px;
-    top: 10px;
-    transition:0.7s ease all;
-    pointer-events: none;
-    
-}
-
-.label-genero
-{
-    color:blue; 
-}
-
-.input:focus~label,
-.input:valid~label{
-    top: -14px;
-    font-size:12px;
-    color:rgb(177, 117, 6);
-}
-
-.barra{
-    position:relative;
-    display:block;
-    width:100%;
-}
-
-.barra::before{
-    content:"";
-    height:2px;
-    width: 0%;
-    bottom:0;
-    position:absolute;
-    background: linear-gradient(to right, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    transition:0.3s ease width;
-    left:0;
-}
-
-.input:focus~.barra::before{
-    width:100%;
-}
-
-#btn_Registrar{
-
-    font-family: 'DynaPuff', cursive;
-    background: #F7971E;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FFD200, #F7971E);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    border-radius:10px;
-    display: block;
+.containerP {
     width: 80%;
-    margin:10px auto;
-    color:black;
-    height: 40px;
-    font-size: 16px;
-    cursor:pointer;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 55%;
+}
+
+/*
+=========================================
+SLIDER
+=========================================
+*/
+
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; 
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slider {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  transition: transform 0.5s ease-in-out; 
+  position: relative;
+}
+
+.slide {
+  flex: 0 0 100%;
+  text-align: center;
+  position: relative;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  right: 0;
+  z-index: 1; 
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-controls a {
+  text-decoration: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.slide-indicators {
+  position: absolute;
+  top: 75%;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  z-index: 1; 
+  display: flex;
+  justify-content: center;
+}
+
+.slide-indicator {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.slide-indicator.active {
+  background-color: #ff1212;
+}
+
+
+
+  /*
+  =============================================
+  TERMINA SLIDER
+  =============================================
+  */
+
+
+
+  /*
+  =============================================
+  FORMULARIO
+  =============================================
+  */
+
+  .div-formulario {
+    background-image: url(/img/imgs/fondoR.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 150px auto;
+}
+
+h1 {
+  font-size: 3em;
+  background-image: linear-gradient(45deg, #ff0000, #320C3B); 
+  -webkit-background-clip: text; 
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.144); 
+  margin-bottom: 20px;
+}
+
+.check-group {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 28px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+.input-group input {
+  width: 100%;
+  height: 100%;
+  background: none;
+  color: #000000;
+  padding-top: 20px;
+  border: none;
+  outline: 0px;
+  font-size: 18px;
+}
+
+.input-group .lbl {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  border-bottom: 3px solid #05958C;
+}
+.input-group .lbl::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 100%;
+  border-bottom: 5px solid #600c73;
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
+}
+
+.text {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  transition: all 0.3s ease;
+  color: #F87D06;
+  font-size: 16px;
+}
+
+.input-group input:focus + .lbl .text,
+.input-group input:valid + .lbl .text {
+  transform: translateY(-100%);
+  font-size: 14px;
+  color: #CA133F;
+}
+
+.input-group input:focus + .lbl::after, 
+.input-group input:valid + .lbl::after {
+  transform: translateX(0%);
+}
+
+.check-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
 
 }
 
-#btn_Regresar{
-
-    font-family: 'DynaPuff', cursive;
-    background: #F7971E;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FFD200, #F7971E);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    border-radius:10px;
-    display: block;
-    width: 60%;
-    margin:10px auto;
-    color:black;
-    height: 40px;
-    font-size: 16px;
-    cursor:pointer;
-
+.check-group label {
+  color: #F87D06;
+  position: relative;
+  padding-left: 23px;
 }
 
-.form div button:hover {
-
-    box-shadow: inset 0 0 20px rgba(49, 138, 172, 0.5), 0 0 20px rgba(49, 138, 172, 0.4);
-    outline-color: rgba(49, 138, 172, 0);
-    outline-offset: 100px;
-    text-shadow: 1px 1px 6px rgb(217, 255, 0); 
-
+.check-group label::before {
+  content: ' ';
+  border: solid 1px #6b6a6a;
+  border-radius: 3px;
+  width: 15px;
+  height: 15px;
+  left: -5px;
+  position: absolute;
+  transition: all 0.2s;
+  transform: rotate(0deg);
+  margin-left: 10px;
 }
 
-@media screen and (max-width:500px){
-    .form{
-        width: 80%;
-    }    
+.check-group input {
+  display: none;
 }
 
-/*FIN REGISTRO*/
+.check-group input:checked + label {
+  color: #ff0000;
+}
+
+.check-group input:checked + label:before {
+  border-color: #ff0000;
+  color: #ff0000;
+  content: '\f00c';
+  font-family: FontAwesome;
+  transform: rotate(360deg);
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: #320C3B;
+  background-size: 400%;
+  color: #fff;
+  border: none;
+  font-family: 'DynaPuff', cursive;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(82.3deg,#ff0000 10.8%,#320C3B 84.3%
+  );
+  transition: all 0.475s;
+}
+
+/*
+=============================================
+TERMINA FORMULARIO
+=============================================
+*/
+
+
+/*
+=============================================
+ESTILOS FLECHA
+=============================================
+*/
+
+.flecha {
+
+  position: relative;
+  animation: bounce 2s infinite;
+  margin: 0 auto; 
+}
+
+
+.flecha-punta {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent; 
+  border-bottom: 15px solid transparent; 
+  border-right: 30px solid #F87D06;
+  margin-left: -30px;
+}
+
+.flecha-cuerpo {
+  width: 30px; 
+  height: 14px; 
+  background-color: #F87D06; 
+  position: absolute;
+  top: 8px; 
+  left: -1px; 
+}
+
+@keyframes bounce {
+  0%, 100% {
+      transform: translateX(0);
+  }
+  50% {
+      transform: translateX(20px);
+  }
+}
+
+/*
+=============================================
+TERMINA ESTILOS FLECHA
+=============================================
+*/
+
+
+/*
+==================================
+ESTILOS FLECHA 2
+==================================
+*/
+
+.flecha2 {
+  width: 180px;
+  height: 40px; 
+  position: relative;
+  animation: bounce2 2s infinite;
+  margin: 0 auto; 
+}
+
+.flecha-cuerpo2 {
+  width: 30px; 
+  height: 14px; 
+  background-color: #F87D06; 
+  position: absolute;
+  top: 8px; 
+  left: 110px; 
+  z-index: 1; 
+}
+
+.flecha-punta2 {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent; 
+  border-bottom: 15px solid transparent; 
+  border-left: 30px solid #F87D06; 
+  margin-left: 140px;
+  z-index: 2; 
+}
+
+@keyframes bounce2 {
+  0%, 100% {
+      transform: translateX(0);
+  }
+  50% {
+      transform: translateX(-20px); 
+  }
+}
+
+/*
+=============================================
+TERMINA ESTILOS FLECHA 2
+=============================================
+*/
+
+
+
+
+
+
+

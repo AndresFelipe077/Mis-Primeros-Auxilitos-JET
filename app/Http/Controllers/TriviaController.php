@@ -44,7 +44,7 @@ class TriviaController extends Controller
 
     $nombre = Str::random(10) . $cadenaConvert;
 
-    $ruta = storage_path() . '\app\public\imagesTrivias/' . $nombre;
+    $ruta = storage_path() . '/app/public/contenidos/imagenes/' . $nombre;
 
     Image::make($request->file('image'))
       ->resize(900, null, function ($constraint) {
@@ -62,7 +62,7 @@ class TriviaController extends Controller
     Trivia::create([
       'title'      => $request->title,
       'slug'       => $slug_title_url,
-      'image'      => '/storage/imagesTrivias/' . $nombre,
+      'image'      => '/storage/contenidos/imagenes/' . $nombre,
       'content'    => $request->content,
       'respuesta1' => $request->respuesta1,
       'respuesta2' => $request->respuesta2,
@@ -106,7 +106,7 @@ class TriviaController extends Controller
 
     $nombre = Str::random(10) . $cadenaConvert;
 
-    $ruta = storage_path() . '\app\public\imagesTrivias/' . $nombre;
+    $ruta = storage_path() . '/app/public/contenidos/imagenes/' . $nombre;
 
     Image::make($request->file('image'))
       ->resize(900, null, function ($constraint) {
@@ -124,7 +124,7 @@ class TriviaController extends Controller
     Trivia::create([
       'title'      => $request->title,
       'slug'       => $slug_title_url,
-      'image'      => '/storage/imagesTrivias/' . $nombre,
+      'image'      => '/storage/contenidos/imagenes/' . $nombre,
       'content'    => $request->content,
       'respuesta1' => $request->respuesta1,
       'respuesta2' => $request->respuesta2,
@@ -171,7 +171,7 @@ class TriviaController extends Controller
 
     $nombre = Str::random(10) . $cadenaConvert;
 
-    $ruta = storage_path() . '\app\public\imagesTrivias/' . $nombre;
+    $ruta = storage_path() . '/app/public/contenidos/imagenes/' . $nombre;
 
     Image::make($request->file('image'))
       ->resize(900, null, function ($constraint) {
@@ -189,7 +189,7 @@ class TriviaController extends Controller
     Trivia::create([
       'title'      => $request->title,
       'slug'       => $slug_title_url,
-      'image'      => '/storage/imagesTrivias/' . $nombre,
+      'image'      => '/storage/contenidos/imagenes/' . $nombre,
       'content'    => $request->content,
       'respuesta1' => $request->respuesta1,
       'respuesta2' => $request->respuesta2,

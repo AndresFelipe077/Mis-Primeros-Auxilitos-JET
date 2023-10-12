@@ -4,7 +4,6 @@
         @section('title', 'Crear contenido')
 
         <x-slot name="header">
-            <x-header />
         </x-slot>
 
 
@@ -41,8 +40,8 @@
                             <div class="form-group m-1 mx-auto">
                                 <label class="h5" for="exampleFormControlFile1">Escoge tu imagen 😁😎😋</label>
 
-                                <img class="rounded mx-auto m-2" src="{{ asset('img/icons/subir.png') }}"
-                                    id="imgPreview" width="150px" height="150px">
+                                <img class="imagen-secundaria" src="{{ asset('img/icons/subir.png') }}"
+                                    id="imgPreview">
 
                                 <label for="file-upload" class="subir" id="label">
                                     <i class="bi bi-cloud-upload-fill h2"></i> Subir
@@ -100,7 +99,7 @@
         <x-slot name="footer">
         </x-slot>
 
-        <link rel="stylesheet" href="{{ asset('css/create-content.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/create-contenido-image.css') }}" />
         <script src="{{ asset('js/form-extension.js') }}"></script>
 
 

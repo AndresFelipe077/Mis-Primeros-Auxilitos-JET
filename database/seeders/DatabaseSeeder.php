@@ -35,8 +35,8 @@ class DatabaseSeeder extends Seeder
         Trivia::factory(10)     -> create();
         Adivinanza::factory(10) -> create();
         Video::factory(10)      -> create();
-        Quiz::factory(10)       -> create();
-        Question::factory(10)   -> create();
-        Answer::factory(4)      -> create();
+        Quiz::factory(10)     -> create();
+        Question::factory(10) -> create();
+        Answer::factory(4)    -> create();
     }
 }

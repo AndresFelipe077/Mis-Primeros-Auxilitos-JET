@@ -15,12 +15,3 @@ Cerrar
 
 Confirmar
 <a target="_blank" href="https://icons8.com/icon/y1uHVxXxLrdQ/aprobaci%C3%B3n">Aprobación</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-
-Error 
-<a href="https://www.flaticon.com/free-icons/error" title="error icons">Error icons created by Freepik - Flaticon</a>
-
-Image-preview
-<a href="https://www.flaticon.com/free-icons/image" title="image icons">Image icons created by Pixel perfect - Flaticon</a>
-
-Image statistics
-<a href="https://www.flaticon.es/iconos-gratis/grafico-circular" title="gráfico circular iconos">Gráfico circular iconos creados por Freepik - Flaticon</a>
