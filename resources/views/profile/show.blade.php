@@ -50,7 +50,7 @@
                                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                     @if (Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook')
                                         @if (Auth::user()->profile_photo_path != null)
-                                            <img wire:key="{{ Auth::user()->id }}" class="rounded-circle mx-auto"
+                                            <img class="rounded-circle mx-auto"
                                                 width="150px" height="150px"
                                                 src="{{ Auth::user()->profile_photo_url }}"
                                                 alt="{{ Auth::user()->name }}" />
@@ -60,7 +60,7 @@
                                                 referrerpolicy="no-referrer" />
                                         @endif
                                     @else
-                                        <img wire:key="{{ Auth::user()->id }}" class="rounded-circle mx-auto"
+                                        <img class="rounded-circle mx-auto"
                                             width="150px" height="150px" src="{{ Auth::user()->profile_photo_url }}"
                                             alt="{{ Auth::user()->name }}" />
                                     @endif
