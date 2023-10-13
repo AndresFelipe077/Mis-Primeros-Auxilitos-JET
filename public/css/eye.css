@@ -27,3 +27,7 @@
     left: unset;
     right: 12px !important;
   }
+.btn-primary{
+  position: relative;
+  left: 30px;
+}
