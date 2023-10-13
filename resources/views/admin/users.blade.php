@@ -56,6 +56,12 @@
                     <div class="card">
                         <div class="card-header">
                             <h4> Lista de usuarios </h4>
+                            <a href="{{ route('admin.pdf.users') }}" class="btn btn-success" target="_target">
+                                <i class="fas fa-file-pdf fa-2x"></i>
+                            </a>
+                            <a href="{{ route('admin.excel.users') }}" class="btn btn-info">
+                                <i class="fas fa-file-excel fa-2x"></i>
+                            </a>                            
                         </div>
                         <div class="card-body">
 
@@ -84,7 +90,6 @@
                                                 <td>{{ $user->email }}</td>
                                                 <td>{{ $user->fechaNacimiento }}</td>
                                                 <td>
-
                                                     @if (Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook')
                                                         @if (Auth::user()->profile_photo_path != null)
                                                             <img src="{{ asset($user->profile_photo_url) }}"
@@ -102,9 +107,7 @@
                                                             class="rounded-circle object-cover mx-auto" width="80px"
                                                             height="80px">
                                                     @endif
-
                                                 </td>
-
                                                 <td class="align-middle m-2">
                                                     {!! Form::model($user, ['route' => ['admin.user.update', $user], 'method' => 'put', 'id' => 'user-form']) !!}
                                                     @foreach ($roles as $role)
