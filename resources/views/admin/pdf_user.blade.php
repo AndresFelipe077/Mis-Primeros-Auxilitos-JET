@@ -58,9 +58,13 @@
                             @endif
                         </td>
                         <td>
-                          @foreach ($user->roles as $role)
-                            {{ $role->name }}
-                          @endforeach
+                            @if ($user->roles->isEmpty())
+                                <p>Usuario</p>
+                            @else
+                                @foreach ($user->roles as $role)
+                                    {{ $role->name }}
+                                @endforeach
+                            @endif
                         </td>
                     </tr>
                 @endforeach

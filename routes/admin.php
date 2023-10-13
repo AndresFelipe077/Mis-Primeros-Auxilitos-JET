@@ -19,7 +19,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     Route::get('estadisticas', 'estadisticas')->name('admin.estadisticas');
 
-    Route::get('change_passoword','changePassword')->name('admin.change_password');
+    Route::get('change_password','changePassword')->name('admin.change_password');
 
 });
 

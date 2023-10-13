@@ -12,7 +12,7 @@ class UserController extends Controller
 
   public function users()
   {
-    $users = User::where('name', '!=', 'Admin example')
+    $users = User::where('name', '!=', 'Admin')
       ->orderBy('id', 'asc')
       ->simplePaginate(10);
 
