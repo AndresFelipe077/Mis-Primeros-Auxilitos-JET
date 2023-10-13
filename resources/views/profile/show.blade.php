@@ -50,8 +50,7 @@
                                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                     @if (Auth::user()->external_auth == 'google' || Auth::user()->external_auth == 'facebook')
                                         @if (Auth::user()->profile_photo_path != null)
-                                            <img class="rounded-circle mx-auto"
-                                                width="150px" height="150px"
+                                            <img class="rounded-circle mx-auto" width="150px" height="150px"
                                                 src="{{ Auth::user()->profile_photo_url }}"
                                                 alt="{{ Auth::user()->name }}" />
                                         @else
@@ -60,8 +59,8 @@
                                                 referrerpolicy="no-referrer" />
                                         @endif
                                     @else
-                                        <img class="rounded-circle mx-auto"
-                                            width="150px" height="150px" src="{{ Auth::user()->profile_photo_url }}"
+                                        <img class="rounded-circle mx-auto" width="150px" height="150px"
+                                            src="{{ Auth::user()->profile_photo_url }}"
                                             alt="{{ Auth::user()->name }}" />
                                     @endif
                                 @else
@@ -74,14 +73,15 @@
                                             clip-rule="evenodd" />
                                     </svg>
                                 @endif
-                                <p class="my-3 h5"></p>
-                                <div class="d-flex justify-content-center mb-2">
+                                {{-- <p class="my-3 h5"></p> --}}
 
-                                    <button type="button" wire:key="{{ Auth::user()->id }}" class="btn btn-primary"
-                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                        <img src=" {{ asset('/img/icons/editarCuenta.png') }} " alt="Editar cuenta"
-                                            width="60px" height="50px">
-                                    </button>
+                                <button type="button" class="btn btn-primary text-center mt-3" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop">
+                                    <img src=" {{ asset('/img/icons/editarCuenta.png') }} " alt="Editar cuenta"
+                                        width="60px" height="50px">
+                                </button>
+
+                                <div class="d-flex justify-content-center mb-2">
 
                                     <!-- Modal -->
                                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
