@@ -32,7 +32,7 @@
                 },
                 onApprove: function (data, actions) {
                     actions.order.capture().then(function (detalles) {
-                     
+                        window.location.href = "{{ route('suscripcion') }}";
                     });
                 },
                 onCancel: function (data) {
