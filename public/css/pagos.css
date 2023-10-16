@@ -1,0 +1,58 @@
+/* Estilos para el contenedor principal */
+/* Estilos para el contenedor principal */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+    margin: 0;
+    background-image: url("../img/imgs/pexels-jessica-ticozzelli-5985670.jpg") !important;
+    background-size: 100% ; /* Ajusta el ancho al 100% y el alto se ajusta automáticamente */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+
+.payment-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para el título */
+h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Estilos para el precio */
+.price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0070ba;
+    margin: 20px 0;
+}
+
+/* Estilos para el botón de PayPal */
+#paypal-button-container {
+    margin: 20px 0;
+}
+
+.paypal-button {
+    background-color: #0070ba;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.paypal-button:hover {
+    background-color: #005a9e;
+}

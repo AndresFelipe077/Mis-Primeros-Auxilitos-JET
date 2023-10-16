@@ -4,6 +4,7 @@ use App\Http\Controllers\AdivinanzaController;
 use App\Http\Controllers\AnswerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContenidoController;
+use App\Http\Controllers\PagosController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuizResultController;
@@ -225,3 +226,10 @@ Route::get('/facebook-callback', [SocialController::class, 'callbackFacebook']);
 Route::get('/login-google', [SocialController::class, 'redirectGoogle'])->name('google');
 
 Route::get('/google-callback', [SocialController::class, 'callbackGoogle']);
+
+
+
+
+////////pagos 
+
+Route::get('/pagos',[PagosController::class,'index']);
