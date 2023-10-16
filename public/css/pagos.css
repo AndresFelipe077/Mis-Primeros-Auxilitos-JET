@@ -11,6 +11,7 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    font-family: 'DynaPuff', cursive;
 }
 
 
@@ -26,7 +27,7 @@ body {
 
 /* Estilos para el título */
 h2 {
-    font-size: 24px;
+    font-size: 20px;
     color: #333;
 }
 
@@ -55,4 +56,47 @@ h2 {
 
 .paypal-button:hover {
     background-color: #005a9e;
+}
+
+h1, h2 {
+    display: inline-block;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 20px;
+    position: relative;
+}
+
+h1 span, h2 span {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+h1:hover span, h2:hover span {
+    transform: translateY(-0.2em);
+    color: #ff6600; /* Cambia el color al pasar el cursor */
+}
+
+
+.helicoptero {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    left: 500px;
+    top: -400px;
+}
+
+.helicoptero:hover {
+    animation: glimmer 0.5s linear infinite;
+}
+
+@keyframes glimmer {
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.2);
+    }
+    100% {
+        filter: brightness(1);
+    }
 }

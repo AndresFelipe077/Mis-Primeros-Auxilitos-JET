@@ -16,4 +16,8 @@ class PagosController extends Controller
     public function suscripcion(){
         return view('pagos.suscripcon');
     }
+
+    public function menuSuscripcion(){
+        return view('pagos.menususcripcion');
+    }
 }

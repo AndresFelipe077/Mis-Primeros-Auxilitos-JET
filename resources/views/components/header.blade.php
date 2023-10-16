@@ -85,3 +85,4 @@
     </nav>
 
 </div>
+<a href="{{ url('/menuSuscripcion') }}" class="subscribe-button">Suscribete a mas contenido Premiun </a>

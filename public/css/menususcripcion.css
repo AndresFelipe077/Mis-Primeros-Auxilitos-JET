@@ -1,0 +1,183 @@
+body {
+    font-family: 'DynaPuff', cursive;
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/imgs/pexels-rdne-stock-project-8500283.jpg") !important;
+    background-size: 100% ; /* Ajusta el ancho al 100% y el alto se ajusta automáticamente */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  
+
+}
+
+header {
+    text-align: center;
+    background: rgb(155,64,167);
+    background: linear-gradient(90deg, rgba(155,64,167,1) 0%, rgba(121,9,107,1) 32%, rgba(72,91,167,1) 64%, rgba(0,212,255,1) 80%, rgba(0,254,255,1) 100%);
+    font-family: 'DynaPuff', cursive;
+    color: #fff;
+    padding: 20px;
+}
+
+@keyframes colorChange {
+    0% {
+        color: #FF0000;
+    }
+    10% {
+        color: #FFA500;
+    }
+    20% {
+        color: #FFFF00;
+    }
+    30% {
+        color: #008000;
+    }
+    40% {
+        color: #0000FF;
+    }
+    50% {
+        color: #05ff50;
+    }
+    60% {
+        color: #008b00;
+    }
+    70% {
+        color: #FF1493;
+    }
+    80% {
+        color: #FF69B4;
+    }
+    90% {
+        color: #FF4500;
+    }
+    100% {
+        color: #FF0000;
+    }
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'DynaPuff', cursive;
+    animation: colorChange 12s infinite;
+}
+
+
+
+p {
+    font-size: 20px;
+    font-family: 'DynaPuff', cursive;
+}
+
+.subscription-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+    font-family: 'DynaPuff', cursive;
+}
+
+.subscription-card {
+    background-color: rgba(255, 255, 255, 0.7); /* Cambia el último valor para ajustar la opacidad */
+    border: 2px solid #0070ba;
+    border-radius: 10px;
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'DynaPuff', cursive;
+}
+
+
+@keyframes colorChangeH2 {
+    0% {
+        color: #fdfdfd;
+    }
+    10% {
+        color: #FFA500;
+    }
+    20% {
+        color: #FFFF00;
+    }
+    30% {
+        color: #008000;
+    }
+    40% {
+        color: #0000FF;
+    }
+    50% {
+        color: #4B0082;
+    }
+    60% {
+        color: #8B008B;
+    }
+    70% {
+        color: #FF1493;
+    }
+    80% {
+        color: #FF69B4;
+    }
+    90% {
+        color: #FF4500;
+    }
+    100% {
+        color: #FF0000;
+    }
+}
+
+h2 {
+    font-size: 28px;
+    color: #e6c611;
+    font-family: 'DynaPuff', cursive;
+    animation: colorChangeH2 12s infinite;
+}
+
+h3 {
+    font-size: 24px;
+    color: #0070ba;
+    font-family: 'DynaPuff', cursive;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+    font-family: 'DynaPuff', cursive;
+}
+
+.subscribe-button {
+    background-color: #ff6b6b;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    margin: 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    font-family: 'DynaPuff', cursive;
+}
+
+.subscribe-button:hover {
+    background-color: #e54747;
+    font-family: 'DynaPuff', cursive;
+}
+
+.slogan{
+color: #f9f9f9;
+font-family: 'DynaPuff', cursive;
+}
+
+.dos{
+    position: relative;
+    left: -500px;
+    font-family: 'DynaPuff', cursive;
+}
+
+.subscribe-button{
+    position: relative;
+    left: 1200px;
+    top: -200px;
+}

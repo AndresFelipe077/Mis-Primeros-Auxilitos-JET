@@ -234,4 +234,6 @@ Route::get('/google-callback', [SocialController::class, 'callbackGoogle']);
 
 Route::get('/pagos',[PagosController::class,'index']);
 Route::get('/suscripcion', [PagosController::class, 'suscripcion'])->name('suscripcion');
+Route::get('/menuSuscripcion', [PagosController::class, 'menuSuscripcion'])->name('menuSuscripcion');
+
 
