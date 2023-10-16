@@ -52,10 +52,10 @@
 
                 {{-- Eliminar foto --}}
 
-                @if ($this->user->profile_photo_path || $this->user->avatar)
+                {{-- @if ($this->user->profile_photo_path || $this->user->avatar)
                     <button type="button" class="btn btn-danger mt-2" wire:click="deleteProfilePhoto">Eliminar
                         foto</button>
-                @endif
+                @endif --}}
 
                 <x-jet-input-error for="photo" class="mt-2" />
             </div>
