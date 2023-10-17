@@ -60,4 +60,14 @@ class UserController extends Controller
       return back()->withError('No se pudo eliminar el usuario.');
     }
   }
+
+  public function roles()
+  {
+
+
+
+    return view('admin.roles');
+
+  }
+
 }

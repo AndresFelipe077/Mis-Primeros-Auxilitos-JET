@@ -314,6 +314,14 @@ return [
             'can'         => 'admin'
         ],
         [
+            'text'        => 'Roles',
+            'url'         => 'admin/roles',
+            'icon'        => 'fas fa-fw fa-users',
+            // 'label'       => 5,
+            'label_color' => 'success',
+            'can'         => 'admin.users'
+        ],
+        [
             'text'        => 'Usuarios',
             'url'         => 'admin/users',
             'icon'        => 'fas fa-fw fa-users',
