@@ -27,7 +27,7 @@
                 <ul class="slider">
                   <li class="slide"><img src="{{ asset('img/logo/logo.png')}}" alt="Imagen 1"></li>
                   <li class="slide"><img src="{{ asset('img/imgs/policia.png')}}" alt="Imagen 2"></li>
-                  <li class="slide"><img src="{{ asset('img/profile/profile2.png')}}" alt="Imagen 3"></li>
+                  <li class="slide"><img src="{{ asset('img/imgs/imagenavatar1.png  ')}}" alt="Imagen 3"></li>
                 </ul>
 
                 <div class="slider-controls">
@@ -96,8 +96,11 @@
             
                
                     <div class="input-group">
-                        <input type="date"  name="fechaNacimiento" id="date" value="{{ old('fechaNacimiento') }}" required>
-                        <label class="lbl" for="input"><span class="text">Fecha de nacimiento</span></label>
+                        {{-- <input type="date"  name="fechaNacimiento" id="date" value="{{ old('fechaNacimiento') }}" placeholder="" required>
+                        <label class="lbl" for="input"><span class="text">Fecha de nacimiento</span></label> --}}
+
+                        <input type="text" name="fehcaNacimiento" id="date" value="{{old('fechaNacimiento')}}" onclick="cambiarTipo()" required />
+                        <label for="input" class="lbl"><span class="text">Fecha de nacimiento</span></label>
                     </div>
             
               
