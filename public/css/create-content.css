@@ -100,7 +100,7 @@ label{
 }
 .h5{
     position: relative;
-    left: 250px;
+    left: 10px;
 }
 .card {
     background-color: rgba(128, 128, 128, 0.2); /* Gris casi transparente */
@@ -149,3 +149,13 @@ label{
     }
   }
   
+
+  .rounded {
+    position: relative !important;
+    left: 5px;
+  }
+
+  .segundo{
+    position: relative;
+    left: 200px;
+  }
