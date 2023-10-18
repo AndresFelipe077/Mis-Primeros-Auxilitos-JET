@@ -35,10 +35,27 @@
                     });
                 },
                 onApprove: function (data, actions) {
-                    actions.order.capture().then(function (detalles) {
-                        window.location.href = "{{ route('suscripcion') }}";
-                    });
-                },
+    actions.order.capture().then(function (detalles) {
+        // Realiza una solicitud POST para crear un registro de suscripción
+        // con el ID del usuario y el estado de aprobado
+        fetch("{{ route('crearSuscripcion') }}", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "X-CSRF-TOKEN": "{{ csrf_token() }}"
+    },
+    body: new URLSearchParams({ userId: {{ auth()->id() }}, status: 'aprobado' })
+})
+.then(response => response.json())
+.then(data => {
+    // Redirige al usuario a la página de suscripciones u otra acción
+    window.location.href = "{{ route('suscripcion') }}";
+});
+
+    });
+},
+
+
                 onCancel: function (data) {
                     alert("Pago cancelado");
                     console.log(data);

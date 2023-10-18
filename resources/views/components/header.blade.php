@@ -85,4 +85,11 @@
     </nav>
 
 </div>
+
+@if (auth()->check() && auth()->user()->subscription && auth()->user()->subscription->subscription_status === 'aprobado')
+<!-- La condición se cumple -->
+
+@else
+<!-- La condición no se cumple -->
 <a href="{{ url('/menuSuscripcion') }}" class="subscribe-button">Suscribete a mas contenido Premiun </a>
+@endif

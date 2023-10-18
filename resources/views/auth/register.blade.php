@@ -99,7 +99,7 @@
                         {{-- <input type="date"  name="fechaNacimiento" id="date" value="{{ old('fechaNacimiento') }}" placeholder="" required>
                         <label class="lbl" for="input"><span class="text">Fecha de nacimiento</span></label> --}}
 
-                        <input type="text" name="fehcaNacimiento" id="date" value="{{old('fechaNacimiento')}}" onclick="cambiarTipo()" required />
+                        <input type="text" name="fechaNacimiento" id="date" value="{{old('fechaNacimiento')}}" onclick="cambiarTipo()" required />
                         <label for="input" class="lbl"><span class="text">Fecha de nacimiento</span></label>
                     </div>
             

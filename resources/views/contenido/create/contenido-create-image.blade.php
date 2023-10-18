@@ -7,11 +7,25 @@
         </x-slot>
 
 
-
         <div class="container text-center mx-auto animate__animated animate__swing rounded">
             <h1 id="title-h1" class="text-center animate__animated animate__jackInTheBox">Crear contenido</h1>
 
             <div class="row">
+                @if (auth()->check() && auth()->user()->subscription && auth()->user()->subscription->subscription_status === 'aprobado')
+                <!-- La condición se cumple -->
+                <p>La condición aaaaaaa.</p>
+             
+            @else
+                <!-- La condición no se cumple -->
+                <p>abquiere mas contenido premiun.</p>
+            @endif
+            
+            
+            
+            
+            
+            
+
 
                 <div class="col-sm-2 text-center">
                     <img src="{{ asset('img/icons/pintura.png') }}" id="image" alt="Imagen"
