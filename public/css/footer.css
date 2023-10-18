@@ -43,8 +43,8 @@
   .navbar1{
     position: relative !important;
     top: 0px;
-    width: 1530px;
-    left: -120px;
+    width: 110vw; /* 100% del ancho de la ventana del navegador */
+    left: -280px;
   }
   .iamgenes{
     position: relative;
