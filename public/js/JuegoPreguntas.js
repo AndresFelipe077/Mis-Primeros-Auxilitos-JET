@@ -1,4 +1,4 @@
-let banderas = ["img-reto1.png", "img-reto2.png", "img-reto3.png", "img-reto4.png", "img-reto5.png"];
+let banderas = ["imagen.rcp.jpg", "img-reto2.png", "img-reto3.png", "img-reto4.png", "img-reto5.png"];
 
 
 let correcta = [2,2,1,1,0];
@@ -14,6 +14,8 @@ let posActual = 0;
 let cantidadAcertadas = 0;
 
 function comenzarJuego(){
+    var imagenLogo = document.getElementById('imagenlogo');
+    imagenLogo.style.display = 'none';
     posActual = 0;
     cantidadAcertadas = 0;
     document.getElementById("pantalla-inicial").style.display = "none";
@@ -30,7 +32,7 @@ function cargarBandera(){
         //limpiamos las clases que se asignaron
         limpiarOpciones();
 
-        document.getElementById("imgBandera").src = "img/" + banderas[posActual];
+        document.getElementById("imgBandera").src = "img/games/" + banderas[posActual];
         document.getElementById("n0").innerHTML = opciones[posActual][0];
         document.getElementById("n1").innerHTML = opciones[posActual][1];
         document.getElementById("n2").innerHTML = opciones[posActual][2];
@@ -75,3 +77,4 @@ function volverAlInicio(){
     document.getElementById("pantalla-inicial").style.display = "block";
     document.getElementById("pantalla-juego").style.display = "none";
 }
+

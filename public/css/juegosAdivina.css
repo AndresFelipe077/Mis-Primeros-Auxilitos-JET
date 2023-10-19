@@ -6,6 +6,9 @@ body{
     width: 100%;
     display: grid;
     place-items: center;
+    background-image: url("../img/imgs/fondo-ajustes.jpg") !important;
+    background-size: cover;
+    background-attachment: fixed;
 }
 h1{
     position: relative;

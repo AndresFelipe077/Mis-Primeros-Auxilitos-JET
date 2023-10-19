@@ -162,3 +162,21 @@ h4 {
     border-radius: 50%;
     border: 5px solid #fff;
 }
+
+
+.imagenlogo {
+    width: 400px;
+    position: relative;
+    left: 650px;
+    top: 30px;
+    animation: salto 2s ease-in-out infinite;
+}
+
+@keyframes salto {
+    0%, 100% {
+        top: 30px; /* Posición inicial */
+    }
+    50% {
+        top: 10px; /* Salto hacia arriba */
+    }
+}

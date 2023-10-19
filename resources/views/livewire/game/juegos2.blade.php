@@ -9,19 +9,23 @@
     <title>Juegos</title>
 </head>
 <body>
+
+  
     <div id="pantalla-inicial">
         <h1>Adivina la Respuesta</h1>
         <button class="btn-1" onclick="comenzarJuego()">COMENZAR A JUGAR</button>
         {{-- <img class="img-inicio" src="IMG/inicio retos.png"> --}}
     </div>
-
+    <div class="imagenlogo" id="imagenlogo">
+        <img src="{{ asset('img/logo/logo.png') }}">
+    </div>
 
     <!-- Pantalla juego -->
     <div class="pantalla-juego" id="pantalla-juego">
         <h4>¿Esto es....?</h4>
-        <img src="{{ asset('img/games/memo-1.jpg') }}">
+        <img src="{{ asset('img/games/iamgen.sinfondo.png') }}">
         
-        <img src="{{ asset('img/games/img-reto5.png') }}" alt="" id="imgBandera">
+        <img src="{{ asset('img/games/img-reto2.png') }}" alt="" id="imgBandera">
 
         <div class="opciones">
             <div class="opcion" id="op0" onclick="comprobarRespuesta(0)">
@@ -38,6 +42,7 @@
             </div>
         </div>
     </div>
+    
     <!-- Pantalla final -->
     <div id="pantalla-final">
         <h2>CORRECTAS: <span id="numCorrectas">3</span></h2>
