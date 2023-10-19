@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
-*{
+
+* {
     box-sizing: border-box;
-    font-family: 'Mochiy Pop One';
+    font-family: 'Mochiy Pop One', sans-serif;
 }
-body{
-    background: url(/IMG/imagen\ fondo\ retos.webp);
+
+body {
+    background-image: url("../img/imgs/fondo-ajustes.jpg") !important;
     background-size: cover;
     background-attachment: fixed;
     margin: 0;
 }
-h1{
+
+h1 {
     width: fit-content;
     background-color: #fff;
     margin: 40px auto;
@@ -17,7 +20,8 @@ h1{
     box-shadow: 5px 5px 0 #000;
     padding: 20px 30px;
 }
-h4{
+
+h4 {
     width: fit-content;
     background-color: #7d1414;
     margin: 40px auto;
@@ -26,59 +30,52 @@ h4{
     color: white;
     padding: 20px 30px;
 }
+
 /* PANTALLA INICIO */
-#pantalla-inicial{
+#pantalla-inicial {
     display: block;
     text-align: center;
     font-size: 30px;
-}
-#pantalla-inicial{
     margin: 60px 0;
 }
-.btn-1{
+
+.btn-1,
+.btn {
     border: none;
     background: #580078;
     color: #fff;
     padding: 10px 20px;
     border-radius: 50px;
     cursor: pointer;
-    transition: .5s;
-    position: relative;
-    top: -400px;
-    left: 200px;
-}
-.btn{
-    border: none;
-    background: #580078;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: .5s;
+    transition: 0.5s;
 }
 
-.btn:hover{
+.btn:hover {
     transform: scale(1.1);
 }
 
 /* PANTALLA juego */
-#pantalla-juego{
+#pantalla-juego {
     display: none;
 }
-.pantalla-juego{
+
+.pantalla-juego {
     max-width: 800px;
     margin: 50px auto;
     text-align: center;
 }
-.pantalla-juego img{
+
+.pantalla-juego img {
     max-width: 400px;
     width: 100%;
 }
-.opciones{
+
+.opciones {
     max-width: 400px;
     margin: auto;
 }
-.opcion{
+
+.opcion {
     display: flex;
     position: relative;
     align-items: center;
@@ -86,7 +83,8 @@ h4{
     margin: 30px auto;
     cursor: pointer;
 }
-.opcion .letra{
+
+.opcion .letra {
     background-color: #580078;
     width: 50px;
     height: 50px;
@@ -99,7 +97,8 @@ h4{
     border: 5px solid #fff;
     position: relative;
 }
-.opcion .nombre{
+
+.opcion .nombre {
     background: #fff;
     width: 100%;
     font-size: 25px;
@@ -109,27 +108,31 @@ h4{
     border-radius: 0 20px 20px 0;
     padding: 7px 0 7px 30px;
 }
-/* clases que se aplicará cuando haya acertada la opcion  */
-.opcion .nombreAcertada{
+
+/* clases que se aplicarán cuando haya acertada la opción */
+.opcion .nombreAcertada {
     background-color: yellowgreen;
     color: #fff;
 }
-.opcion .letraAcertada{
+
+.opcion .letraAcertada {
     background-color: yellowgreen;
-    color: #fff ;
+    color: #fff;
 }
-/* clases que se aplicaran cuando se equivoque en la opcion elegida */
-.opcion .nombreNoAcertada{
+
+/* clases que se aplicarán cuando se equivoque en la opción elegida */
+.opcion .nombreNoAcertada {
     background-color: darkred;
     color: #fff;
 }
-.opcion .letraNoAcertada{
+
+.opcion .letraNoAcertada {
     background-color: darkred;
     color: #fff;
 }
 
 /* IMG INICIO */
-.img-inicio{
+.img-inicio {
     width: 400px;
     position: relative;
     left: -120px;
@@ -137,11 +140,12 @@ h4{
 }
 
 /* PANTALLA final */
-#pantalla-final{
+#pantalla-final {
     display: none;
     text-align: center;
 }
-#pantalla-final #numCorrectas{
+
+#pantalla-final #numCorrectas {
     background-color: chartreuse;
     display: inline-block;
     width: 50px;
@@ -149,7 +153,8 @@ h4{
     border-radius: 50%;
     border: 5px solid #fff;
 }
-#pantalla-final #numIncorrectas{
+
+#pantalla-final #numIncorrectas {
     background-color: darkred;
     display: inline-block;
     width: 50px;

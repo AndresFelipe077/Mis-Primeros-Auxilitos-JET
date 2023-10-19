@@ -1,7 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
+   <script src="{{ asset('js/JuegoPreguntas.js') }}"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,13 +19,14 @@
     <!-- Pantalla juego -->
     <div class="pantalla-juego" id="pantalla-juego">
         <h4>¿Esto es....?</h4>
-        <img src="{{ asset('games\memo-1.jpg') }}">
+        <img src="{{ asset('img/games/memo-1.jpg') }}">
+        
+        <img src="{{ asset('img/games/img-reto5.png') }}" alt="" id="imgBandera">
 
-        <img src="img/ad.svg" alt="" id="imgBandera">
         <div class="opciones">
             <div class="opcion" id="op0" onclick="comprobarRespuesta(0)">
                 <div class="letra" id="l0">A</div>
-                <div class="nombre" id="n0">OPCION A</div>
+                <div class "nombre" id="n0">OPCION A</div>
             </div>
             <div class="opcion" id="op1" onclick="comprobarRespuesta(1)">
                 <div class="letra" id="l1">B</div>
@@ -43,10 +44,5 @@
         <h2>INCORRECTAS: <span id="numIncorrectas">2</span></h2>
         <button class="btn" onclick="volverAlInicio()">VOLVER AL INICIO</button>
     </div>
-
-    <script src="{{ asset('js/JuegoPreguntas.js') }}"></script>
-
-  
-
 </body>
 </html>
