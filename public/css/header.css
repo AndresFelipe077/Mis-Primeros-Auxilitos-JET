@@ -103,6 +103,7 @@
     position: absolute;
     animation: moverHelicoptero 15s linear infinite, ondaHelicoptero 2s ease-in-out infinite;
     right: 20px; /* Alineado a la derecha */
+    z-index: 2;
 }
 
 @keyframes moverHelicoptero {
@@ -137,6 +138,8 @@
   transition: background-color 0.3s ease;
   font-family: 'DynaPuff', cursive;
   position: relative;
-  left: 820px;
+  left: 1120px;
+  top: 100px;
   
 }
+

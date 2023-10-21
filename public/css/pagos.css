@@ -1,26 +1,26 @@
 /* Estilos para el contenedor principal */
-/* Estilos para el contenedor principal */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150vh;
+    height: 100vh; /* Cambiado a 100vh para que sea perfectamente responsivo */
     margin: 0;
     background-image: url("../img/imgs/pexels-jessica-ticozzelli-5985670.jpg") !important;
-    background-size: 100% ; /* Ajusta el ancho al 100% y el alto se ajusta automáticamente */
+    background-size: cover; /* Cubre el ancho y alto del contenedor */
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     font-family: 'DynaPuff', cursive;
+    padding: 10px; /* Añadido espacio interno para contenido en pantallas pequeñas */
 }
 
-
+/* Estilos para el contenedor de la tarjeta de pago */
 .payment-card {
     background-color: #fff;
     border: 1px solid #e0e0e0;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    max-width: 100%; /* Ocupa el ancho completo en pantallas pequeñas */
     padding: 20px;
     text-align: center;
 }
@@ -58,31 +58,11 @@ h2 {
     background-color: #005a9e;
 }
 
-h1, h2 {
-    display: inline-block;
-    font-size: 30px;
-    text-transform: uppercase;
-    margin: 20px;
-    position: relative;
-}
-
-h1 span, h2 span {
-    display: inline-block;
-    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
-}
-
-h1:hover span, h2:hover span {
-    transform: translateY(-0.2em);
-    color: #ff6600; /* Cambia el color al pasar el cursor */
-}
-
-
+/* Estilos para el helicóptero */
 .helicoptero {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    left: 500px;
-    top: -400px;
+    width: 100px; /* Tamaño ajustado para pantalla pequeña */
+    height: 100px;
+    margin: 0 auto; /* Centrar horizontalmente */
 }
 
 .helicoptero:hover {
@@ -98,5 +78,21 @@ h1:hover span, h2:hover span {
     }
     100% {
         filter: brightness(1);
+    }
+}
+
+/* Responsivo para pantalla pequeña (menos de 768px) */
+@media (max-width: 768px) {
+    .payment-card {
+        max-width: 90%; /* Reducido ligeramente para ajuste en pantallas pequeñas */
+    }
+
+    .paypal-button {
+        padding: 8px 16px; /* Ajuste en el tamaño del botón */
+    }
+
+    .helicoptero {
+        width: 60px; /* Reducido el tamaño del helicóptero */
+        height: 60px;
     }
 }

@@ -3,12 +3,10 @@ body {
     margin: 0;
     padding: 0;
     background-image: url("../img/imgs/pexels-rdne-stock-project-8500283.jpg") !important;
-    background-size: 100% ; /* Ajusta el ancho al 100% y el alto se ajusta automáticamente */
+    background-size: 100%; /* Ajusta el ancho al 100% y el alto se ajusta automáticamente */
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-  
-
 }
 
 header {
@@ -63,10 +61,51 @@ h1 {
     animation: colorChange 12s infinite;
 }
 
+h2 {
+    font-size: 28px;
+    color: #e6c611;
+    font-family: 'DynaPuff', cursive;
+    animation: colorChangeH2 12s infinite;
+}
 
+h3 {
+    font-size: 24px;
+    color: #0070ba;
+    font-family: 'DynaPuff', cursive;
+}
 
 p {
     font-size: 20px;
+    font-family: 'DynaPuff', cursive;
+}
+
+.slogan {
+    color: #f9f9f9;
+    font-family: 'DynaPuff', cursive;
+}
+
+.dos {
+    position: relative;
+    left: -500px;
+    font-family: 'DynaPuff', cursive;
+}
+
+.subscribe-button {
+    background-color: #ff6b6b;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    margin: 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    font-family: 'DynaPuff', cursive;
+}
+
+.subscribe-button:hover {
+    background-color: #e54747;
     font-family: 'DynaPuff', cursive;
 }
 
@@ -89,7 +128,6 @@ p {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     font-family: 'DynaPuff', cursive;
 }
-
 
 @keyframes colorChangeH2 {
     0% {
@@ -127,57 +165,28 @@ p {
     }
 }
 
-h2 {
-    font-size: 28px;
-    color: #e6c611;
-    font-family: 'DynaPuff', cursive;
-    animation: colorChangeH2 12s infinite;
-}
+/* Responsivo para pantalla pequeña (menos de 768px) */
+@media (max-width: 768px) {
+    h1, h2, h3 {
+        font-size: 24px;
+    }
 
-h3 {
-    font-size: 24px;
-    color: #0070ba;
-    font-family: 'DynaPuff', cursive;
-}
+    p {
+        font-size: 18px;
+    }
 
-p {
-    font-size: 18px;
-    color: #555;
-    font-family: 'DynaPuff', cursive;
-}
+    .subscription-info {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.subscribe-button {
-    background-color: #ff6b6b;
-    color: #fff;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    font-size: 24px;
-    margin: 20px;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-    font-family: 'DynaPuff', cursive;
-}
+    .subscription-card {
+        width: 80%;
+    }
 
-.subscribe-button:hover {
-    background-color: #e54747;
-    font-family: 'DynaPuff', cursive;
-}
-
-.slogan{
-color: #f9f9f9;
-font-family: 'DynaPuff', cursive;
-}
-
-.dos{
-    position: relative;
-    left: -500px;
-    font-family: 'DynaPuff', cursive;
-}
-
-.subscribe-button{
-    position: relative;
-    left: 1200px;
-    top: -200px;
+    .subscribe-button {
+        padding: 10px 20px;
+        font-size: 18px;
+        margin: 10px;
+    }
 }
