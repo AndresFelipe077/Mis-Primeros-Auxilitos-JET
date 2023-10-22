@@ -10,23 +10,23 @@ let ArrayFruit = [];
 const btn = document.getElementById('btn');
 let listFruit = ['💉', '👸', '🚑', '⛑️', '🚑', '🏥', '💉', '👨‍⚕️', '👨‍⚕️', '⛑️', '👸', '🏥'];
 let count = 0;
-let isChecking = false; // Nueva variable para rastrear la comprobación
-console.log(ArrayCard.length);
-listFruit.forEach((fruit) => (
+let isChecking = false;
+
+listFruit.forEach((fruit) => {
     templateHTML += `
     <div class="card">
         <div class="sides front"></div>
         <div class="sides back">${fruit}</div>
     </div>
-    `
-));
+    `;
+});
 
 app.innerHTML = templateHTML;
 
 app.addEventListener('click', (e) => {
     let value = e.target.matches('.front');
 
-    if (value && ArrayCard.length < 2 && !isChecking) { // Evitar abrir más de dos cartas y comprobar durante la verificación
+    if (value && ArrayCard.length < 2 && !isChecking) {
         if (count < 2) {
             let ElementCard = e.target.parentElement;
             let fruit = ElementCard.children[1].textContent;
@@ -41,19 +41,24 @@ app.addEventListener('click', (e) => {
 });
 
 const VerificationsCards = () => {
-    if (ArrayCard.length === 2) { // Verificar después de abrir dos cartas
-        isChecking = true; // Iniciar la comprobación
+    if (ArrayCard.length === 2) {
+        isChecking = true;
         if (ArrayFruit[0] === ArrayFruit[1]) {
             ArrayCard = [];
             ArrayFruit = [];
-            isChecking = false; // Finalizar la comprobación
+            isChecking = false;
+
+            if (app.querySelectorAll('.rotate').length === listFruit.length) {
+                const modal = document.getElementById('myModal');
+                modal.style.display = 'block';
+            }
         } else {
             setTimeout(() => {
                 ArrayCard[0].classList.remove('rotate');
                 ArrayCard[1].classList.remove('rotate');
                 ArrayCard = [];
                 ArrayFruit = [];
-                isChecking = false; // Finalizar la comprobación
+                isChecking = false;
             }, 800);
         }
     }
@@ -74,3 +79,18 @@ btn.addEventListener('click', () => {
         index.classList.remove('rotate');
     }
 });
+
+// Evento para cerrar el modal
+const closeModalButton = document.getElementById('closeModal');
+const modal = document.getElementById('myModal');
+closeModalButton.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+// Evento para cerrar el modal haciendo clic fuera del mismo
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+

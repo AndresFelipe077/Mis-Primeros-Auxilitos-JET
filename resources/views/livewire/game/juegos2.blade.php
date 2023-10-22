@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <script src="{{ asset('js/JuegoPreguntas.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/JuegosPreguntas.css') }}" />
+    <script src="{{ asset('js/JuegoPreguntas.js') }}"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/JuegosPreguntas.css') }}" />
     <title>Juegos</title>
 </head>
 <body>
-
-  
     <div id="pantalla-inicial">
         <h1>Adivina la Respuesta</h1>
         <button class="btn-1" onclick="comenzarJuego()">COMENZAR A JUGAR</button>
-        {{-- <img class="img-inicio" src="IMG/inicio retos.png"> --}}
     </div>
+    
     <div class="imagenlogo" id="imagenlogo">
         <img src="{{ asset('img/logo/logo.png') }}">
     </div>
@@ -30,7 +28,7 @@
         <div class="opciones">
             <div class="opcion" id="op0" onclick="comprobarRespuesta(0)">
                 <div class="letra" id="l0">A</div>
-                <div class "nombre" id="n0">OPCION A</div>
+                <div class="nombre" id="n0">OPCION A</div>
             </div>
             <div class="opcion" id="op1" onclick="comprobarRespuesta(1)">
                 <div class="letra" id="l1">B</div>
@@ -47,7 +45,19 @@
     <div id="pantalla-final">
         <h2>CORRECTAS: <span id="numCorrectas">3</span></h2>
         <h2>INCORRECTAS: <span id="numIncorrectas">2</span></h2>
+        <button class="btn" onclick="mostrarResultados()">Ver Resultados</button>
         <button class="btn" onclick="volverAlInicio()">VOLVER AL INICIO</button>
     </div>
+
+    <!-- Resultados Modal -->
+    <div id="resultadoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeResultadoModal" onclick="cerrarResultados()">&times;</span>
+            <h2>Resultados del juego</h2>
+            <p>Correctas: <span id="numCorrectasResultado"></span></p>
+            <p>Incorrectas: <span id="numIncorrectasResultado"></span></p>
+        </div>
+    </div>
+    
 </body>
 </html>
