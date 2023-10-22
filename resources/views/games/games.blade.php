@@ -100,7 +100,7 @@
                     <div class="contenedor rounded">
                         <a href="{{ url('juegos') }}" class="btn mt-2">
                             <img class="imagen rounded img-fluid mx-auto d-block"
-                                src="{{ asset('img/icons/adivinanza_icon.png') }}" alt="Image of adivinanza"
+                                src="{{ asset('img/icons/empearejar.jpg') }}" alt="Image of adivinanza"
                                 width="250px" height="250px">
                         </a>
                     </div>
@@ -113,7 +113,7 @@
                     <div class="contenedor rounded">
                         <a href="{{ url('juegos2') }}" class="btn mt-2">
                             <img class="imagen rounded img-fluid mx-auto d-block"
-                                src="{{ asset('img/icons/trivia_icon.png') }}" alt="Image of trivia" width="250px"
+                                src="{{ asset('img/icons/1000x1000.jpg') }}" alt="Image of trivia" width="250px"
                                 height="250px">
                         </a>
                     </div>
