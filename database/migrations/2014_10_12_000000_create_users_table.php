@@ -24,6 +24,7 @@ return new class extends Migration
             $table->date('fechaNacimiento')            -> nullable();
             $table->string('password', 20);
             $table->string('description', 250)         -> nullable();
+            $table->text('observacion')                -> nullable();
             $table->rememberToken();
             $table->timestamps();
         });        

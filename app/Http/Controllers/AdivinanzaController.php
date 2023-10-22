@@ -26,7 +26,7 @@ class AdivinanzaController extends Controller
     {
         $request->validate([
             'title'    => 'required|max:50',
-            'image'    => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image'    => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'content'  => 'required|max:250',
         ]);
 
@@ -36,7 +36,7 @@ class AdivinanzaController extends Controller
 
         $nombre = Str::random(10) . $cadenaConvert;
 
-        $ruta = storage_path() . '\app\public\imagesAdivinanzas/' . $nombre;
+        $ruta = storage_path() . 'app/public/contenidos/imagenes/' . $nombre;
 
         Image::make($request->file('image'))
             ->resize(900, null, function ($constraint) {
@@ -54,7 +54,7 @@ class AdivinanzaController extends Controller
         Adivinanza::create([
             'title'   => $request->title,
             'slug'    => $slug_title_url,
-            'image'   => '/storage/imagesAdivinanzas/' . $nombre,
+            'image'   => '/storage/contenidos/imagenes/' . $nombre,
             'content' => $request->content,
 
         ]);
@@ -72,7 +72,7 @@ class AdivinanzaController extends Controller
     {
         $request->validate([
             'title'    => 'required|max:50',
-            'image'    => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image'    => 'image|mimes:jpeg,png,jpg,gif,svg',
             'content'  => 'required|max:250',
         ]);
 

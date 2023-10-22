@@ -4,15 +4,28 @@
         @section('title', 'Crear contenido')
 
         <x-slot name="header">
-            <x-header />
         </x-slot>
-
 
 
         <div class="container text-center mx-auto animate__animated animate__swing rounded">
             <h1 id="title-h1" class="text-center animate__animated animate__jackInTheBox">Crear contenido</h1>
 
             <div class="row">
+                @if (auth()->check() && auth()->user()->subscription && auth()->user()->subscription->subscription_status === 'aprobado')
+                <!-- La condición se cumple -->
+                <p>La condición aaaaaaa.</p>
+             
+            @else
+                <!-- La condición no se cumple -->
+                <p>abquiere mas contenido premiun.</p>
+            @endif
+            
+            
+            
+            
+            
+            
+
 
                 <div class="col-sm-2 text-center">
                     <img src="{{ asset('img/icons/pintura.png') }}" id="image" alt="Imagen"
@@ -41,8 +54,8 @@
                             <div class="form-group m-1 mx-auto">
                                 <label class="h5" for="exampleFormControlFile1">Escoge tu imagen 😁😎😋</label>
 
-                                <img class="rounded mx-auto m-2" src="{{ asset('img/icons/subir.png') }}"
-                                    id="imgPreview" width="150px" height="150px">
+                                <img class="imagen-secundaria" src="{{ asset('img/icons/subir.png') }}"
+                                    id="imgPreview">
 
                                 <label for="file-upload" class="subir" id="label">
                                     <i class="bi bi-cloud-upload-fill h2"></i> Subir
@@ -100,7 +113,7 @@
         <x-slot name="footer">
         </x-slot>
 
-        <link rel="stylesheet" href="{{ asset('css/create-content.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/create-contenido-image.css') }}" />
         <script src="{{ asset('js/form-extension.js') }}"></script>
 
 

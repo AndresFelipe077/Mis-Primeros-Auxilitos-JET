@@ -1,3 +1,5 @@
+
+
 <x-jet-form-section submit="updateProfileInformation">
     <x-slot name="form">
 
@@ -50,10 +52,10 @@
 
                 {{-- Eliminar foto --}}
 
-                @if ($this->user->profile_photo_path || $this->user->avatar)
+                {{-- @if ($this->user->profile_photo_path || $this->user->avatar)
                     <button type="button" class="btn btn-danger mt-2" wire:click="deleteProfilePhoto">Eliminar
                         foto</button>
-                @endif
+                @endif --}}
 
                 <x-jet-input-error for="photo" class="mt-2" />
             </div>
@@ -171,21 +173,34 @@
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
             <div class="d-flex align-items-baseline">
 
-                <button type="submit" class="btn btn-success ml-3" wire:loading.attr="disabled"
-                    wire:target="photo">
+
+                <button type="submit" class="btn btn-success ml-3" wire:loading.attr="disabled" wire:target="photo" onclick="recargarPagina()">
                     <div wire:loading role="status">
                         <span class="visually-hidden">Cargando...</span>
                     </div>
-
                     {{ __('Actualizar') }}
                 </button>
+                
+                <script>
+                    function recargarPagina() {
+                        // Agregar una cadena de consulta única a la URL
+                        var url = window.location.href;
+                        var uniqueQuery = new Date().getTime(); // Genera un valor de tiempo único
+                        url = url + (url.indexOf('?') !== -1 ? '&' : '?') + 'cache=' + uniqueQuery;
+                        window.location.href = url;
+                    }
+                </script>
+                
+                
 
 
 
                 {{-- <x-jet-button  >
                     {{ __('Actualizar') }}
                 </x-jet-button> --}}
+                <meta http-equiv="cache-control" content="no-store" />
 
+                <link rel="stylesheet" href="{{ asset('css/update-perfil.css') }}">
             </div>
         </x-slot>
     </div>

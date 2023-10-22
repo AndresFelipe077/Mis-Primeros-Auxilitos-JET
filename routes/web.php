@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContenidoController;
 use App\Http\Controllers\JuegosAdivina;
 use App\Http\Controllers\JuegosController;
+use App\Http\Controllers\PagosController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuizResultController;
@@ -238,3 +239,17 @@ Route::get('/facebook-callback', [SocialController::class, 'callbackFacebook']);
 Route::get('/login-google', [SocialController::class, 'redirectGoogle'])->name('google');
 
 Route::get('/google-callback', [SocialController::class, 'callbackGoogle']);
+
+
+
+
+////////pagos 
+
+Route::get('/pagos',[PagosController::class,'index']);
+Route::get('/suscripcion', [PagosController::class, 'suscripcion'])->name('suscripcion');
+Route::get('/menuSuscripcion', [PagosController::class, 'menuSuscripcion'])->name('menuSuscripcion');
+
+Route::post('/crear-suscripcion', [PagosController::class, 'crearSuscripcion'])->name('crearSuscripcion');
+
+
+

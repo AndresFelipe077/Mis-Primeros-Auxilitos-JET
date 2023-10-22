@@ -91,3 +91,71 @@ label{
     }
 
 }
+.bg-white{
+    position: relative;
+    left: -110px;
+    width: 400px;
+    height: 300px;
+    
+}
+.h5{
+    position: relative;
+    left: 10px;
+}
+.card {
+    background-color: rgba(128, 128, 128, 0.2); /* Gris casi transparente */
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    animation: neon-border-animation 3s linear infinite;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 1); /* Comienza con un borde rojo más intenso */
+  }
+  
+  @keyframes neon-border-animation {
+    0% {
+      box-shadow: 0 0 20px rgba(255, 0, 0, 1); /* Rojo más intenso */
+    }
+    33% {
+      box-shadow: 0 0 20px rgba(0, 255, 0, 1); /* Verde más intenso */
+    }
+    66% {
+      box-shadow: 0 0 20px rgba(0, 0, 255, 1); /* Azul más intenso */
+    }
+    100% {
+      box-shadow: 0 0 20px rgba(255, 0, 0, 1); /* Vuelve a rojo más intenso */
+    }
+  }
+  .col-sm-2 {
+    position: relative;
+    animation: mover-izquierda 6s linear infinite alternate, 
+               mover-arriba 8s linear infinite alternate;
+  }
+  
+  @keyframes mover-izquierda {
+    0%, 100% {
+      left: 0; /* Posición inicial */
+    }
+    50% {
+      left: -50px; /* Mover hacia la izquierda */
+    }
+  }
+  
+  @keyframes mover-arriba {
+    0%, 100% {
+      top: 0; /* Posición inicial */
+    }
+    50% {
+      top: -50px; /* Mover hacia arriba */
+    }
+  }
+  
+
+  .rounded {
+    position: relative !important;
+    left: 5px;
+  }
+
+  .segundo{
+    position: relative;
+    left: 200px;
+  }
