@@ -1,0 +1,98 @@
+/* Estilos para el contenedor principal */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Cambiado a 100vh para que sea perfectamente responsivo */
+    margin: 0;
+    background-image: url("../img/imgs/pexels-jessica-ticozzelli-5985670.jpg") !important;
+    background-size: cover; /* Cubre el ancho y alto del contenedor */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: 'DynaPuff', cursive;
+    padding: 10px; /* Añadido espacio interno para contenido en pantallas pequeñas */
+}
+
+/* Estilos para el contenedor de la tarjeta de pago */
+.payment-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Ocupa el ancho completo en pantallas pequeñas */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para el título */
+h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+/* Estilos para el precio */
+.price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0070ba;
+    margin: 20px 0;
+}
+
+/* Estilos para el botón de PayPal */
+#paypal-button-container {
+    margin: 20px 0;
+}
+
+.paypal-button {
+    background-color: #0070ba;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.paypal-button:hover {
+    background-color: #005a9e;
+}
+
+/* Estilos para el helicóptero */
+.helicoptero {
+    width: 100px; /* Tamaño ajustado para pantalla pequeña */
+    height: 100px;
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.helicoptero:hover {
+    animation: glimmer 0.5s linear infinite;
+}
+
+@keyframes glimmer {
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.2);
+    }
+    100% {
+        filter: brightness(1);
+    }
+}
+
+/* Responsivo para pantalla pequeña (menos de 768px) */
+@media (max-width: 768px) {
+    .payment-card {
+        max-width: 90%; /* Reducido ligeramente para ajuste en pantallas pequeñas */
+    }
+
+    .paypal-button {
+        padding: 8px 16px; /* Ajuste en el tamaño del botón */
+    }
+
+    .helicoptero {
+        width: 60px; /* Reducido el tamaño del helicóptero */
+        height: 60px;
+    }
+}

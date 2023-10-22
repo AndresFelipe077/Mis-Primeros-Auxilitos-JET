@@ -1,29 +1,43 @@
+/* Estilos para el campo de entrada (input) y sus iconos */
+
 .input-wrapper {
-    position: relative;
-  }
-  
-  .input {
-    box-sizing: border-box;
-    color: #191919;
-    padding: 15px 15px 15px 35px;
-    width: 100%;
-  }
-  
-  .input.password {
-    padding: 15px 35px 15px 15px;
-  }
-  
-  .input-icon {
-    color: #191919;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  .input-icon.password {
-    left: unset;
-    right: 12px !important;
-  }
+  position: relative; /* Contenedor del campo de entrada */
+}
+
+.input {
+  box-sizing: border-box;
+  color: #191919;
+  padding: 15px 15px 15px 35px; /* Ajusta el relleno del campo de entrada */
+  width: 100%; /* Ajusta el ancho del campo de entrada */
+}
+
+.input.password {
+  padding: 15px 35px 15px 15px; /* Ajusta el relleno del campo de entrada (para campos de contraseña) */
+}
+
+.input-icon {
+  color: #191919;
+  position: absolute; /* Posición absoluta para el icono */
+  width: 20px;
+  height: 20px;
+  left: 12px; /* Posición izquierda del icono */
+  top: 50%; /* Alineación vertical del icono */
+  transform: translateY(-50%); /* Ajuste de alineación vertical */
+}
+
+.input-icon.password {
+  left: unset; /* Posición izquierda (para campos de contraseña) */
+  right: 12px !important; /* Posición derecha del icono (para campos de contraseña) */
+}
+
+/* Estilos para botones */
+
+.btn-primary{
+position: relative;
+left: 30px; /* Mueve el botón hacia la derecha */
+}
+
+.actualizar-boton{
+position: relative;
+left: -29px; /* Mueve el botón hacia la izquierda */
+}

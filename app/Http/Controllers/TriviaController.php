@@ -32,7 +32,7 @@ class TriviaController extends Controller
   {
     $request->validate([
       'title'    => 'required|max:50',
-      'image'    => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+      'image'    => 'required|image|mimes:jpeg,png,jpg,gif',
       'content'  => 'max:250',
       'respuesta1' => 'required|max:50',
       'respuesta2' => 'required|max:50',
@@ -93,7 +93,7 @@ class TriviaController extends Controller
   {
     $request->validate([
       'title'    => 'required|max:50',
-      'image'    => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+      'image'    => 'required|image|mimes:jpeg,png,jpg,gif,svg',
       'content'  => 'max:250',
       'respuesta1' => 'required|max:50',
       'respuesta2' => 'required|max:50',
@@ -157,7 +157,7 @@ class TriviaController extends Controller
   {
     $request->validate([
       'title'    => 'required|max:50',
-      'image'    => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+      'image'    => 'required|image|mimes:jpeg,png,jpg,gif,svg',
       'content'  => 'max:250',
       'respuesta1' => 'required|max:50',
       'respuesta2' => 'required|max:50',

@@ -91,7 +91,7 @@ label{
 }
 .h5{
     position: relative;
-    left: 250px;
+    left: 10px;
 }
 
   @keyframes neon-border-animation {
@@ -132,3 +132,13 @@ label{
     }
   }
   
+
+  .rounded {
+    position: relative !important;
+    left: 5px;
+  }
+
+  .segundo{
+    position: relative;
+    left: 200px;
+  }

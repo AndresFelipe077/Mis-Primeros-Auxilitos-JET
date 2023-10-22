@@ -152,6 +152,58 @@
                     <div class="line"></div>
                 </div>
 
+                <div class="card m-4 text-center">
+                  <div class=" card-body shadow ">
+                      <div class="h4">Adivinanzas 8 - 12 años</div>
+                      <div class="contenedor rounded">
+                          <a href="{{ route('adivinanzaShow') }}" class="btn mt-2">
+                              <img class="imagen rounded img-fluid mx-auto d-block"
+                                  src="{{ asset('img/icons/adivinanza_icon.png') }}" alt="Image of adivinanza"
+                                  width="250px" height="250px">
+                          </a>
+                      </div>
+                  </div>
+              </div>
+
+              @if (auth()->check() && auth()->user()->subscription && auth()->user()->subscription->subscription_status === 'aprobado')
+              <!-- La condición se cumple -->
+              <div class="card m-4 text-center">
+                <div class=" card-body shadow ">
+                    <div class="h4">Juego Advina la pareja</div>
+                    <div class="contenedor rounded">
+                        <a href="{{ url('juegos') }}" class="btn mt-2">
+                            <img class="imagen rounded img-fluid mx-auto d-block"
+                                src="{{ asset('img/icons/empearejar.jpg') }}" alt="Image of adivinanza"
+                                width="250px" height="250px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="card m-4 text-center">
+                <div class=" card-body shadow ">
+                    <div class="h4">Juegos Preguntas</div>
+                    <div class="contenedor rounded">
+                        <a href="{{ url('juegos2') }}" class="btn mt-2">
+                            <img class="imagen rounded img-fluid mx-auto d-block"
+                                src="{{ asset('img/icons/1000x1000.jpg') }}" alt="Image of trivia" width="250px"
+                                height="250px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+           
+          @else
+       
+
+        
+          @endif
+
+           
+
+
+
+
             </div>
         </div>
     </div>
