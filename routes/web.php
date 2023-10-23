@@ -251,5 +251,7 @@ Route::get('/menuSuscripcion', [PagosController::class, 'menuSuscripcion'])->nam
 
 Route::post('/crear-suscripcion', [PagosController::class, 'crearSuscripcion'])->name('crearSuscripcion');
 
+Route::get('/premium', [PagosController::class, 'premium']);
+
 
 

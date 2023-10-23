@@ -9,8 +9,7 @@
 
     {{-- imagen con movimiento  --}}
   
-        <img class="logo" src="{{ asset('img/icons/imagen de logo.png') }}" alt="Admin" width="50px" height="50px">
- 
+    
     <!-- Contenido de tu página aquí -->
 
     <!-- Footer -->
