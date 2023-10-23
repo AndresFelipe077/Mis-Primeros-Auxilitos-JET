@@ -154,12 +154,13 @@
                                                                             contenido? 😊😊😊😊</p>
 
                                                                         <form method="POST" class="text-center"
-                                                                            action="{{ route('create.role') }}">
+                                                                            action="{{ route('content.verified', $contenido) }}">
                                                                             @csrf
+                                                                            @method('put')
 
                                                                             <div class="check-group m-3">
                                                                                 <input type="checkbox" id="check1"
-                                                                                    name="verified" value="verified"
+                                                                                    name="verified" value="1"
                                                                                     class="form-check-input form-check-lg">
                                                                                 <label for="check1"
                                                                                     class="form-check-label">Verificar</label>
@@ -172,7 +173,6 @@
                                                                                 <button type="submit"
                                                                                     class="btn btn-success">Verificar</button>
                                                                             </div>
-
 
                                                                         </form>
 

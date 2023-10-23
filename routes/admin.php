@@ -21,6 +21,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     Route::get('change_password','changePassword')->name('admin.change_password');
 
+    Route::put('verified/content/{contenido}','contentVerified')->name('content.verified');
+
 });
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified', 'admin'])->controller(UserController::class)->group(function() {

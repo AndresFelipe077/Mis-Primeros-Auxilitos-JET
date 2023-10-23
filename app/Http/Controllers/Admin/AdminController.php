@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Contenido;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
@@ -29,7 +30,7 @@ class AdminController extends Controller
         $imageUrl = substr($imageUrl, 1);
         $content->url = $imageUrl;
       }
-      
+
     }
 
     $pdf = Pdf::loadView('admin.pdf_content', compact('contents'));
@@ -39,23 +40,15 @@ class AdminController extends Controller
 
   }
 
-  public function exportExcelContents() {
+  public function exportExcelContents()
+  {
     return Excel::download(new ContentsExport, 'contenidos.xlsx');
   }
 
   public function generatePdfUsers()
   {
+
     $users = User::all();
-
-    // foreach ($users as $user) {
-    //   $imageUrl = $user->url;
-
-    //   if (strpos($imageUrl, '/') === 0) {
-    //     $imageUrl = substr($imageUrl, 1);
-    //     $user->url = $imageUrl;
-    //   }
-      
-    // }
 
     $pdf = Pdf::loadView('admin.pdf_user', compact('users'));
 
@@ -63,7 +56,8 @@ class AdminController extends Controller
 
   }
 
-  public function exportExcelUsers() {
+  public function exportExcelUsers()
+  {
     return Excel::download(new UsersExport, 'usuarios.xlsx');
   }
 
@@ -77,5 +71,17 @@ class AdminController extends Controller
   {
     return view('admin.change_password');
   }
+
+  public function contentVerified(Request $request, Contenido $contenido)
+  {
+
+    $contenido->verified = $request->verified;
+
+    $contenido->update();
+
+    return redirect()->route('admin.contenido')->with('verified', 'ok');
+
+  }
+
 
 }
