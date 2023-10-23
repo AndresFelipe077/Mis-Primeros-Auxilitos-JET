@@ -26,6 +26,7 @@ return new class extends Migration
                 ->cascadeOnUpdate()
                 ->nullOnDelete();
             $table->text('observacion')->nullable();
+            $table->boolean('verified')->default(false);
             
             $table->timestamps();
             

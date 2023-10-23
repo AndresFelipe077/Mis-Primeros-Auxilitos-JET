@@ -57,7 +57,7 @@
                                 <th>Correo</th>
                                 <th>Fecha de Nacimiento</th>
                                 <th>Foto</th>
-                                <th>Editar</th>
+                                <th>Observacion</th>
                                 <th>Eliminar</th>
                             </thead>
                             <tbody>

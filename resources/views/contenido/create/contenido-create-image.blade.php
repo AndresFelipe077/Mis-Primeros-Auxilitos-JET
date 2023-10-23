@@ -20,14 +20,6 @@
                 <p>abquiere mas contenido premiun.</p>
             @endif
             
-            
-            
-            
-            
-            
-            
-
-
                 <div class="col-sm-2 text-center">
                     <img src="{{ asset('img/icons/pintura.png') }}" id="image" alt="Imagen"
                         class="mt-5 m-3 mx-auto" width="150px" height="150px">

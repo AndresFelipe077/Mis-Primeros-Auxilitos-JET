@@ -54,5 +54,9 @@ class PagosController extends Controller
         }
     }
     
+    public function premium(){
+        return view('contenido.premium.contenidoPremium');
+    }
+    
 
 }

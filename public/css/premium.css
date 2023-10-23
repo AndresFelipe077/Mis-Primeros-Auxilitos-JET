@@ -1,0 +1,7 @@
+.text-center{
+    position: relative;
+    left: 300px;
+    top: 200px;
+    width: 600px;
+    height: 400px !important;
+}
