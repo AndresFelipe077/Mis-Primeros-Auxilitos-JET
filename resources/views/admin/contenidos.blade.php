@@ -86,6 +86,7 @@
                                         <th>Autor</th>
                                         <th>Descripción</th>
                                         <th>Imagen</th>
+                                        <th>Verificación</th>
                                         <th>Editar</th>
                                         <th>Eliminar</th>
                                     </thead>
@@ -117,6 +118,13 @@
                                                         @endif
                                                     @endif
 
+                                                </td>
+                                                <td>
+                                                    @if($contenido->verified == 1)
+                                                        <p class="text-success">Verificado</p>
+                                                    @else
+                                                        <p class="text-danger">sin verificar</p>
+                                                    @endif
                                                 </td>
                                                 <td class="align-middle">
 

@@ -30,7 +30,7 @@
                 <script>
                     Swal.fire(
                         '¡Contenido subido!',
-                        '¡El envio ha sido un exito!.',
+                        '¡El envio se ha subido exitosamente y estará siendo verificado lo más rapido posible! 😊😊😊😊😊',
                         'success'
                     )
                 </script>
