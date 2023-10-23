@@ -1,59 +1,23 @@
 /* Estilos para el footer */
 
 
-.logo {
-    width: 100px;
-    height: 100px;
-    background-image: url('ruta-de-tu-imagen-del-helicóptero.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    animation: moverHelicoptero 35s linear infinite; /* Ajustar la duración y velocidad según sea necesario */
-    z-index: 9999; /* Asegúrate de que este valor sea mayor que otros elementos */
-  }
-  
-  @keyframes moverHelicoptero {
-    0% {
-      left: -100px;
-    }
-    100% {
-      left: calc(100% + 100px);
-    }
-  }
-  
-  .navbar-brand {
-    position: relative;
-    top: -110px;
-    left: -70px;
-    z-index: 1; /* Asegúrate de que este valor sea menor que el de .logo */
-  }
-  
-  .logoimagen{
-    position: relative;
-    right: 300px;
-  }
-  
-
-  .navbar1{
-    height: 100px;
+  .navbar1 {
     background: rgb(155,64,167);
     background: linear-gradient(90deg, rgba(155,64,167,1) 0%, rgba(121,9,107,1) 32%, rgba(72,91,167,1) 64%, rgba(0,212,255,1) 80%, rgba(0,254,255,1) 100%);
-    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
   }
-  .navbar1{
-    position: relative !important;
-    top: 0px;
-    width: 1530px;
-    left: -120px;
-  }
+  
+  
   .iamgenes{
     position: relative;
-    top: 24px;
+    top: 10px;
 
   }
   .iamgenes3 {
     position: relative;
-    top: 24px;
+    top: 10px;
     transition: transform 0.2s, opacity 0.2s; /* Agregamos transiciones para el destello y la rotación */
     animation: rotate 4s linear infinite, destello 0.5s infinite alternate; /* Agregamos una animación de rotación y un destello */
   }
@@ -85,6 +49,6 @@
 
   .iamgenes2 {
     position: relative;
-    top: 24px;
+    top: 10px;
   }
 

@@ -44,11 +44,24 @@
                                 <label class="h5" for="exampleFormControlFile1" id="src-file">Escoge tu contenido
                                     😋😊😉</label>
                                 <div>
-                                    <video class="video"  controls autoplay id="video-tag "
-                                        class="mx-auto m-3 rounded text-white bg-white">
+                                    <video class="video" controls autoplay id="video-tag" class="mx-auto m-3 rounded text-white bg-white">
                                         <source id="video-source" src="{{ old('url', $contenido->url) }}">
                                         Tu navegador no soporta elementos de video😥.
                                     </video>
+                                
+                               
+                                    <script>
+                                        document.addEventListener("DOMContentLoaded", function() {
+                                        
+                                            var videoSource = document.getElementById("video-source");
+                                            var videoTag = document.getElementById("video-tag");
+                                
+                                            if (videoSource && videoTag) {
+                                                videoSource.src = "{{ old('url', $contenido->url) }}";
+                                                videoTag.load();
+                                            }
+                                        });
+                                    </script>
 
                                     <label for="file-upload" class="subir">
                                         <i class="bi bi-cloud-upload-fill h5"></i> subir
@@ -77,8 +90,10 @@
                                     <br>
                                 @enderror
                             </div>
-                            <button type="submit" class="btn bg-transparent"><img
+                            <div class="segundo">
+                            <button type="submit" class="btn bg-transparent "><img
                                     src="{{ asset('/img/icons/subir2.png') }}" width="60px" height="60px"></button>
+                                </div>
 
                         </form>
 
