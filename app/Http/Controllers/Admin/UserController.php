@@ -64,9 +64,9 @@ class UserController extends Controller
   public function roles()
   {
 
+    $roles = Role::all();
 
-
-    return view('admin.roles');
+    return view('admin.roles', compact('roles'));
 
   }
 
