@@ -27,6 +27,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     Route::get('/users','users')->name('admin.users'); // Return only users
 
+    Route::get('/roles','roles')->name('admin.roles');
+
     Route::put('/user/create_observacion/{user}', 'createObservation')->name('admin.users.observacion');
 
     Route::get('users_admin', 'usersAdmins')->name('admin.admin.users'); // Return only users admin
