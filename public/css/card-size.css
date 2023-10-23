@@ -333,13 +333,7 @@ position: absolute;
      Es negativo para que no "camine" hacia atrás */
   to { background-position: -672px }
 }
-
-.pagination-lg{
-  position: relative !important;
-  top: -90px !important;
-}
-
 .smith{
-  position: relative !important;
-  top: 90px !important;
+  position: relative;
+  left: -189px;
 }
