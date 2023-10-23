@@ -84,13 +84,13 @@
             @endif
 
             @if (session('subir') == 'ok')
-                <script>
-                    Swal.fire(
-                        '¡Contenido subido!',
-                        '¡El envio se ha subido exitosamente y estará siendo verificado lo más rapido posible! 😊😊😊😊😊',
-                        'success'
-                    )
-                </script>
+            <script>
+                Swal.fire(
+                    '¡Contenido subido!',
+                    '¡El envio ha sido un exito!.',
+                    'success'
+                )
+            </script>
             @endif
 
             @if (session('actualizar') == 'ok')
@@ -113,67 +113,73 @@
                 </div>
 
                 @foreach ($contenidos as $contenido)
+                <div class="col-12 col-md-6 mt-5 col-lg-4">
 
-                    @if ($contenido->verified == 1)
-                        <div class="col-12 col-md-6 mt-5 col-lg-4">
+                    <div class="card m-3 text-center rounded animate__animated animate__wobble" id="card-contenido" data-aos="fade-right">
 
-                            <div class="burbujas">
-                                <div class="burbuja"></div>
-                                <div class="burbuja"></div>
-                                <div class="burbuja"></div>
-                                <div class="burbuja"></div>
-                                <div class="burbuja"></div>
-                                <div class="burbuja"></div>
-                                <div class="burbuja"></div>
-    
-    
-                            </div>
 
-                            <div class="card m-3 text-center rounded animate__animated animate__wobble"
-                                id="card-contenido" data-aos="fade-right">
-                                <div class="card-body shadow">
-                                    <h5 class="card-title">{{ $contenido->title }}</h5>
-                                    <div class="contenedor rounded">
-                                        @if ($contenido->url)
-                                            @php
-                                                $extension = pathinfo($contenido->url)['extension'];
-                                            @endphp
-                                            @if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' || $extension == 'svg')
-                                                <img class="imagen rounded mx-auto d-block" src="{{ $contenido->url }}"
-                                                    alt="Image of trivia" id="img-content">
-                                            @else
-                                                <video id="fm-video"
-                                                    class="mx-auto m-3 rounded fm-video video-js vjs-16-9 vjs-big-play-centered"
-                                                    data-setup="{}" controls {{-- poster="{{ asset('img/icons/video.png') }}" --}}>
-                                                    <source src="{{ asset($contenido->url) }}">
-                                                    Tu navegador no soporta elementos de video😥.
-                                                </video>
-                                            @endif
-                                        @endif
-                                    </div>
-                                    <p><strong>Autor: </strong> {{ $contenido->autor }}</p>
-                                    <div class="text-center mt-3">
-                                        @if (Auth::user()->id == $contenido->user_id)
-                                            @if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' || $extension == 'svg')
-                                                <a class="btn bg-transparent"
-                                                    href="{{ route('contenido.edit.image', $contenido) }}"><img
-                                                        src="{{ asset('/img/icons/lapiz-editar.png') }}" width="50px"
-                                                        height="50px" alt="Editar"></a>
-                                            @else
-                                                <a class="btn bg-transparent"
-                                                    href="{{ route('contenido.edit.video', $contenido) }}"><img
-                                                        src="{{ asset('/img/icons/lapiz-editar.png') }}" width="50px"
-                                                        height="50px" alt="Editar"></a>
-                                            @endif
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="burbujas">
+                            <div class="burbuja"></div>
+                            <div class="burbuja"></div>
+                            <div class="burbuja"></div>
+                            <div class="burbuja"></div>
+                            <div class="burbuja"></div>
+                            <div class="burbuja"></div>
+                            <div class="burbuja"></div>
+
+
                         </div>
-                    @endif
+                        <div class="card-body shadow">
+                            <h5 class="card-title">{{ $contenido->title }}</h5>
+                            <div class="contenedor rounded">
+                                @if ($contenido->url)
+                                @php
+                                $extension = pathinfo($contenido->url)['extension'];
+                                @endphp
+                                @if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' || $extension == 'svg')
+                                <img class="imagen rounded mx-auto d-block" src="{{ $contenido->url }}" alt="Image of trivia" id="img-content">
+                                @else
+                                <video id="fm-video" class="mx-auto m-3 rounded fm-video video-js vjs-16-9 vjs-big-play-centered" data-setup="{}" controls {{-- poster="{{ asset('img/icons/video.png') }}" --}}>
+                                    <source src="{{ asset($contenido->url) }}">
+                                    Tu navegador no soporta elementos de video😥.
+                                </video>
+                                @endif
+                                @endif
+                            </div>
+                            <p><strong>Autor: </strong> {{ $contenido->autor }}</p>
+                            <div class="text-center mt-3">
+                                @if (Auth::user()->id == $contenido->user_id)
+                                @if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' || $extension == 'svg')
+                                <a class="btn bg-transparent" href="{{ route('contenido.edit.image', $contenido) }}"><img src="{{ asset('/img/icons/lapiz-editar.png') }}" width="50px" height="50px" alt="Editar"></a>
+                                @else
+                                <a class="btn bg-transparent" href="{{ route('contenido.edit.video', $contenido) }}"><img src="{{ asset('/img/icons/lapiz-editar.png') }}" width="50px" height="50px" alt="Editar"></a>
+                                @endif
+                                @endif
+
+                                
+                            </div>
+
+                            <!-- <div id="sky">
+                                <div id="sea">
+                                    <div id="bern"></div>
+                                </div>
+                            </div> -->
+                        
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+                
+
                 @endforeach
 
             </div>
+
+
+
         </div>
 
         
