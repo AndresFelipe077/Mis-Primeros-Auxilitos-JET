@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id'); // Relación con la tabla de usuarios
             $table->string('subscription_status'); // Campo que indica el estado de la suscripción
-            // Agrega otros campos relacionados con las suscripciones si es necesario
+            $table->double('price')->nullable();
             $table->timestamps();
         });
     }
