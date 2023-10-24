@@ -33,7 +33,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     Route::post('/rol/create','createRole')->name('create.role');
 
-    Route::put('/rol/assing_to_permissions/{role}','assingRoleToPermissions')->name('assing.role.permission');
+    Route::post('/rol/assing_to_permissions/{role}','assignRoleToPermissions')->name('assing.role.permission');
 
     Route::put('/user/create_observacion/{user}', 'createObservation')->name('admin.users.observacion');
 

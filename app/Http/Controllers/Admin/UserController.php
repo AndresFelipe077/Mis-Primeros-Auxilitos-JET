@@ -81,16 +81,22 @@ class UserController extends Controller
 
   public function createRole(Request $request)
   {
-    $role = Role::create($request->all());
+    $role = Role::create([
+      'name' => $request->name,
+      'guard_name' => 'web'
+    ]);
     return redirect()->route('admin.roles')->with('crear', 'ok');
   }
 
-  public function assingRoleToPermissions(Request $request, Role $role)
+  public function assignRoleToPermissions(Request $request, Role $role)
   {
 
-    $role->syncPermissions($request->permissions);
+    // return $request;
+    $permissions = $request->input('permissions', []); // Obtener los nombres de permisos del formulario
 
-    return redirect()->route('admin.roles')->with('info', 'Permissions assigned to role');
+    $role->syncPermissions($permissions); // Asignar permisos al rol
+
+    return redirect()->route('admin.roles')->with('info', 'Permisos asignados al rol exitosamente.');
   }
 
 }

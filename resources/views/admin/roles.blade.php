@@ -136,7 +136,7 @@
                                 </div>
                                 <div class="modal-body">
 
-                                    {!! Form::model($role, ['route' => ['assing.role.permission', $role], 'method' => 'put', 'id' => 'user-form']) !!}
+                                    {!! Form::model($role, ['route' => ['assing.role.permission', $role], 'method' => 'post', 'id' => 'user-form']) !!}
 
                                     @foreach ($permissions as $permission)
                                         <div class="form-check">
