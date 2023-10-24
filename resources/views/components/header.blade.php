@@ -7,12 +7,11 @@
                     alt="" width="80px" height="50px"></a>
             <div id="iconsvg" class="d-flex position-absolute ">
 
-                @if (Auth::user()->roles)
+                @if (Auth::user()->roles->count() > 0)
                     <a class="rounded-circle bg-transparent" href="{{ route('admin') }}">
                         <img src="{{ asset('img/admin/admin.png') }}" alt="Admin" width="50px" height="50px">
                     </a>
                 @endif
-
 
 
                 <button wire:key="{{ Auth::user()->id }}" class="btn success rounded-circle bg-transparent"
