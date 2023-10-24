@@ -66,9 +66,13 @@ class AdminController extends Controller
 
     $monthlyProfits = $this->monthlyProfits();
 
-    $annualProfits = $this->annualProfits();
+    $annualProfits  = $this->annualProfits();
 
-    return view('admin.statistics', compact('monthlyProfits', 'annualProfits'));
+    $getCantUsers   = $this->getCantUsers();
+
+    $getCantContent = $this->getCantContent();
+
+    return view('admin.statistics', compact('monthlyProfits', 'annualProfits', 'getCantUsers', 'getCantContent'));
   }
 
   /**
@@ -118,4 +122,21 @@ class AdminController extends Controller
 
     return redirect()->route('admin.contenido')->with('verified', 'ok');
   }
+
+  /**
+   * Return all users as number
+   *
+   * @return void
+   */
+  public function getCantUsers()
+  {
+    $users = User::all()->count();
+    return $users;
+  }
+
+  public function getCantContent()
+  {
+    return Contenido::all()->count();
+  }
+
 }
