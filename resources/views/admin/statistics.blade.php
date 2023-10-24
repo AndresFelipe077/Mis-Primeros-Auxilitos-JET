@@ -323,6 +323,7 @@
         <script src="{{ asset('js_statistics/demo/chart-area-demo.js') }}"></script>
         
         <script>
+          // console.log(getPrices(@json($payments))); // get prices of controller admin as array
           getPrices(@json($payments)); // get prices of controller admin as array
         </script>
 
