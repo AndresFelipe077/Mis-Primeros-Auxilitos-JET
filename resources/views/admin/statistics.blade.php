@@ -12,7 +12,7 @@
 
 @section('content')
 
-    <body id="page-top" >
+    <body id="page-top">
 
         <!-- Page Wrapper -->
         <div id="wrapper" data-aos="fade-up">
@@ -46,7 +46,8 @@
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                     Ganancias (Mensualmente)</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $monthlyProfits }}</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $monthlyProfits }}
+                                                </div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -64,7 +65,8 @@
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                     Ganancias (Anualmente)</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $annualProfits }}</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $annualProfits }}
+                                                </div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -80,11 +82,13 @@
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Cantidad de usuarios
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Cantidad
+                                                    de usuarios
                                                 </div>
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col-auto">
-                                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ $getCantUsers }}</div>
+                                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                                            {{ $getCantUsers }}</div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="progress progress-sm mr-2">
@@ -111,7 +115,8 @@
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                     Cantidad de contenido</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $getCantContent }}</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $getCantContent }}
+                                                </div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -165,8 +170,9 @@
                                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                         <h6 class="m-0 font-weight-bold text-primary">Fuentes de ingresos</h6>
                                         <div class="dropdown no-arrow">
-                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <a class="dropdown-toggle" href="#" role="button"
+                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
                                                 <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
@@ -223,7 +229,8 @@
                                             <div class="progress-bar bg-warning" role="progressbar" style="width: 40%"
                                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
-                                        <h4 class="small font-weight-bold">Usuarios activos<span class="float-right">70%</span></h4>
+                                        <h4 class="small font-weight-bold">Usuarios activos<span
+                                                class="float-right">70%</span></h4>
                                         <div class="progress mb-4">
                                             <div class="progress-bar bg-success" role="progressbar" style="width: 70%"
                                                 aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
@@ -242,8 +249,10 @@
                                         <h6 class="m-0 font-weight-bold text-primary">Progreso del sistema</h6>
                                     </div>
                                     <div class="card-body">
-                                        <p>El sistema continua mejorando sus acciones con el objetivo de ayudar a nuestros niños</p>
-                                        <p class="mb-0">Por un mejor futuro de nuestros niños y de nuestra sociedad "Mis Primeros Auxilitos". 😊😊😊😊</p>
+                                        <p>El sistema continua mejorando sus acciones con el objetivo de ayudar a nuestros
+                                            niños</p>
+                                        <p class="mb-0">Por un mejor futuro de nuestros niños y de nuestra sociedad "Mis
+                                            Primeros Auxilitos". 😊😊😊😊</p>
                                     </div>
                                 </div>
 
@@ -312,6 +321,11 @@
 
         <!-- Page level custom scripts -->
         <script src="{{ asset('js_statistics/demo/chart-area-demo.js') }}"></script>
+        
+        <script>
+            getPrices(@json($pagos)); // get prices of controller admin as array
+        </script>
+
         <script src="{{ asset('js_statistics/demo/chart-pie-demo.js') }}"></script>
 
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
