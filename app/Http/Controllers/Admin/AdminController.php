@@ -61,6 +61,11 @@ class AdminController extends Controller
   }
 
 
+  /**
+   * Push info to view statistics
+   *
+   * @return void
+   */
   public function estadisticas()
   {
 
@@ -72,10 +77,10 @@ class AdminController extends Controller
 
     $getCantContent = $this->getCantContent();
 
-    $pagos = [0, 100000, 100000, 0, 10000, 20000, 15000, 25000, 20000, 30000, 25000, 40000];
+    $payments = [0, 0, 100000, 0, 10000, 20000, 15000, 25000, 20000, 30000, 25000, 40000];
 
-    return view('admin.statistics', compact('monthlyProfits', 'annualProfits', 'getCantUsers', 'getCantContent', 'pagos'));
-    
+    return view('admin.statistics', compact('monthlyProfits', 'annualProfits', 'getCantUsers', 'getCantContent', 'payments'));
+
   }
 
   /**

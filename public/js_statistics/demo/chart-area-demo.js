@@ -27,10 +27,10 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   return s.join(dec);
 }
 
-var priceObject;
+var objectPrices;
 
 function getPrices(prices) {
-  return priceObject = prices;
+  return objectPrices = prices;
 }
 
 setTimeout(function () {
@@ -53,7 +53,7 @@ setTimeout(function () {
         pointHoverBorderColor: "rgba(78, 115, 223, 1)",
         pointHitRadius: 10,
         pointBorderWidth: 2,
-        data: priceObject,
+        data: objectPrices,
       }],
     },
     options: {
