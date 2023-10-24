@@ -104,7 +104,11 @@ class AdminController extends Controller
 
     $payments = $this->summaryMonthlyEarnings();
 
-    return view('admin.statistics', compact('monthlyProfits', 'annualProfits', 'getCantUsers', 'getCantContent', 'payments'));
+    $countVideoAndImages = $this->countVideoAndImages();
+
+    $countNewUsersLastWeek = $this->countNewUsersLastWeek();
+
+    return view('admin.statistics', compact('monthlyProfits', 'annualProfits', 'getCantUsers', 'getCantContent', 'payments', 'countVideoAndImages', 'countNewUsersLastWeek'));
   }
 
   /**
@@ -138,6 +142,41 @@ class AdminController extends Controller
     $gananciasMensuales = array_values($gananciasMensuales);
 
     return $gananciasMensuales;
+  }
+
+  /**
+   * Count content with goalget that is 30
+   *
+   * @return void
+   */
+  public function countVideoAndImages()
+  {
+
+    $content = Contenido::all()->count();
+
+    $goalget = 30;
+
+    $contentAim = ($content / $goalget) * 100;
+
+    return $contentAim;
+
+  }
+
+  /**
+   * Count new users register in last week
+   *
+   * @return void
+   */
+  public function countNewUsersLastWeek()
+  {
+    $now = Carbon::now();
+    $weekAgo = $now->subWeek(); // Fecha y hora hace una semana desde ahora
+    
+    $newUsers = User::where('created_at', '>=', $weekAgo)->count(); // Usuarios registrados en la última semana
+
+    $objetivo = 20; // Establece tu objetivo de nuevos usuarios
+
+    return ($newUsers / $objetivo) * 100;
   }
 
   /**

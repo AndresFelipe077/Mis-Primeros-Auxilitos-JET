@@ -192,13 +192,13 @@
                                         </div>
                                         <div class="mt-4 text-center small">
                                             <span class="mr-2">
-                                                <i class="fas fa-circle text-primary"></i> Direct
+                                                <i class="fas fa-circle text-primary"></i> Usuarios
                                             </span>
                                             <span class="mr-2">
-                                                <i class="fas fa-circle text-success"></i> Social
+                                                <i class="fas fa-circle text-success"></i> Contenido
                                             </span>
                                             <span class="mr-2">
-                                                <i class="fas fa-circle text-info"></i> Referral
+                                                <i class="fas fa-circle text-info"></i> Juegos
                                             </span>
                                         </div>
                                     </div>
@@ -219,20 +219,15 @@
                                     </div>
                                     <div class="card-body">
                                         <h4 class="small font-weight-bold">Videos e imagenes<span
-                                                class="float-right">80%</span></h4>
+                                                class="float-right">{{$countVideoAndImages}}%</span></h4>
                                         <div class="progress mb-4">
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 80%"
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: {{ $countVideoAndImages }}%"
                                                 aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
-                                        <h4 class="small font-weight-bold">Juegos<span class="float-right">40%</span></h4>
-                                        <div class="progress mb-4">
-                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 40%"
-                                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
                                         <h4 class="small font-weight-bold">Usuarios activos<span
-                                                class="float-right">70%</span></h4>
+                                                class="float-right">{{$countNewUsersLastWeek}}%</span></h4>
                                         <div class="progress mb-4">
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 70%"
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: {{ $countNewUsersLastWeek }}%"
                                                 aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
@@ -323,7 +318,6 @@
         <script src="{{ asset('js_statistics/demo/chart-area-demo.js') }}"></script>
         
         <script>
-          // console.log(getPrices(@json($payments))); // get prices of controller admin as array
           getPrices(@json($payments)); // get prices of controller admin as array
         </script>
 
