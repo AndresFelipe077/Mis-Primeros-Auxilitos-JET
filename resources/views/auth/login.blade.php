@@ -181,7 +181,7 @@
                         </div>
                     </div>
                     <div class="row text-center bg-dark text-light rounded ">
-                        <div class="col-12">Copyright &copy; 2022</div>
+                        <div class="col-12">Nuestros heroes del futuro 😊😊😊</div>
                     </div>
                 </div>
 
