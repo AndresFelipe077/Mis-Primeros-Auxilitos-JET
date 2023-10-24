@@ -260,7 +260,7 @@
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Mis primeros auxilitos 2023</span>
+                            <span>❤️ Mis primeros auxilitos por un mejor futuro!!! ❤️</span>
                         </div>
                     </div>
                 </footer>
