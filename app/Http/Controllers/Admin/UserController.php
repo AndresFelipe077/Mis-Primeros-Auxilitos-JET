@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
@@ -50,6 +51,13 @@ class UserController extends Controller
     return redirect()->route('admin.users')->with('info', 'Roles asignados correctamente');
   }
 
+
+  public function permissions()
+  {
+    $permissions = Permission::all();
+    return $permissions;
+  }
+
   public function destroy(User $user)
   {
     try {
@@ -66,14 +74,23 @@ class UserController extends Controller
 
     $roles = Role::all();
 
-    return view('admin.roles', compact('roles'));
+    $permissions = $this->permissions();
 
+    return view('admin.roles', compact('roles', 'permissions'));
   }
 
   public function createRole(Request $request)
   {
     $role = Role::create($request->all());
-    return redirect()->route('admin.roles')->with('crear','ok');
+    return redirect()->route('admin.roles')->with('crear', 'ok');
+  }
+
+  public function assingRoleToPermissions(Request $request, Role $role)
+  {
+
+    $role->syncPermissions($request->permissions);
+
+    return redirect()->route('admin.roles')->with('info', 'Permissions assigned to role');
   }
 
 }

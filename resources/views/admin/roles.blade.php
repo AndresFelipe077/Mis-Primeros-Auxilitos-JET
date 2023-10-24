@@ -60,7 +60,15 @@
             </script>
         @endif
 
-
+        @if (session('roleAsignado') == 'ok')
+            <script>
+                Swal.fire(
+                    'Creado!',
+                    '¡Permisos asignados al role correctamente!.',
+                    'success'
+                )
+            </script>
+        @endif
 
         <div class="container mt-2" data-aos="fade-down">
 
@@ -79,7 +87,7 @@
                         <div class="modal-body">
 
                             <form method="POST" action="{{ route('create.role') }}">
-                              @csrf
+                                @csrf
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="floatingInput" name="name"
                                         placeholder="name@example.com" value="{{ old('name') }}">
@@ -90,20 +98,15 @@
                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                                     <button type="submit" class="btn btn-success">Crear role</button>
                                 </div>
-
                             </form>
-
-
-
                         </div>
-
                     </div>
                 </div>
             </div>
 
             <div class="row justify-content-center">
                 @foreach ($roles as $role)
-                    <div class="col-md-4">
+                    <div class="col-md-4" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $role->name }}">
                         <div class="card mb-4">
                             <div class="card-header">
                                 <h4>{{ $role->name }}</h4>
@@ -116,6 +119,43 @@
                                     <img src="{{ asset('img/logo/contenido.png') }}" alt="imagen-role"
                                         class="rounded-circle object-cover mx-auto d-block" width="80px" height="80px">
                                 @endif
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal{{ $role->name }}" tabindex="-1"
+                        aria-labelledby="exampleModalLabel{{ $role->name }}" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel{{ $role->name }}">Asignar rol a permisos</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                    {!! Form::model($role, ['route' => ['assing.role.permission', $role], 'method' => 'put', 'id' => 'user-form']) !!}
+
+                                    @foreach ($permissions as $permission)
+                                        <div class="form-check">
+                                            {!! Form::checkbox('permissions[]', $permission->id, null, [
+                                                'class' => 'form-check-input',
+                                                'id' => 'permission-' . $permission->id,
+                                            ]) !!}
+                                            {!! Form::label('permission-' . $permission->id, $permission->name, ['class' => 'btn btn-outline-success form-check-label']) !!}
+                                        </div>
+                                    @endforeach
+
+                                    <div class="modal-footer">
+                                        {!! Form::button('Cancelar', ['class' => 'btn btn-danger', 'data-bs-dismiss' => 'modal']) !!}
+                                        {!! Form::submit('Asignar permisos', ['class' => 'btn btn-success']) !!}
+                                    </div>
+                                    {!! Form::close() !!}
+
+
+                                </div>
                             </div>
                         </div>
                     </div>
