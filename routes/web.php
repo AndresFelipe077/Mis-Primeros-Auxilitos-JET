@@ -253,5 +253,9 @@ Route::post('/crear-suscripcion', [PagosController::class, 'crearSuscripcion'])-
 
 Route::get('/premium', [PagosController::class, 'premium']);
 
+Route::get('/generar-recibo-pdf/{userId}', [PagosController::class,'recibo']);
+
+
+
 
 

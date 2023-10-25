@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Subscription;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Barryvdh\DomPDF\Facade as PDF;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 
 class PagosController extends Controller
 {
@@ -58,5 +61,17 @@ class PagosController extends Controller
         return view('contenido.premium.contenidoPremium');
     }
     
+   public function recibo(Request $request, $userId){
+    $user = User::find($userId);
+    $userName = $user->name;
+    $monto = 8.00;
 
+    // Genera el contenido del recibo PDF
+    $pdf = FacadePdf::loadView('pagos.recibo.pdf', compact('userName', 'monto'));
+
+
+    // Retorna el PDF como una respuesta descargable
+    return $pdf->download('recibo.pdf');
+}
+    
 }

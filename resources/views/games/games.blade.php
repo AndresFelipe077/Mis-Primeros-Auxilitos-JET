@@ -1,11 +1,12 @@
 <link id="image-head" rel="shortcut icon" href="{{ asset('img/menu/challengue2.png') }}" type="image/x-icon">
+<link rel="stylesheet" href="{{ asset('css/games2.css') }}">
 @section('title', 'Juegos')
 <x-app-layout>
 
     <x-slot name="header">
         <x-header />
     </x-slot>
-
+<div class="header2">
     <div class="container">
         <div class="row">
             <div class="row mt-5 mx-auto text-center">
@@ -207,6 +208,7 @@
             </div>
         </div>
     </div>
+</div>
 
     <x-slot name="footer">
         <x-footer />
