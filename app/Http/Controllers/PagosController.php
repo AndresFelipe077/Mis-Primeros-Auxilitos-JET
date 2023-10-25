@@ -74,4 +74,7 @@ class PagosController extends Controller
     return $pdf->download('recibo.pdf');
 }
     
+
+
+
 }
