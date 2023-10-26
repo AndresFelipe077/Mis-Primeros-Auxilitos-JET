@@ -97,6 +97,10 @@
             setTimeout(function() {
                 window.location.href = "{{ route('suscripcion') }}";
             }, 1000);
+        } else if (choice === 'no'){
+            setTimeout(function() {
+                window.location.href = "{{ route('suscripcion') }}";
+            }, 1000);
         }
     }
 </script>

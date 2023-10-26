@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id'); // Relación con la tabla de usuarios
+            $table->unsignedBigInteger('user_id')->unique(); // Relación con la tabla de usuarios
             $table->string('subscription_status'); // Campo que indica el estado de la suscripción
             // Agrega otros campos relacionados con las suscripciones si es necesario
             $table->timestamps();

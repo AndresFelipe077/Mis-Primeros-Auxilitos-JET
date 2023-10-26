@@ -32,17 +32,22 @@ class PagosController extends Controller
         try {
             // Tu código de creación de suscripción aquí
             Log::info('Llegó una solicitud a crearSuscripcion');
-    
+            
             // Obtén el ID del usuario actualmente autenticado
             $userId = $request->input('userId');
     
-            // Obtén el estado de la suscripción desde la solicitud
-            $status = $request->input('status');
+            // Verifica si el usuario ya tiene una suscripción activa
+            $suscripcionExistente = Subscription::where('user_id', $userId)->where('subscription_status', 'activo')->first();
     
-            // Crea un registro de suscripción en la tabla de suscripciones
+            if ($suscripcionExistente) {
+                // Si el usuario ya tiene una suscripción activa, no permitas crear una nueva
+                return response()->json(['error' => 'El usuario ya tiene una suscripción activa'], 422);
+            }
+    
+            // Si el usuario no tiene una suscripción activa, crea un nuevo registro de suscripción
             Subscription::create([
                 'user_id' => $userId,
-                'subscription_status' => $status,
+                'subscription_status' => $request->input('status'),
             ]);
     
             // Realiza cualquier otra lógica necesaria
@@ -54,6 +59,32 @@ class PagosController extends Controller
     
             // Devuelve una respuesta de error apropiada en formato JSON
             return response()->json(['error' => 'Error al crear la suscripción'], 500);
+        }
+    }
+    
+
+
+    public function cancelarSuscripcion(Request $request)
+    {
+        try {
+            // Obtén el usuario autenticado
+            $user = auth()->user();
+    
+            // Verifica si el usuario existe
+            if ($user) {
+                // Elimina la suscripción del usuario actual
+                $user->subscription->delete();
+    
+                // Puedes realizar cualquier otra lógica necesaria aquí
+    
+                // Devuelve una respuesta JSON
+                return response()->json(['success' => true, 'message' => 'Suscripción cancelada con éxito']);
+            } else {
+                return response()->json(['success' => false, 'error' => 'No se encontró el usuario'], 404);
+            }
+        } catch (\Exception $e) {
+            // Si hay un error al cancelar la suscripción, devolver una respuesta de error
+            return response()->json(['success' => false, 'error' => 'Error al cancelar la suscripción'], 500);
         }
     }
     

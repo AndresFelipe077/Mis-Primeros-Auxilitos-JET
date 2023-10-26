@@ -125,6 +125,98 @@
                     </div>
                 </div>
 
+                @if (auth()->check() && auth()->user()->subscription && auth()->user()->subscription->subscription_status === 'aprobado')
+                <!-- La condición se cumple -->
+                {{-- Botón de cancelar suscripción --}}
+               <!-- Botón para cancelar suscripción -->
+<div class="actualizar-boton suscripcion">
+    <button title="Cancelar suscripción" type="button" class="btn btn-primary text-center mt-3" data-bs-toggle="modal" data-bs-target="#cancelSubscriptionModal">
+        <!-- Icono para cancelar suscripción -->
+        <img src="{{ asset('/img/icons8-cancelar-suscripción-80.png') }}" alt="Cancelar suscripción" width="60px" height="50px">
+    </button>
+</div>
+
+<!-- Modal para cancelar suscripción -->
+<div class="modal fade" id="cancelSubscriptionModal" tabindex="-1" aria-labelledby="cancelSubscriptionModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content posicion">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cancelSubscriptionModalLabel">Eliminar Suscripción</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Contenido del modal -->
+                <p>¿Estás seguro de que deseas eliminar tu suscripción?</p>
+                <!-- Puedes agregar más contenido o formularios aquí -->
+                <img src="{{ asset('/img/7Waj.gif') }}" alt="Imagen de confirmación de cancelación">
+            </div>
+            <div class="primero" style="position: relative;">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="confirmarEliminarSuscripcionBtn">
+                    Confirmar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de agradecimiento -->
+<div class="modal fade" id="agradecimientoModal" tabindex="-1" aria-labelledby="agradecimientoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="agradecimientoModalLabel">¡Suscripción terminada!</h5>
+                <button type="button" class="btn-close  " data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Contenido del modal de agradecimiento -->
+                <p> Recuerda que puedes reactivarla cuando quiereas, estamos para servirte. ¡Gracias por utilizar nuestros servicios!</p>
+                <!-- Puedes agregar más contenido o formularios aquí -->
+            </div>
+            <div class="cierre">
+                <button type="button" class="btn btn-primary" id="cerrarAgradecimientoModalBtn" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('confirmarEliminarSuscripcionBtn').addEventListener('click', function() {
+        // Realizar una solicitud POST a la ruta /cancelar-suscripcion
+        fetch('{{ route('cancelar-suscripcion') }}', {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}', // Agregar el token CSRF
+            },
+        })
+        .then(response => {
+            if (response.status === 200) {
+                // Cierra el modal de confirmación
+                $('#cancelSubscriptionModal').modal('hide');
+                // Muestra el modal de agradecimiento
+                $('#agradecimientoModal').modal('show');
+            } else {
+                // Manejar errores o mostrar un mensaje de error
+                console.error('Error al cancelar la suscripción.');
+            }
+        });
+    });
+
+    // Agrega un evento clic al botón de cierre del modal de agradecimiento
+    document.getElementById('cerrarAgradecimientoModalBtn').addEventListener('click', function() {
+        // Recargar la página
+        location.reload();
+    });
+</script>
+
+         
+            @else
+                <!-- La condición no se cumple -->
+            @endif
+
+             
+
+                
                 <!-- Sección para eliminar usuario -->
                 @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
                     @livewire('profile.delete-user-form')
@@ -180,7 +272,7 @@
                     <div class="col-sm-3">
                         <p class="mb-0">Genero: </p>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="nuevos">
                         <p class="text-muted mb-0">{{ Auth::user()->genero }}</p>
                     </div>
                 </div>
