@@ -2,11 +2,16 @@
 
 use App\Http\Controllers\AdivinanzaController;
 use App\Http\Controllers\AnswerController;
+use App\Http\Controllers\JuegoAdivinanzaController;
+use App\Http\Controllers\JuegoController;
+use App\Http\Controllers\Trivias2Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContenidoController;
+use App\Http\Controllers\JuegoAdivinanzasController;
 use App\Http\Controllers\JuegosAdivina;
 use App\Http\Controllers\JuegosController;
 use App\Http\Controllers\PagosController;
+use App\Http\Controllers\PlaysController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuizResultController;
@@ -243,7 +248,7 @@ Route::get('/google-callback', [SocialController::class, 'callbackGoogle']);
 
 
 
-////////pagos 
+////////pagos
 
 Route::get('/pagos',[PagosController::class,'index']);
 Route::get('/suscripcion', [PagosController::class, 'suscripcion'])->name('suscripcion');
@@ -256,6 +261,58 @@ Route::get('/premium', [PagosController::class, 'premium']);
 Route::get('/generar-recibo-pdf/{userId}', [PagosController::class,'recibo']);
 
 
+/*
+========================
+RUTAS JUEGOS
+========================
+*/
+// Route::get('/juegos-y-niveles', [JuegoController::class,'mostrarJuegosYNiveles']);
+
+// Route::get('/vista/trivia', [Trivias2Controller::class, 'mostrarPregunta'])->name('mostrar_pregunta');
+// Route::post('/vista/trivia', [Trivias2Controller::class, 'procesarRespuesta'])->name('procesar_respuesta');
+
+// Route::get('/vista/adivinanza', [JuegoAdivinanzasController::class, 'mostrarAdivinanza'])->name('mostrar_pregunta');
+// Route::post('/vista/adivinanza', [JuegoAdivinanzasController::class, 'procesarRespuesta'])->name('procesar_respuesta');
+
+// Route::get('/juego-adivinanza', [JuegoAdivinanzaController::class, 'mostrarAdivinanza'])->name('juego_adivinanza');
+// Route::post('/juego-adivinanza/procesar', [JuegoAdivinanzaController::class, 'procesarRespuesta'])->name('juego_adivinanza_procesar');
+
+// Route::get('/trivias/{nivel}', [Trivias2Controller::class, 'mostrarPregunta'])->name('jugar_trivia');
+// Route::post('/trivias/procesar', [Trivias2Controller::class,'procesarRespuesta'])->name('procesar_respuesta_trivia');
+// Route::get('/trivias/jugar/{nivel}', [JuegoController::class, 'jugarNivel'])->name('jugar_nivel');
+// Route::get('/jugar-nivel/{nivel}', [JuegoController::class, 'jugarNivel'])->name('jugar_nivel');
+// Route::get('/juego_resultado', [JuegoController::class, ]);
+// Route::get('/trivias/resultado/{nivel}/{resultado}', [JuegoController::class,'mostrarResultado'])->name('juego_resultado');
+
+// Route::get('/trivias/jugar/{nivel}', [Trivias2Controller::class, 'jugarNivel'])->name('jugar_nivel');
+
+
+// Route::get('/trivias/jugarrr/{nivel}', [JuegoController::class, 'jugarNivel'])
+//     ->name('jugar_nivel')
+//     ->where('nivel', '[0-9]+'); // Añade una restricción para asegurarte de que nivel sea un número
+
+// Route::get('/juego_resultado', [JuegoController::class, 'mostrarResultado'])
+//     ->name('juego_resultado');
+//     Route::get('/jugar-siguiente-nivel/{nivel}', [JuegoController::class, 'jugarSiguienteNivel'])->name('jugar_siguiente_nivel');
+
+
+// // routes/web.php
+
+Route::get('/juegos/registrar', [JuegoController::class, 'registrarJuego'])->name('juegos.registrar');
+Route::post('/juegos/guardar', [JuegoController::class,'guardarJuego'])->name('juegos.guardar');
+
+
+// Route::middleware(['auth'])->group(function () {
+//     // Rutas protegidas por autenticación
+//     Route::get('/juegos-y-niveles', [JuegoController::class, 'mostrarJuegosYNiveles'])->name('juegos_niveles');
+
+//     // ... Otras rutas protegidas ...
+// });
 
 
 
+
+Route::get('/juegos', [PlaysController::class, 'mostrarJuegos'])->name('juegos.mostrar');
+Route::get('/juegos/nivel/{nivel}', [PlaysController::class, 'jugarNivel'])->name('juegos.nivel');
+Route::post('/juegos/nivel/{nivel}/procesar', [PlaysController::class, 'procesarRespuesta'])->name('juegos.nivel.procesar');
+Route::get('/ruta_de_resultados/{nombreDelJuego}/{resultado}', [PlaysController::class, 'mostrarResultado'])->name('juegos.resultado');
