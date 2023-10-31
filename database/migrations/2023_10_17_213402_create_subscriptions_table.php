@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('subscription_status'); // Campo que indica el estado de la suscripción
             $table->timestamp('expires_at')->default(now()->addDays(30)); // Agrega un campo de fecha de vencimiento y establece un valor predeterminado
             // Agrega otros campos relacionados con las suscripciones si es necesario
-            $table->double('price')->nullable();
+            $table->double('price')->nullable()->default(33000);
             $table->timestamps();
         });
     }
