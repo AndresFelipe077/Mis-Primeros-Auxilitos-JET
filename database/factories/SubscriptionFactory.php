@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Subscription;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -15,19 +16,30 @@ class SubscriptionFactory extends Factory
    *
    * @return array<string, mixed>
    */
-  public function definition()
-  {
+  protected $model = Subscription::class;
 
-    $user = User::all()->random();
+    public function definition()
+    {
+        $user = User::factory()->create();
 
-    return [
-      'user_id'             => $user->id,
-      'subscription_status' => $this->faker->randomElement(['aprobado']),
-      'price'               => $this->faker->randomElement(['40000']),
-      'expires_at'          => $this->faker->randomElement(['2023-10-16 11:14:16']),
-      'created_at'          => $this->faker->randomElement(['2023-10-16 11:14:16', '2023-08-24 11:14:16', '2023-04-24 11:14:16', '2023-10-24 11:14:16']),
-      'updated_at'          => $this->faker->randomElement(['2023-01-10 11:14:16', '2022-10-16 11:14:16', '2023-10-24 11:14:16']),
-    ];
+        return [
+            'user_id' => $user->id,
+            'subscription_status' => $this->faker->randomElement(['aprobado']),
+            'price' => $this->faker->randomElement(['40000']),
+            'expires_at' => $this->faker->dateTimeBetween('now', '+1 year')->format('Y-m-d H:i:s'),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ];
+    }
 
-  }
+    public function forUser()
+    {
+        return $this->state(function (array $attributes) {
+            $user = User::factory()->create();
+            return [
+                'user_id' => $user->id,
+            ];
+        });
+    }
+
 }
