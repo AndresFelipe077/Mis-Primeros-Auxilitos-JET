@@ -5,3 +5,29 @@
     width: 600px;
     height: 400px !important;
 }
+
+.primera{
+    position: relative;
+    left: -10px;
+    height: 200px;
+}
+
+.segunda{
+    position: relative;
+    left: 700px;
+    top: -220px;
+    height: 100px;
+}
+
+.tercera{
+    position: relative;
+    left: -10px;
+    top: -50px;
+}
+
+.cuarta{
+    position: relative !important;
+    left: 700px;
+    top: -470px;
+ 
+}
