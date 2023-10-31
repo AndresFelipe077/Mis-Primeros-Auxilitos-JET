@@ -19,7 +19,7 @@ class ContenidoControllerApi extends Controller
    */
   public function index()
   {
-    $contenidos = Contenido::orderBy('id', 'desc')->get();
+    $contenidos = Contenido::orderBy('id', 'desc')->where('verified', 1)->get();
 
     return response()->json($contenidos);
   }
@@ -49,7 +49,7 @@ class ContenidoControllerApi extends Controller
 
     $request->validate([
       'title'       => 'required|max:50',
-      'url'        => 'nullable|mimetypes:image/jpeg,image/png,image/jpg,image/gif,image/svg+xml',
+      'url'         => 'nullable|mimetypes:image/jpeg,image/png,image/jpg,image/gif,image/svg+xml',
       'autor'       => 'string',
       'description' => 'required|max:250',
     ]);
@@ -80,6 +80,7 @@ class ContenidoControllerApi extends Controller
       'url'         => '/storage/contenidos/imagenes/' . $nombre, // Corrección en la ruta de almacenamiento
       'autor'       => $request->autor,
       'description' => $request->description,
+      'verified'    => 0,
       'user_id'     => $request->user_id,
     ]);
 
