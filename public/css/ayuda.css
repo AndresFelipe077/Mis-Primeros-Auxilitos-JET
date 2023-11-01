@@ -1,14 +1,41 @@
-.footer2 {
-    position: relative !important;
-    left: 200px !important;
-    background: rgb(155,64,167);
-    background: linear-gradient(90deg, rgba(155,64,167,1) 0%, rgba(121,9,107,1) 32%, rgba(72,91,167,1) 64%, rgba(0,212,255,1) 80%, rgba(0,254,255,1) 100%);
-width: 1530px;
-height: 300px;
-    
+/* Estilos para hacer el footer responsivo, cubrir toda la pantalla horizontal y fijo en la parte inferior */
+.footerPrincipal {
+    background: linear-gradient(90deg, rgba(155, 64, 167, 1) 0%, rgba(121, 9, 107, 1) 32%, rgba(72, 91, 167, 1) 64%, rgba(0, 212, 255, 1) 80%, rgba(0, 254, 255, 1) 100%);
+    color: #fff;
+    padding: 45px;
+    position: fixed; /* Hace que el footer sea fijo en la parte inferior */
+    bottom: 0; /* Fija el footer en la parte inferior */
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que el footer esté por encima de otros elementos */
 }
 
-.footerPrincipal{
-    position: relative;
-    top: 100px;
+.footer2 {
+    display: flex;
+    flex-wrap: wrap;
 }
+
+.footer2 > div {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Media query para hacerlo responsivo */
+@media (max-width: 768px) {
+    .footerPrincipal {
+        text-align: center;
+    }
+
+    .footer2 {
+        flex-direction: column;
+    }
+
+    .footer2 > div {
+        width: 100%;
+    }
+}
+
+.centralparte{
+  height: 1000px;
+}
+

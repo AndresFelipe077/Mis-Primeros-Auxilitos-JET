@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
     <title>Login</title>
+    <link rel="stylesheet" href={{asset('css/logins.css')}}>
     <link id="image-head" rel="shortcut icon" href="{{ asset('img/botiquin.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
@@ -38,9 +39,10 @@
     <div class="intro text-center">
         <h1 class="logo-header">
             <span class="logo"><img src="{{ asset('img/logo/logo.png') }}" alt="Auxilitos"></span>
-            <span class="logo">MIS PRIMEROS</span> <span class="logo">AUXILITOS</span>
+            <span class="logo">MIS PRIMEROS  AUXILITOS</span> 
         </h1>
     </div>
+    
 
     <div class="container mt-5 animate__animated animate__swing rounded">
         <div class="row align-items-stretch">
@@ -181,7 +183,7 @@
                         </div>
                     </div>
                     <div class="row text-center bg-dark text-light rounded ">
-                        <div class="col-12">Copyright &copy; 2022</div>
+                        <div class="col-12">Nuestros heroes del futuro 😊😊😊</div>
                     </div>
                 </div>
 

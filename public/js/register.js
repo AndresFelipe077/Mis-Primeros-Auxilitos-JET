@@ -57,3 +57,20 @@ setInterval(() => {
   updateSlider();
   updateIndicators();
 }, 5000);
+
+
+/*
+============================================
+INPUT DATE
+============================================
+*/
+function cambiarTipo() {
+  const fechaInput = document.getElementById("date");
+  fechaInput.type = "date";
+  fechaInput.removeEventListener("click", cambiarTipo);
+}
+
+// Añade un evento para volver a cambiar el tipo si el usuario sale del campo sin seleccionar una fecha
+document.getElementById("date").addEventListener("blur", function() {
+  this.type = "text";
+});

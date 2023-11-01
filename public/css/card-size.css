@@ -6,4 +6,338 @@
 /* #card-body{
   width: 300px !important; 
   height:470px !important;
-} */
+} */ 
+
+
+
+
+
+
+.card1 {
+  background-color: rgba(128, 128, 128, 0.2); /* Gris casi transparente */
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  animation: neon-border-animation 3s linear infinite;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 1); /* Comienza con un borde rojo más intenso */
+
+  /* background: linear-gradient(to bottom, #fffefb32, #00bfff72); */
+
+    
+    outline: none;
+}
+
+.card{
+  background: linear-gradient(to bottom, #fffefb32, #00bfff72);
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+   
+    text-align: center;
+}
+.circles {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: none;
+}
+
+.half-circle1 {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #373ecd;
+  position: relative;
+  
+}
+.half-circle2 {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #dc3cdc;
+  position: relative;
+  
+}
+.half-circle3 {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #05f2b7;
+  position: relative;
+  
+}
+.half-circle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #0519f2;
+  position: relative;
+  
+}
+.line {
+  width: 100%;
+ height: 10px;
+   /* background-color: #0cd2a7; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: moveLine 5s linear infinite;
+  background: linear-gradient(to bottom, #4203ff, #eb01f8fd); 
+  
+}
+
+@keyframes moveLine {
+  0% {
+      transform: translateX(-100%);
+  }
+  100% {
+      transform: translateX(100%);
+  }
+}
+
+
+
+@keyframes neon-border-animation {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 1); /* Rojo más intenso */
+  }
+  33% {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 1); /* Verde más intenso */
+  }
+  66% {
+    box-shadow: 0 0 20px rgba(0, 0, 255, 1); /* Azul más intenso */
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 1); /* Vuelve a rojo más intenso */
+  }
+}
+.col-sm-2 {
+  position: relative;
+  animation: mover-izquierda 6s linear infinite alternate, 
+             mover-arriba 8s linear infinite alternate;
+}
+
+@keyframes mover-izquierda {
+  0%, 100% {
+    left: 0; /* Posición inicial */
+  }
+  50% {
+    left: -50px; /* Mover hacia la izquierda */
+  }
+}
+
+@keyframes mover-arriba {
+  0%, 100% {
+    top: 0; /* Posición inicial */
+  }
+  50% {
+    top: -50px; /* Mover hacia arriba */
+  }
+}
+
+
+/* aniaccion iagenes de dos  */
+
+.container1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.image-container {
+  position: absolute;
+  cursor: pointer;
+}
+
+#movable-image {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+#large-image {
+  display: none;
+  width: 300px;
+  height: 300px;
+}
+
+/* carta principalll burbujas */
+
+
+
+.burbuja{
+   
+  border-radius: 50%;
+  background: #30c1ff;
+  opacity: 0.3;
+
+  position: absolute;
+  bottom: 0;
+  
+
+  animation: burbujas 3s linear infinite ;
+}
+.burbuja:nth-child(1){
+  width: 80px;
+  height: 80px;
+  left: 5%;
+  animation-duration: 3s;
+  animation-delay: 3s;
+
+}
+.burbuja:nth-child(2){
+  width: 100px;
+  height: 100px;
+  left: 35%;
+  animation-duration: 3s;
+  animation-delay: 5s;
+  
+}
+.burbuja:nth-child(3){
+  width: 70px;
+  height: 70px;
+  left: 15%;
+  animation-duration: 1.s;
+  animation-delay: 7s;
+  
+}
+.burbuja:nth-child(4){
+  width: 50px;
+  height: 50px;
+  left: 90%;
+  animation-duration: 6s;
+  animation-delay: 3s;
+  
+}
+.burbuja:nth-child(5){
+  width: 70px;
+  height: 70px;
+  left: 65%;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  
+}
+.burbuja:nth-child(6){
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  animation-duration: 4s;
+  animation-delay: 5s;
+  
+}
+.burbuja:nth-child(7){
+  width: 60px;
+  height: 60px;
+  left: 80%;
+  animation-duration: 4s;
+  animation-delay: 5s;
+  
+}
+.burbuja:nth-child(8){
+  width: 100px;
+  height: 100px;
+  left: 52%;
+  animation-duration: 5s;
+  animation-delay: 5s;
+  
+}
+.burbuja:nth-child(9){
+  width: 65px;
+  height: 65px;
+  left: 51%;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  
+}
+.burbuja:nth-child(10){
+  width: 40px;
+  height: 40px;
+  left: 35%;
+  animation-duration: 3s;
+  animation-delay: 4s;
+  
+}
+
+
+
+
+
+@keyframes burbujas{
+0%{
+  bottom: 0;
+  opacity:0;
+
+}
+50%{
+     opacity: .4;
+
+}
+100%{
+  bottom: 100vh;
+  opacity: 0;
+}
+  
+}
+@keyframes movimiento {
+  0%{
+      transform: translateY(0);
+  }
+  50%{
+      transform: translateY(30px);
+  }
+  100%{
+      transform: translateY(0);
+
+  }
+  
+}
+
+
+/* animacion caminando img */
+
+
+/* Bernard Bernoulli: Animación del personaje */
+#bern {
+  /* Tamaño de la viñeta individual */
+  width: 95px;
+  height: 156px;
+  
+  /* Cómo hay establecido un tamaño, centramos */
+  margin: auto;
+  
+  /* Cargamos el sprite (repeat-x se puede omitir, por defecto) */
+  background: url("/img/tutu.png") repeat-x;
+  
+position: absolute;
+  /* Aplicamos animación "walk" (0.8seg, 6 frames, repetimos) */
+  animation: walk .8s steps(7) infinite;
+  
+  /* Posicionamos el personaje sobre el camino de madera */
+
+}
+
+/* Animación de personaje caminando: Simplemente mueve el sprite sheet hacia la izquierda, realizando el movimiento. */
+@keyframes walk {
+  /* Partimos de la primera viñeta del sprite sheet */
+  from { background-position: 0 }
+  /* Tamaño total de ancho del sprite. 
+     Es negativo para que no "camine" hacia atrás */
+  to { background-position: -672px }
+}
+.smith {
+  transform: translateX(19px);
+  margin-top: 100px;
+}
+.nuevos{
+  position: relative !important;
+  left: 105px;
+}
