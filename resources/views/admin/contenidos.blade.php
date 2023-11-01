@@ -70,12 +70,12 @@
                     <div class="card">
                         <div class="card-header">
                             <h4> Lista de contenidos </h4>
-                            <a href="{{ route('admin.pdf.content') }}"  class="btn btn-success" target="_target">
+                            <a href="{{ route('admin.pdf.content') }}" class="btn btn-success" target="_target">
                                 <i class="fas fa-file-pdf fa-2x"></i>
                             </a>
                             <a href="{{ route('admin.excel.contents') }}" class="btn btn-info">
                                 <i class="fas fa-file-excel fa-2x"></i>
-                            </a> 
+                            </a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -86,6 +86,7 @@
                                         <th>Autor</th>
                                         <th>Descripción</th>
                                         <th>Imagen</th>
+                                        <th>Verificación</th>
                                         <th>Editar</th>
                                         <th>Eliminar</th>
                                     </thead>
@@ -118,6 +119,70 @@
                                                     @endif
 
                                                 </td>
+                                                <td>
+                                                    @if ($contenido->verified == 1)
+                                                        <p class="text-success">Verificado</p>
+                                                    @else
+                                                        <p class="text-danger">sin verificar</p>
+
+                                                        <a href="{{ route('admin.excel.contents') }}"
+                                                            class="btn btn-success ml-4"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#exampleModal{{ $contenido->id }}">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 100 100">
+                                                                <circle cx="50" cy="50" r="40" stroke="green" stroke-width="3" fill="white" />
+                                                                <path d="M30 50L45 65L70 30" stroke="green" stroke-width="5" fill="transparent" />
+                                                              </svg>                                                              
+                                                        </a>
+
+                                                        <!-- Modal -->
+                                                        <div class="modal fade" id="exampleModal{{ $contenido->id }}" tabindex="-1"
+                                                            aria-labelledby="exampleModalLabel{{ $contenido->id }}"
+                                                            aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                                                                            Verificar contenido</h1>
+                                                                        <button type="button" class="btn-close"
+                                                                            data-bs-dismiss="modal"
+                                                                            aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+
+                                                                        <p class="h3">¿De seguro deseas verificar este
+                                                                            contenido? 😊😊😊😊</p>
+
+                                                                        <form method="POST" class="text-center"
+                                                                            action="{{ route('content.verified', $contenido) }}">
+                                                                            @csrf
+                                                                            @method('put')
+
+                                                                            <div class="check-group m-3">
+                                                                                <input type="checkbox" id="check1"
+                                                                                    name="verified" value="1"
+                                                                                    class="form-check-input form-check-lg">
+                                                                                <label for="check1"
+                                                                                    class="form-check-label">Verificar</label>
+                                                                            </div>
+
+                                                                            <div class="modal-footer">
+                                                                                <button type="button"
+                                                                                    class="btn btn-danger"
+                                                                                    data-bs-dismiss="modal">Cancelar</button>
+                                                                                <button type="submit"
+                                                                                    class="btn btn-success">Verificar</button>
+                                                                            </div>
+
+                                                                        </form>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    @endif
+                                                </td>
                                                 <td class="align-middle">
 
                                                     <button class="btn btn-success text-success bg-success rounded mb-3"
@@ -144,7 +209,8 @@
                                                                         id="exampleModalLabel{{ $contenido->id }}">
                                                                         Editar contenido 🤗</h1>
                                                                     <button type="button" class="btn-close"
-                                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body">
 
@@ -181,7 +247,8 @@
                                                                                             @enderror
                                                                                         </div>
 
-                                                                                        <div class="form-group m-1 mx-auto">
+                                                                                        <div
+                                                                                            class="form-group m-1 mx-auto">
                                                                                             <label class="h5"
                                                                                                 for="exampleFormControlFile1"
                                                                                                 id="src-file">Escoge tu

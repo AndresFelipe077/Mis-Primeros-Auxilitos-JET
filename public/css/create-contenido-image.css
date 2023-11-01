@@ -97,7 +97,7 @@ label {
 
 .h5 {
     position: relative;
-    left: 80px;
+    left: 220px;
     top: 70px;
 }
 
@@ -153,5 +153,5 @@ label {
 .imagen-secundaria{
     position: relative;
     width: 150px;
-    left: -130px;
+    left: 60px;
 }
