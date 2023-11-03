@@ -94,7 +94,7 @@ class ContenidoControllerApi extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function show($id)
+  public function show($id): JsonResponse
   {
     $content = Contenido::find($id);
 
@@ -115,9 +115,9 @@ class ContenidoControllerApi extends Controller
   public function update(Request $request, $id): JsonResponse
   {
     $request->validate([
-      'title' => 'required|max:50',
-      'file' => 'image', // Validación de imagen
-      'autor' => 'string',
+      'title'       => 'required|max:50',
+      'url'         => 'nullable|mimetypes:image/jpeg,image/png,image/jpg,image/gif,image/svg+xml', // Validación de imagen
+      'autor'       => 'string',
       'description' => 'required|max:250',
     ]);
 
@@ -134,8 +134,8 @@ class ContenidoControllerApi extends Controller
     $content->title = $title;
     $content->slug = $title_url;
 
-    if ($request->hasFile('file')) {
-      $file = $request->file('file');
+    if ($request->hasFile('url')) {
+      $file = $request->file('url');
       $cadena = $file->getClientOriginalName();
       $cadenaConvert = strtr($cadena, " ", "_");
       $nombre = Str::random(10) . $cadenaConvert;
