@@ -7,6 +7,7 @@ use App\Models\Contenido;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 
@@ -111,18 +112,49 @@ class ContenidoControllerApi extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, $id)
+  public function update(Request $request, $id): JsonResponse
   {
+    $request->validate([
+      'title' => 'required|max:50',
+      'file' => 'image', // Validación de imagen
+      'autor' => 'string',
+      'description' => 'required|max:250',
+    ]);
 
-    $contenido = Contenido::findOrFail($id);
+    $content = Contenido::find($id);
 
-    if (!$contenido) {
-      return response()->json(['error' => 'Content not found'], 404);
+    if (!$content) {
+      return response()->json(['message' => 'Content not found'], 404);
     }
 
-    $contenido->update($request->all());
+    $title = $request->title;
+    $title_url = Str::random(1) . Str::slug($title, '-');
 
-    return response()->json($contenido, 200);
+    $name = $request->autor;
+    $content->title = $title;
+    $content->slug = $title_url;
+
+    if ($request->hasFile('file')) {
+      $file = $request->file('file');
+      $cadena = $file->getClientOriginalName();
+      $cadenaConvert = strtr($cadena, " ", "_");
+      $nombre = Str::random(10) . $cadenaConvert;
+      $file->move('storage/contenidos/imagenes/', $nombre);
+
+      // Eliminar el archivo anterior si existe
+      if ($content->url != '') {
+        unlink(public_path($content->url));
+      }
+
+      $content->url = '/storage/contenidos/imagenes/' . $nombre;
+    }
+
+    $content->autor = $name;
+    $content->description = $request->description;
+
+    $content->update();
+
+    return response()->json($content, 200);
   }
 
   /**
