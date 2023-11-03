@@ -41,3 +41,19 @@ left: 30px; /* Mueve el botón hacia la derecha */
 position: relative;
 left: -29px; /* Mueve el botón hacia la izquierda */
 }
+
+.primero{
+  position: relative !important;
+  left: -20px;
+  top: -20px;
+}
+
+.cierre{
+  position: relative !important;
+  left: -30px;
+  top: -20px;
+}
+
+.posicion{
+  height: 400px;
+}

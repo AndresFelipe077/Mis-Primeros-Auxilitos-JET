@@ -13,11 +13,11 @@
             <div class="row">
                 @if (auth()->check() && auth()->user()->subscription && auth()->user()->subscription->subscription_status === 'aprobado')
                 <!-- La condición se cumple -->
-                <p>La condición aaaaaaa.</p>
+        
              
             @else
                 <!-- La condición no se cumple -->
-                <p>abquiere mas contenido premiun.</p>
+           
             @endif
             
                 <div class="col-sm-2 text-center">

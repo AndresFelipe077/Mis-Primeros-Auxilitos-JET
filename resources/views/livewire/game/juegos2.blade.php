@@ -21,8 +21,7 @@
     <!-- Pantalla juego -->
     <div class="pantalla-juego" id="pantalla-juego">
         <h4>¿Esto es....?</h4>
-        <img src="{{ asset('img/games/iamgen.sinfondo.png') }}">
-        
+      
         <img src="{{ asset('img/games/img-reto2.png') }}" alt="" id="imgBandera">
 
         <div class="opciones">
