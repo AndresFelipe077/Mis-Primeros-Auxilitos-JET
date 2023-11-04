@@ -112,22 +112,23 @@ class ContenidoControllerApi extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, $id): JsonResponse
+  public function update(Request $request, $id) : JsonResponse
   {
-    $request->validate([
-      'title'       => 'required|max:50',
-      'url'         => 'nullable|mimetypes:image/jpeg,image/png,image/jpg,image/gif,image/svg+xml', // Validación de imagen
-      'autor'       => 'string',
-      'description' => 'required|max:250',
-    ]);
+    // $request->validate([
+    //   'title'       => 'required|max:50',
+    //   'url'         => 'nullable|mimetypes:image/jpeg,image/png,image/jpg,image/gif,image/svg+xml', // Validación de imagen
+    //   'autor'       => 'string',
+    //   'description' => 'required|max:250',
+    // ]);
 
-    $content = Contenido::find($id);
+    $content = Contenido::findOrFail($id);
 
     if (!$content) {
       return response()->json(['message' => 'Content not found'], 404);
     }
 
     $title = $request->title;
+    var_dump($title);
     $title_url = Str::random(1) . Str::slug($title, '-');
 
     $name = $request->autor;
@@ -151,6 +152,9 @@ class ContenidoControllerApi extends Controller
 
     $content->autor = $name;
     $content->description = $request->description;
+
+    $content->verified = 0;
+    $content->user_id = $request->user_id;
 
     $content->update();
 
