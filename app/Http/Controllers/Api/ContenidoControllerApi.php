@@ -31,7 +31,7 @@ class ContenidoControllerApi extends Controller
    * @param (int) $userId
    * @author Andres Felipe Pizo Luligo
    */
-  public function contenidosByUser($userId): JsonResponse
+  public function myContent($userId): JsonResponse
   {
     $user = User::findOrFail($userId);
     $contenidos = $user->contenidos;

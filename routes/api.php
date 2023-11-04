@@ -90,6 +90,6 @@ Route::middleware('auth:samctum')->group(
 
 Route::resource('contenidos', ContenidoControllerApi::class);
 
-Route::get('contenidos_by_user/{id}', [ContenidoControllerApi::class, 'contenidosByUser']);
+Route::get('my_content/{id}', [ContenidoControllerApi::class, 'myContent']);
 
 Route::resource('users', UserControllerApi::class)->only(['index', 'show', 'update']);
