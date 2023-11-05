@@ -33,10 +33,9 @@ class ContenidoControllerApi extends Controller
    */
   public function myContent($userId): JsonResponse
   {
-    $user = User::findOrFail($userId);
-    $contenidos = $user->contenidos;
+    $content = Contenido::where('user_id', $userId)->get();
 
-    return response()->json($contenidos);
+    return response()->json($content, 200);
   }
 
   /**
