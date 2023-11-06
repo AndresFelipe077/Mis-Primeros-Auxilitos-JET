@@ -88,7 +88,7 @@ Route::middleware('auth:samctum')->group(
 
 // Apis about contenido
 
-Route::resource('contenidos', ContenidoControllerApi::class);
+Route::resource('contenidos', ContenidoControllerApi::class)->only(['index', 'show', 'store', 'update', 'destroy']);
 
 Route::get('my_content/{id}', [ContenidoControllerApi::class, 'myContent']);
 
