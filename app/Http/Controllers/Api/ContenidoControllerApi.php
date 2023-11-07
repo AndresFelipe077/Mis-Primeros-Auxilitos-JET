@@ -108,17 +108,15 @@ class ContenidoControllerApi extends Controller
    * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, $id)
+  /*public function update(Request $request, $id)
   {
 
-    /*$request->validate([
+    $request->validate([
       'title'       => 'required|max:50',
       'url'         => 'nullable|mimetypes:image/jpeg,image/png,image/jpg,image/gif,image/svg+xml',
       'autor'       => 'string',
       'description' => 'required|max:250',
-    ]);*/
-
-    var_dump($request->title, "Titulo");
+    ]);
 
     $content = Contenido::findOrFail($id);
 
@@ -163,7 +161,49 @@ class ContenidoControllerApi extends Controller
     $content->update();
 
     return response()->json($content, 200);
+  }*/
+  public function update(Request $request, $id)
+  {
+    // Validación de la solicitud
+    /*$request->validate([
+        'title'       => 'required|max:50',
+        'url'         => 'nullable|mimetypes:image/jpeg,image/png,image/jpg,image/gif,image/svg+xml',
+        'autor'       => 'string',
+        'description' => 'required|max:250',
+    ]);*/
+
+    $content = Contenido::findOrFail($id);
+
+    // Verificar la existencia del archivo y eliminarlo
+    if (!empty($content->url)) {
+      $existingFile = public_path($content->url);
+      if (file_exists($existingFile)) {
+        unlink($existingFile);
+      }
+    }
+
+    // Procesar el archivo de imagen
+    if ($request->hasFile('url')) {
+      $file = $request->file('url');
+      $fileName = Str::random(10) . '_' . str_replace(' ', '_', $file->getClientOriginalName());
+      $filePath = '/storage/contenidos/imagenes/' . $fileName;
+      $file->move(public_path('storage/contenidos/imagenes/'), $fileName);
+      $content->url = $filePath;
+    }
+
+    // Actualizar otras propiedades usando el método update de Eloquent
+    $content->update([
+      'title' => $request->title,
+      'slug' => Str::random(1) . Str::slug($request->title, '-'),
+      'autor' => $request->autor,
+      'description' => $request->description,
+      'verified' => 0,
+      'user_id' => $request->user_id,
+    ]);
+
+    return response()->json($content, 200);
   }
+
 
   /**
    * Remove the specified resource from storage.
