@@ -108,102 +108,65 @@ class ContenidoControllerApi extends Controller
    * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
-  /*public function update(Request $request, $id)
+  public function updateContent(Request $request, $id)
   {
 
-    $request->validate([
+    /*$request->validate([
       'title'       => 'required|max:50',
       'url'         => 'nullable|mimetypes:image/jpeg,image/png,image/jpg,image/gif,image/svg+xml',
       'autor'       => 'string',
       'description' => 'required|max:250',
-    ]);
-
-    $content = Contenido::findOrFail($id);
-
-    if (!$content) {
-      return response()->json(['message' => 'Content not found'], 404);
-    }
-
-    if ($request->has('url')) {
-
-      $destination = public_path() . $content->url;
-
-      if ($content->url != '') {
-        unlink(public_path() . '/' . $content->url);
-      }
-
-      $file = $request->file('url');
-
-      $cadena = $file->getClientOriginalName();
-
-      $cadenaConvert = strtr($cadena, " ", "_");
-
-      $nombre = Str::random(10) . $cadenaConvert;
-
-      $file->move('storage/contenidos/imagenes/', $nombre);
-
-      $content->url = '/storage/contenidos/imagenes/' . $nombre;
-    }
-
-    $title = $request->title;
-    $title_url = Str::random(1) . Str::slug($title, '-');
-
-    $name = $request->autor;
-    $content->title = $title;
-    $content->slug = $title_url;
-
-    $content->autor = $name;
-    $content->description = $request->description;
-
-    $content->verified = 0;
-    $content->user_id = $request->user_id;
-
-    $content->update();
-
-    return response()->json($content, 200);
-  }*/
-  public function update(Request $request, $id)
-  {
-    // Validación de la solicitud
-    /*$request->validate([
-        'title'       => 'required|max:50',
-        'url'         => 'nullable|mimetypes:image/jpeg,image/png,image/jpg,image/gif,image/svg+xml',
-        'autor'       => 'string',
-        'description' => 'required|max:250',
     ]);*/
 
-    $content = Contenido::findOrFail($id);
+    try {
 
-    // Verificar la existencia del archivo y eliminarlo
-    if (!empty($content->url)) {
-      $existingFile = public_path($content->url);
-      if (file_exists($existingFile)) {
-        unlink($existingFile);
+      $content = Contenido::findOrFail($id);
+
+      if (!$content) {
+        return response()->json(['message' => 'Content not found'], 404);
       }
+
+      if ($request->has('url')) {
+
+        $destination = public_path() . $content->url;
+
+        if ($content->url != '') {
+          unlink(public_path() . '/' . $content->url);
+        }
+
+        $file = $request->file('url');
+
+        $cadena = $file->getClientOriginalName();
+
+        $cadenaConvert = strtr($cadena, " ", "_");
+
+        $nombre = Str::random(10) . $cadenaConvert;
+
+        $file->move('storage/contenidos/imagenes/', $nombre);
+
+        $content->url = '/storage/contenidos/imagenes/' . $nombre;
+      }
+
+      $title = $request->title;
+      $title_url = Str::random(1) . Str::slug($title, '-');
+
+      $name = $request->autor;
+      $content->title = $title;
+      $content->slug = $title_url;
+
+      $content->autor = $name;
+      $content->description = $request->description;
+
+      $content->verified = 0;
+      $content->user_id = $request->user_id;
+
+      $content->update();
+
+      return response()->json($content, 200);
+    } catch (\Exception $e) {
+      return response()->json(['error' => 'Error' . $e], 500);
     }
-
-    // Procesar el archivo de imagen
-    if ($request->hasFile('url')) {
-      $file = $request->file('url');
-      $fileName = Str::random(10) . '_' . str_replace(' ', '_', $file->getClientOriginalName());
-      $filePath = '/storage/contenidos/imagenes/' . $fileName;
-      $file->move(public_path('storage/contenidos/imagenes/'), $fileName);
-      $content->url = $filePath;
-    }
-
-    // Actualizar otras propiedades usando el método update de Eloquent
-    $content->update([
-      'title' => $request->title,
-      'slug' => Str::random(1) . Str::slug($request->title, '-'),
-      'autor' => $request->autor,
-      'description' => $request->description,
-      'verified' => 0,
-      'user_id' => $request->user_id,
-    ]);
-
-    return response()->json($content, 200);
   }
-
 
   /**
    * Remove the specified resource from storage.
