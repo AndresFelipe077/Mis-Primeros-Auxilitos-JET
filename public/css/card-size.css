@@ -1,6 +1,7 @@
 #card-contenido{
   width: 300px !important; 
   height:500px !important;
+  border-radius: 30%;
 }
 
 /* #card-body{
@@ -8,6 +9,44 @@
   height:470px !important;
 } */ 
 
+/* Estilos generales para pantallas pequeñas responsoiveeeeeeeeeeeeeeeeeeeeeeee  cartass home*/
+
+@media (max-width: 200px) {
+  #card-contenido{
+    width: 100px !important; 
+    height:400px !important;
+  }
+}
+@media (min-width: 201px) and (max-width: 349px) {
+  #card-contenido {
+    width: 200px !important; 
+    height:400px !important;
+  }
+}
+@media (min-width: 340px) and (max-width: 479px) {
+  #card-contenido {
+    width: 270px !important; 
+    height:470px !important;
+  }
+}
+
+
+/* Estilos para pantallas medianas */
+@media (min-width: 480px) and (max-width: 992px) {
+  #card-contenido {
+    width: 300px !important; 
+    height:500px !important;
+  margin: auto;
+  }
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 993px) {
+  #card-contenido {
+    width: 300px !important; 
+    height:500px !important;
+  }
+}
 
 
 
@@ -34,6 +73,7 @@
    
     text-align: center;
 }
+
 .circles {
   display: flex;
   justify-content: center;
@@ -81,6 +121,22 @@
   position: relative;
   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* jurgods lineaaaaa de dos colores */
 .line {
   width: 100%;
  height: 10px;
@@ -92,6 +148,7 @@
   background: linear-gradient(to bottom, #4203ff, #eb01f8fd); 
   
 }
+/* ´movimiento linea de abajo de la carta juegos */
 
 @keyframes moveLine {
   0% {
@@ -102,7 +159,7 @@
   }
 }
 
-
+/* fondo luces de la carta juegos */
 
 @keyframes neon-border-animation {
   0% {
@@ -124,29 +181,30 @@
              mover-arriba 8s linear infinite alternate;
 }
 
-@keyframes mover-izquierda {
+/* @keyframes mover-izquierda {
   0%, 100% {
     left: 0; /* Posición inicial */
-  }
-  50% {
-    left: -50px; /* Mover hacia la izquierda */
-  }
-}
+  /* } */
+  /* 50% {
+    left: -50px; Mover hacia la izquierda */
+  /* }
+} */
 
-@keyframes mover-arriba {
+/* @keyframes mover-arriba {
   0%, 100% {
-    top: 0; /* Posición inicial */
-  }
-  50% {
-    top: -50px; /* Mover hacia arriba */
-  }
-}
+    top: 0; Posición inicial
+  } */
+  /* 50% {
+    top: -50px; Mover hacia arriba */
+  /* } */
+/* } */ 
 
 
-/* aniaccion iagenes de dos  */
+
+/* aniaccion imagenes de dos  */
 
 .container1 {
-  position: absolute;
+  position: static;
   top: 0;
   left: 0;
   width: 100%;
@@ -170,6 +228,7 @@
   height: 300px;
 }
 
+
 /* carta principalll burbujas */
 
 
@@ -178,7 +237,7 @@
    
   border-radius: 50%;
   background: #30c1ff;
-  opacity: 0.3;
+  opacity: 0;
 
   position: absolute;
   bottom: 0;
@@ -186,6 +245,8 @@
 
   animation: burbujas 3s linear infinite ;
 }
+
+
 .burbuja:nth-child(1){
   width: 80px;
   height: 80px;
@@ -275,6 +336,7 @@
 0%{
   bottom: 0;
   opacity:0;
+  
 
 }
 50%{
