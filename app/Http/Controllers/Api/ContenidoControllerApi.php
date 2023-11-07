@@ -111,12 +111,12 @@ class ContenidoControllerApi extends Controller
   public function updateContent(Request $request, $id)
   {
 
-    /*$request->validate([
+    $request->validate([
       'title'       => 'required|max:50',
       'url'         => 'nullable|mimetypes:image/jpeg,image/png,image/jpg,image/gif,image/svg+xml',
       'autor'       => 'string',
       'description' => 'required|max:250',
-    ]);*/
+    ]);
 
     try {
 
