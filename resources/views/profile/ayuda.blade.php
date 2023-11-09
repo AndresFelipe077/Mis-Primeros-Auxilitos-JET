@@ -64,7 +64,7 @@
         </div>
 
 
-        <div class="">
+        <div class="centralparte">
             <header class="showcase2 ">
                 <h2 class="titulo2">Mis primeros Auxilitos</h2>
                 <p class="subtitulo2" data-aos="fade-down">Tiene como finalidad poder instruir de manera

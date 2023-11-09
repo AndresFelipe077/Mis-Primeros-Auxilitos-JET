@@ -1,5 +1,4 @@
 <link rel="shortcut icon" href="{{ asset('img/profile/profile2.png') }}" type="image/x-icon">
-<link rel="stylesheet" href="{{ asset('css/eye.css') }}">
 @extends('adminlte::page')
 
 @section('content')

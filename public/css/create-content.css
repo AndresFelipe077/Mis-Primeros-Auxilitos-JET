@@ -50,15 +50,6 @@ label{
 }
 
 
-.subir{
-    padding: 5px 10px !important;
-    background: #5678EF !important;
-    color:#fff !important; 
-    border:0px solid #fff !important;
-    border-radius: 10px;
-    width: 50%;
-    cursor: pointer !important;
-}
  
 .subir:hover{
     color:#fff;
@@ -100,17 +91,9 @@ label{
 }
 .h5{
     position: relative;
-    left: 250px;
+    left: 10px;
 }
-.card {
-    background-color: rgba(128, 128, 128, 0.2); /* Gris casi transparente */
-    border-radius: 50px;
-    position: relative;
-    overflow: hidden;
-    animation: neon-border-animation 3s linear infinite;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 1); /* Comienza con un borde rojo más intenso */
-  }
-  
+
   @keyframes neon-border-animation {
     0% {
       box-shadow: 0 0 20px rgba(255, 0, 0, 1); /* Rojo más intenso */
@@ -140,7 +123,7 @@ label{
     }
   }
   
-  @keyframes mover-arriba {
+  @keyframes mover-arriba { 
     0%, 100% {
       top: 0; /* Posición inicial */
     }
@@ -149,3 +132,13 @@ label{
     }
   }
   
+
+  .rounded {
+    position: relative !important;
+    left: 5px;
+  }
+
+  .segundo{
+    position: relative;
+    left: 200px;
+  }

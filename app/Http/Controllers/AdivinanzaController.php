@@ -26,7 +26,7 @@ class AdivinanzaController extends Controller
     {
         $request->validate([
             'title'    => 'required|max:50',
-            'image'    => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image'    => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'content'  => 'required|max:250',
         ]);
 
@@ -72,7 +72,7 @@ class AdivinanzaController extends Controller
     {
         $request->validate([
             'title'    => 'required|max:50',
-            'image'    => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image'    => 'image|mimes:jpeg,png,jpg,gif,svg',
             'content'  => 'required|max:250',
         ]);
 

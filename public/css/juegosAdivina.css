@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&display=swap');
+
+body{
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background-image: url("../img/imgs/fondo-ajustes.jpg") !important;
+    background-size: cover;
+    background-attachment: fixed;
+}
+h1{
+    position: relative;
+    font-family: 'DynaPuff', cursive;
+
+}
+.app{
+    width: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+.card{
+    height: 150px;
+    width: 150px;
+    border: 1px solid #ccc;
+    transform-style: preserve-3d;
+    transition: .7s;
+}
+
+.sides{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-size: 2em;
+    display: grid;
+    place-items: center;
+    backface-visibility: hidden;
+}
+.front{
+    background-color: rgb(18, 168, 238);
+}
+.back{
+    background-color: rgb(214, 1, 204);
+    transform: rotateY(180deg);
+}
+
+.btn-game{
+    height: 50px;
+    padding: 1em 1.5em;
+    color: #222;
+    background-color: rgb(240, 240, 14);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-family: 'DynaPuff', cursive;
+
+}
+
+.rotate{
+    transform: rotateY(180deg);
+}
+/* EDIT "IMG-FLOTANTE-BOY */
+.img-boy{
+    position:absolute;
+    top: -400px;
+    left: calc(70% -10px);
+    position: relative;
+    right: 1px;
+    left: 530px;
+    float: right;
+    animation: movimiento 2.5s linear infinite;
+    width: 400px;
+    height: 350px;
+    display: block;
+}
+@keyframes movimiento{
+30%{
+    transform: translate(0);
+}
+30%{
+    transform: translate(30px);
+}
+
+100%{
+
+    transform: translateY(0);
+}
+}
+/* FIN EDIT "IMG-FLOTANTE */
+
+
+/* EFECTO */
+
+.card {
+    --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+    width: 100px;
+    height: 154px;
+    padding: 5px;
+    border-radius: 1rem;
+    overflow: visible;
+    background: #f7ba2b;
+    background: var(--background);
+    position: relative;
+    z-index: 1;
+   }
+   
+   .card::after {
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    transform: scale(0.8);
+    filter: blur(25px);
+    background: #f7ba2b;
+    background: var(--background);
+    transition: opacity .5s;
+   }
+   
+   
+   
+   .card .title {
+    font-weight: bold;
+    letter-spacing: .1em;
+   }
+   
+   /*Hover*/
+   .card:hover::after {
+    opacity: 0;
+   }
+   
+   .card:hover .card-info {
+    color: #f7ba2b;
+    transition: color 1s;
+   }
+   /* Estilos del modal */
+   .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(145, 123, 234, 0.7); /* Cambia los valores de RGB y la opacidad (0.7) según tus preferencias */
+}
+
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid blue;
+    border-radius: 10px;
+    margin: 15% auto;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    width: 70%;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+
+/* Estilos adicionales para el modal */
+/* Añade estilos de diseño según tus preferencias */

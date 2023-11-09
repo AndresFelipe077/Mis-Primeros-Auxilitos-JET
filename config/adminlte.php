@@ -314,6 +314,14 @@ return [
             'can'         => 'admin'
         ],
         [
+            'text'        => 'Roles',
+            'url'         => 'admin/roles',
+            'icon'        => 'fas fa-fw fa-users',
+            // 'label'       => 5,
+            'label_color' => 'success',
+            'can'         => 'admin.users'
+        ],
+        [
             'text'        => 'Usuarios',
             'url'         => 'admin/users',
             'icon'        => 'fas fa-fw fa-users',
@@ -342,10 +350,9 @@ return [
             'text'        => 'Administradores',
             'url'         => 'admin/users_admin',
             'icon'        => 'fas fa-fw fa-user',
-            'label'       => 5,
+            'label'       => 2,
             'label_color' => 'success',
             'can'         => 'admin.admin.users'
-
         ],
         ['header' => 'account_settings'],
         [
@@ -353,11 +360,11 @@ return [
             'url'  => '/user/profile',
             'icon' => 'fas fa-fw fa-user',
         ],
-        [
-            'text' => 'change_password',
-            'url'  => '/admin/change_password',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
+        // [
+        //     'text' => 'change_password',
+        //     'url'  => '/admin/change_password',
+        //     'icon' => 'fas fa-fw fa-lock',
+        // ],
         // [
         //     'text'    => 'multilevel',
         //     'icon'    => 'fas fa-fw fa-share',
@@ -548,7 +555,7 @@ return [
             'fullscreen'      => true,
         ],
         'options' => [
-            'loading_screen'    => 1000,
+            'loading_screen'    => 500,
             'auto_show_new_tab' => true,
             'use_navbar_items'  => true,
         ],
@@ -566,5 +573,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];
