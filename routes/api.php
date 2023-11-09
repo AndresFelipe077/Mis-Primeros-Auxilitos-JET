@@ -94,4 +94,4 @@ Route::get('my_content/{id}', [ContenidoControllerApi::class, 'myContent']);
 
 Route::post('update_content/{id}', [ContenidoControllerApi::class, 'updateContent']);
 
-Route::resource('users', UserControllerApi::class)->only(['index', 'show', 'update']);
+Route::resource('users', UserControllerApi::class)->only(['index', 'show', 'update']); //
