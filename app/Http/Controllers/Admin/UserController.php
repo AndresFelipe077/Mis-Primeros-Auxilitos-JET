@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
@@ -50,6 +51,13 @@ class UserController extends Controller
     return redirect()->route('admin.users')->with('info', 'Roles asignados correctamente');
   }
 
+
+  public function permissions()
+  {
+    $permissions = Permission::all();
+    return $permissions;
+  }
+
   public function destroy(User $user)
   {
     try {
@@ -60,4 +68,35 @@ class UserController extends Controller
       return back()->withError('No se pudo eliminar el usuario.');
     }
   }
+
+  public function roles()
+  {
+
+    $roles = Role::all();
+
+    $permissions = $this->permissions();
+
+    return view('admin.roles', compact('roles', 'permissions'));
+  }
+
+  public function createRole(Request $request)
+  {
+    $role = Role::create([
+      'name' => $request->name,
+      'guard_name' => 'web'
+    ]);
+    return redirect()->route('admin.roles')->with('crear', 'ok');
+  }
+
+  public function assignRoleToPermissions(Request $request, Role $role)
+  {
+
+    // return $request;
+    $permissions = $request->input('permissions', []); // Obtener los nombres de permisos del formulario
+
+    $role->syncPermissions($permissions); // Asignar permisos al rol
+
+    return redirect()->route('admin.roles')->with('info', 'Permisos asignados al rol exitosamente.');
+  }
+
 }

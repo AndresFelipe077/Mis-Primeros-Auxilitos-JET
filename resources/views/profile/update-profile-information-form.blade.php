@@ -1,5 +1,3 @@
-
-
 <x-jet-form-section submit="updateProfileInformation">
     <x-slot name="form">
 
@@ -183,21 +181,10 @@
                 
                 <script>
                     function recargarPagina() {
-                        // Agregar una cadena de consulta única a la URL
-                        var url = window.location.href;
-                        var uniqueQuery = new Date().getTime(); // Genera un valor de tiempo único
-                        url = url + (url.indexOf('?') !== -1 ? '&' : '?') + 'cache=' + uniqueQuery;
                         window.location.href = url;
                     }
                 </script>
-                
-                
 
-
-
-                {{-- <x-jet-button  >
-                    {{ __('Actualizar') }}
-                </x-jet-button> --}}
                 <meta http-equiv="cache-control" content="no-store" />
 
                 <link rel="stylesheet" href="{{ asset('css/update-perfil.css') }}">

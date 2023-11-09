@@ -21,11 +21,19 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     Route::get('change_password','changePassword')->name('admin.change_password');
 
+    Route::put('verified/content/{contenido}','contentVerified')->name('content.verified');
+
 });
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified', 'admin'])->controller(UserController::class)->group(function() {
 
     Route::get('/users','users')->name('admin.users'); // Return only users
+
+    Route::get('/roles','roles')->name('admin.roles');
+
+    Route::post('/rol/create','createRole')->name('create.role');
+
+    Route::post('/rol/assing_to_permissions/{role}','assignRoleToPermissions')->name('assing.role.permission');
 
     Route::put('/user/create_observacion/{user}', 'createObservation')->name('admin.users.observacion');
 

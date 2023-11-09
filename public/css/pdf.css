@@ -1,0 +1,73 @@
+/* Estilos generales para la factura */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("/img/logo/logo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.invoice-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border: 2px solid #3498db;
+    margin: 20px;
+}
+
+.invoice-title {
+    font-size: 24px;
+    text-align: center;
+    color: #e74c3c; /* Rojo */
+}
+
+.customer-details {
+    margin-top: 20px;
+}
+
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.invoice-table th, .invoice-table td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+    color: #000; /* Texto negro */
+}
+
+.invoice-table th {
+    background-color: #f39c12; /* Amarillo */
+    color: #fff; /* Texto blanco */
+}
+
+.invoice-table td:nth-child(odd) {
+    background-color: #f39c12; /* Amarillo */
+    color: #fff; /* Texto blanco */
+}
+
+.invoice-table td:nth-child(even) {
+    background-color: #3498db; /* Azul */
+    color: #fff; /* Texto blanco */
+}
+
+.total {
+    text-align: right;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #27ae60; /* Verde */
+}
+
+.notes {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #3498db; /* Azul */
+}

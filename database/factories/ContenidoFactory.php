@@ -28,6 +28,7 @@ class ContenidoFactory extends Factory
             'autor'       => $user -> name,
             'description' => $this -> faker -> text('200'),
             'user_id'     => $user -> id,
+            'verified'    => 1,
             'created_at'  => now(),
         ];
     }
