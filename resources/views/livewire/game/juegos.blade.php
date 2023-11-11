@@ -22,3 +22,5 @@
     <script src="{{ asset('js/JuegoAdivina.js') }}"></script>
 </body>
 </html>
+
+
