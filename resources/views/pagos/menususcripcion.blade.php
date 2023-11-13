@@ -6,17 +6,20 @@
     </x-slot>
     <!DOCTYPE html>
     <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <title>Mis Primeros Auxilios - Suscripción</title>
         <link rel="stylesheet" type="text/css" href="{{ asset('css/menususcripcion.css') }}">
-          <a href="{{ url('/pagos') }}" class="subscribe-button">¡Adquiérelo ya!</a>
+        <a href="{{ url('/pagos') }}" class="subscribe-button">¡Adquiérelo ya!</a>
     </head>
+
     <body>
         <h2>¿Por qué suscribirte?</h2>
         <section class="subscription-info primera">
-    
+
 
             <!-- Tarjeta 1 con imagen y texto -->
             <div class="subscription-card segunda">
@@ -38,10 +41,11 @@
                 <h3>Videos e Imágenes Exclusivas</h3>
                 <p>Disfruta de contenido multimedia exclusivo que inspirará y entretendrá a tus hijos.</p>
             </div>
-        
+
         </section>
-    
+
     </body>
+
     </html>
     <x-slot name="footer">
         <x-footer />

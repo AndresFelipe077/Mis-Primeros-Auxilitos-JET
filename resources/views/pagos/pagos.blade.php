@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>PayPal JS SDK Subscription Integration</title>
     <script src="https://www.paypal.com/sdk/js?client-id=AUtEzyJARwUiSv7wWujpVtYerulyE1tTVqidHakgKZNEDll69IqICzgmhkO3bHHj7LGC3Tg3j6f_8XE_"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/pagos.css') }}">
