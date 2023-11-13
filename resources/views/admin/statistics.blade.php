@@ -1,6 +1,7 @@
 @extends('adminlte::page')
 
 @section('title', 'Estadisticas')
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
 <!-- Custom fonts for this template-->
 <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
