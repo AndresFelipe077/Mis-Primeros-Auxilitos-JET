@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdivinaController;
 use App\Http\Controllers\AdivinanzaController;
+use App\Http\Controllers\AhorcadoController;
 use App\Http\Controllers\AnswerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContenidoController;
@@ -81,7 +83,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::get('juegos2', [JuegosAdivina::class, 'index2']);
 
+    Route::get('ahorcado', [AhorcadoController::class, 'index3']);
 
+    Route::get('/adivina', [AdivinaController::class, 'index4']);
 
 
 
