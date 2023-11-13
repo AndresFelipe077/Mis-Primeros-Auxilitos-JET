@@ -16,7 +16,7 @@
 
 
 
-    <a class="img-home" href="{{ url('') }}" >
+    <a class="img-home" href="{{ url('dashboard/games') }}" >
     <img src="{{ asset('/img/icons/games.png') }}">
     </a>
 
