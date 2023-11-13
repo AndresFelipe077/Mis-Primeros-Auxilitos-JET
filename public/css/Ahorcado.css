@@ -77,3 +77,48 @@ body {
     left: 350px;
 
 }
+
+
+/* SLIDER */ 
+
+.slider-container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+
+  .slider-nav button {
+    background: none;
+    border: none;
+    font-size: 5.5em;
+    cursor: pointer;
+  }
+
+  .img-home{
+    position: relative;
+    right: 600px;
+  }

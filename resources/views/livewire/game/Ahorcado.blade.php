@@ -11,7 +11,16 @@
 </head>
 <body>
 
+
     <h1 class="title">Adivina la Palabra con "Mis Primeros Auxilitos"</h1>
+
+
+
+    <a class="img-home" href="{{ url('') }}" >
+    <img src="{{ asset('/img/icons/games.png') }}">
+    </a>
+
+
 
 <div>
     <canvas class="ahorcado" id="canvas"></canvas>
@@ -20,14 +29,35 @@
 <div class="wordEdit" id="wordContainer"></div>
 <button id="startButton">START</button>
 
-<img class="medicimg" src="{{ asset('img/games/medicoGames.png') }}">
+<br>
+<div class="slider-container">
+  <div class="slides">
+    <div class="slide"><img src="{{ asset('/img/games/Ahorcado-1.png') }}" alt="" width="300px" height="300px"></div>
+    <div class="slide"><img src="{{ asset('/img/games/Ahorcado-2.png') }}" alt="" width="300px" height="300px"></div>
+    <div class="slide"><img src="{{ asset('/img/games/Ahorcado-3.png') }}" alt="" width="300px" height="300px"></div>
+    <div class="slide"><img src="{{ asset('/img/games/Ahorcado-4.png') }}" alt="" width="300px" height="300px"></div>
+    <div class="slide"><img src="{{ asset('/img/games/Ahorcado-5.png') }}" alt="" width="300px" height="300px"></div>
+    <div class="slide"><img src="{{ asset('/img/games/Ahorcado-6.png') }}" alt="" width="300px" height="300px"></div>
+    <div class="slide"><img src="{{ asset('/img/games/Ahorcado-7.png') }}" alt="" width="300px" height="300px"></div>
+    <div class="slide"><img src="{{ asset('/img/games/Ahorcado-8.png') }}" alt="" width="300px" height="300px"></div>
+    <div class="slide"><img src="{{ asset('/img/games/Ahorcado-9.png') }}" alt="" width="300px" height="300px"></div>
 
 
+    <!-- Agrega más slides según sea necesario -->
+  </div>
+
+  <div class="slider-nav">
+    <button onclick="prevSlide()">&#8249;</button>
+    <button onclick="nextSlide()">&#8250;</button>
+  </div>
+</div>
 
 
-
+<script src="{{ asset('js/SliderAhorcado.js') }}"></script>
 <script src="{{ asset('js/Ahorcado.js') }}"></script>
 <script src="{{ asset('js/Ahorcado2Worlds.js') }}"></script>
+
+
 
 </body>
 </html>

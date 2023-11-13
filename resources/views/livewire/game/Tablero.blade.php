@@ -10,6 +10,11 @@
 
 
 <body>
+<a class="img-home" href="{{ url('') }}" >
+    <img src="{{ asset('/img/icons/games.png') }}">
+    </a>
+
+
 
 <input class="colors" type="color" id="color-picker" value="#000000">COLORES</input>
 <button class="rnc" id="reset-button">Reiniciar Dibujo</button>

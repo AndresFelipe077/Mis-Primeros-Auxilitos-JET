@@ -9,6 +9,11 @@
 </head>
 <body>
     <h1>ADIVINA</h1>
+
+    <a class="img-home" href="{{ url('') }}" >
+    <img src="{{ asset('/img/icons/games.png') }}">
+    </a>
+
     <div class="app" id="app"></div>
     <button class="btn-game" id="btn">Jugar De Nuevo</button>
 

@@ -9,6 +9,10 @@
     <title>Juegos</title>
 </head>
 <body>
+<a class="img-home" href="{{ url('') }}" >
+    <img src="{{ asset('/img/icons/games.png') }}">
+    </a>
+
     <div id="pantalla-inicial">
         <h1>Adivina la Respuesta</h1>
         <button class="btn-1" onclick="comenzarJuego()">COMENZAR A JUGAR</button>
