@@ -143,3 +143,24 @@
   
 }
 
+.suscription{
+  background: linear-gradient(to bottom, #3a0fb1, #8706ff, #FF6B6B);
+
+  color: #fff;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 24px;
+  margin: 20px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  font-family: 'DynaPuff', cursive;
+  position: relative;
+  top: 100px;
+  left: 70px;
+
+  
+}
+
+

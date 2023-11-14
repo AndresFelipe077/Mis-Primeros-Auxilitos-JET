@@ -54,5 +54,5 @@
     <!-- La condición se cumple -->
 @else
     <!-- La condición no se cumple -->
-    <a href="{{ url('/menuSuscripcion') }}" class="subscribe-button">Suscribete </a>
+    <a href="{{ url('/menuSuscripcion') }}" class="suscription">Suscribete </a>
 @endif
