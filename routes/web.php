@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdivinaController;
 use App\Http\Controllers\AdivinanzaController;
+use App\Http\Controllers\AhorcadoController;
 use App\Http\Controllers\AnswerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContenidoController;
@@ -69,20 +71,20 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::delete('edit/{contenido}', 'destroy')->name('contenido.destroy');
 });
 
+
+// Games of nico
+// Rutas de los Juegos
+Route::get('juegos', [JuegosController::class, 'index']);
+
+Route::get('juegos2', [JuegosAdivina::class, 'index2']);
+
+Route::get('ahorcado', [AhorcadoController::class, 'index3']);
+
+Route::get('/adivina', [AdivinaController::class, 'index4']);
+
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(TriviaController::class)->group(function () {
 
     Route::get('dashboard/games', 'game')->name('dashboard.game');
-
-
-
-
-    // Rutas de los Juegos
-    Route::get('juegos', [JuegosController::class, 'index']);
-
-    Route::get('juegos2', [JuegosAdivina::class, 'index2']);
-
-
-
 
 
     // Muestra la vista de preguntas 5 a 7 años

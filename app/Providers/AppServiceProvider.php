@@ -27,12 +27,5 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
-
-        $cantidadUsuarios = User::has('roles')->count();
-
-        View::composer('*', function ($view) use ($cantidadUsuarios) {
-            $view->with('cantidadUsuarios', $cantidadUsuarios);
-        });
-
     }
 }
