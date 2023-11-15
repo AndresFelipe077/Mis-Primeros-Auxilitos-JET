@@ -8,7 +8,6 @@
         <x-header />
     </x-slot>
 
-
               @if (auth()->check() && auth()->user()->subscription && auth()->user()->subscription->subscription_status === 'aprobado')
               <!-- La condición se cumple -->
               <div class="container">
@@ -106,7 +105,19 @@
         </div>
            
           @else
-       
+    
+          <div class="card text-center ">
+            <div class="card-header">
+                Lo sentimos 
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Para poder disfrutar de este contenido </h5>
+              <p class="card-text">Adquiere una suscripción mensual y disfruta de los mejores contenidos para tus niños .</p>
+            </div>
+            <div class="card-footer text-muted">
+                Recuerda nuestros niños son los hervores del mañana  
+            </div>
+          </div>
 
         
           @endif
