@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Resultado</h1>
-    <p>{{ $mensaje }}</p>
-    <a href="{{ $redireccion }}">Volver a jugar</a>
+    <p>{{$nombreDelJuego}}</p>
+    <p>{{$resultado}}</p>
 </body>
 </html>

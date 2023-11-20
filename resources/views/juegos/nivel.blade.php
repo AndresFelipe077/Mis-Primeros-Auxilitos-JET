@@ -18,7 +18,6 @@
     <input type="text" name="respuestaCorrecta" id="respuestaCorrecta">
     <button type="submit">Enviar respuesta</button>
     </form>
-    {{-- <p>{{$respuestaCorrecta}}</p>
-    <p>{{$juego->nombre}}</p> --}}
+
 </body>
 </html>

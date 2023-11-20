@@ -316,3 +316,5 @@ Route::get('/juegos', [PlaysController::class, 'mostrarJuegos'])->name('juegos.m
 Route::get('/juegos/nivel/{nivel}', [PlaysController::class, 'jugarNivel'])->name('juegos.nivel');
 Route::post('/juegos/nivel/{nivel}/procesar', [PlaysController::class, 'procesarRespuesta'])->name('juegos.nivel.procesar');
 Route::get('/ruta_de_resultados/{nombreDelJuego}/{resultado}', [PlaysController::class, 'mostrarResultado'])->name('juegos.resultado');
+
+// Route::post('/completarNIvel/{nivelId}', [PlaysController::class, 'completarNivel'])->name('completar');

@@ -35,27 +35,36 @@ class PlaysController extends Controller
         $nombreDelJuego = $juego->nombre;
 
         $respuesta = (int)$request->input('respuestaCorrecta');
+
         $respuestaCorrecta = $this->obtenerRespuestaCorrectaSegunNivel($nivel);
+        $pregunta = $this->obtenerPreguntaSegunNivel($nivel);
 
-        $resultado = ($respuesta == $respuestaCorrecta) ? 'Correcto' : 'Incorrecto';
+        if ($respuesta === $respuestaCorrecta) {
+            $resultado = 'Correcto';
 
-        $this->completarNivel($nivel);
+            $this->completarNivel($nivel);
+            return redirect()->route('juegos.resultado', compact('nombreDelJuego','resultado'));
+        } else {
+            $resultado = 'Incorrecto';
+            return redirect()->route('juegos.nivel', compact('pregunta','nivel'));
+        }
 
-        return redirect()->route('juegos.resultado', compact('nombreDelJuego','resultado'));
+        // $resultado = ($respuesta == $respuestaCorrecta) ? 'Correcto' : 'Incorrecto';
+
+
+
+
     }
 
     public function mostrarResultado($nombreDelJuego, $resultado)
     {
-        return redirect()->route('juegos.resultado', [
-            'nombreDelJuego' => $nombreDelJuego,
-            'resultado' => $resultado,
-        ]);
+        return view('juegos.resultado', compact('nombreDelJuego','resultado'));
+
     }
 
-    public function completarNivel($nivelId)
+    public function completarNivel(Nivel $nivel)
     {
         $usuario = Auth::user();
-        $nivel = Nivel::find($nivelId);
 
         if ($nivel) {
             $nivelCompletado = ProgresoUsuario::where('user_id', $usuario->id)
@@ -67,7 +76,7 @@ class PlaysController extends Controller
                 $progreso->user_id = $usuario->id;
                 $progreso->nivel_id = $nivel->id;
 
-                $juegoId = $nivel->juego->id;
+                 $juegoId = $nivel->juego->id;
 
                 $progreso->juego_id = $juegoId;
                 $progreso->save();
