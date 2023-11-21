@@ -81,15 +81,15 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 40px;
-  background: none;
+  height: 50%; 
+
 }
 
-.half-circle1 {
+/* .half-circle1 {
   width: 0;
   height: 0;
   border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
+  border-right: 80px solid transparent;
   border-top: 20px solid #373ecd;
   position: relative;
   
@@ -111,7 +111,7 @@
   border-top: 20px solid #05f2b7;
   position: relative;
   
-}
+} */
 .half-circle {
   width: 0;
   height: 0;
@@ -120,9 +120,186 @@
   border-top: 20px solid #0519f2;
   position: relative;
   
+}.half-circle1 {
+  border-top-color: #373ecd; /* Color del primer triángulo */
+  border-left: 20px solid transparent;
+  border-right: 80px solid transparent;
+  border-top: 20px solid #373ecd;
+}
+
+.half-circle2 {
+  border-top-color: #dc3cdc; /* Color del segundo triángulo */
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #dc3cdc;
+}
+
+.half-circle3 {
+  border-top-color: #05f2b7; /* Color del tercer triángulo */
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #05f2b7;
 }
 
 
+
+/* Ajusta los estilos para que sean responsivos */
+
+@media (max-width: 150px) {
+  .half-circle1,
+  .half-circle2,
+  .half-circle3,
+  .half-circle {
+    border-left: 5px solid transparent;
+    border-right: 70px solid transparent;
+    border-top: 5px solid #373ecd;
+  }
+}
+
+
+
+@media (min-width:200px) and (max-width: 574px) {
+  .half-circle1 {
+    border-left: 0px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 22px solid #373ecd
+}
+}
+@media (min-width:200px) and (max-width: 574px) {
+  .half-circle2 {
+    border-left: 9px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #dc3cdc;
+  }
+}
+
+
+@media (min-width:200px) and (max-width: 574px) {
+  .half-circle3{
+    border-left: 9px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 18px solid #05f2b7;
+  }
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 575px) and (max-width: 765px) {
+  .half-circle1 {
+    border-left: 1px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 17px solid #373ecd
+}
+}
+@media (min-width: 575px) and (max-width: 765px) {
+  .half-circle2 {
+    border-left:  solid transparent;
+    border-right: 13px solid transparent;
+    border-top: 17px solid #dc3cdc;
+  }
+}
+
+
+@media (min-width: 575px) and (max-width: 765px){
+  .half-circle3{
+    border-left: 1px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 17px solid #05f2b7;
+  }
+}
+
+
+
+
+@media (min-width: 766px) and (max-width: 991px) {
+  .half-circle1 {
+    border-left: 0px solid transparent;
+    border-right: 35px solid transparent;
+    border-top: 22px solid #373ecd
+}
+}
+@media (min-width: 766px) and (max-width: 991px) {
+  .half-circle2 {
+    border-left: 6px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 20px solid #dc3cdc;
+  }
+}
+
+
+@media (min-width: 766px) and (max-width: 991px){
+  .half-circle3{
+    border-left: 6px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 18px solid #05f2b7;
+  }
+}
+
+
+
+
+
+
+
+@media (min-width:992px) and (max-width: 1198px) {
+  .half-circle1 {
+    border-left: 0px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 22px solid #373ecd
+}
+}
+@media (min-width:992px) and (max-width: 1198px) {
+  .half-circle2 {
+    border-left: 9px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #dc3cdc;
+  }
+}
+
+
+@media (min-width:992x) and (max-width: 1198px) {
+  .half-circle3{
+    border-left: 9px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 18px solid #05f2b7;
+  }
+}
+
+
+/* aqui estoy corrigiendo para realizar todo responsiveeeee aqui me falta ajustar */
+
+
+
+
+@media (min-width:1199px) and (max-width: 1399px) {
+  .half-circle1 {
+    border-left: 20px solid transparent;
+  border-right: 80px solid transparent;
+  border-top: 20px solid #373ecd;
+}
+}
+@media (min-width:1199px) and (max-width: 1399px) {
+  .half-circle2 {
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #dc3cdc;
+  }
+}
+
+
+@media (min-width:1199px) and (max-width: 1399px) {
+  .half-circle3{
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #05f2b7;
+  }
+}
 
 
 
