@@ -26,35 +26,27 @@ class PlaysController extends Controller
         return view('juegos.nivel', compact('pregunta', 'nivel'));
     }
 
-    public function procesarRespuesta(Request $request, $nivel)
+    public function procesarRespuesta(Request $request, $nivelId)
     {
-
-        $nivel = Nivel::find($nivel);
+        $nivel = Nivel::find($nivelId);
         $juego = $nivel->juego;
 
         $nombreDelJuego = $juego->nombre;
 
-        $respuesta = (int)$request->input('respuestaCorrecta');
-
+        $respuesta = $request->input('respuestaCorrecta');
         $respuestaCorrecta = $this->obtenerRespuestaCorrectaSegunNivel($nivel);
-        $pregunta = $this->obtenerPreguntaSegunNivel($nivel);
 
-        if ($respuesta === $respuestaCorrecta) {
-            $resultado = 'Correcto';
 
-            $this->completarNivel($nivel);
-            return redirect()->route('juegos.resultado', compact('nombreDelJuego','resultado'));
-        } else {
-            $resultado = 'Incorrecto';
-            return redirect()->route('juegos.nivel', compact('pregunta','nivel'));
+        $resultado = ($respuesta === $respuestaCorrecta) ? 'Correcto' : 'Incorrecto';
+
+        if ($resultado === 'Correcto') {
+            $this->completarNivel($nivelId);
         }
 
-        // $resultado = ($respuesta == $respuestaCorrecta) ? 'Correcto' : 'Incorrecto';
-
-
-
-
+        return redirect()->route('juegos.resultado', compact('nombreDelJuego', 'resultado'));
     }
+
+
 
     public function mostrarResultado($nombreDelJuego, $resultado)
     {
@@ -62,9 +54,10 @@ class PlaysController extends Controller
 
     }
 
-    public function completarNivel(Nivel $nivel)
+    public function completarNivel($nivelId)
     {
         $usuario = Auth::user();
+        $nivel = Nivel::find($nivelId);
 
         if ($nivel) {
             $nivelCompletado = ProgresoUsuario::where('user_id', $usuario->id)
@@ -75,14 +68,13 @@ class PlaysController extends Controller
                 $progreso = new ProgresoUsuario();
                 $progreso->user_id = $usuario->id;
                 $progreso->nivel_id = $nivel->id;
-
-                 $juegoId = $nivel->juego->id;
-
-                $progreso->juego_id = $juegoId;
+                $progreso->juego_id = $nivel->juego->id;
                 $progreso->save();
             }
         }
     }
+
+
 
     private function obtenerPreguntaSegunNivel($nivel)
     {
@@ -96,7 +88,7 @@ class PlaysController extends Controller
     private function obtenerRespuestaCorrectaSegunNivel($nivel)
     {
 
-        $respuestaCorrecta = PreguntaTrivia::where('nivel_id', $nivel)->pluck('respuestaCorrecta')->first();
+        $respuestaCorrecta = PreguntaTrivia::where('nivel_id', $nivel->id)->pluck('respuestaCorrecta')->first();
 
         return $respuestaCorrecta;
 
