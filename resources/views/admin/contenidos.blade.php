@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('title', 'Contenidos')
-{{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/contentAdmin.png') }}" type="image/x-icon">
 

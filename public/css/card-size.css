@@ -395,7 +395,11 @@ position: absolute;
      Es negativo para que no "camine" hacia atrás */
   to { background-position: -672px }
 }
-.smith{
-  position: relative;
-  left: -189px;
+.smith {
+  transform: translateX(19px);
+  margin-top: 100px;
+}
+.nuevos{
+  position: relative !important;
+  left: 105px;
 }

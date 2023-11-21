@@ -33,6 +33,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     Route::post('/rol/create','createRole')->name('create.role');
 
+    Route::post('/rol/assing_to_permissions/{role}','assignRoleToPermissions')->name('assing.role.permission');
+
     Route::put('/user/create_observacion/{user}', 'createObservation')->name('admin.users.observacion');
 
     Route::get('users_admin', 'usersAdmins')->name('admin.admin.users'); // Return only users admin
