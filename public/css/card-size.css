@@ -1,7 +1,8 @@
 #card-contenido{
   width: 300px !important; 
   height:500px !important;
-  border-radius: 30%;
+
+ 
 
 }
 
@@ -67,7 +68,18 @@
     
     outline: none;
 }
+.cartvane{
+  border-radius: 9%;
 
+  /* border: 2px solid #ff0000; */
+
+
+
+  border-top: 5px solid #491d88; /* Borde rojo en la parte superior */
+  border-right: 5px solid #fec859; /* Borde verde a la derecha */
+  border-bottom: 5px solid #331a38; /* Borde azul en la parte inferior */
+  border-left: 5px solid #43b5a0;
+} 
 .card{
   background: linear-gradient(to bottom, #fffefb5b, #00bfff3a);
     border-radius: 50px;
@@ -75,6 +87,8 @@
     border: none;
     text-align: center;
 }
+
+
 
 .circles {
   display: flex;
