@@ -453,6 +453,8 @@
 .smith {
   transform: translateX(19px);
   margin-top: 100px;
+  position: relative;
+  left: 30px;
 }
 .nuevos{
   position: relative !important;
