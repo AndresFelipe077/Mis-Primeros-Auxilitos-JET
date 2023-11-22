@@ -1,20 +1,18 @@
 <div>
     <nav class="navbar navbar-default rounded bg-info w-100 p-3 fixed-top vh-md-100 animate__animated animate__backInDown"
         id="header">
+        <img class="helicoptero" src="{{ asset('img/icons/helicoptero.png') }}" alt="Admin" width="50px" height="50px">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('quiz.index') }}"><img src="{{ asset('img/imgs/logo.png') }}"
-                    alt="" width="60px" height="50px"></a>
+            <a class="iconimage" href="{{ route('quiz.index') }}"><img src="{{ asset('img/imgs/logo.png') }}"
+                    alt="" width="80px" height="50px"></a>
             <div id="iconsvg" class="d-flex position-absolute ">
 
-                @if (Auth::user()->hasRole('Admin'))
+                @if (Auth::user()->roles->count() > 0)
                     <a class="rounded-circle bg-transparent" href="{{ route('admin') }}">
                         <img src="{{ asset('img/admin/admin.png') }}" alt="Admin" width="50px" height="50px">
                     </a>
-                @elseif(Auth::user()->hasRole('Contenido'))
-                    <a class="rounded-circle bg-transparent" href="{{ route('admin.contenido') }}">
-                        <img src="{{ asset('img/admin/admin.png') }}" alt="Admin" width="50px" height="50px">
-                    </a>
                 @endif
+
 
                 <button wire:key="{{ Auth::user()->id }}" class="btn success rounded-circle bg-transparent"
                     onclick="location.href='{{ route('profile.show') }}'">
@@ -51,3 +49,10 @@
     </nav>
 
 </div>
+
+@if (auth()->check() && auth()->user()->subscription && auth()->user()->subscription->subscription_status === 'aprobado')
+    <!-- La condición se cumple -->
+@else
+    <!-- La condición no se cumple -->
+    <a href="{{ url('/menuSuscripcion') }}" class="suscription">Suscribete </a>
+@endif

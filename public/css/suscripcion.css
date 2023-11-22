@@ -1,0 +1,86 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; /* Desactiva el scroll */
+    margin: 0; /* Quita el margen predeterminado del cuerpo */
+}
+
+#showModal {
+    background-color: #0070ba;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 20px;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Asegura que el video esté detrás de otros elementos */
+    overflow: hidden; /* Desactiva el scroll */
+}
+
+video {
+    object-fit: cover; /* El video se ajustará a toda la pantalla sin recortarse */
+    width: 100%;
+    height: 100%;
+}
+
+.modal-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden; /* Desactiva el scroll */
+}
+
+.modal {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo transparente */
+    border: 2px solid #0070ba;
+    border-radius: 10px;
+    width: 70%;
+    max-width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #0070ba;
+}
+
+p {
+    font-size: 18px;
+    color: #333;
+}
+
+.modal-button {
+    background-color: #f28d35;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.modal-button:hover {
+    background-color: #e0752b;
+}

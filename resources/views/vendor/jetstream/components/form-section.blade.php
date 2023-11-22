@@ -10,7 +10,7 @@
                 </div>
 
                 @if (isset($actions))
-                    <div class="card-footer d-flex justify-content-center">
+                    <div class="">
                         {{ $actions }}
                     </div>
                 @endif

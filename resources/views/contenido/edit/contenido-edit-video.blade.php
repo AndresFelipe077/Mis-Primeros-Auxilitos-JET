@@ -10,7 +10,7 @@
 
 
         <div class="container text-center mx-auto animate__animated animate__swing rounded">
-            <h1 id="title-h1" class="text-center animate__animated animate__swing rounded">Edita tu contenido 🤗</h1>
+            <h1 id="title-h1" class="titulo2">Edita tu contenido 🤗</h1>
 
             <div class="row">
 
@@ -21,10 +21,13 @@
 
                 <div class="col-sm-8">
                     <div class="card">
+                        <div class="video">
                         <form action="{{ route('contenido.update.video', $contenido) }}" method="POST"
                             enctype="multipart/form-data">
+                        </div>
                             @csrf
                             @method('put')
+                       
 
                             <div class="form-group">
                                 <label for="">Titulo</label>
@@ -41,14 +44,27 @@
                                 <label class="h5" for="exampleFormControlFile1" id="src-file">Escoge tu contenido
                                     😋😊😉</label>
                                 <div>
-                                    <video controls autoplay id="video-tag"
-                                        class="mx-auto m-3 rounded text-white bg-white">
+                                    <video class="video" controls autoplay id="video-tag" class="mx-auto m-3 rounded text-white bg-white">
                                         <source id="video-source" src="{{ old('url', $contenido->url) }}">
                                         Tu navegador no soporta elementos de video😥.
                                     </video>
+                                
+                               
+                                    <script>
+                                        document.addEventListener("DOMContentLoaded", function() {
+                                        
+                                            var videoSource = document.getElementById("video-source");
+                                            var videoTag = document.getElementById("video-tag");
+                                
+                                            if (videoSource && videoTag) {
+                                                videoSource.src = "{{ old('url', $contenido->url) }}";
+                                                videoTag.load();
+                                            }
+                                        });
+                                    </script>
 
                                     <label for="file-upload" class="subir">
-                                        <i class="bi bi-cloud-upload-fill h5"></i> Escoger contenido
+                                        <i class="bi bi-cloud-upload-fill h5"></i> subir
                                     </label>
                                     <input type="file" name="file"
                                         class="form-control-file mx-auto text-center d-none" id="file-upload"
@@ -74,8 +90,10 @@
                                     <br>
                                 @enderror
                             </div>
-                            <button type="submit" class="btn bg-transparent"><img
+                            <div class="segundo">
+                            <button type="submit" class="btn bg-transparent "><img
                                     src="{{ asset('/img/icons/subir2.png') }}" width="60px" height="60px"></button>
+                                </div>
 
                         </form>
 
@@ -119,7 +137,7 @@
             <x-slot name="footer">
             </x-slot>
 
-            <link rel="stylesheet" href="{{ asset('css/create-content.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/edit-contendio-vide.css') }}">
             <script src="{{ asset('js/videoPreview.js') }}"></script>
 
         </div>

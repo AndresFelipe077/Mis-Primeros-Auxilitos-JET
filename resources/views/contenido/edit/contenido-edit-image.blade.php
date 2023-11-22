@@ -10,7 +10,7 @@
 
 
         <div class="container text-center mx-auto animate__animated animate__swing rounded">
-            <h1 id="title-h1" class="text-center animate__animated animate__swing rounded">Edita tu contenido 🤗</h1>
+            <h1 id="title-h1" class="titulo2">Edita tu contenido 🤗</h1>
 
             <div class="row">
 
@@ -27,7 +27,7 @@
                             @method('put')
 
                             <div class="form-group">
-                                <label for="">Titulo</label>
+                                <label class="h5"  for="">Titulo</label>
                                 <input type="text" name="title" class="form-control" aria-describedby=""
                                     value="{{ old('title', $contenido->title) }}">
                                 @error('title')
@@ -45,7 +45,7 @@
                                         width="150px" height="150px">
 
                                     <label for="file-upload" class="subir">
-                                        <i class="bi bi-cloud-upload-fill h5"></i> Escoger contenido
+                                        <i class="bi bi-cloud-upload-fill h5"></i> subir
                                     </label>
                                     <input type="file" name="file"
                                         class="form-control-file mx-auto text-center d-none" id="file-upload"
@@ -116,7 +116,7 @@
             <x-slot name="footer">
             </x-slot>
 
-            <link rel="stylesheet" href="{{ asset('css/create-content.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/edit-image-contenido.css') }}">
             <script src="{{ asset('js/videoPreview.js') }}"></script>
 
         </div>

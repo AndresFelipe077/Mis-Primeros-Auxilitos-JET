@@ -1,4 +1,5 @@
 <link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/algodon.png') }}" type="image/x-icon">
+<link rel="stylesheet" href="{{ asset('css/edit.css') }}" />
 <x-app-layout>
 
     @section('title', 'Editar video')
@@ -116,5 +117,6 @@
     </x-slot>
 
     <script src="{{ asset('js/videoPreview.js') }}"></script>
+    
 
 </x-app-layout>

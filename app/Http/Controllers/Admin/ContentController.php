@@ -22,14 +22,13 @@ class ContentController extends Controller
     {
         $request->validate([
             'title'        => 'required|max:50',
-            'file'         => 'mimetypes:jpeg,png,jpg,gif,svg',
+            'file'         => 'image',
             'autor'        => 'string',
             'description'  => 'required|max:250',
         ]);
         $title  = $request->title;
         $title_url  = Str::random(1) . Str::slug($title, '-');
 
-        $name = Auth::user()->name;
         $contenido->title = $title;
         $contenido->slug  = $title_url;
 
@@ -49,12 +48,12 @@ class ContentController extends Controller
 
             $nombre = Str::random(10) . $cadenaConvert;
 
-            $file->move('storage/contenidos/images/', $nombre);
+            $file->move('storage/contenidos/imagenes/', $nombre);
 
-            $contenido->url = '/storage/contenidos/images/' . $nombre;
+            $contenido->url = '/storage/contenidos/imagenes/' . $nombre;
         }
 
-        $contenido->autor       = $name;
+        $contenido->autor       = $contenido->autor;
         $contenido->description = $request->description;
 
         $contenido->update();

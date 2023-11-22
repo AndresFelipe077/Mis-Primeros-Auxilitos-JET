@@ -1,0 +1,43 @@
+/* Estilos para hacer el footer responsivo, cubrir solo el 30% de la pantalla y ser fijo */
+.footerPrincipal {
+    background: linear-gradient(90deg, rgba(155, 64, 167, 1) 0%, rgba(121, 9, 107, 1) 32%, rgba(72, 91, 167, 1) 64%, rgba(0, 212, 255, 1) 80%, rgba(0, 254, 255, 1) 100%);
+    color: #fff;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+    height: 35vh; /* Cambiado el alto al 30% de la pantalla */
+}
+
+.footer2 {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.footer2 > div {
+    flex: 12;
+    padding: -10px;
+}
+
+/* Media query para hacerlo responsivo */
+@media (max-width: 868px) {
+    .footerPrincipal {
+        text-align: center;
+        padding: -25px;
+        height: 50%; /* Ajusta el alto responsivo al 30% de la pantalla */
+    }
+
+    .footer2 > div {
+        width: 30%;
+    }
+}
+
+.centralparte {
+    box-sizing: border-box;
+    padding-bottom: 30vh; /* Ajusta el espacio en la parte inferior según el alto del footer */
+}

@@ -1,0 +1,137 @@
+body {
+    font-family: 'DynaPuff', cursive;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-size: 100%;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    top: -50px;
+    height: 1000px;
+}
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'DynaPuff', cursive;
+    animation: colorChange 12s infinite;
+}
+
+h2 {
+    font-size: 38px;
+    color: #1143e6;
+    font-family: 'DynaPuff', cursive;
+    animation: colorChangeH2 12s infinite;
+    position: relative;
+ 
+}
+
+h3 {
+    font-size: 24px;
+    color: #0070ba;
+    font-family: 'DynaPuff', cursive;
+}
+
+p {
+    font-size: 20px;
+    font-family: 'DynaPuff', cursive;
+}
+
+.slogan {
+    color: #f9f9f9;
+    font-family: 'DynaPuff', cursive;
+}
+
+.dos {
+    position: relative;
+    left: -500px;
+    font-family: 'DynaPuff', cursive;
+}
+
+.subscribe-button {
+    background: linear-gradient(to bottom, #3a0fb1, #8706ff, #FF6B6B);
+    color: #fff;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    margin: 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    font-family: 'DynaPuff', cursive;
+    position: relative;
+    top: -20px;
+    left: 70px;
+}
+
+.subscription-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin: 20px;
+    font-family: 'DynaPuff', cursive;
+}
+
+.subscription-card {
+    background-color: #ffffff;
+    border: 2px solid #0070ba;
+    border-radius: 10px;
+    width: 28%;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'DynaPuff', cursive;
+}
+
+/* Responsivo para pantalla pequeña (menos de 768px) */
+@media (max-width: 768px) {
+    h1, h2, h3 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .slogan {
+        text-align: center;
+    }
+
+    .dos {
+        left: 0;
+    }
+
+    .subscribe-button {
+        padding: 10px 20px;
+        font-size: 18px;
+        margin: 10px;
+        top: 30px;
+        left: 0;
+    }
+
+    .subscription-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subscription-card {
+        width: 80%;
+        left: 0;
+    }
+    
+    .segunda {
+        left: 0;
+    }
+
+    .cuarta {
+        left: 0;
+    }
+    
+    .subscription-card, .subscribe-button {
+        position: static;
+    }
+}
+
+

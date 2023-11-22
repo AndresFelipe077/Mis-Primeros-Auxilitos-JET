@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('title', 'Admin home')
-{{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link id="image-head" rel="shortcut icon" href="{{ asset('img/icons/admin.png') }}" type="image/x-icon">
 
@@ -106,6 +106,16 @@
                         </div>
 
         </main>
+
+        {{-- <footer class="text-muted py-5">
+      <div class="container">
+        <p class="float-end mb-1">
+          <a href="#">Back to top</a>
+        </p>
+        <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+        <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+      </div>
+    </footer> --}}
 
 
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

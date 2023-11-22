@@ -1,9 +1,14 @@
 <?php
 
+use App\Http\Controllers\AdivinaController;
 use App\Http\Controllers\AdivinanzaController;
+use App\Http\Controllers\AhorcadoController;
 use App\Http\Controllers\AnswerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContenidoController;
+use App\Http\Controllers\JuegosAdivina;
+use App\Http\Controllers\JuegosController;
+use App\Http\Controllers\PagosController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuizResultController;
@@ -65,6 +70,17 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::delete('edit/{contenido}', 'destroy')->name('contenido.destroy');
 });
+
+
+// Games of nico
+// Rutas de los Juegos
+Route::get('juegos', [JuegosController::class, 'index']);
+
+Route::get('juegos2', [JuegosAdivina::class, 'index2']);
+
+Route::get('ahorcado', [AhorcadoController::class, 'index3']);
+
+Route::get('/adivina', [AdivinaController::class, 'index4']);
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(TriviaController::class)->group(function () {
 
@@ -225,3 +241,24 @@ Route::get('/facebook-callback', [SocialController::class, 'callbackFacebook']);
 Route::get('/login-google', [SocialController::class, 'redirectGoogle'])->name('google');
 
 Route::get('/google-callback', [SocialController::class, 'callbackGoogle']);
+
+
+
+
+////////pagos 
+
+Route::get('/pagos',[PagosController::class,'index']);
+Route::get('/suscripcion', [PagosController::class, 'suscripcion'])->name('suscripcion');
+Route::get('/menuSuscripcion', [PagosController::class, 'menuSuscripcion'])->name('menuSuscripcion');
+
+Route::post('/crear-suscripcion', [PagosController::class, 'crearSuscripcion'])->name('crearSuscripcion');
+
+Route::get('/premium', [PagosController::class, 'premium']);
+
+Route::get('/generar-recibo-pdf/{userId}', [PagosController::class,'recibo']);
+
+
+Route::post('/cancelar-suscripcion', [PagosController::class, 'cancelarSuscripcion'])->name('cancelar-suscripcion');
+
+
+
