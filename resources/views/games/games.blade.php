@@ -39,8 +39,8 @@
                             </div> <br>
                             <br>
 
-                            <div class="card m-4 text-center">
-                                <div class=" card-body shadow ">
+                            <div class="cartita m-4 text-center">
+                                <div class="  cont card-body shadow ">
                                     <div class="h4">Juego Adivina la pareja</div>
                                     <div class="contenedor rounded">
                                         <a href="{{ url('juegos') }}" class="btn mt-2">
@@ -49,10 +49,14 @@
                                                 width="250px" height="250px">
                                         </a>
                                     </div>
+                                    <br>
+                                    <br>
                                 </div>
+                                
                             </div>
 
                         </div>
+                        
                         <div class="line"></div>
                     </div>
 
@@ -60,21 +64,20 @@
                     <div class="card1 m-4 text-center">
                         <div class=" card-body shadow ">
 
-                            <div class="circles">
-                                <div class="half-circle"></div>
-                                <div class="half-circle"></div>
-                                <div class="half-circle"></div>
-                                <div class="half-circle"></div>
-                                <div class="half-circle"></div>
-                                <div class="half-circle"></div>
-                                <div class="half-circle"></div>
-                                <div class="half-circle"></div>
-                                <div class="half-circle"></div>
-                            </div>
+                        <div class="circles">
+                                <div class="half-circle1"></div>
+                                <div class="half-circle2"></div>
+                                <div class="half-circle3"></div>
+                                <div class="half-circle1"></div>
+                                <div class="half-circle2"></div>
+                                <div class="half-circle3"></div>
+                                <div class="half-circle1"></div>
+                                <div class="half-circle2"></div>
+                                <div class="half-circle3"></div>
+                            </div> <br>
                             <br>
-                            <br>
-                            <div class="card m-4 text-center">
-                                <div class=" card-body shadow ">
+                            <div class="cartita m-4 text-center">
+                                <div class="cont card-body shadow ">
                                     <div class="h4">Ahorcado</div>
                                     <div class="contenedor rounded">
                                         <a href="{{ url('ahorcado') }}" class="btn mt-2">
@@ -83,27 +86,32 @@
                                                 width="250px" height="250px">
                                         </a>
                                     </div>
+                                    <br>
+                                    <br>
                                 </div>
                             </div>
+                            
                         </div>
                         <div class="line"></div>
                     </div>
 
+                    
+
                     {{-- <div class="card1 m-4 text-center">
                         <div class=" card-body shadow ">
-                            <div class="circles">
-                                <div class="half-circle"></div>
-                                <div class="half-circle"></div>
-                                <div class="half-circle"></div>
-                                <div class="half-circle"></div>
-                                <div class="half-circle"></div>
-                                <div class="half-circle"></div>
-                                <div class="half-circle"></div>
-                                <div class="half-circle"></div>
-                                <div class="half-circle"></div>
-                            </div>
+                        <div class="circles">
+                                <div class="half-circle1"></div>
+                                <div class="half-circle2"></div>
+                                <div class="half-circle3"></div>
+                                <div class="half-circle1"></div>
+                                <div class="half-circle2"></div>
+                                <div class="half-circle3"></div>
+                                <div class="half-circle1"></div>
+                                <div class="half-circle2"></div>
+                                <div class="half-circle3"></div>
+                            </div> <br>
                             <br>
-                            <br>
+
                             <div class="h4">Preguntitas 11 - 12 años</div>
                             <div class="contenedor rounded">
                                 <a href="{{ route('triviaShow11_12') }}" class="btn mt-2">
@@ -116,11 +124,52 @@
                         <div class="line"></div>
                     </div> --}}
 
+
+
+
+
+
                 </div>
 
                 <div class="col-sm-6 mb-5" data-aos="fade-left">
                     <div class="card1 m-4 text-center">
                         <div class=" card-body shadow ">
+                        <div class="circles">
+                                <div class="half-circle1"></div>
+                                <div class="half-circle2"></div>
+                                <div class="half-circle3"></div>
+                                <div class="half-circle1"></div>
+                                <div class="half-circle2"></div>
+                                <div class="half-circle3"></div>
+                                <div class="half-circle1"></div>
+                                <div class="half-circle2"></div>
+                                <div class="half-circle3"></div>
+                            </div> <br>
+                            <br>
+                            <div class="cartita m-4 text-center  ">
+                                <div class="cont card-body shadow ">
+                                    <div class="h4">Juegos Preguntas</div>
+                                    <div class="contenedor rounded">
+                                        <a href="{{ url('juegos2') }}" class="btn mt-2">
+                                            <img class="imagen rounded img-fluid mx-auto d-block"
+                                                src="{{ asset('img/icons/1000x1000.jpg') }}" alt="Image of trivia"
+                                                width="250px" height="250px">
+                                        </a>
+                                       
+                                    </div>
+                                    <br>
+                                    <br>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                    </div>
+
+
+                    @if (auth()->check() && auth()->user()->subscription && auth()->user()->subscription->subscription_status === 'aprobado')
+                        <div class="card1 m-4 text-center">
+                            <div class=" card-body shadow ">
                             <div class="circles">
                                 <div class="half-circle1"></div>
                                 <div class="half-circle2"></div>
@@ -131,44 +180,10 @@
                                 <div class="half-circle1"></div>
                                 <div class="half-circle2"></div>
                                 <div class="half-circle3"></div>
-                            </div>
+                            </div> <br>
                             <br>
-                            <br>
-                            <div class="card m-4 text-center">
-                                <div class=" card-body shadow ">
-                                    <div class="h4">Juegos Preguntas</div>
-                                    <div class="contenedor rounded">
-                                        <a href="{{ url('juegos2') }}" class="btn mt-2">
-                                            <img class="imagen rounded img-fluid mx-auto d-block"
-                                                src="{{ asset('img/icons/1000x1000.jpg') }}" alt="Image of trivia"
-                                                width="250px" height="250px">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="line"></div>
-                    </div>
-
-
-                    @if (auth()->check() && auth()->user()->subscription && auth()->user()->subscription->subscription_status === 'aprobado')
-                        <div class="card1 m-4 text-center">
-                            <div class=" card-body shadow ">
-                                <div class="circles">
-                                    <div class="half-circle"></div>
-                                    <div class="half-circle"></div>
-                                    <div class="half-circle"></div>
-                                    <div class="half-circle"></div>
-                                    <div class="half-circle"></div>
-                                    <div class="half-circle"></div>
-                                    <div class="half-circle"></div>
-                                    <div class="half-circle"></div>
-                                    <div class="half-circle"></div>
-                                </div>
-                                <br>
-                                <br>
-                                <div class="card m-4 text-center">
-                                    <div class=" card-body shadow ">
+                                <div class="cartita m-4 text-center">
+                                    <div class=" cont card-body shadow ">
                                         <div class="h4">Dibujar - adivina</div>
                                         <div class="contenedor rounded">
                                             <a href="{{ url('adivina') }}" class="btn mt-2">
@@ -177,6 +192,8 @@
                                                     width="250px" height="250px">
                                             </a>
                                         </div>
+                                        <br>
+                                        <br>
                                     </div>
                                 </div>
                             </div>
