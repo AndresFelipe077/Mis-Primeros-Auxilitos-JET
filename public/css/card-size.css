@@ -455,8 +455,9 @@
   margin-top: 100px;
   position: relative;
   left: 30px;
+  top: -120px;
 }
 .nuevos{
   position: relative !important;
-  left: 105px;
+  left: 90px;
 }
