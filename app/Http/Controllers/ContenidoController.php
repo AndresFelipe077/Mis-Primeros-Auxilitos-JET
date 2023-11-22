@@ -165,7 +165,7 @@ class ContenidoController extends Controller
   
       $contenido->autor = $name;
       $contenido->description = $request->description;
-  
+      $contenido->verified = 0;
       $contenido->update();
   
       return redirect()->route('dashboard.index', compact('contenido'))->with('actualizar', 'ok');
@@ -209,6 +209,7 @@ class ContenidoController extends Controller
 
     $contenido->autor       = $name;
     $contenido->description = $request->description;
+    $contenido->verified = 0;
 
     $contenido->update();
 
