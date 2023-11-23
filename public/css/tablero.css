@@ -43,16 +43,23 @@ canvas{
     color: black;
 }
 
+.colors{
 
+    width: 40px; 
+    height: 40px; 
+    border: none;
+    border-radius: 50%;
 
-@media screen and (max-width: 768px) {
-    body {
-        font-size: 6vw; /* Ajuste para pantallas más pequeñas */
-    }
-
-    .rnc {
-        width: 70vw;
-        font-size: 5vw;
-        border-radius: 3vw;
-    }
 }
+
+
+.color-picker-container {
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+  }
+
+  label {
+    font-size: 14px; /* Tamaño de la etiqueta */
+    margin-left: 5px; /* Espacio entre el color picker y la etiqueta */
+  }

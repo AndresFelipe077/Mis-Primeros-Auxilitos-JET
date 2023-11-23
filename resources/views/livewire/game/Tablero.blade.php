@@ -12,7 +12,11 @@
 
 <body>
 
-<input class="colors" type="color" id="color-picker" value="#000000">COLORES</input>
+<div class="color-picker-container">
+  <input class="colors" type="color" id="color-picker" value="#000000">
+  <label for="color-picker">COLORES</label>
+</div>
+
 <button class="rnc" id="reset-button">Reiniciar Dibujo</button>
 
 
