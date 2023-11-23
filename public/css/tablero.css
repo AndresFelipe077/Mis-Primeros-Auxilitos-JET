@@ -42,3 +42,17 @@ canvas{
     position: relative;
     color: black;
 }
+
+
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 6vw; /* Ajuste para pantallas más pequeñas */
+    }
+
+    .rnc {
+        width: 70vw;
+        font-size: 5vw;
+        border-radius: 3vw;
+    }
+}

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&display=swap');
 
+
 .hidden {
     color: transparent;
 }
@@ -68,6 +69,11 @@ body {
     cursor: pointer;
 }
 
+
+
+
+
+
 .medicimg {
     width: 220px;
     height: 250px;
@@ -75,5 +81,60 @@ body {
     text-align: center;
     top: -100px;
     left: 350px;
+}
 
+@media screen and (max-width: 768px) {
+
+    .medicimg {
+        width: 150px;
+        height: 180px;
+        top: -50px;
+        left: 50px;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .medicimg {
+        width: 150px;
+        height: 180px;
+        top: -50px;
+        left: 50px;
+    }
+
+    /* Ajustes para el botón START */
+    #startButton {
+        width: 200px; 
+        font-size: 18px; 
+    }
+
+    /* Ajustes para el título */
+    .title {
+        font-size: 28px; 
+    }
+
+    /* Ajustes para el subtítulo */
+    .subText {
+        font-size: 24px; 
+    }
+
+    /* Ajustes para el contenedor de la palabra */
+    .wordEdit {
+        font-size: 30px; 
+    }
+
+    .medicimg {
+        width: 100px;
+        height: 120px;
+        top: -25px;
+        left: 25px;
+    }
 }
