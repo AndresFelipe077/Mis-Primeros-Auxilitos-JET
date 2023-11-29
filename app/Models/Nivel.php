@@ -11,6 +11,8 @@ class Nivel extends Model
 
     protected $table = 'niveles';
 
+    protected $guarded = [];
+
     public function juego() {
         return $this->belongsTo(Juego::class, 'juego_id');
     }

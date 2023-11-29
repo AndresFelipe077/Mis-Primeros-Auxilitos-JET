@@ -32,7 +32,7 @@
         </li>
         @endforeach
     </ul> --}}
-    <div class="container">
+    {{-- <div class="container">
         <h1>Selecciona un Juego</h1>
         <div class="juegos">
             @foreach($juegos as $juego)
@@ -57,7 +57,7 @@
     </div>
 
     <style>
-   .container {
+        .container {
             position: relative;
         }
 
@@ -93,7 +93,7 @@
             z-index: -1;
             position: absolute;
             top: 40%;
-            left: 0; /* Cambiado de 'left: 100%' a 'left: 0' para iniciar desde el div juego */
+            left: 0;
         }
 
         .niveles {
@@ -102,10 +102,10 @@
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
             position: absolute;
-            left: 100%; /* Posición a la derecha del div juego */
-            top: 40%; /* Ajuste para alinear niveles con el juego superior */
-            transform: translateY(-50%); /* Ajuste para centrar los niveles */
-            z-index: 1; /* Colocar niveles encima de las líneas */
+            left: 100%;
+            top: 40%;
+            transform: translateY(-50%);
+            z-index: 1;
         }
 
         .nivel {
@@ -114,7 +114,7 @@
             width: 40px;
             height: 40px;
             background-color: #c60808;
-            position: relative; /* Agregado para posicionar el hr dentro del nivel */
+            position: relative;
         }
 
         .nivel hr {
@@ -125,7 +125,7 @@
             width: 0; /* Inicialmente la línea tiene ancho cero */
             transition: width 0.3s ease-in-out;
             position: absolute;
-            bottom: 10px; /* Posicionar la línea en la parte inferior del nivel */
+            bottom: 10px;
         }
 
         .niveles.visible .nivel hr {
@@ -136,8 +136,12 @@
             width: 0;
         }
 
-        .niveles.visible a {
-            pointer-events: auto;
+        .niveles.visible a[disabled] .nivel {
+            cursor: not-allowed;
+        }
+
+        .niveles.visible a[disabled] .nivel hr {
+            background-color: #ccc; /* Cambia el color de la línea en enlaces deshabilitados */
         }
 
         .niveles.visible {
@@ -145,21 +149,49 @@
         }
     </style>
 
+
     <script>
- function toggleNiveles(elementoJuego) {
-            var contenedorJuego = elementoJuego.parentNode;
-            var conector = contenedorJuego.querySelector('.conector');
-            var niveles = contenedorJuego.querySelector('.niveles');
+function toggleNiveles(elementoJuego) {
+    var contenedorJuego = elementoJuego.parentNode;
+    var conector = contenedorJuego.querySelector('.conector');
+    var niveles = contenedorJuego.querySelector('.niveles');
 
-            // Alternar visibilidad de los niveles
-            niveles.classList.toggle('visible');
+    // Alternar visibilidad de los niveles
+    niveles.classList.toggle('visible');
 
-            // Mostrar/ocultar niveles con animación de opacidad
-            niveles.style.opacity = niveles.classList.contains('visible') ? 1 : 0;
+    // Mostrar/ocultar niveles con animación de opacidad
+    niveles.style.opacity = niveles.classList.contains('visible') ? 1 : 0;
 
-            // Ajustar la anchura del conector
-            conector.style.width = niveles.classList.contains('visible') ? '100%' : '0';
-        }
-    </script>
+    // Ajustar la anchura del conector
+    conector.style.width = niveles.classList.contains('visible') ? '100%' : '0';
+
+    // Deshabilitar/enabled los enlaces según la visibilidad de los niveles
+    var enlaces = niveles.querySelectorAll('a');
+    enlaces.forEach(function(enlace) {
+        enlace.disabled = !niveles.classList.contains('visible');
+    });
+}
+    </script> --}}
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Lista de Juegos</h1>
+    <ul>
+        @foreach($juegos as $juego)
+            <li>
+                <a href="{{ route('juegos.niveles', ['juego' => $juego->id]) }}">{{ $juego->nombre }}</a>
+            </li>
+        @endforeach
+    </ul>
+
+
 </body>
 </html>

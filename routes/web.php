@@ -312,9 +312,17 @@ Route::post('/juegos/guardar', [JuegoController::class,'guardarJuego'])->name('j
 
 
 
-Route::get('/juegos', [PlaysController::class, 'mostrarJuegos'])->name('juegos.mostrar');
-Route::get('/juegos/nivel/{nivel}', [PlaysController::class, 'jugarNivel'])->name('juegos.nivel');
-Route::post('/juegos/nivel/{nivel}/procesar', [PlaysController::class, 'procesarRespuesta'])->name('juegos.nivel.procesar');
-Route::get('/ruta_de_resultados/{nombreDelJuego}/{resultado}', [PlaysController::class, 'mostrarResultado'])->name('juegos.resultado');
+// Route::get('/juegos', [PlaysController::class, 'mostrarJuegos'])->name('juegos.mostrar');
+// Route::get('/juegos/nivel', [PlaysController::class, 'jugarNivel'])->name('juegos.nivel');
+// Route::post('/juegos/nivel/{nivel}/procesar', [PlaysController::class, 'procesarRespuesta'])->name('juegos.nivel.procesar');
+// Route::get('/ruta_de_resultados/{nombreDelJuego}/{resultado}', [PlaysController::class, 'mostrarResultado'])->name('juegos.resultado');
 
 // Route::post('/completarNIvel/{nivelId}', [PlaysController::class, 'completarNivel'])->name('completar');
+
+// use App\Http\Controllers\PlaysController;
+
+Route::get('/juegos', [PlaysController::class, 'mostrarJuegos'])->name('juegos.lista');
+Route::get('/juegos/{juego}/niveles', [PlaysController::class, 'mostrarNiveles'])->name('juegos.niveles');
+Route::get('/juegos/nivel/{nivel}', [PlaysController::class, 'jugarNivel'])->name('juegos.nivel');
+Route::post('/juegos/nivel/{nivel}/procesar', [PlaysController::class, 'procesarRespuesta'])->name('juegos.procesar');
+Route::get('/juegos/resultado/{nombreDelJuego}/{resultado}', [PlaysController::class, 'mostrarResultado'])->name('juegos.resultado');
