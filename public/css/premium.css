@@ -1,7 +1,15 @@
-.text-center{
+.container{
+    display: flex;
+    flex-wrap: wrap;
     position: relative;
-    left: 300px;
-    top: 200px;
-    width: 600px;
-    height: 400px !important;
+    top: 80px;
+    left: 10px;
+}
+
+.card{
+    flex-grow: 1;
+    flex-basis: 200;
+    width: 300px;
+    height: 300px;
+
 }

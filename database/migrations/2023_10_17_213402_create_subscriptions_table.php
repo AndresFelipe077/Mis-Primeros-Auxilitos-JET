@@ -15,12 +15,16 @@ return new class extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id'); // Relación con la tabla de usuarios
+            $table->unsignedBigInteger('user_id')->unique(); // Relación con la tabla de usuarios
             $table->string('subscription_status'); // Campo que indica el estado de la suscripción
+            $table->timestamp('expires_at')->default(now()->addDays(30)); // Agrega un campo de fecha de vencimiento y establece un valor predeterminado
             // Agrega otros campos relacionados con las suscripciones si es necesario
+            $table->double('price')->nullable()->default(33000);
             $table->timestamps();
         });
     }
+    
+    
 
     /**
      * Reverse the migrations.
@@ -31,4 +35,6 @@ return new class extends Migration
     {
         Schema::dropIfExists('subscriptions');
     }
+
+    
 };

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Login</title>
     <link rel="stylesheet" href={{asset('css/logins.css')}}>
     <link id="image-head" rel="shortcut icon" href="{{ asset('img/botiquin.png') }}" type="image/x-icon">
@@ -183,7 +183,7 @@
                         </div>
                     </div>
                     <div class="row text-center bg-dark text-light rounded ">
-                        <div class="col-12">Copyright &copy; 2022</div>
+                        <div class="col-12">Nuestros heroes del futuro 😊😊😊</div>
                     </div>
                 </div>
 

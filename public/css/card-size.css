@@ -1,13 +1,49 @@
 #card-contenido{
   width: 300px !important; 
   height:500px !important;
+
+ 
+
 }
 
-/* #card-body{
-  width: 300px !important; 
-  height:470px !important;
-} */ 
+/* Estilos generales para pantallas pequeñas responsoiveeeeeeeeeeeeeeeeeeeeeeee  cartass home*/
 
+@media (max-width: 200px) {
+  #card-contenido{
+    width: 100px !important; 
+    height:400px !important;
+  }
+}
+@media (min-width: 201px) and (max-width: 349px) {
+  #card-contenido {
+    width: 200px !important; 
+    height:400px !important;
+  }
+}
+@media (min-width: 340px) and (max-width: 479px) {
+  #card-contenido {
+    width: 270px !important; 
+    height:470px !important;
+  }
+}
+
+
+/* Estilos para pantallas medianas */
+@media (min-width: 480px) and (max-width: 992px) {
+  #card-contenido {
+    width: 300px !important; 
+    height:500px !important;
+  margin: auto;
+  }
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 993px) {
+  #card-contenido {
+    width: 300px !important; 
+    height:500px !important;
+  }
+}
 
 
 
@@ -19,21 +55,26 @@
   position: relative;
   overflow: hidden;
   animation: neon-border-animation 3s linear infinite;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 1); /* Comienza con un borde rojo más intenso */
-
-  /* background: linear-gradient(to bottom, #fffefb32, #00bfff72); */
-
-    
+  box-shadow: 0 0 20px rgba(255, 0, 0, 1); /* Comienza con un borde rojo más intenso */ 
     outline: none;
 }
-
+.cartvane{
+  border-radius: 9%;
+  border-top: 5px solid #491d88; /* Borde rojo en la parte superior */
+  border-right: 5px solid #fec859; /* Borde verde a la derecha */
+  border-bottom: 5px solid #331a38; /* Borde azul en la parte inferior */
+  border-left: 5px solid #43b5a0;
+} 
 .card{
-  background: linear-gradient(to bottom, #fffefb32, #00bfff72);
+  background: linear-gradient(to bottom, #fffefb5b, #00bfff3a);
     border-radius: 50px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-   
+    border: none;
     text-align: center;
 }
+
+
+
 .circles {
   display: flex;
   justify-content: center;
@@ -41,37 +82,10 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 40px;
-  background: none;
+  height: 50%; 
+
 }
 
-.half-circle1 {
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid #373ecd;
-  position: relative;
-  
-}
-.half-circle2 {
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid #dc3cdc;
-  position: relative;
-  
-}
-.half-circle3 {
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid #05f2b7;
-  position: relative;
-  
-}
 .half-circle {
   width: 0;
   height: 0;
@@ -80,19 +94,169 @@
   border-top: 20px solid #0519f2;
   position: relative;
   
+}.half-circle1 {
+  border-top-color: #373ecd; /* Color del primer triángulo */
+  border-left: 20px solid transparent;
+  border-right: 80px solid transparent;
+  border-top: 20px solid #373ecd;
 }
+
+.half-circle2 {
+  border-top-color: #dc3cdc; /* Color del segundo triángulo */
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #dc3cdc;
+}
+
+.half-circle3 {
+  border-top-color: #05f2b7; /* Color del tercer triángulo */
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #05f2b7;
+}
+
+/* Ajusta los estilos para que sean responsivos */
+/* responsive 200px 574px pantalla */
+@media (min-width:200px) and (max-width: 574px) {
+  .half-circle1 {
+    border-left: 0px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 22px solid #373ecd
+}
+}
+@media (min-width:200px) and (max-width: 574px) {
+  .half-circle2 {
+    border-left: 9px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #dc3cdc;
+  }
+}
+
+@media (min-width:200px) and (max-width: 574px) {
+  .half-circle3{
+    border-left: 9px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 18px solid #05f2b7;
+  }
+}
+
+/* responsive 575px 765px pantalla */
+
+@media (min-width: 575px) and (max-width: 765px) {
+  .half-circle1 {
+    border-left: 1px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 17px solid #373ecd
+}
+}
+@media (min-width: 575px) and (max-width: 765px) {
+  .half-circle2 {
+    border-left:  solid transparent;
+    border-right: 13px solid transparent;
+    border-top: 17px solid #dc3cdc;
+  }
+}
+
+@media (min-width: 575px) and (max-width: 765px){
+  .half-circle3{
+    border-left: 1px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 17px solid #05f2b7;
+  }
+}
+
+/* responsive 766px 991px pantalla */
+
+@media (min-width: 766px) and (max-width: 991px) {
+  .half-circle1 {
+    border-left: 0px solid transparent;
+    border-right: 35px solid transparent;
+    border-top: 22px solid #373ecd
+}
+}
+
+@media (min-width: 766px) and (max-width: 991px) {
+  .half-circle2 {
+    border-left: 6px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 20px solid #dc3cdc;
+  }
+}
+
+@media (min-width: 766px) and (max-width: 991px){
+  .half-circle3{
+    border-left: 6px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 18px solid #05f2b7;
+  }
+}
+
+/* responsive 992px 1198px pantalla */
+
+@media (min-width:992px) and (max-width: 1198px) {
+  .half-circle1 {
+    border-left: 0px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 22px solid #373ecd
+}
+
+}
+@media (min-width:992px) and (max-width: 1198px) {
+  .half-circle2 {
+    border-left: 9px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #dc3cdc;
+  }
+}
+
+@media (min-width:992x) and (max-width: 1198px) {
+  .half-circle3{
+    border-left: 9px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 18px solid #05f2b7;
+  }
+}
+
+/* responsive 1199px 1399px pantalla */
+
+@media (min-width:1199px) and (max-width: 1399px) {
+  .half-circle1 {
+    border-left: 20px solid transparent;
+  border-right: 80px solid transparent;
+  border-top: 20px solid #373ecd;
+}
+
+}
+@media (min-width:1199px) and (max-width: 1399px) {
+  .half-circle2 {
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #dc3cdc;
+  }
+}
+
+@media (min-width:1199px) and (max-width: 1399px) {
+  .half-circle3{
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #05f2b7;
+  }
+}
+
+/* lineaaaaa de dos colores */
+
 .line {
   width: 100%;
- height: 10px;
-   /* background-color: #0cd2a7; */
+  height: 15px;
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 0px;
   animation: moveLine 5s linear infinite;
-  background: linear-gradient(to bottom, #4203ff, #eb01f8fd); 
+  background: linear-gradient(to bottom, #4203ff, #01f8ecfd); 
   
 }
 
+/* ´movimiento linea de abajo de la carta juegos */
 @keyframes moveLine {
   0% {
       transform: translateX(-100%);
@@ -102,7 +266,7 @@
   }
 }
 
-
+/* fondo luces de la carta juegos */
 
 @keyframes neon-border-animation {
   0% {
@@ -124,29 +288,10 @@
              mover-arriba 8s linear infinite alternate;
 }
 
-@keyframes mover-izquierda {
-  0%, 100% {
-    left: 0; /* Posición inicial */
-  }
-  50% {
-    left: -50px; /* Mover hacia la izquierda */
-  }
-}
-
-@keyframes mover-arriba {
-  0%, 100% {
-    top: 0; /* Posición inicial */
-  }
-  50% {
-    top: -50px; /* Mover hacia arriba */
-  }
-}
-
-
-/* aniaccion iagenes de dos  */
+/* aniaccion imagenes de dos  */
 
 .container1 {
-  position: absolute;
+  position: static;
   top: 0;
   left: 0;
   width: 100%;
@@ -172,20 +317,16 @@
 
 /* carta principalll burbujas */
 
-
-
 .burbuja{
    
   border-radius: 50%;
   background: #30c1ff;
-  opacity: 0.3;
-
+  opacity: 0;
   position: absolute;
   bottom: 0;
-  
-
   animation: burbujas 3s linear infinite ;
 }
+
 .burbuja:nth-child(1){
   width: 80px;
   height: 80px;
@@ -267,26 +408,22 @@
   
 }
 
-
-
-
-
 @keyframes burbujas{
 0%{
   bottom: 0;
   opacity:0;
-
 }
+
 50%{
      opacity: .4;
-
 }
+
 100%{
   bottom: 100vh;
   opacity: 0;
+ }
 }
-  
-}
+
 @keyframes movimiento {
   0%{
       transform: translateY(0);
@@ -301,39 +438,26 @@
   
 }
 
+/* cartas de los juegos en si imagenes */
 
-/* animacion caminando img */
-
-
-/* Bernard Bernoulli: Animación del personaje */
-#bern {
-  /* Tamaño de la viñeta individual */
-  width: 95px;
-  height: 156px;
-  
-  /* Cómo hay establecido un tamaño, centramos */
-  margin: auto;
-  
-  /* Cargamos el sprite (repeat-x se puede omitir, por defecto) */
-  background: url("/img/tutu.png") repeat-x;
-  
-position: absolute;
-  /* Aplicamos animación "walk" (0.8seg, 6 frames, repetimos) */
-  animation: walk .8s steps(7) infinite;
-  
-  /* Posicionamos el personaje sobre el camino de madera */
-
+.cartita .cont{
+  background:transparent !important;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  text-align: center;
 }
 
-/* Animación de personaje caminando: Simplemente mueve el sprite sheet hacia la izquierda, realizando el movimiento. */
-@keyframes walk {
-  /* Partimos de la primera viñeta del sprite sheet */
-  from { background-position: 0 }
-  /* Tamaño total de ancho del sprite. 
-     Es negativo para que no "camine" hacia atrás */
-  to { background-position: -672px }
-}
-.smith{
+/* Muchas Gracias equipo les saluda vansss */
+
+.smith {
+  transform: translateX(19px);
+  margin-top: 100px;
   position: relative;
-  left: -189px;
+  left: 30px;
+  top: -120px;
+}
+.nuevos{
+  position: relative !important;
+  left: 90px;
 }

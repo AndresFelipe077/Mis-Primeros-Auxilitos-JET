@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdivinaController;
 use App\Http\Controllers\AdivinanzaController;
+use App\Http\Controllers\AhorcadoController;
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\JuegoAdivinanzaController;
 use App\Http\Controllers\JuegoController;
@@ -74,20 +76,20 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::delete('edit/{contenido}', 'destroy')->name('contenido.destroy');
 });
 
+
+// Games of nico
+// Rutas de los Juegos
+Route::get('juegos', [JuegosController::class, 'index']);
+
+Route::get('juegos2', [JuegosAdivina::class, 'index2']);
+
+Route::get('ahorcado', [AhorcadoController::class, 'index3']);
+
+Route::get('/adivina', [AdivinaController::class, 'index4']);
+
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(TriviaController::class)->group(function () {
 
     Route::get('dashboard/games', 'game')->name('dashboard.game');
-
-
-
-
-    // Rutas de los Juegos
-    Route::get('juegos', [JuegosController::class, 'index']);
-
-    Route::get('juegos2', [JuegosAdivina::class, 'index2']);
-
-
-
 
 
     // Muestra la vista de preguntas 5 a 7 años
@@ -261,39 +263,6 @@ Route::get('/premium', [PagosController::class, 'premium']);
 Route::get('/generar-recibo-pdf/{userId}', [PagosController::class,'recibo']);
 
 
-/*
-========================
-RUTAS JUEGOS
-========================
-*/
-// Route::get('/juegos-y-niveles', [JuegoController::class,'mostrarJuegosYNiveles']);
-
-// Route::get('/vista/trivia', [Trivias2Controller::class, 'mostrarPregunta'])->name('mostrar_pregunta');
-// Route::post('/vista/trivia', [Trivias2Controller::class, 'procesarRespuesta'])->name('procesar_respuesta');
-
-// Route::get('/vista/adivinanza', [JuegoAdivinanzasController::class, 'mostrarAdivinanza'])->name('mostrar_pregunta');
-// Route::post('/vista/adivinanza', [JuegoAdivinanzasController::class, 'procesarRespuesta'])->name('procesar_respuesta');
-
-// Route::get('/juego-adivinanza', [JuegoAdivinanzaController::class, 'mostrarAdivinanza'])->name('juego_adivinanza');
-// Route::post('/juego-adivinanza/procesar', [JuegoAdivinanzaController::class, 'procesarRespuesta'])->name('juego_adivinanza_procesar');
-
-// Route::get('/trivias/{nivel}', [Trivias2Controller::class, 'mostrarPregunta'])->name('jugar_trivia');
-// Route::post('/trivias/procesar', [Trivias2Controller::class,'procesarRespuesta'])->name('procesar_respuesta_trivia');
-// Route::get('/trivias/jugar/{nivel}', [JuegoController::class, 'jugarNivel'])->name('jugar_nivel');
-// Route::get('/jugar-nivel/{nivel}', [JuegoController::class, 'jugarNivel'])->name('jugar_nivel');
-// Route::get('/juego_resultado', [JuegoController::class, ]);
-// Route::get('/trivias/resultado/{nivel}/{resultado}', [JuegoController::class,'mostrarResultado'])->name('juego_resultado');
-
-// Route::get('/trivias/jugar/{nivel}', [Trivias2Controller::class, 'jugarNivel'])->name('jugar_nivel');
-
-
-// Route::get('/trivias/jugarrr/{nivel}', [JuegoController::class, 'jugarNivel'])
-//     ->name('jugar_nivel')
-//     ->where('nivel', '[0-9]+'); // Añade una restricción para asegurarte de que nivel sea un número
-
-// Route::get('/juego_resultado', [JuegoController::class, 'mostrarResultado'])
-//     ->name('juego_resultado');
-//     Route::get('/jugar-siguiente-nivel/{nivel}', [JuegoController::class, 'jugarSiguienteNivel'])->name('jugar_siguiente_nivel');
 
 
 // // routes/web.php
@@ -308,21 +277,22 @@ Route::post('/juegos/guardar', [JuegoController::class,'guardarJuego'])->name('j
 
 //     // ... Otras rutas protegidas ...
 // });
+Route::post('/cancelar-suscripcion', [PagosController::class, 'cancelarSuscripcion'])->name('cancelar-suscripcion');
 
 
 
 
-// Route::get('/juegos', [PlaysController::class, 'mostrarJuegos'])->name('juegos.mostrar');
-// Route::get('/juegos/nivel', [PlaysController::class, 'jugarNivel'])->name('juegos.nivel');
-// Route::post('/juegos/nivel/{nivel}/procesar', [PlaysController::class, 'procesarRespuesta'])->name('juegos.nivel.procesar');
-// Route::get('/ruta_de_resultados/{nombreDelJuego}/{resultado}', [PlaysController::class, 'mostrarResultado'])->name('juegos.resultado');
+/*
+========================
+RUTAS JUEGOS
+========================
+*/
 
-// Route::post('/completarNIvel/{nivelId}', [PlaysController::class, 'completarNivel'])->name('completar');
-
-// use App\Http\Controllers\PlaysController;
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(ContenidoController::class)->group(function () {
 
 Route::get('/juegos', [PlaysController::class, 'mostrarJuegos'])->name('juegos.lista');
 Route::get('/juegos/{juego}/niveles', [PlaysController::class, 'mostrarNiveles'])->name('juegos.niveles');
 Route::get('/juegos/nivel/{nivel}', [PlaysController::class, 'jugarNivel'])->name('juegos.nivel');
 Route::post('/juegos/nivel/{nivel}/procesar', [PlaysController::class, 'procesarRespuesta'])->name('juegos.procesar');
 Route::get('/juegos/resultado/{nombreDelJuego}/{resultado}', [PlaysController::class, 'mostrarResultado'])->name('juegos.resultado');
+});

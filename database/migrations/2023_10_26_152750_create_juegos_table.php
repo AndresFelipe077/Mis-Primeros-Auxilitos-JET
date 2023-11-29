@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->text('descripcion');
-            // Agrega más campos si es necesario
+            $table->string('imagen');
             $table->timestamps();
         });
     }

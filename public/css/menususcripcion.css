@@ -2,58 +2,14 @@ body {
     font-family: 'DynaPuff', cursive;
     margin: 0;
     padding: 0;
-    background-image: url("../img/imgs/pexels-rdne-stock-project-8500283.jpg") !important;
-    background-size: 100%; /* Ajusta el ancho al 100% y el alto se ajusta automáticamente */
+    position: relative;
+    background-size: 100%;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    top: -50px;
+    height: 1000px;
 }
-
-header {
-    text-align: center;
-    background: rgb(155,64,167);
-    background: linear-gradient(90deg, rgba(155,64,167,1) 0%, rgba(121,9,107,1) 32%, rgba(72,91,167,1) 64%, rgba(0,212,255,1) 80%, rgba(0,254,255,1) 100%);
-    font-family: 'DynaPuff', cursive;
-    color: #fff;
-    padding: 20px;
-}
-
-@keyframes colorChange {
-    0% {
-        color: #FF0000;
-    }
-    10% {
-        color: #FFA500;
-    }
-    20% {
-        color: #FFFF00;
-    }
-    30% {
-        color: #008000;
-    }
-    40% {
-        color: #0000FF;
-    }
-    50% {
-        color: #05ff50;
-    }
-    60% {
-        color: #008b00;
-    }
-    70% {
-        color: #FF1493;
-    }
-    80% {
-        color: #FF69B4;
-    }
-    90% {
-        color: #FF4500;
-    }
-    100% {
-        color: #FF0000;
-    }
-}
-
 h1 {
     font-size: 36px;
     font-weight: bold;
@@ -62,10 +18,12 @@ h1 {
 }
 
 h2 {
-    font-size: 28px;
-    color: #e6c611;
+    font-size: 38px;
+    color: #1143e6;
     font-family: 'DynaPuff', cursive;
     animation: colorChangeH2 12s infinite;
+    position: relative;
+ 
 }
 
 h3 {
@@ -91,9 +49,9 @@ p {
 }
 
 .subscribe-button {
-    background-color: #ff6b6b;
+    background: linear-gradient(to bottom, #3a0fb1, #8706ff, #FF6B6B);
     color: #fff;
-    padding: 15px 30px;
+    padding: 10px 30px;
     border: none;
     border-radius: 5px;
     font-size: 24px;
@@ -102,67 +60,29 @@ p {
     display: inline-block;
     transition: background-color 0.3s ease;
     font-family: 'DynaPuff', cursive;
-}
-
-.subscribe-button:hover {
-    background-color: #e54747;
-    font-family: 'DynaPuff', cursive;
+    position: relative;
+    top: -20px;
+    left: 70px;
 }
 
 .subscription-info {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-wrap: nowrap;
     margin: 20px;
     font-family: 'DynaPuff', cursive;
 }
 
 .subscription-card {
-    background-color: rgba(255, 255, 255, 0.7); /* Cambia el último valor para ajustar la opacidad */
+    background-color: #ffffff;
     border: 2px solid #0070ba;
     border-radius: 10px;
-    width: 30%;
+    width: 28%;
     padding: 20px;
     text-align: center;
     margin: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     font-family: 'DynaPuff', cursive;
-}
-
-@keyframes colorChangeH2 {
-    0% {
-        color: #fdfdfd;
-    }
-    10% {
-        color: #FFA500;
-    }
-    20% {
-        color: #FFFF00;
-    }
-    30% {
-        color: #008000;
-    }
-    40% {
-        color: #0000FF;
-    }
-    50% {
-        color: #4B0082;
-    }
-    60% {
-        color: #8B008B;
-    }
-    70% {
-        color: #FF1493;
-    }
-    80% {
-        color: #FF69B4;
-    }
-    90% {
-        color: #FF4500;
-    }
-    100% {
-        color: #FF0000;
-    }
 }
 
 /* Responsivo para pantalla pequeña (menos de 768px) */
@@ -175,6 +95,22 @@ p {
         font-size: 18px;
     }
 
+    .slogan {
+        text-align: center;
+    }
+
+    .dos {
+        left: 0;
+    }
+
+    .subscribe-button {
+        padding: 10px 20px;
+        font-size: 18px;
+        margin: 10px;
+        top: 30px;
+        left: 0;
+    }
+
     .subscription-info {
         flex-direction: column;
         align-items: center;
@@ -182,11 +118,20 @@ p {
 
     .subscription-card {
         width: 80%;
+        left: 0;
+    }
+    
+    .segunda {
+        left: 0;
     }
 
-    .subscribe-button {
-        padding: 10px 20px;
-        font-size: 18px;
-        margin: 10px;
+    .cuarta {
+        left: 0;
+    }
+    
+    .subscription-card, .subscribe-button {
+        position: static;
     }
 }
+
+
