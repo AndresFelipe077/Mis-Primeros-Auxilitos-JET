@@ -92,18 +92,32 @@ class PagosController extends Controller
         return view('contenido.premium.contenidoPremium');
     }
     
-   public function recibo(Request $request, $userId){
-    $user = User::find($userId);
-    $userName = $user->name;
-    $monto = 8.00;
-
-    // Genera el contenido del recibo PDF
-    $pdf = FacadePdf::loadView('pagos.recibo.pdf', compact('userName', 'monto'));
-
-
-    // Retorna el PDF como una respuesta descargable
-    return $pdf->download('recibo.pdf');
-}
+    public function recibo(Request $request, $userId) {
+        // Lógica para crear el usuario (si es necesario)
+    
+        $user = User::find($userId);
+    
+        // Verifica si el usuario existe
+        if (!$user) {
+            return response()->json(['error' => 'Usuario no encontrado'], 404);
+        }
+    
+        // Forzar la persistencia del modelo (opcional, dependiendo de tu lógica)
+        // $user->save();
+    
+        // Recargar la instancia del usuario desde la base de datos
+        $user = $user->refresh();
+    
+        $userName = $user->name;
+        $monto = 8.00;
+    
+        // Genera el contenido del recibo PDF
+        $pdf = FacadePdf::loadView('pagos.recibo.pdf', compact('userName', 'monto'));
+    
+        // Retorna el PDF como una respuesta descargable
+        return $pdf->download('recibo.pdf');
+    }
+    
     
 
 
