@@ -261,4 +261,5 @@ Route::get('/generar-recibo-pdf/{userId}', [PagosController::class,'recibo']);
 Route::post('/cancelar-suscripcion', [PagosController::class, 'cancelarSuscripcion'])->name('cancelar-suscripcion');
 
 
+Route::get('/download_apk', [DownloadApp::class, 'downloadApk'])->name('download.apk');
 
