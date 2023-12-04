@@ -6,15 +6,14 @@
 
 
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 0;
+        @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap');
+        .container {
+            margin-top: 2rem;
+            font-family: 'DynaPuff', cursive;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            flex-direction: column;
         }
 
         h1 {
@@ -30,7 +29,7 @@
 
         .card {
             margin: 10px;
-            width: 200px;
+            width: 20rem;
             background-color: #ffffff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -45,9 +44,11 @@
         }
 
         .card img {
+            border: 1px solid #0000;
             width: 100%;
-            height: 150px; /* Ajusta la altura según tus necesidades */
+            height: 80%; /* Ajusta la altura según tus necesidades */
             object-fit: cover;
+            background-size: cover;
         }
 
         .card a {
@@ -60,36 +61,21 @@
             font-size: 18px;
         }
     </style>
+<div class="container">
 
     <h1>Lista de Juegos</h1>
     <div class="cards-container">
         @foreach($juegos as $juego)
+          <a href="{{ route('juegos.niveles', ['juego' => $juego->id]) }}">
             <div class="card">
-                <img src="{{ asset($juego->imagen) }}" alt="{{ $juego->nombre }}">
+                <img src="{{ asset('storage/' . $juego->imagen) }}" alt="{{ $juego->nombre }}">
                 <a href="{{ route('juegos.niveles', ['juego' => $juego->id]) }}">{{ $juego->nombre }}</a>
             </div>
+          </a>
         @endforeach
     </div>
+</div>
 
-
-    @foreach($juegos as $juego)
-
-    <div class="cartita m-4 text-center">
-        <div class=" cont card-body shadow ">
-            <div class="h4">{{$juego->nombre}}</div>
-            <div class="contenedor rounded">
-                <a href="{{ route('juegos.niveles', ['juego' => $juego->id]) }}" class="btn mt-2">
-                    <img class="imagen rounded img-fluid mx-auto d-block"
-                        src="{{asset('storage/' . $juego->imagen)}}" alt="Image of trivia"
-                        width="250px" height="250px">
-                </a>
-            </div>
-            <br>
-            <br>
-        </div>
-    </div>
-
-    @endforeach
 
 
     <x-slot name="footer">

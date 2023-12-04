@@ -31,6 +31,12 @@ class DatabaseSeeder extends Seeder
 
         $this->call(UserSeeder::class);
 
+        $this->call(JuegosSeeder::class);
+
+        $this->call(NivelSeeder::class);
+
+        $this->call(PreguntasyRSeeder::class);
+
         User::factory(10)         -> create();
         Contenido::factory(10)    -> create();
         Trivia::factory(10)       -> create();
@@ -42,6 +48,6 @@ class DatabaseSeeder extends Seeder
 
         $path = 'database/seeders/sql/subscriptions.sql';
         DB::unprepared(file_get_contents($path));
-        
+
     }
 }
