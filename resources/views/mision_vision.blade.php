@@ -49,7 +49,7 @@
             <img class="mx-auto" src="{{ asset('img/icons/house.png') }}" alt="Home" height="100px" width="100px" onclick="location.href='{{ route('dashboard.index') }}'">
         
         </div>
-        <a href="#" class="boton-espacio">Manual de usuario</a>
+        <a href="https://www.calameo.com/read/0075376847d8a2c7cb32f" class="boton-espacio">Manual de usuario</a>
         <a href="#" class="boton-arcoiris">Manual técnico</a>
     </div>
 
