@@ -105,27 +105,27 @@
                         $datosPorNivel = [
                             1 => [
                                 'opciones' => ['Chicle', 'Papel', 'Algodón'],
-                                'imagen' => 'img/games/img-reto3.png',
+                                'imagen' => 'img/FPreguntas/cinta1.png',
                             ],
                             2 => [
                                 'opciones' => ['Esponja', 'Pincel', 'Pañuelo'],
-                                'imagen' => 'img/doct.png',
+                                'imagen' => 'img/FPreguntas/jabon.png',
                             ],
                             3 => [
                                 'opciones' => [' Darle agua', 'Ponerle una venda', 'Darle palmadas en la espalda'],
-                                'imagen' => 'img/doct.png',
+                                // 'imagen' => 'img/doct.png',
                             ],
                             4 => [
                                 'opciones' => ['Darle un vaso de agua', 'Ponerle una venda', 'Pedirle que respire profundamente'],
-                                'imagen' => 'img/doct.png',
+                                // 'imagen' => 'img/doct.png',
                             ],
                             5 => [
                                 'opciones' => ['Teléfono', 'Bolsa de hielo', 'Linterna'],
-                                'imagen' => 'img/doct.png',
+                                'imagen' => 'img/FPreguntas/respirador.png',
                             ],
                             6 => [
                                 'opciones' => ['Peluche', 'Pegamento', 'Papel aluminio'],
-                                'imagen' => 'img/doct.png',
+                                'imagen' => 'img/FPreguntas/venda.png',
                             ],
                             // Agrega más niveles y sus opciones según sea necesario
                         ];
