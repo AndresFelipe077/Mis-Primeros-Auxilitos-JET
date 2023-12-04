@@ -185,6 +185,14 @@
                     <div class="row text-center bg-dark text-light rounded ">
                         <div class="col-12">Nuestros heroes del futuro 😊😊😊</div>
                     </div>
+
+                    <div class="text-center mt-3">
+                        <a class="rounded-circle bg-transparent" href="{{ route('download.apk') }}">
+                            <img src="{{ asset('img/app.png') }}" alt="Admin" width="100px" height="100px">
+                        </a>
+                        <p class="h4">Mis primeros auxilitos - App</p>
+                    </div>
+
                 </div>
 
             </div>
