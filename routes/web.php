@@ -6,6 +6,7 @@ use App\Http\Controllers\AhorcadoController;
 use App\Http\Controllers\AnswerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContenidoController;
+use App\Http\Controllers\DownloadApp;
 use App\Http\Controllers\JuegosAdivina;
 use App\Http\Controllers\JuegosController;
 use App\Http\Controllers\PagosController;
