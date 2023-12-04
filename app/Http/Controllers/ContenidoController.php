@@ -147,7 +147,7 @@ class ContenidoController extends Controller
           $destination = public_path() . $contenido->url;
   
           if ($contenido->url != '') {
-              unlink(public_path() . '/' . $contenido->url);
+              unlink(public_path() . $contenido->url);
           }
   
           $file = $request->file('file');
