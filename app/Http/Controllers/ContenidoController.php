@@ -165,6 +165,7 @@ class ContenidoController extends Controller
   
       $contenido->autor = $name;
       $contenido->description = $request->description;
+      $contenido->verified = 0;
   
       $contenido->update();
   
