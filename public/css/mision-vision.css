@@ -1,0 +1,47 @@
+.boton-arcoiris {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #FFD700, #FF8C00, #FF4500, #FF0000, #8B0000);
+    color: white;
+    transition: background 0.3s ease-in-out;
+}
+
+.boton-arcoiris:hover {
+    background: linear-gradient(to right, #FF0000, #FF4500, #FF8C00, #FFD700, #32CD32);
+}
+
+.boton-espacio {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    background-color: #610505;
+    color: #fff;
+    border: 2px solid #fff;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.boton-espacio:hover {
+    background-color: #fff;
+    color: #222;
+}
+
+.boton-espacio {
+    position: relative;
+    top: -100px;
+    left: 200px;
+}
+
+.boton-arcoiris {
+    position: relative;
+    left: 670px;
+    top: -96px;
+}
