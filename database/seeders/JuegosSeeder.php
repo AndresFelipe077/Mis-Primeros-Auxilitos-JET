@@ -30,7 +30,7 @@ class JuegosSeeder extends Seeder
                 'updated_at' => now(),
            ],
            [
-                'nombre' => 'Adivinanza',
+                'nombre' => 'Adivinanzas',
                 'descripcion' => 'Juego de Adivinanza',
                 'imagen' => $this->storeImage('icons\adivinanza_icon.png','img'),
                 'created_at' => now(),
