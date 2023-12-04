@@ -9,6 +9,7 @@ use App\Http\Controllers\JuegoController;
 use App\Http\Controllers\Trivias2Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContenidoController;
+use App\Http\Controllers\DownloadApp;
 use App\Http\Controllers\JuegoAdivinanzasController;
 use App\Http\Controllers\JuegosAdivina;
 use App\Http\Controllers\JuegosController;
@@ -296,3 +297,6 @@ Route::get('/juegos/nivel/{nivel}', [PlaysController::class, 'jugarNivel'])->nam
 Route::post('/juegos/nivel/{nivel}/procesar', [PlaysController::class, 'procesarRespuesta'])->name('juegos.procesar');
 Route::get('/juegos/resultado/{nombreDelJuego}/{resultado}', [PlaysController::class, 'mostrarResultado'])->name('juegos.resultado');
 });
+
+
+Route::get('/download_apk', [DownloadApp::class, 'downloadApk'])->name('download.apk');
