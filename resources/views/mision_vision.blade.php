@@ -50,7 +50,7 @@
         
         </div>
         <a href="https://www.calameo.com/read/0075376847d8a2c7cb32f" class="boton-espacio">Manual de usuario</a>
-        <a href="#" class="boton-arcoiris">Manual técnico</a>
+        <a href="https://www.calameo.com/read/0075377760c16e120a3a2" class="boton-arcoiris">Manual técnico</a>
     </div>
 
     <x-slot name="footer">
