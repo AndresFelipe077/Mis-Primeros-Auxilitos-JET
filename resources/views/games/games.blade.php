@@ -43,7 +43,7 @@
                                 <div class="  cont card-body shadow ">
                                     <div class="h4">Juego Adivina la pareja</div>
                                     <div class="contenedor rounded">
-                                        <a href="{{ url('juegos') }}" class="btn mt-2">
+                                        <a href="{{ url('juegos3') }}" class="btn mt-2">
                                             <img class="imagen rounded img-fluid mx-auto d-block"
                                                 src="{{ asset('img/icons/empearejar.jpg') }}" alt="Image of adivinanza"
                                                 width="250px" height="250px">
@@ -52,11 +52,11 @@
                                     <br>
                                     <br>
                                 </div>
-                                
+
                             </div>
 
                         </div>
-                        
+
                         <div class="line"></div>
                     </div>
 
@@ -90,12 +90,12 @@
                                     <br>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <div class="line"></div>
                     </div>
 
-                    
+
 
                     {{-- <div class="card1 m-4 text-center">
                         <div class=" card-body shadow ">
@@ -155,12 +155,12 @@
                                                 src="{{ asset('img/icons/1000x1000.jpg') }}" alt="Image of trivia"
                                                 width="250px" height="250px">
                                         </a>
-                                       
+
                                     </div>
                                     <br>
                                     <br>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <div class="line"></div>

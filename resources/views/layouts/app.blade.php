@@ -30,7 +30,7 @@
 
 
 
-    {{-- link de guest --}}
+    {{-- links de guest --}}
     <link rel="stylesheet" href="{{ asset('css/plantillaGuest.css') }}">
 
     {{-- Estilos de jquery --}}

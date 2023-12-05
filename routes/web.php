@@ -80,7 +80,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
 // Games of nico
 // Rutas de los Juegos
-Route::get('juegos', [JuegosController::class, 'index']);
+Route::get('juegos3', [JuegosController::class, 'index']);
 
 Route::get('juegos2', [JuegosAdivina::class, 'index2']);
 
