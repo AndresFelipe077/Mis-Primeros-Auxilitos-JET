@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/imgs/fondo-ajustes.jpg") !important;
+    font-family: 'DynaPuff', cursive;
+    font-size: 40px;
+    text-align: center;
+
+} 
+
+.main-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+canvas{
+    background-color: aliceblue;
+}
+
+
+
+.logo{
+    position: relative;
+    top: 1000px;
+}
+.rnc{
+    margin-top: 20px;
+    appearance: none;
+    font-family: 'DynaPuff', cursive;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    background: #1adc13;
+    color: #fff;
+    font-weight: 600;
+    font-size: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    color: black;
+}
+
+.colors{
+
+    width: 40px; 
+    height: 40px; 
+    border: none;
+    border-radius: 50%;
+
+}
+
+
+.color-picker-container {
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+  }
+
+  label {
+    font-size: 14px; /* Tamaño de la etiqueta */
+    margin-left: 5px; /* Espacio entre el color picker y la etiqueta */
+  }

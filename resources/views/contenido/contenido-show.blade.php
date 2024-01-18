@@ -66,9 +66,14 @@
                 </div>
 
                 @foreach ($contenidos as $contenido)
-
                     @if ($contenido->verified == 1)
-                        <div class="col-12 col-md-6 mt-5 col-lg-4">
+           
+                    <div class=" col-12 col-md-6 mt-5 col-lg-4">
+
+                         
+
+                            <div class="card m-3 text-center  animate__animated animate__wobble" style="border-radius: 9%; "
+                            id="card-contenido" data-aos="fade-right">
 
                             <div class="burbujas">
                                 <div class="burbuja"></div>
@@ -81,10 +86,8 @@
     
     
                             </div>
-
-                            <div class="card m-3 text-center rounded animate__animated animate__wobble"
-                                id="card-contenido" data-aos="fade-right">
-                                <div class="card-body shadow">
+                          
+                                <div class="cartvane card-body shadow">
                                     <h5 class="card-title">{{ $contenido->title }}</h5>
                                     <div class="contenedor rounded">
                                         @if ($contenido->url)
@@ -130,7 +133,9 @@
         </div>
 
         
-
+<br>
+<br>
+<br>
         <div class="smith">
             <ul class="pagination pagination-lg">
                 <li class="page-item active mb-5" aria-current="page">

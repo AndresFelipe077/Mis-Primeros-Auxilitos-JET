@@ -8,8 +8,8 @@
 <body>
 
     {{-- imagen con movimiento  --}}
-  
-    
+
+
     <!-- Contenido de tu página aquí -->
 
     <!-- Footer -->
@@ -17,7 +17,7 @@
         <nav class="footer">
             <div class="navbar1 bg-info">
                 <div class="hijos-navbar">
-                    <img  class="iamgenes footer"  src="{{ asset('img/icons/casa.barra-footer-removebg-preview.png') }}" onclick="location.href='{{ route('dashboard.index') }}'">
+                    <img  class="iamgenes footer"  src="{{ asset('img/icons/casa.barra-footer-removebg-preview.png') }}" onclick="location.href='{{ route('juegos.lista') }}'">
                 </div>
                 <div class="hijos-navbar">
                     <img class="iamgenes footer"  src="{{ asset('img/menu/challengue2.png') }}"

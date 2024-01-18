@@ -147,7 +147,7 @@ class ContenidoController extends Controller
           $destination = public_path() . $contenido->url;
   
           if ($contenido->url != '') {
-              unlink(public_path() . '/' . $contenido->url);
+              unlink(public_path() . $contenido->url);
           }
   
           $file = $request->file('file');
@@ -165,6 +165,7 @@ class ContenidoController extends Controller
   
       $contenido->autor = $name;
       $contenido->description = $request->description;
+      $contenido->verified = 0;
   
       $contenido->update();
   
@@ -209,6 +210,7 @@ class ContenidoController extends Controller
 
     $contenido->autor       = $name;
     $contenido->description = $request->description;
+    $contenido->verified = 0;
 
     $contenido->update();
 

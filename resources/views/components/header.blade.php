@@ -3,7 +3,7 @@
         id="header">
         <img class="helicoptero" src="{{ asset('img/icons/helicoptero.png') }}" alt="Admin" width="50px" height="50px">
         <div class="container-fluid">
-            <a class="iconimage" href="{{ route('quiz.index') }}"><img src="{{ asset('img/imgs/logo.png') }}"
+            <a class="iconimage" href="{{ route('dashboard.index') }}"><img src="{{ asset('img/imgs/logo.png') }}"
                     alt="" width="80px" height="50px"></a>
             <div id="iconsvg" class="d-flex position-absolute ">
 
@@ -54,5 +54,5 @@
     <!-- La condición se cumple -->
 @else
     <!-- La condición no se cumple -->
-    <a href="{{ url('/menuSuscripcion') }}" class="subscribe-button">Suscribete </a>
+    <a href="{{ url('/menuSuscripcion') }}" class="suscription">Suscribete </a>
 @endif

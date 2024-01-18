@@ -8,11 +8,11 @@
         <x-header />
     </x-slot>
 
-   
               @if (auth()->check() && auth()->user()->subscription && auth()->user()->subscription->subscription_status === 'aprobado')
               <!-- La condición se cumple -->
-              <div class="card m-4 text-center primera">
-                <div class=" card-body shadow ">
+              <div class="container">
+              <div class="">
+                <div class=" card">
                     <div class="h4">¿Ques es RCP?</div>
                     <div class="contenedor rounded">
                         <video controls width="850px" height="auto">
@@ -23,8 +23,8 @@
                 </div>
             </div>
 
-            <div class="card m-4 text-center segunda">
-                <div class=" card-body shadow ">
+            <div class="">
+                <div class=" card">
                     <div class="h4">¿Ques es RCP?</div>
                     <div class="contenedor rounded">
                         <video controls width="850px" height="auto">
@@ -35,8 +35,8 @@
                 </div>
             </div>
 
-            <div class="card m-4 text-center tercera">
-                <div class=" card-body shadow ">
+            <div class="">
+                <div class=" card">
                     <div class="h4">¿Ques es RCP?</div>
                     <div class="contenedor rounded">
                         <video controls width="850px" height="auto">
@@ -46,8 +46,8 @@
                     </div>
                 </div>
             </div>
-            <div class="card m-4 text-center cuarta">
-                <div class=" card-body shadow ">
+            <div class="">
+                <div class=" card">
                     <div class="h4">¿Ques es RCP?</div>
                     <div class="contenedor rounded">
                         <video controls width="850px" height="auto">
@@ -57,8 +57,8 @@
                     </div>
                 </div>
             </div>
-            <div class="card m-4 text-center quinta">
-                <div class=" card-body shadow ">
+            <div class="">
+                <div class=" card">
                     <div class="h4">¿Ques es RCP?</div>
                     <div class="contenedor rounded">
                         <video controls width="850px" height="auto">
@@ -68,8 +68,8 @@
                     </div>
                 </div>
             </div>
-            <div class="card m-4 text-center sexta">
-                <div class=" card-body shadow ">
+            <div class="">
+                <div class=" card">
                     <div class="h4">¿Ques es RCP?</div>
                     <div class="contenedor rounded">
                         <video controls width="850px" height="auto">
@@ -79,9 +79,45 @@
                     </div>
                 </div>
             </div>
+            <div class="">
+                <div class=" card">
+                    <div class="h4">¿Ques es RCP?</div>
+                    <div class="contenedor rounded">
+                        <video controls width="850px" height="auto">
+                            <source src="{{ asset('videos/videsuscripcion2.mp4') }}" type="video/mp4">
+                            Tu navegador no soporta la reproducción de videos.
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class=" card">
+                    <div class="h4">¿Ques es RCP?</div>
+                    <div class="contenedor rounded">
+                        <video controls width="850px" height="auto">
+                            <source src="{{ asset('videos/videsuscripcion2.mp4') }}" type="video/mp4">
+                            Tu navegador no soporta la reproducción de videos.
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+        </div>
            
           @else
-       
+    
+          <div class="card text-center ">
+            <div class="card-header">
+                Lo sentimos 
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Para poder disfrutar de este contenido </h5>
+              <p class="card-text">Adquiere una suscripción mensual y disfruta de los mejores contenidos para tus niños .</p>
+            </div>
+            <div class="card-footer text-muted">
+                Recuerda nuestros niños son los hervores del mañana  
+            </div>
+          </div>
 
         
           @endif
@@ -95,8 +131,39 @@
         </div>
     </div>
 
+
+    {{-- <div id="paypal-button-container-P-66S47642J3354442YMVAZHCQ"></div>
+    <script src="https://www.paypal.com/sdk/js?client-id=AUgDyfyqBycdUb_XUsANjBmAuHfJxUHAgx2ZStgncmUrraGbz8Y_8cRZZV8MDSQz_qnKGe9307b-fPOe&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+    <script>
+      paypal.Buttons({
+          style: {
+              shape: 'pill',
+              color: 'gold',
+              layout: 'vertical',
+              label: 'subscribe'
+          },
+          createSubscription: function(data, actions) {
+            return actions.subscription.create({
+              /* Creates the subscription */
+              plan_id: 'P-66S47642J3354442YMVAZHCQ'
+            });
+          },
+          onApprove: function(data, actions) {
+            alert(data.subscriptionID); // You can add optional success message for the subscriber here
+          }
+      }).render('#paypal-button-container-P-66S47642J3354442YMVAZHCQ'); // Renders the PayPal button
+    </script> --}}
+
+
+
+
+
+
     <x-slot name="footer">
         <x-footer />
     </x-slot>
+
+
+
 
 </x-app-layout>

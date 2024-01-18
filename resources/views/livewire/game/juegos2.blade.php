@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="{{ asset('css/JuegosPreguntas.css') }}" />
-    <script src="{{ asset('js/JuegoPreguntas.js') }}"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Juegos</title>
+    <link rel="stylesheet" href="{{ asset('css/JuegosPreguntas.css') }}" />
+    <script src="{{ asset('js/JuegoPreguntas.js') }}"></script>
 </head>
 <body>
+
+    <div class="contenedor">
+
+
+
     <div id="pantalla-inicial">
         <h1>Adivina la Respuesta</h1>
         <button class="btn-1" onclick="comenzarJuego()">COMENZAR A JUGAR</button>
@@ -58,5 +65,9 @@
         </div>
     </div>
     
+
+
+    </div>
+
 </body>
 </html>

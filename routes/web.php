@@ -1,12 +1,20 @@
 <?php
 
+use App\Http\Controllers\AdivinaController;
 use App\Http\Controllers\AdivinanzaController;
+use App\Http\Controllers\AhorcadoController;
 use App\Http\Controllers\AnswerController;
+use App\Http\Controllers\JuegoAdivinanzaController;
+use App\Http\Controllers\JuegoController;
+use App\Http\Controllers\Trivias2Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContenidoController;
+use App\Http\Controllers\DownloadApp;
+use App\Http\Controllers\JuegoAdivinanzasController;
 use App\Http\Controllers\JuegosAdivina;
 use App\Http\Controllers\JuegosController;
 use App\Http\Controllers\PagosController;
+use App\Http\Controllers\PlaysController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuizResultController;
@@ -69,20 +77,20 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::delete('edit/{contenido}', 'destroy')->name('contenido.destroy');
 });
 
+
+// Games of nico
+// Rutas de los Juegos
+Route::get('juegos3', [JuegosController::class, 'index']);
+
+Route::get('juegos2', [JuegosAdivina::class, 'index2']);
+
+Route::get('ahorcado', [AhorcadoController::class, 'index3']);
+
+Route::get('/adivina', [AdivinaController::class, 'index4']);
+
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(TriviaController::class)->group(function () {
 
     Route::get('dashboard/games', 'game')->name('dashboard.game');
-
-
-
-
-    // Rutas de los Juegos
-    Route::get('juegos', [JuegosController::class, 'index']);
-
-    Route::get('juegos2', [JuegosAdivina::class, 'index2']);
-
-
-
 
 
     // Muestra la vista de preguntas 5 a 7 años
@@ -243,7 +251,7 @@ Route::get('/google-callback', [SocialController::class, 'callbackGoogle']);
 
 
 
-////////pagos 
+////////pagos
 
 Route::get('/pagos',[PagosController::class,'index']);
 Route::get('/suscripcion', [PagosController::class, 'suscripcion'])->name('suscripcion');
@@ -256,7 +264,39 @@ Route::get('/premium', [PagosController::class, 'premium']);
 Route::get('/generar-recibo-pdf/{userId}', [PagosController::class,'recibo']);
 
 
+
+
+// // routes/web.php
+
+Route::get('/juegos/registrar', [JuegoController::class, 'registrarJuego'])->name('juegos.registrar');
+Route::post('/juegos/guardar', [JuegoController::class,'guardarJuego'])->name('juegos.guardar');
+
+
+// Route::middleware(['auth'])->group(function () {
+//     // Rutas protegidas por autenticación
+//     Route::get('/juegos-y-niveles', [JuegoController::class, 'mostrarJuegosYNiveles'])->name('juegos_niveles');
+
+//     // ... Otras rutas protegidas ...
+// });
 Route::post('/cancelar-suscripcion', [PagosController::class, 'cancelarSuscripcion'])->name('cancelar-suscripcion');
 
 
 
+
+/*
+========================
+RUTAS JUEGOS
+========================
+*/
+
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->controller(ContenidoController::class)->group(function () {
+
+Route::get('/juegos', [PlaysController::class, 'mostrarJuegos'])->name('juegos.lista');
+Route::get('/juegos/{juego}/niveles', [PlaysController::class, 'mostrarNiveles'])->name('juegos.niveles');
+Route::get('/juegos/nivel/{nivel}', [PlaysController::class, 'jugarNivel'])->name('juegos.nivel');
+Route::post('/juegos/nivel/{nivel}/procesar', [PlaysController::class, 'procesarRespuesta'])->name('juegos.procesar');
+Route::get('/juegos/resultado/{nombreDelJuego}/{resultado}', [PlaysController::class, 'mostrarResultado'])->name('juegos.resultado');
+});
+
+
+Route::get('/download_apk', [DownloadApp::class, 'downloadApk'])->name('download.apk');

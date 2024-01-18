@@ -10,7 +10,14 @@ body {
     background-size: cover;
     background-attachment: fixed;
     margin: 0;
+    
 }
+
+.contenedor {
+    text-align: center; 
+  }
+
+
 
 h1 {
     width: fit-content;
@@ -165,11 +172,9 @@ h4 {
 
 
 .imagenlogo {
-    width: 400px;
-    position: relative;
-    left: 500px;
-    top: 30px;
     animation: salto 2s ease-in-out infinite;
+    display: block; 
+    margin: 0 auto;
 }
 
 @keyframes salto {
@@ -241,5 +246,18 @@ h4 {
 #verResultadosBtn:hover {
     background-color: #0056a1;
 }
+
+
+
+@media only screen and (max-width: 768px) {
+    
+    .pantalla-juego img {
+        max-width: 80%; 
+    }
+    .opciones {
+        max-width: 80%; 
+    }
+}
+
 
 

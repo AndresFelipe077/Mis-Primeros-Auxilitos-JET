@@ -27,7 +27,7 @@
         
         <p class="total">Total: ${{ $monto }}</p>
         <p class="notes">Gracias por su pago.</p>
-        <p class="footer">© {{ date('Y') }} Tu Empresa</p>
+        <p class="footer">© {{ date('Y') }} Mis Primeros Auxilitos</p>
     </div>
 </body>
 </html>

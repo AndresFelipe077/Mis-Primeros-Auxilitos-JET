@@ -2,55 +2,14 @@ body {
     font-family: 'DynaPuff', cursive;
     margin: 0;
     padding: 0;
-position: relative;
+    position: relative;
     background-size: 100%;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-top: -50px;
+    top: -50px;
     height: 1000px;
 }
-
-@keyframes colorChange {
-    0% {
-        color: #FF0000;
-    }
-    10% {
-        color: #FFA500;
-    }
-    20% {
-        color: #FFFF00;
-    }
-    30% {
-        color: #008000;
-    }
-    40% {
-        color: #0000FF;
-    }
-    50% {
-        color: #05ff50;
-    }
-    60% {
-        color: #008b00;
-    }
-    70% {
-        color: #FF1493;
-    }
-    80% {
-        color: #FF69B4;
-    }
-    90% {
-        color: #FF4500;
-    }
-    100% {
-        color: #FF0000;
-    }
-}
-
-h1, h2, h3, p, .slogan, .dos {
-    z-index: 1;
-}
-
 h1 {
     font-size: 36px;
     font-weight: bold;
@@ -64,7 +23,7 @@ h2 {
     font-family: 'DynaPuff', cursive;
     animation: colorChangeH2 12s infinite;
     position: relative;
-    left: 380px;
+ 
 }
 
 h3 {
@@ -90,9 +49,9 @@ p {
 }
 
 .subscribe-button {
-    background-color: #ff6b6b;
+    background: linear-gradient(to bottom, #3a0fb1, #8706ff, #FF6B6B);
     color: #fff;
-    padding: 15px 30px;
+    padding: 10px 30px;
     border: none;
     border-radius: 5px;
     font-size: 24px;
@@ -101,13 +60,14 @@ p {
     display: inline-block;
     transition: background-color 0.3s ease;
     font-family: 'DynaPuff', cursive;
+    position: relative;
+    top: -20px;
+    left: 70px;
 }
-
-
 
 .subscription-info {
     display: flex;
-    justify-content: space-between; /* Cambiado de space-around a space-between */
+    justify-content: space-between;
     flex-wrap: nowrap;
     margin: 20px;
     font-family: 'DynaPuff', cursive;
@@ -117,15 +77,13 @@ p {
     background-color: #ffffff;
     border: 2px solid #0070ba;
     border-radius: 10px;
-    width: 28%; /* Cambiado el valor a 28% para que queden más separadas */
+    width: 28%;
     padding: 20px;
     text-align: center;
     margin: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     font-family: 'DynaPuff', cursive;
 }
-
-
 
 /* Responsivo para pantalla pequeña (menos de 768px) */
 @media (max-width: 768px) {
@@ -137,6 +95,22 @@ p {
         font-size: 18px;
     }
 
+    .slogan {
+        text-align: center;
+    }
+
+    .dos {
+        left: 0;
+    }
+
+    .subscribe-button {
+        padding: 10px 20px;
+        font-size: 18px;
+        margin: 10px;
+        top: 30px;
+        left: 0;
+    }
+
     .subscription-info {
         flex-direction: column;
         align-items: center;
@@ -144,32 +118,20 @@ p {
 
     .subscription-card {
         width: 80%;
+        left: 0;
+    }
+    
+    .segunda {
+        left: 0;
     }
 
-    .subscribe-button {
-        padding: 10px 20px;
-        font-size: 18px;
-        margin: 10px;
+    .cuarta {
+        left: 0;
+    }
+    
+    .subscription-card, .subscribe-button {
+        position: static;
     }
 }
 
-.segunda{
-    position: relative;
-    left: -240px;
-}
 
-.cuarta{
-    position: relative;
-    left: 120px;
-}
-
-.subscription-card {
-  position: relative;
-  top: 100px;
-  left: -90px;
-}
-
-.subscribe-button {
- position: relative;
- top: -10px;
-}
